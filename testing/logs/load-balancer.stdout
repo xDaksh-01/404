@@ -6,3 +6,73 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5008
  * Running on http://10.12.15.75:5008
 Press CTRL+C to quit
+127.0.0.1 - - [29/Mar/2026 04:13:16] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:13:29] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:13:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:13:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:13:45] "GET /health HTTP/1.1" 200 -
+[2026-03-29 04:13:52.789] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:13:52] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:13:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:00] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:14:01.599] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:14:01] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:19] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:34] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:14:40.518] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [29/Mar/2026 04:14:40] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:44] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:14:59] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:14:59.406] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [29/Mar/2026 04:14:59] "POST /reroute HTTP/1.1" 200 -
+[2026-03-29 04:15:04.701] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:15:04] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:10] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:12] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:15:12.876] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:15:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:13] "GET /health HTTP/1.1" 200 -
+[2026-03-29 04:15:21.822] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:15:21] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:42] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:15:57] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:15:57.991] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:15:57] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:00] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:11] "GET /health HTTP/1.1" 200 -
+[2026-03-29 04:16:17.489] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:16:17] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:41] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:50] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:16:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:10] "GET /health HTTP/1.1" 200 -
+[2026-03-29 04:17:17.453] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [29/Mar/2026 04:17:17] "POST /reroute HTTP/1.1" 200 -
+[2026-03-29 04:17:20.571] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:17:20] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:30] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:17:31.062] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:17:31] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:39] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:40] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:17:54] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:17:55.501] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [29/Mar/2026 04:17:55] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:09] "GET /health HTTP/1.1" 200 -
+[2026-03-29 04:18:15.480] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [29/Mar/2026 04:18:15] "POST /demo/inject HTTP/1.1" 200 -
