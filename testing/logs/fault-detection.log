@@ -3,3 +3,13 @@
 [2026-03-28 10:01:48.427] [fault-detection] [INFO] Starting fault-detection on port 5010
 [2026-03-28 10:04:39.155] [fault-detection] [INFO] Starting fault-detection on port 5010
 [2026-03-28 10:09:08.300] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 10:26:40.830] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 10:29:27.042] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 10:51:24.276] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 10:52:23.989] [fault-detection] [WARNING] [INJECT] current_surge on feeder east-feeder-2
+[2026-03-28 10:54:08.976] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 11:04:21.013] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 11:05:00.684] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 11:17:26.740] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 11:20:33.431] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 11:25:01.858] [fault-detection] [INFO] Starting fault-detection on port 5010

@@ -8,4 +8,4 @@ if ROOT not in sys.path:
 from ml.anomaly_detector import run_inference_loop
 
 if __name__ == "__main__":
-    run_inference_loop(poll_interval=2.0)
+    run_inference_loop(poll_interval=5.0)

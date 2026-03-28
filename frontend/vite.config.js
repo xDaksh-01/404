@@ -16,6 +16,8 @@ export default defineConfig({
       '/api/ze': { target: 'http://127.0.0.1:5005', rewrite: (p) => p.replace(/^\/api\/ze/, ''), changeOrigin: true },
       '/api/zw': { target: 'http://127.0.0.1:5006', rewrite: (p) => p.replace(/^\/api\/zw/, ''), changeOrigin: true },
       '/api/zc': { target: 'http://127.0.0.1:5007', rewrite: (p) => p.replace(/^\/api\/zc/, ''), changeOrigin: true },
+      '/grafana': { target: 'http://127.0.0.1:3001', rewrite: (p) => p.replace(/^\/grafana/, ''), changeOrigin: true },
+      '/prometheus': { target: 'http://127.0.0.1:9090', rewrite: (p) => p.replace(/^\/prometheus/, ''), changeOrigin: true },
     }
   }
 })

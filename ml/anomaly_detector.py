@@ -59,7 +59,9 @@ SERVICE_URLS = {
 
 from concurrent.futures import ThreadPoolExecutor
 
-ANOMALY_COOLDOWN = 12  # Reduced to allow faster re-triggering
+ANOMALY_COOLDOWN = 45
+ANOMALY_SCORE_ALERT_THRESHOLD = -0.02
+LOW_CONFIDENCE_THRESHOLD = 0.72
 _last_anomaly_times = {} # component_key -> timestamp
 _cooldown_lock = threading.Lock()
 
@@ -100,8 +102,8 @@ def collect_metrics() -> dict:
     return responses
 
 
-def build_feature_vector(responses: dict) -> np.ndarray:
-    """Convert API responses → feature vector using the shared extractor."""
+def build_feature_vector(responses: dict) -> tuple[np.ndarray, dict]:
+    """Convert API responses → (feature vector, feature map)."""
     zone_responses = [
         responses.get("zone_north",   {}),
         responses.get("zone_south",   {}),
@@ -117,7 +119,50 @@ def build_feature_vector(responses: dict) -> np.ndarray:
         loadbalancer_response=   responses.get("load_balancer",     {}),
         gridcontroller_response= responses.get("grid_controller",   {}),
     )
-    return np.array(features_to_vector(feature_dict), dtype=float)
+    return np.array(features_to_vector(feature_dict), dtype=float), feature_dict
+
+
+def choose_fault_type(predicted_fault: str, confidence: float,
+                      feature_map: dict, responses: dict) -> tuple[str, str]:
+    """
+    Choose the final fault type with deterministic signal checks.
+    Falls back to a heuristic when classifier confidence is low.
+    """
+    zone_responses = [
+        responses.get("zone_north", {}),
+        responses.get("zone_south", {}),
+        responses.get("zone_east", {}),
+        responses.get("zone_west", {}),
+        responses.get("zone_central", {}),
+    ]
+    zone_voltages = [z.get("voltage_avg_v", 230) for z in zone_responses]
+    zone_load_pcts = []
+    for z in zone_responses:
+        peak = z.get("peak_load_mw", 1) or 1
+        zone_load_pcts.append((z.get("current_load_mw", 0) / peak) * 100)
+
+    heuristic = None
+    if feature_map.get("residual_current_ma_max", 0) > 450 or feature_map.get("current_thd_percent_avg", 0) > 20:
+        heuristic = "current_surge"
+    elif feature_map.get("transformer_temperature_max", 0) > 92 or feature_map.get("transformer_load_percent_max", 0) > 98:
+        heuristic = "transformer_overload"
+    elif max(zone_load_pcts) > 95 or feature_map.get("zones_overloaded_count", 0) >= 2 or feature_map.get("rebalance_count_session", 0) >= 4:
+        heuristic = "power_redistribution"
+    elif any(
+        z.get("substation_status") in ("rebooting", "tripped")
+        or (z.get("current_load_mw", 1) <= 1 and z.get("voltage_avg_v", 230) <= 5)
+        for z in zone_responses
+    ):
+        heuristic = "rebooting_overheat"
+    elif max(zone_voltages) > 258:
+        heuristic = "voltage_spike"
+    elif feature_map.get("grid_voltage_avg", 230) > 245 or feature_map.get("voltage_violations_count", 0) >= 3:
+        heuristic = "voltage_overload"
+
+    if heuristic and (confidence < LOW_CONFIDENCE_THRESHOLD or predicted_fault == "voltage_spike"):
+        return heuristic, "heuristic"
+
+    return predicted_fault, "classifier"
 
 
 def identify_affected_components(responses: dict, fault_type: str) -> dict:
@@ -147,9 +192,10 @@ def identify_affected_components(responses: dict, fault_type: str) -> dict:
                   key=lambda kv: kv[1].get("load_percent", 0))
     context["zone"] = worst_z[0]
 
-    # Identify worst feeder
+    # Identify worst feeder (only for feeder/fault-detection-driven fault types)
     feeders = responses.get("fault_detection", {}).get("feeders", [])
-    if feeders:
+    feeder_driven = {"current_surge", "earth_fault", "arc_fault", "insulation_breakdown"}
+    if feeders and fault_type in feeder_driven:
         worst_f = max(feeders, key=lambda f: f.get("residual_current_ma", 0))
         context["feeder_id"] = worst_f.get("feeder_id", "central-feeder-1")
         feeder_zone = worst_f.get("zone", "central")
@@ -180,7 +226,7 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
             responses = collect_metrics()
 
             # ── 2. Feature vector ─────────────────────────────────────────
-            vec = build_feature_vector(responses)
+            vec, feature_map = build_feature_vector(responses)
             vec_scaled = scaler.transform([vec])
 
             # ── 3. Anomaly detection ──────────────────────────────────────
@@ -189,11 +235,24 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
             is_anomaly    = (prediction == -1)
 
             if is_anomaly:
+                # Ignore weak excursions that frequently self-correct.
+                if anomaly_score > ANOMALY_SCORE_ALERT_THRESHOLD:
+                    if once:
+                        return
+                    time.sleep(poll_interval)
+                    continue
+
                 # ── 4. Classify root cause ────────────────────────────────
                 fault_proba = classifier.predict_proba(vec_scaled)[0]
                 fault_idx   = np.argmax(fault_proba)
-                fault_type  = label_encoder.classes_[fault_idx]
+                predicted_fault = label_encoder.classes_[fault_idx]
                 confidence  = float(fault_proba[fault_idx])
+                fault_type, source = choose_fault_type(
+                    predicted_fault=predicted_fault,
+                    confidence=confidence,
+                    feature_map=feature_map,
+                    responses=responses,
+                )
 
                 context = identify_affected_components(responses, fault_type)
                 
@@ -210,12 +269,15 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
                         continue
                     _last_anomaly_times[comp_key] = now
 
-                logger.warning(f"[ANOMALY] score={anomaly_score:.4f} Fault={fault_type} confidence={confidence:.2f} | Context={context}")
+                logger.warning(
+                    f"[ANOMALY] score={anomaly_score:.4f} Fault={fault_type} "
+                    f"pred={predicted_fault} source={source} confidence={confidence:.2f} | Context={context}"
+                )
 
                 write_simulation_log("ml-anomaly-detector", "ML-DETECT",
                     f"Anomaly detected score={anomaly_score:.4f} prediction={prediction}")
                 write_simulation_log("ml-anomaly-detector", "ML-CLASSIFY",
-                    f"Root cause={fault_type} confidence={confidence:.2f} context={context}")
+                    f"Root cause={fault_type} source={source} confidence={confidence:.2f} context={context}")
 
                 # Map fault types to human-readable labels for the dashboard
                 display_names = {

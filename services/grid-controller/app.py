@@ -61,6 +61,18 @@ SERVICE_HOSTS = {
     "fault-detection": os.getenv("FAULT_DETECTION_HOST", "localhost"),
 }
 PORT_TO_SERVICE = {port: name for name, port in SERVICE_PORTS.items()}
+KNOWN_FAULT_TYPES = [
+    "voltage_overload",
+    "power_redistribution",
+    "voltage_spike",
+    "current_surge",
+    "transformer_overload",
+    "rebooting_overheat",
+]
+
+
+def _empty_fault_counts() -> dict:
+    return {ft: 0 for ft in KNOWN_FAULT_TYPES}
 
 
 def service_url(service_name: str, path: str) -> str:
@@ -91,6 +103,9 @@ state = {
     "remediation_actions_count": 0,
     "alert_rate_per_minute": 0.0,
     "remediation_count_session": 0,
+    "resolved_alerts_count": 0,
+    "detected_faults_total": 0,
+    "fault_type_counts": _empty_fault_counts(),
     "is_simulating": True,
     "simulation_start_time": time.time(),
 }
@@ -98,6 +113,9 @@ state = {
 alerts = deque(maxlen=200)   # live alert feed
 remediation_log = deque(maxlen=100)
 alert_timestamps = deque(maxlen=300)  # for rate calculation
+
+ALERT_DEDUP_WINDOW_S = 45
+ACTIVE_ALERT_TTL_S = 300
 
 # ─── Logger ────────────────────────────────────────────────────────────────────
 logger = setup_logger(SERVICE_NAME)
@@ -212,6 +230,46 @@ def simulate_natural_variation():
         time.sleep(3)
 
 
+def _alert_fingerprint(alert: dict) -> str:
+    return "|".join([
+        alert.get("service", ""),
+        alert.get("fault_type", ""),
+        alert.get("zone", ""),
+        alert.get("component", ""),
+        alert.get("message", ""),
+    ])
+
+
+def _refresh_active_alerts_count_locked(now_ts: float | None = None):
+    now_ts = now_ts or time.time()
+    state["active_alerts_count"] = len([
+        a for a in alerts
+        if a.get("status", "OPEN") == "OPEN"
+        and (now_ts - datetime.datetime.fromisoformat(a["timestamp"]).timestamp()) < ACTIVE_ALERT_TTL_S
+    ])
+
+
+def _resolve_related_alerts_locked(fault_type: str, zone: str = "", component: str = "") -> int:
+    """Resolve open alerts that match the same incident footprint."""
+    resolved_now = 0
+    now = datetime.datetime.now().isoformat()
+    for alert in alerts:
+        if alert.get("status") != "OPEN":
+            continue
+        if fault_type and alert.get("fault_type") != fault_type:
+            continue
+        if zone and alert.get("zone") and alert.get("zone") != zone:
+            continue
+        if component and alert.get("component") and alert.get("component") != component:
+            continue
+        alert["status"] = "RESOLVED"
+        alert["resolved_timestamp"] = now
+        resolved_now += 1
+    if resolved_now:
+        state["resolved_alerts_count"] += resolved_now
+    return resolved_now
+
+
 # ─── Routes ────────────────────────────────────────────────────────────────────
 
 @app.route("/health")
@@ -233,15 +291,39 @@ def status():
 def metrics():
     with state_lock:
         s = dict(state)
+        fault_counts = dict(s.get("fault_type_counts", {}))
     lines = [
+        '# HELP grid_total_load_mw Total real power demand on the smart grid in MW',
+        '# TYPE grid_total_load_mw gauge',
         f'grid_total_load_mw {s["grid_total_load_mw"]}',
+        '# HELP grid_capacity_mw Total nominal capacity of the smart grid in MW',
+        '# TYPE grid_capacity_mw gauge',
         f'grid_capacity_mw {s["grid_capacity_mw"]}',
+        '# HELP grid_load_percent Grid loading as percentage of total capacity',
+        '# TYPE grid_load_percent gauge',
         f'grid_load_percent {s["grid_load_percent"]}',
+        '# HELP active_alerts_count Number of currently active alerts in SCADA',
+        '# TYPE active_alerts_count gauge',
         f'active_alerts_count {s["active_alerts_count"]}',
+        '# HELP services_online_count Number of online services observed by SCADA',
+        '# TYPE services_online_count gauge',
         f'services_online_count {s["services_online_count"]}',
+        '# HELP system_status Grid health state where 0=healthy 1=degraded 2=critical',
+        '# TYPE system_status gauge',
         f'system_status {s["system_status"]}',
+        '# HELP remediation_actions_count Total remediation actions executed',
+        '# TYPE remediation_actions_count counter',
         f'remediation_actions_count {s["remediation_actions_count"]}',
+        '# HELP resolved_alerts_count Total alerts marked as resolved by remediation',
+        '# TYPE resolved_alerts_count counter',
+        f'resolved_alerts_count {s["resolved_alerts_count"]}',
+        '# HELP ml_detected_faults_total Total ML-detected fault alerts grouped by fault type',
+        '# TYPE ml_detected_faults_total counter',
+        f'ml_detected_faults_total {s["detected_faults_total"]}',
     ]
+    for ft, count in sorted(fault_counts.items()):
+        fault_label = str(ft).replace('"', "")
+        lines.append(f'ml_detected_faults_total{{fault_type="{fault_label}"}} {count}')
     return Response("\n".join(lines) + "\n", mimetype="text/plain")
 
 
@@ -313,6 +395,7 @@ def metrics_summary():
 def receive_alert():
     data = request.get_json(force=True) or {}
     now = datetime.datetime.now()
+    now_ts = time.time()
     alert = {
         "id": f"a-{int(time.time()*1000)}",
         "timestamp": now.isoformat(),
@@ -323,25 +406,58 @@ def receive_alert():
         "zone": data.get("zone", ""),
         "message": data.get("message", ""),
         "fault_type": data.get("fault_type", ""),
+        "status": "OPEN",
+        "resolved_timestamp": None,
+        "occurrences": 1,
+        "last_seen": now.isoformat(),
     }
-    alerts.appendleft(alert)
-    alert_timestamps.append(time.time())
+    alert["fingerprint"] = _alert_fingerprint(alert)
 
+    deduped_alert_id = None
     with state_lock:
-        state["active_alerts_count"] = len([
-            a for a in alerts
-            if (time.time() - datetime.datetime.fromisoformat(a["timestamp"]).timestamp()) < 300
-        ])
+        for existing in alerts:
+            if existing.get("fingerprint") != alert["fingerprint"]:
+                continue
+            if existing.get("status", "OPEN") != "OPEN":
+                continue
 
-    logger.warning(f"[ALERT] {alert['severity']} | {alert['service']} | {alert['message']}")
-    write_simulation_log(SERVICE_NAME, "ALERT", f"{alert['severity']} from {alert['service']}: {alert['message']}")
-    return jsonify({"received": True, "alert_id": alert["id"]})
+            prev_ts = datetime.datetime.fromisoformat(existing["timestamp"]).timestamp()
+            if now_ts - prev_ts <= ALERT_DEDUP_WINDOW_S:
+                existing["occurrences"] = existing.get("occurrences", 1) + 1
+                existing["last_seen"] = alert["last_seen"]
+                existing["timestamp_display"] = alert["timestamp_display"]
+                deduped_alert_id = existing["id"]
+                break
+
+        if deduped_alert_id is None:
+            alerts.appendleft(alert)
+            alert_timestamps.append(now_ts)
+
+            if alert["service"] == "ml-anomaly-detector" and alert.get("fault_type"):
+                ft = alert["fault_type"]
+                state["detected_faults_total"] += 1
+                counts = state.setdefault("fault_type_counts", {})
+                counts[ft] = counts.get(ft, 0) + 1
+
+        _refresh_active_alerts_count_locked(now_ts)
+
+    if deduped_alert_id is None:
+        logger.warning(f"[ALERT] {alert['severity']} | {alert['service']} | {alert['message']}")
+        write_simulation_log(SERVICE_NAME, "ALERT", f"{alert['severity']} from {alert['service']}: {alert['message']}")
+        return jsonify({"received": True, "alert_id": alert["id"], "deduplicated": False})
+
+    logger.info(f"[ALERT-DEDUPE] {alert['service']} {alert.get('fault_type','')} merged into {deduped_alert_id}")
+    return jsonify({"received": True, "alert_id": deduped_alert_id, "deduplicated": True})
 
 
 @app.route("/alerts")
 def get_alerts():
     limit = int(request.args.get("limit", 50))
-    return jsonify(list(alerts)[:limit])
+    include_resolved = request.args.get("include_resolved", "0") == "1"
+    if include_resolved:
+        return jsonify(list(alerts)[:limit])
+    open_alerts = [a for a in alerts if a.get("status", "OPEN") == "OPEN"]
+    return jsonify(open_alerts[:limit])
 
 
 @app.route("/remediation-log", methods=["GET"])
@@ -368,6 +484,14 @@ def post_remediation_log():
         with state_lock:
             existing_entry.update(data)
             existing_entry["last_update"] = now.isoformat()
+            status = str(existing_entry.get("status", "")).upper()
+            if status in ("RESOLVED", "PARTIAL"):
+                _resolve_related_alerts_locked(
+                    fault_type=existing_entry.get("fault_type", ""),
+                    zone=existing_entry.get("zone", ""),
+                    component=existing_entry.get("transformer_id", ""),
+                )
+                _refresh_active_alerts_count_locked()
         return jsonify({"updated": True, "id": rid})
     else:
         entry = {
@@ -381,6 +505,14 @@ def post_remediation_log():
         with state_lock:
             state["remediation_actions_count"] += 1
             state["remediation_count_session"] += 1
+            status = str(entry.get("status", "")).upper()
+            if status in ("RESOLVED", "PARTIAL"):
+                _resolve_related_alerts_locked(
+                    fault_type=entry.get("fault_type", ""),
+                    zone=entry.get("zone", ""),
+                    component=entry.get("transformer_id", ""),
+                )
+                _refresh_active_alerts_count_locked()
         
         write_simulation_log(SERVICE_NAME, "REMEDIATE", f"[{data.get('fault_type','?')}] {data.get('status','?')}")
         return jsonify({"created": True, "id": entry["id"]})
@@ -416,6 +548,9 @@ def stop_simulation():
         state["simulation_start_time"] = None
         state["system_status"] = 0
         state["active_alerts_count"] = 0
+        state["resolved_alerts_count"] = 0
+        state["detected_faults_total"] = 0
+        state["fault_type_counts"] = _empty_fault_counts()
         remediation_log.clear()
         alerts.clear()
 
@@ -440,6 +575,9 @@ def demo_reset():
     with state_lock:
         state["system_status"] = 0
         state["active_alerts_count"] = 0
+        state["resolved_alerts_count"] = 0
+        state["detected_faults_total"] = 0
+        state["fault_type_counts"] = _empty_fault_counts()
     return jsonify({"reset": True})
 
 

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Zap, Activity, Info, BarChart3, Bot, Settings } from 'lucide-react'
+import { LayoutDashboard, Zap, Activity, Bot, BarChart3, LineChart } from 'lucide-react'
 
 export default function Sidebar() {
   return (
@@ -29,6 +29,16 @@ export default function Sidebar() {
           <Bot size={18} />
           <span>Logs & Fixes</span>
         </NavLink>
+
+        <a href="/grafana/d/smart-grid-overview/smart-grid-overview?orgId=1&refresh=5s" className="nav-link">
+          <LineChart size={18} />
+          <span>Grafana Dashboard</span>
+        </a>
+
+        <a href="/prometheus/targets" className="nav-link">
+          <BarChart3 size={18} />
+          <span>Prometheus Targets</span>
+        </a>
       </nav>
 
       <div className="sidebar-footer">
