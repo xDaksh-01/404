@@ -539,3 +539,13 @@ Started: 2026-03-29 04:13:33.862
 [04:18:35] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T15", "load_percent": 102.29277595794623})
 [04:18:40.258] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.2s
 [04:18:41.502] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T15 in central is CRITICAL (temp=96.8°C, load=100.0%)
+[04:18:42] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
+[04:18:44.550] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T8
+[04:18:44] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T8", "load_percent": 99.27258896547706})
+[04:18:45.970] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0876 prediction=-1
+[04:18:45.970] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'east', 'feeder_id': 'east-feeder-3'}
+[04:18:47.517] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=95.7°C, load=99.3%)
+[04:18:47.977] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[04:18:47.978] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738127978 Fault=transformer_overload zone=east transformer=T15
+[04:18:48.534] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T15 in central is CRITICAL (temp=97.6°C, load=100.0%)
+[04:18:50.025] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T15/load-limit → 200 (2046ms)
