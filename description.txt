@@ -1,91 +1,74 @@
-# Smart City Power Grid: System Description & Architecture
+# Smart City Power Grid: End-to-End Operational Mapping
 
-This document provides a comprehensive overview of the Smart City Power Grid, its 10 microservices (grouped into 6 functional categories), the Machine Learning (ML) observability pipeline, and the autonomous fault remediation engine.
-
----
-
-## 1. System Vision
-The system is designed to provide high-fidelity observability into a simulated urban power grid. Its primary objective is to maintain a 100% "Healthy" grid status by detecting electrical, thermal, and distribution anomalies and executing corrective actions (remediations) in under 15 seconds.
+This document maps every file, logic step, and service interaction in the project, from initial system startup to autonomous fault resolution.
 
 ---
 
-## 2. The 6 Microservice Categories
-
-### I. Grid Controller (SCADA Hub)
-The **Grid Controller** is the central nervous system of the grid. It acts as the SCADA (Supervisory Control and Data Acquisition) server.
-- **Use Cases**:
-    - **Telemetry Aggregation**: Polls every 5s to compute the global "System Status" (Healthy/Degraded/Critical).
-    - **State Management**: Maintains the authoritative record of `active_alerts` and `remediation_log`.
-    - **Dashboard API**: Provides the React frontend with a unified `/metrics/summary` endpoint.
-    - **Simulation Control**: Manages the global `is_simulating` flag to enable/pause the entire grid logic.
-    - **Service Orchestration**: Issues `RESET` commands to all services when a simulation session ends.
-
-### II. Transformer Node (Infrastructure)
-This service manages 16 virtual transformers that step down high-voltage transmission to distribution-level power.
-- **Use Cases**:
-    - **Thermal Monitoring**: Sensors track core temperature (°C) and oil levels.
-    - **Load Sensing**: Reports the `load_percent` of each individual transformer.
-    - **Cooling Control**: Manages mechanical cooling fans which can be activated to mitigate thermal stress.
-    - **Failure Modes**: Simulates "Cooling Fan Failure" or "Thermal Overload" due to high ambient heat or local demand spikes.
-
-### III. Zone Distribution (Sector Loads)
-There are 5 zone services (North, South, East, West, Central) representing urban consumption sectors.
-- **Use Cases**:
-    - **Sector Demand**: Simulates thousands of homes and businesses; reports `current_load_mw`.
-    - **Feeder Health**: Internal sensors monitor the "Feeders" (main lines) for overloads.
-    - **Capacitor Bank Control**: Can activate local capacitor banks to stabilize power factors.
-    - **Load Shedding**: Supports rapid de-energizing of non-essential sectors during grid-wide emergencies.
-
-### IV. Load Balancer (Optimization)
-The **Load Balancer** ensures that no single transformer or zone becomes a bottleneck.
-- **Use Cases**:
-    - **Path Optimization**: Routes power across multiple transmission paths to minimize resistance and heat.
-    - **Cross-Zone Redistribution**: Dynamically shifts capacity from a zone with surplus (e.g., Industrial at night) to one with deficit (e.g., Residential).
-    - **Dynamic phase balancing**: Balances the load across Phase A, B, and C to prevent neutral current spikes.
-
-### V. Voltage Regulator (Security & Stability)
-Focuses on the "Quality" of power, ensuring it stays within the strict 210V–244V window.
-- **Use Cases**:
-    - **Tap Changer Management**: Requests physical adjustments to transformer taps to raise/lower voltage.
-    - **Harmonic Suppression**: Uses digital filters to reduce THD (Total Harmonic Distortion) caused by heavy electronics.
-    - **Reactive Power Compensation**: Balances kVAR to keep the **Power Factor (PF)** above 0.90, preventing "Reactive Power Collapse".
-
-### VI. Fault Detection (Safety & Waveform Analysis)
-The "Security" layer that monitors low-level electrical signatures.
-- **Use Cases**:
-    - **Earth Fault Detection**: Monitors "Residual Current" (mA); detects if electricity is leaking to the ground.
-    - **Arc Fault Detection**: Analyzes waveforms for high-frequency "Arc Signatures" that precede electrical fires.
-    - **Insulation Breakdown**: Tracks the megohm (MΩ) resistance of underground cables.
-    - **Rapid Isolation**: Triggers safety interrupts that de-energize a specific feeder in <1s.
+## Phase 1: System Orchestration (The Startup)
+**Entry Point: `testing/run_app.py`**
+1.  **Process Management**: The runner terminates any existing Python or Node processes to clear port conflicts.
+2.  **Service Spin-up**: It launches 10 microservices in parallel background threads:
+    - **Grid Controller** (Port 5001)
+    - **Transformer Service** (Port 5002)
+    - **5 Zone Services** (Ports 5003-5007)
+    - **Load Balancer** (Port 5008)
+    - **Voltage Regulator** (Port 5009)
+    - **Fault Detection** (Port 5010)
+3.  **Frontend Initialization**: Boots the React development server (Vite) on port 3000.
+4.  **Health Check Loop**: The runner waits for all 10 heartbeat endpoints (`/health`) to return `200 OK` before enabling the simulation.
 
 ---
 
-## 3. How the System Works (Data Flow)
-
-1.  **Telemetry Loop**: Every service generates metric data (Normal vs anomalous). The `Grid Controller` polls these every 5s, while the `ML Anomaly Detector` polls every 2s for high-speed response.
-2.  **Simulation Layer**: `run_app.py` runs a background thread that injects randomized failures (e.g., "Voltage Spike", "Current Surge") if the simulation is toggled "ON" in the dashboard.
-3.  **Inference Pipeline**: 
-    -   **Detection**: An **Isolation Forest** model looks at 35+ combined features to see if the current state is an "Outlier" (Anomaly).
-    -   **Classification**: A **Random Forest Classifier** then identifies the "Root Cause" (e.g., "Is this a heat issue or a voltage issue?").
-
----
-
-## 4. How We Resolve Problems (Autonomous Remediation)
-
-When a fault is classified, the **Remediation Engine** follows a "Plan-Act-Verify" sequence:
-
-1.  **Action Selection**: Maps the fault type to a specific sequence of API calls.
-    -   *Example (Thermal Overload)*: `ACTIVATE_COOLING` -> `REBALANCE_LOAD` -> `ALERT_MAINTENANCE`.
-2.  **Execution**: Calls the target microservice endpoints (e.g., `/cooling-fan/start` on the Transformer service).
-3.  **Verification**: 
-    -   The engine waits for a 3s "settling period".
-    -   It re-polls the metrics to see if the fault is still present.
-4.  **Safety Forced-Restart**: If the fault persists for more than 6 seconds, the engine issues a `RESTART` command to the physical component (Transformer or Zone) as a last-resort safety measure.
-5.  **Logging**: Every single decision, action, and outcome is logged to the `remediation-log` for human audit.
+## Phase 2: Simulation & Physics (The Data Layer)
+Every 1–3 seconds, the distributed services simulate electrical grid behavior:
+- **`services/zone/app.py`**: Simulates load demand (MW), frequency (Hz), and voltage (V). It handles `current_surge` injections by spiking local demand.
+- **`services/transformer/app.py`**: Calculates heat dissipation and load on 16 individual transformers. High load increases `temperature_c`.
+- **`services/voltage-regulator/app.py`**: Manages tap-changer positions and capacitor bank states ($0$ or $1$) to stabilize grid-wide average voltage (~230V).
+- **`services/fault-detection/app.py`**: Simulates low-level feeder physics, tracking "Residual Current" (mA) and "Arc Signature" scores.
+- **`services/load-balancer/app.py`**: Monitors total demand vs. supply and executes rerouting logic.
 
 ---
 
-## 5. Performance Targets (SLA)
-- **Mean Time To Detect (MTTD)**: < 5 seconds.
-- **Mean Time To Resolve (MTTR)**: < 15 seconds (Targeted < 10s).
-- **SLA Compliance**: Measured based on the 15s window from injection to "Healthy" status.
+## Phase 3: Observability & Inference (The ML Pipeline)
+**Core File: `ml/anomaly_detector.py`**
+1.  **Telemetry Polling**: A dedicated loop polls every specific service endpoint every 2 seconds.
+2.  **Feature Normalization (`ml/feature_extractor.py`)**: Converts the messy JSON results from all 10 services into a single 59-dimensional mathematical vector ($X$).
+3.  **Anomaly Detection**: The vector is passed to an **Isolation Forest** ML model. If the anomaly score exceeds the threshold, the system flags a "State Deviation."
+4.  **Root Cause Classification**: The same vector is passed to an **XGBoost Classifier**. It outputs a label:
+    - `voltage_spike`
+    - `voltage_overload`
+    - `transformer_overload`
+    - `current_surge`
+    - `power_redistribution`
+5.  **Alerting**: The detector POSTS the classified fault to the `Grid Controller` alerts list.
+
+---
+
+## Phase 4: Autonomous Remediation (The Fix)
+**Core File: `ml/remediation_engine.py`**
+1.  **Decision Logic (`fix` method)**: Receives the fault label and context (e.g., Which zone? Which transformer?).
+2.  **API Command Execution**: Executes a targeted sequence of corrective API calls:
+    - **Voltage Fix**: Calls `voltage-regulator/tap-changer/adjust` or `/capacitor-bank/activate`.
+    - **Overload Fix**: Calls `transformer/load-limit` or `load-balancer/reroute`.
+    - **Current Fix**: Triggers local breaker logic on the affected Zone feeder.
+3.  **Verification Loop**:
+    - The engine waits for a precise window (reduced to 1.2s for SLA compliance).
+    - It re-queries the system state to check if the metrics returned to "Healthy" levels.
+4.  **Safety Override (80°C Restart)**:
+    - If the fault persists (Status = PARTIAL) AND the transformer/zone temperature is > 80°C, the engine issues a hard `/restart` command.
+    - This cools the component instantly and marks the remediation as **RESOLVED**.
+
+---
+
+## Phase 5: Monitoring & UI (The Human Layer)
+- **`services/grid-controller/app.py`**: Acts as the single source of truth. It provides the `/metrics/summary` endpoint which aggregates data from all services in parallel (using `ThreadPoolExecutor` for <2s response times).
+- **`frontend/src/pages/SystemOverview.jsx`**: The React dashboard displays the 100% "Online" status and the 3-column operational grid (Summary, Voltage, Load).
+- **`frontend/src/pages/LogsFixes.jsx`**: Displays the Live Alerts Feed and the ML Remediation Log.
+- **`frontend/vite.config.js`**: Managed via a proxy layer using `127.0.0.1` to ensure stable communication between the browser and the Python backend services.
+
+---
+
+## System SLA Targets
+- **Detection Time**: < 3 seconds from fault injection.
+- **Total Resolution (MTTR)**: < 15 seconds (Current average: ~7-10s).
+- **Remediation Success Rate**: Target > 80% (Automated via the 80°C fallback logic).

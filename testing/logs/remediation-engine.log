@@ -389,3 +389,23 @@
 [2026-03-28 08:37:03.407] [remediation-engine] [INFO] [ACTION] POST http://localhost:5008/reroute → 200 (2058ms)
 [2026-03-28 08:37:05.460] [remediation-engine] [INFO] [ACTION] POST http://localhost:5002/distribute → 200 (2052ms)
 [2026-03-28 08:37:06.702] [remediation-engine] [WARNING] [SAFETY] Thermal violation (80.04°C) persistent after 5.3s. Issuing EMERGENCY RESTART.
+[2026-03-28 08:37:08.759] [remediation-engine] [INFO] [ACTION] POST http://localhost:5006/restart → 404 (2056ms)
+[2026-03-28 08:37:10.806] [remediation-engine] [INFO] [ACTION] POST http://localhost:5001/alert → 200 (2047ms)
+[2026-03-28 08:37:10.806] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=9.5s | {'overloaded_zones': 1}
+[2026-03-28 08:37:12.492] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T14
+[2026-03-28 08:37:14.556] [remediation-engine] [INFO] [ACTION] POST http://localhost:5008/reroute → 200 (2064ms)
+[2026-03-28 08:37:16.615] [remediation-engine] [INFO] [ACTION] POST http://localhost:5002/distribute → 200 (2058ms)
+[2026-03-28 08:37:17.848] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=5.4s | {'overloaded_zones': 0}
+[2026-03-28 08:37:19.541] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T3
+[2026-03-28 08:37:21.597] [remediation-engine] [INFO] [ACTION] POST http://localhost:5009/tap-changer/lock → 200 (2055ms)
+[2026-03-28 08:37:23.662] [remediation-engine] [INFO] [ACTION] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2065ms)
+[2026-03-28 08:37:24.904] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=5.4s | {'grid_voltage': 226.36}
+[2026-03-28 08:37:26.595] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T3
+[2026-03-28 08:37:28.641] [remediation-engine] [INFO] [ACTION] POST http://localhost:5008/reroute → 200 (2045ms)
+[2026-03-28 08:37:30.679] [remediation-engine] [INFO] [ACTION] POST http://localhost:5002/distribute → 200 (2038ms)
+[2026-03-28 08:37:31.897] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=5.3s | {'overloaded_zones': 0}
+[2026-03-28 08:37:33.595] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T2
+[2026-03-28 08:37:35.649] [remediation-engine] [INFO] [ACTION] POST http://localhost:5008/reroute → 200 (2053ms)
+[2026-03-28 08:37:37.691] [remediation-engine] [INFO] [ACTION] POST http://localhost:5002/distribute → 200 (2042ms)
+[2026-03-28 08:37:38.939] [remediation-engine] [WARNING] [SAFETY] Fault power_redistribution persistent after 5.3s. Issuing EMERGENCY MITIGATION.
+[2026-03-28 08:37:38.940] [remediation-engine] [INFO] [VERIFY] power_redistribution PARTIAL | total_time=5.3s | {'overloaded_zones': 1}

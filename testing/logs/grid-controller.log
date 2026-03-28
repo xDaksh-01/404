@@ -149,3 +149,12 @@
 [2026-03-28 08:36:47.271] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
 [2026-03-28 08:36:52.543] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 91.3%
 [2026-03-28 08:36:54.270] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:37:01.347] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:37:10.805] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:37:12.490] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:37:19.540] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:37:26.593] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:37:28.576] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 106.1%
+[2026-03-28 08:37:33.594] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:37:34.600] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 105.0%
+[2026-03-28 08:37:40.607] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 102.6%

@@ -513,3 +513,31 @@ Press CTRL+C to quit
 127.0.0.1 - - [28/Mar/2026 08:36:54] "GET /status HTTP/1.1" 200 -
 [2026-03-28 08:36:56.320] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
 127.0.0.1 - - [28/Mar/2026 08:36:56] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:59] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:00.636] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=west mode=reduce excess=72.51MW
+127.0.0.1 - - [28/Mar/2026 08:37:00] "POST /emergency-rebalance HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:01] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:03.405] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+127.0.0.1 - - [28/Mar/2026 08:37:03] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:06] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:08.836] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [28/Mar/2026 08:37:08] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:13] "GET /health HTTP/1.1" 200 -
+[2026-03-28 08:37:14.555] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+127.0.0.1 - - [28/Mar/2026 08:37:14] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:23] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:26] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:28.639] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+127.0.0.1 - - [28/Mar/2026 08:37:28] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:31] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:32.865] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=west mode=reduce excess=86.99000000000001MW
+127.0.0.1 - - [28/Mar/2026 08:37:32] "POST /emergency-rebalance HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:33] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:35.647] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+127.0.0.1 - - [28/Mar/2026 08:37:35] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:38] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:40] "GET /status HTTP/1.1" 200 -
