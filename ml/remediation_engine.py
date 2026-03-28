@@ -114,7 +114,12 @@ class RemediationEngine:
                 remediation_record["actions_taken"] = actions_taken
 
         total_time = time.time() - t_start
-        status = "RESOLVED" if verified else "PARTIAL"
+        if verified:
+            status = "RESOLVED"
+        elif total_time > 15.0:
+            status = "EXCEEDED"
+        else:
+            status = "UNRESOLVED"
         
         logger.info(
             f"[VERIFY] {fault_type} {status} | total_time={total_time:.1f}s | {verify_details}")

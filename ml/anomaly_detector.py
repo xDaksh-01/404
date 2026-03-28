@@ -52,16 +52,21 @@ _cooldown_lock = threading.Lock()
 
 
 def load_models():
-    """Load all trained models from disk."""
-    if not os.path.exists(os.path.join(MODELS_DIR, "isolation_forest.pkl")):
-        raise FileNotFoundError(
-            f"Models not found in {MODELS_DIR}. Run: python ml/train_model.py")
+    """Load models OR train them if missing."""
+    model_path = os.path.join(MODELS_DIR, "isolation_forest.pkl")
+
+    if not os.path.exists(model_path):
+        logger.warning("[ML] Models not found. Training at runtime...")
+
+        from ml.train_model import main as train_main
+        train_main()
 
     anomaly_model  = joblib.load(os.path.join(MODELS_DIR, "isolation_forest.pkl"))
     classifier     = joblib.load(os.path.join(MODELS_DIR, "fault_classifier.pkl"))
     scaler         = joblib.load(os.path.join(MODELS_DIR, "scaler.pkl"))
     label_encoder  = joblib.load(os.path.join(MODELS_DIR, "label_encoder.pkl"))
-    logger.info("[MODELS] All ML models loaded successfully")
+
+    logger.info("[ML] Models ready (runtime trained or loaded)")
     return anomaly_model, classifier, scaler, label_encoder
 
 
@@ -197,8 +202,16 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
                         continue
                     _last_anomaly_times[comp_key] = now
 
-                logger.warning(f"[ANOMALY] score={anomaly_score:.4f} Fault={fault_type} confidence={confidence:.2f} | Context={context}")
-
+                logger.warning(
+    f"""
+ANOMALY DETECTED
+Score: {anomaly_score:.4f}
+Root Cause: {fault_type}
+Confidence: {confidence:.2f}
+Context: {context}
+⚡ Auto-Healing Triggered
+"""
+)
                 write_simulation_log("ml-anomaly-detector", "ML-DETECT",
                     f"Anomaly detected score={anomaly_score:.4f} prediction={prediction}")
                 write_simulation_log("ml-anomaly-detector", "ML-CLASSIFY",

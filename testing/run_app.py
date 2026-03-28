@@ -282,9 +282,6 @@ def main():
     if sys.platform != "win32":
         signal.signal(signal.SIGTERM, shutdown)
 
-    # Write simulation log header
-    write_simulation_header()
-
     print(f"\n{BOLD}{CYAN}{'═'*60}{RESET}")
     print(f"{BOLD}{CYAN}  SMART GRID CONTROL SYSTEM{RESET}")
     print(f"{BOLD}{CYAN}  Smart City Power Grid & Autonomous Remediation{RESET}")
@@ -309,6 +306,9 @@ def main():
     if not all_online:
         log(f"{RED}✗ Not all services came online within 90s. Check logs in {LOG_DIR}{RESET}")
         shutdown()
+
+    # Write simulation log header after services are online
+    write_simulation_header()
 
     now = datetime.datetime.now().strftime("%H:%M:%S")
     print(f"\n[{now}] {GREEN}{BOLD}All {len(SERVICES)} services online. System ready.{RESET}")

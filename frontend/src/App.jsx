@@ -27,26 +27,40 @@ function GridProvider({ children }) {
     zones: {},
     remediationLog: [],
     alerts: [],
-    lastUpdated: '-'
+    lastUpdated: '-',
+    connected: false,
   })
 
   const refresh = useCallback(async () => {
-    const [s, t, z, l, a] = await Promise.all([
-      api.gridSummary(),
-      api.transformers(),
-      api.allZones(),
-      api.remediationLog(50),
-      api.alerts(100)
-    ])
+    try {
+      const results = await Promise.allSettled([
+        api.gridSummary(),
+        api.transformers(),
+        api.allZones(),
+        api.remediationLog(50),
+        api.alerts(100)
+      ])
 
-    setData({
-      summary: s,
-      transformers: t?.transformers || [],
-      zones: z || {},
-      remediationLog: l || [],
-      alerts: a || [],
-      lastUpdated: new Date().toLocaleTimeString()
-    })
+      const s = results[0].status === 'fulfilled' && results[0].value ? results[0].value : null
+      const t = results[1].status === 'fulfilled' && results[1].value ? results[1].value : null
+      const z = results[2].status === 'fulfilled' && results[2].value ? results[2].value : null
+      const l = results[3].status === 'fulfilled' && results[3].value ? results[3].value : null
+      const a = results[4].status === 'fulfilled' && results[4].value ? results[4].value : null
+
+      // Preserve existing data — only update fields when we got a valid response
+      setData(prev => ({
+        summary:        s !== null ? s : prev.summary,
+        transformers:   t !== null ? (t?.transformers || []) : prev.transformers,
+        zones:          z !== null ? z : prev.zones,
+        remediationLog: l !== null ? l : prev.remediationLog,
+        alerts:         a !== null ? a : prev.alerts,
+        lastUpdated:    s !== null ? new Date().toLocaleTimeString() : prev.lastUpdated,
+        connected:      s !== null,
+      }))
+    } catch (error) {
+      console.error('GridProvider refresh error:', error)
+      // Keep ALL existing data on error
+    }
   }, [])
 
   useEffect(() => { refresh() }, [refresh])
