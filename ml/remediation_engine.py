@@ -29,6 +29,25 @@ ZONE_PORTS = {
 class RemediationEngine:
     def __init__(self):
         self._actions_executed = 0
+        self._port_host = {
+            5001: os.getenv("GRID_CONTROLLER_HOST", "localhost"),
+            5002: os.getenv("TRANSFORMER_HOST", "localhost"),
+            5003: os.getenv("ZONE_NORTH_HOST", "localhost"),
+            5004: os.getenv("ZONE_SOUTH_HOST", "localhost"),
+            5005: os.getenv("ZONE_EAST_HOST", "localhost"),
+            5006: os.getenv("ZONE_WEST_HOST", "localhost"),
+            5007: os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+            5008: os.getenv("LOAD_BALANCER_HOST", "localhost"),
+            5009: os.getenv("VOLTAGE_REGULATOR_HOST", "localhost"),
+            5010: os.getenv("FAULT_DETECTION_HOST", "localhost"),
+        }
+
+    def _resolve_url(self, url: str) -> str:
+        """Map localhost service URLs to docker service hosts when available."""
+        out = url
+        for port, host in self._port_host.items():
+            out = out.replace(f"localhost:{port}", f"{host}:{port}")
+        return out
 
     def fix(self, fault_type: str, context: dict):
         """
@@ -104,7 +123,7 @@ class RemediationEngine:
             "status":            "EXECUTING",
         }
         try:
-            requests.post("http://localhost:5001/remediation-log",
+            requests.post(self._resolve_url("http://localhost:5001/remediation-log"),
                           json=remediation_record, timeout=2)
         except Exception:
             pass
@@ -161,25 +180,42 @@ class RemediationEngine:
             "total_time_s":  round(total_time, 2),
         })
         try:
-            requests.post("http://localhost:5001/remediation-log",
+            requests.post(self._resolve_url("http://localhost:5001/remediation-log"),
                           json=remediation_record, timeout=2)
         except Exception:
             pass
+
+        if status == "RESOLVED":
+            # Tell grid-controller to clear the matching active alert.
+            try:
+                requests.post(
+                    self._resolve_url("http://localhost:5001/alerts/resolve"),
+                    json={
+                        "fault_type": fault_type,
+                        "zone": zone,
+                        "service": "ml-anomaly-detector",
+                        "component": transformer_id,
+                        "resolved_by": "remediation-engine",
+                    },
+                    timeout=2,
+                )
+            except Exception as e:
+                logger.warning(f"[ALERT-RESOLVE-FAIL] {e}")
 
     # ─── Fault-specific remediation actions ────────────────────────────────────
 
     def _restart_component(self, comp_type: str, comp_id: str) -> list:
         actions = []
-        url = ""
         if comp_type == "transformer":
-            url = f"http://localhost:5002/transformer/{comp_id}/restart"
+            # Transformer service exposes reset endpoint, not restart.
+            url = "http://localhost:5002/demo/reset"
         else:
-            # zone
+            # Zone services expose reset endpoint, not restart.
             zone_port = ZONE_PORTS.get(comp_id, 5007)
-            url = f"http://localhost:{zone_port}/restart"
+            url = f"http://localhost:{zone_port}/demo/reset"
         
-        r = self._post(url, {})
-        actions.append({"action": "component_restart", "target": comp_id, 
+        r = self._get(url)
+        actions.append({"action": "component_reset", "target": comp_id,
                         "success": r is not None})
         
         # Also alert
@@ -303,7 +339,7 @@ class RemediationEngine:
         try:
             if fault_type == "transformer_overload":
                 tid = context.get("transformer_id", "T1")
-                r = requests.get(f"http://localhost:5002/transformer/{tid}", timeout=2)
+                r = requests.get(self._resolve_url(f"http://localhost:5002/transformer/{tid}"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     temp = d.get("temperature_c", 999)
@@ -314,7 +350,7 @@ class RemediationEngine:
                     return ok, {"temp": d.get("temperature_c"), "load": d.get("load_percent")}
 
             elif fault_type in ("voltage_overload", "voltage_spike"):
-                r = requests.get("http://localhost:5009/status", timeout=2)
+                r = requests.get(self._resolve_url("http://localhost:5009/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     voltage = d.get("grid_voltage_avg_v", 230)
@@ -324,14 +360,14 @@ class RemediationEngine:
                     return ok, {"grid_voltage": d.get("grid_voltage_avg_v")}
 
             elif fault_type == "current_surge":
-                r = requests.get("http://localhost:5010/status", timeout=2)
+                r = requests.get(self._resolve_url("http://localhost:5010/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("residual_current_ma_max", 999) < 200
                     return ok, {"residual_current": d.get("residual_current_ma_max")}
 
             elif fault_type == "power_redistribution":
-                r = requests.get("http://localhost:5008/status", timeout=2)
+                r = requests.get(self._resolve_url("http://localhost:5008/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("zones_overloaded_count", 5) == 0
@@ -340,7 +376,7 @@ class RemediationEngine:
             elif fault_type == "rebooting_overheat":
                 zone = context.get("zone", "central")
                 zone_port = ZONE_PORTS.get(zone, 5007)
-                r = requests.get(f"http://localhost:{zone_port}/status", timeout=2)
+                r = requests.get(self._resolve_url(f"http://localhost:{zone_port}/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("substation_status") == "healthy"
@@ -351,18 +387,36 @@ class RemediationEngine:
 
         return True, {"note": "verification assumed OK"}
 
-    def _post(self, url: str, body: dict) -> dict:
-        """Execute HTTP POST with error handling."""
+    def _get(self, url: str) -> dict:
+        """Execute HTTP GET with error handling."""
         t_start = time.time()
+        resolved_url = self._resolve_url(url)
         try:
-            r = requests.post(url, json=body, timeout=3)
+            r = requests.get(resolved_url, timeout=3)
             latency_ms = round((time.time() - t_start) * 1000)
             write_simulation_log("remediation-engine", "REMEDIATE",
-                f"POST {url} → {r.status_code} ({latency_ms}ms)")
-            logger.info(f"[ACTION] POST {url} → {r.status_code} ({latency_ms}ms)")
+                f"GET {resolved_url} -> {r.status_code} ({latency_ms}ms)")
+            logger.info(f"[ACTION] GET {resolved_url} -> {r.status_code} ({latency_ms}ms)")
             return r.json() if r.status_code == 200 else None
         except Exception as e:
             write_simulation_log("remediation-engine", "ERROR",
-                f"POST {url} failed: {e}")
-            logger.warning(f"[ACTION-FAIL] POST {url}: {e}")
+                f"GET {resolved_url} failed: {e}")
+            logger.warning(f"[ACTION-FAIL] GET {resolved_url}: {e}")
+            return None
+
+    def _post(self, url: str, body: dict) -> dict:
+        """Execute HTTP POST with error handling."""
+        t_start = time.time()
+        resolved_url = self._resolve_url(url)
+        try:
+            r = requests.post(resolved_url, json=body, timeout=3)
+            latency_ms = round((time.time() - t_start) * 1000)
+            write_simulation_log("remediation-engine", "REMEDIATE",
+                f"POST {resolved_url} → {r.status_code} ({latency_ms}ms)")
+            logger.info(f"[ACTION] POST {resolved_url} → {r.status_code} ({latency_ms}ms)")
+            return r.json() if r.status_code == 200 else None
+        except Exception as e:
+            write_simulation_log("remediation-engine", "ERROR",
+                f"POST {resolved_url} failed: {e}")
+            logger.warning(f"[ACTION-FAIL] POST {resolved_url}: {e}")
             return None
