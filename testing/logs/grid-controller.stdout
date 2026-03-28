@@ -1,4 +1,4 @@
-[2026-03-28 10:56:45.890] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
+[2026-03-28 15:35:32.979] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -6,3 +6,16 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5001
  * Running on http://10.12.15.75:5001
 Press CTRL+C to quit
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:39] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:40] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:42] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:42] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:42] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:43] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:43] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 15:35:43] "GET /alerts?limit=100 HTTP/1.1" 200 -

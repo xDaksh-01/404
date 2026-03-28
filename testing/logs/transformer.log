@@ -1,1 +1,22 @@
-[2026-03-28 10:56:46.182] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-28 15:35:33.280] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-28 15:36:32.373] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
+[2026-03-28 15:37:41.106] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
+[2026-03-28 15:37:44.328] [transformer] [INFO] [LOAD-LIMIT] T15: max_load_percent=60
+[2026-03-28 15:39:04.838] [transformer] [WARNING] [INJECT] voltage_spike on transformer T8
+[2026-03-28 15:40:14.843] [transformer] [WARNING] [INJECT] transformer_overload on transformer T10
+[2026-03-28 15:40:17.167] [transformer] [INFO] [LOAD-LIMIT] T10: max_load_percent=60
+[2026-03-28 15:40:35.854] [transformer] [WARNING] [INJECT] transformer_overload on transformer T7
+[2026-03-28 15:40:39.500] [transformer] [INFO] [LOAD-LIMIT] T7: max_load_percent=60
+[2026-03-28 15:41:26.567] [transformer] [INFO] [LOAD-LIMIT] T3: max_load_percent=60
+[2026-03-28 15:41:47.270] [transformer] [WARNING] [INJECT] voltage_spike on transformer T10
+[2026-03-28 15:43:02.035] [transformer] [WARNING] [INJECT] voltage_spike on transformer T1
+[2026-03-28 15:43:15.775] [transformer] [WARNING] [INJECT] voltage_spike on transformer T13
+[2026-03-28 15:43:33.863] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
+[2026-03-28 15:43:39.423] [transformer] [INFO] [LOAD-LIMIT] T13: max_load_percent=60
+[2026-03-28 15:44:24.410] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
+[2026-03-28 15:44:40.224] [transformer] [WARNING] [INJECT] voltage_spike on transformer T8
+[2026-03-28 15:46:00.823] [transformer] [WARNING] [INJECT] transformer_overload on transformer T10
+[2026-03-28 15:47:42.325] [transformer] [WARNING] [INJECT] voltage_spike on transformer T11
+[2026-03-28 15:47:56.303] [transformer] [WARNING] [INJECT] voltage_spike on transformer T5
+[2026-03-28 15:48:35.337] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
+[2026-03-28 15:48:51.987] [transformer] [WARNING] [INJECT] voltage_spike on transformer T4

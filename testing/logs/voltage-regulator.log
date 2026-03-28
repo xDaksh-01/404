@@ -1,2 +1,127 @@
-[2026-03-28 10:56:48.307] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
-[2026-03-28 10:56:50.329] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+[2026-03-28 15:35:35.386] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
+[2026-03-28 15:35:37.400] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+[2026-03-28 15:35:40.417] [voltage-regulator] [INFO] [TAP] south: tap raised to 1
+[2026-03-28 15:35:43.448] [voltage-regulator] [INFO] [TAP] east: tap raised to 1
+[2026-03-28 15:35:46.482] [voltage-regulator] [INFO] [TAP] west: tap raised to 1
+[2026-03-28 15:35:49.496] [voltage-regulator] [INFO] [TAP] central: tap raised to 1
+[2026-03-28 15:35:59.525] [voltage-regulator] [INFO] [TAP] south: tap raised to 2
+[2026-03-28 15:36:04.398] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:36:06.445] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:36:11.415] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:36:13.456] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:36:25.547] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:36:27.589] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:36:36.087] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:36:38.133] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:36:50.221] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:36:52.262] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:37:04.576] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:37:06.618] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:37:18.698] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:37:20.748] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:37:32.831] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:37:34.874] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:37:55.457] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:37:57.498] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:02.469] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:04.520] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:09.454] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:11.501] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:16.462] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:18.508] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:30.561] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:32.607] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:44.720] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:46.759] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:51.697] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:38:53.738] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:38:58.683] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:00.720] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:39:12.812] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:14.854] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:39:26.920] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:28.964] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:39:39.082] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 15:39:41.068] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:43.103] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:39:48.067] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:50.108] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:39:56.069] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:39:58.117] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:40:03.060] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:40:05.100] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:40:28.314] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:40:30.363] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:40:51.269] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:40:51.592] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 15:40:53.307] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:40:58.271] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:41:00.309] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:41:12.395] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:41:14.455] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:41:33.543] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:41:35.591] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:41:40.545] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:41:42.594] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:41:47.610] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:41:49.671] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:01.811] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:03.842] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:12.417] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:14.493] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:19.496] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:21.530] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:33.670] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:35.715] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:42.034] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 15:42:44.293] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:46.361] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:42:56.003] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:42:58.067] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:43:10.180] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:43:12.248] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:43:24.376] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:43:26.425] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:43:31.411] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:43:33.479] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:43:50.578] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:43:52.624] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:44:04.749] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:44:06.774] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:44:25.800] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:44:27.842] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:44:39.867] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:44:41.925] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:44:46.884] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:44:48.956] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:46:23.543] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:46:25.601] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:46:30.572] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:46:32.636] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:46:44.763] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:46:46.818] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:46:48.889] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 15:46:51.800] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:46:53.863] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:46:59.865] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:01.929] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:47:06.534] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 15:47:06.968] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:09.021] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:47:14.014] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:16.055] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:47:21.045] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:23.099] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:47:35.218] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:37.290] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:47:49.410] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:47:51.456] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:48:03.590] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:48:05.620] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:48:17.778] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:48:19.820] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:48:31.967] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:48:34.028] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:48:46.194] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
+[2026-03-28 15:48:48.276] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=east
+[2026-03-28 15:49:00.367] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=east
