@@ -12,6 +12,7 @@ import SystemOverview from './pages/SystemOverview.jsx'
 import AllTransformers from './pages/AllTransformers.jsx'
 import ZoneDetails from './pages/ZoneDetails.jsx'
 import LogsFixes from './pages/LogsFixes.jsx'
+import AlertsFeed from './components/AlertsFeed.jsx'
 
 // Create Context
 const GridContext = createContext()
@@ -98,6 +99,14 @@ function AppContent() {
           <Route path="/transformers" element={<AllTransformers />} />
           <Route path="/zones" element={<ZoneDetails />} />
           <Route path="/logs" element={<LogsFixes />} />
+          <Route
+            path="/alerts"
+            element={(
+              <div className="page-content">
+                <AlertsFeed />
+              </div>
+            )}
+          />
         </Routes>
       </main>
     </div>

@@ -1,7 +1,20 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Zap, Activity, Info, BarChart3, Bot, Settings } from 'lucide-react'
+import { LayoutDashboard, Zap, Activity, BarChart3, Bot, Bell } from 'lucide-react'
 
 export default function Sidebar() {
+  const host = typeof window !== 'undefined' ? window.location.hostname : 'localhost'
+  const dockerBase = `http://${host}:3000`
+
+  const observabilityLinks = import.meta.env.DEV
+    ? {
+        prometheus: 'http://localhost:9090',
+        grafana: 'http://localhost:3001',
+      }
+    : {
+        prometheus: `http://localhost:3000/prometheus/targets?search=`,
+        grafana: `http://localhost:3000/grafana/d/smart-grid-overview/smart-grid-overview?orgId=1&refresh=5s`,
+      }
+
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
@@ -29,6 +42,31 @@ export default function Sidebar() {
           <Bot size={18} />
           <span>Logs & Fixes</span>
         </NavLink>
+
+        <NavLink to="/alerts" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          <Bell size={18} />
+          <span>Alerts Feed</span>
+        </NavLink>
+
+        <a
+          href={observabilityLinks.prometheus}
+          className="nav-link nav-link-external"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BarChart3 size={18} />
+          <span>Prometheus</span>
+        </a>
+
+        <a
+          href={observabilityLinks.grafana}
+          className="nav-link nav-link-external"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BarChart3 size={18} />
+          <span>Grafana</span>
+        </a>
       </nav>
 
       <div className="sidebar-footer">

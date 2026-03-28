@@ -2932,3 +2932,1040 @@ Confidence: 0.34
 Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-3'}
 ⚡ Auto-Healing Triggered
 
+[2026-03-28 16:40:29.031] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 16:40:29.032] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 16:40:44.134] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0210
+Root Cause: voltage_spike
+Confidence: 0.61
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:40:49.148] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0077
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'south', 'feeder_id': 'south-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:40:59.216] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0065
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'south', 'feeder_id': 'south-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:41:14.429] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0271
+Root Cause: voltage_spike
+Confidence: 0.58
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'south', 'feeder_id': 'south-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:41:29.610] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0486
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'south', 'feeder_id': 'south-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:08.089] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 16:54:08.090] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 16:54:08.184] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0011
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:08.319] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:54:20.700] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0383
+Root Cause: voltage_spike
+Confidence: 0.56
+Context: {'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:20.859] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:54:28.051] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0526
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:28.264] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:54:35.420] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0613
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:35.652] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:54:42.759] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0812
+Root Cause: voltage_spike
+Confidence: 0.48
+Context: {'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:42.965] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:54:55.227] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0696
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:54:55.442] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:55:07.778] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0807
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:55:08.170] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:55:20.427] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0813
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:55:20.605] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 16:55:32.834] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0761
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 16:55:33.033] [ml-anomaly-detector] [ERROR] [INFERENCE-ERROR] cannot access local variable 'status' where it is not associated with a value
+[2026-03-28 17:03:12.017] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:03:12.018] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:03:12.105] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0015
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:03:27.301] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0171
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:03:42.411] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0621
+Root Cause: voltage_spike
+Confidence: 0.50
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:03:57.528] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0723
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:04:12.653] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0742
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:04:27.844] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0770
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:07:05.413] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:07:05.414] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:07:30.480] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0017
+Root Cause: voltage_spike
+Confidence: 0.61
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:07:54.314] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:07:54.315] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:07:54.392] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0437
+Root Cause: voltage_spike
+Confidence: 0.55
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'central', 'feeder_id': 'central-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:08:40.069] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:08:40.070] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:09:00.165] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0211
+Root Cause: voltage_spike
+Confidence: 0.60
+Context: {'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:09:05.143] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0256
+Root Cause: voltage_spike
+Confidence: 0.61
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:09:20.240] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0416
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:09:38.314] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:09:38.315] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:09:43.412] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0015
+Root Cause: voltage_spike
+Confidence: 0.61
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:09:58.524] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0446
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:10:13.639] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0778
+Root Cause: voltage_spike
+Confidence: 0.48
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:10:56.263] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:10:56.265] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:11:21.366] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0049
+Root Cause: voltage_spike
+Confidence: 0.58
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:11:36.577] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0348
+Root Cause: voltage_spike
+Confidence: 0.56
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:12:31.745] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:12:31.745] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:12:36.818] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0236
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'east', 'feeder_id': 'east-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:12:51.932] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0451
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'east', 'feeder_id': 'east-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:13:07.100] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0832
+Root Cause: voltage_spike
+Confidence: 0.51
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'east', 'feeder_id': 'east-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:13:13.622] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1196
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'east'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:13:27.215] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:13:27.216] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:13:47.324] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0215
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:14:02.518] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0334
+Root Cause: voltage_spike
+Confidence: 0.56
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:14:17.698] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0628
+Root Cause: voltage_spike
+Confidence: 0.47
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:17:26.023] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:17:26.023] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:17:26.122] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0014
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:17:41.333] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0149
+Root Cause: voltage_spike
+Confidence: 0.58
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:17:56.506] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0303
+Root Cause: voltage_spike
+Confidence: 0.56
+Context: {'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:18:58.163] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:18:58.164] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:19:03.259] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0005
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'south', 'feeder_id': 'south-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:19:18.384] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0065
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:19:33.520] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0579
+Root Cause: voltage_spike
+Confidence: 0.56
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:19:38.562] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0753
+Root Cause: voltage_spike
+Confidence: 0.47
+Context: {'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:19:48.611] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0785
+Root Cause: voltage_spike
+Confidence: 0.48
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'east', 'feeder_id': 'east-feeder-3'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:20:03.707] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0881
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:20:18.902] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0981
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:20:46.934] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:20:46.935] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:21:02.051] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0143
+Root Cause: voltage_spike
+Confidence: 0.61
+Context: {'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:21:07.027] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0261
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:21:17.100] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0509
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:21:32.241] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0680
+Root Cause: voltage_spike
+Confidence: 0.50
+Context: {'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:21:42.331] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0674
+Root Cause: voltage_spike
+Confidence: 0.47
+Context: {'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:21:57.481] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0628
+Root Cause: voltage_spike
+Confidence: 0.47
+Context: {'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:22:33.758] [ml-anomaly-detector] [INFO] [ML] Models ready (runtime trained or loaded)
+[2026-03-28 17:22:33.759] [ml-anomaly-detector] [INFO] [INFERENCE] ML inference loop starting...
+[2026-03-28 17:22:43.843] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0197
+Root Cause: voltage_spike
+Confidence: 0.59
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:22:58.976] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0367
+Root Cause: voltage_spike
+Confidence: 0.57
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:23:14.161] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0690
+Root Cause: voltage_spike
+Confidence: 0.48
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:23:19.147] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0743
+Root Cause: voltage_spike
+Confidence: 0.49
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:23:29.238] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0874
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:23:44.333] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0917
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:23:54.413] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0946
+Root Cause: voltage_spike
+Confidence: 0.46
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:04.509] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0905
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:09.464] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0898
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:24.592] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0988
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:29.607] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0914
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:44.833] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0947
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:24:59.995] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0977
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:25:15.203] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0992
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:25:30.436] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1006
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:25:40.501] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0994
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:25:55.681] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0984
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:00.671] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0987
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:15.839] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1000
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:20.812] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1068
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:36.001] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1005
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:41.049] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0985
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:26:56.203] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1014
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:27:11.358] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0936
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:27:16.331] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0894
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:27:31.570] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0796
+Root Cause: voltage_spike
+Confidence: 0.45
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:27:46.673] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0787
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:28:01.800] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0816
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:28:16.937] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0886
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:28:32.121] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0835
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:28:47.218] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0715
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:02.335] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0675
+Root Cause: voltage_spike
+Confidence: 0.44
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:17.520] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0738
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:22.474] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0728
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:37.591] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0765
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:42.618] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0730
+Root Cause: transformer_overload
+Confidence: 0.51
+Context: {'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:29:47.604] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0801
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:30:02.746] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0943
+Root Cause: voltage_spike
+Confidence: 0.41
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:30:17.962] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0916
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:30:33.094] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0955
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:30:38.086] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0994
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:30:53.186] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0966
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:31:08.381] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0983
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:31:23.480] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.1027
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:31:38.657] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0943
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:31:53.892] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0860
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:32:08.950] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0779
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:32:24.149] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0791
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:32:39.331] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0742
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:32:54.478] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0877
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:04.515] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0876
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:09.517] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0821
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:24.733] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0790
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:29.712] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0742
+Root Cause: transformer_overload
+Confidence: 0.35
+Context: {'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:34.718] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0889
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:33:49.822] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0899
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:34:05.011] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0903
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:34:20.199] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0886
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:34:35.350] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0883
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:34:50.517] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0893
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:35:05.663] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0928
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:35:20.753] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0977
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:35:35.936] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0985
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:35:45.977] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0970
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:35:50.978] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0981
+Root Cause: voltage_spike
+Confidence: 0.43
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:36:06.106] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0998
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:36:21.263] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0927
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:36:36.444] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0970
+Root Cause: voltage_spike
+Confidence: 0.42
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:36:51.654] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0965
+Root Cause: voltage_spike
+Confidence: 0.41
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:37:06.769] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0975
+Root Cause: voltage_spike
+Confidence: 0.41
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:37:11.776] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0966
+Root Cause: voltage_spike
+Confidence: 0.41
+Context: {'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+
+[2026-03-28 17:37:21.829] [ml-anomaly-detector] [WARNING] 
+ANOMALY DETECTED
+Score: -0.0950
+Root Cause: voltage_spike
+Confidence: 0.41
+Context: {'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
+⚡ Auto-Healing Triggered
+

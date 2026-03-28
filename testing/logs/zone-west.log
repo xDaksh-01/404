@@ -45,3 +45,17 @@
 [2026-03-28 17:26:12.895] [zone-west] [WARNING] [INJECT] current_surge in west
 [2026-03-28 17:26:28.089] [zone-west] [INFO] [SHED-LOAD] Shed 70.19MW in west
 [2026-03-28 17:29:51.718] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 16:40:22.264] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 16:54:01.509] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:03:04.768] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:06:58.493] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:07:47.712] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:08:33.274] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:09:31.537] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:10:49.384] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:12:24.944] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:13:19.840] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:17:19.041] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:18:50.953] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:20:39.939] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 17:22:27.120] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
