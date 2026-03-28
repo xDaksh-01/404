@@ -9,7 +9,25 @@ export default function LoadBalancerPanel({ className }) {
   const { summary } = useGrid()
   
   // Use summary from context which contains LB data
-  const data = summary?.load_balancer
+  const data = summary?.load_balancer || {
+    total_demand_mw: 0,
+    total_allocated_mw: 0,
+    zones_overloaded_count: 0,
+    load_shedding_active: false,
+    transmission_mode: 'normal',
+    rebalance_count_session: 0,
+    transmission_paths: {}
+  }
+  const isConnected = !!(summary?.load_balancer && Object.keys(summary.load_balancer).length > 0)
+
+  const demand    = data.total_demand_mw    || 0
+  const allocated = data.total_allocated_mw || 0
+  const balance   = demand > 0 ? (allocated / demand * 100) : 100
+  const overloaded= data.zones_overloaded_count || 0
+  const shedding  = data.load_shedding_active || false
+  const mode      = data.transmission_mode || 'normal'
+  const rebalances= data.rebalance_count_session || 0
+  const paths     = data.transmission_paths || {}
 
   const demand = data?.total_demand_mw
   const allocated = data?.total_allocated_mw
