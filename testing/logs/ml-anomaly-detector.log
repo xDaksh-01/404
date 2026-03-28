@@ -319,3 +319,4 @@
 [2026-03-28 11:33:36.275] [ml-anomaly-detector] [WARNING] [ANOMALY] score=-0.1358 Fault=voltage_spike pred=voltage_spike source=classifier confidence=0.44 | Context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west'}
 [2026-03-28 11:34:21.713] [ml-anomaly-detector] [WARNING] [ANOMALY] score=-0.1270 Fault=voltage_spike pred=voltage_spike source=classifier confidence=0.44 | Context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'south'}
 [2026-03-28 11:34:26.815] [ml-anomaly-detector] [WARNING] [ANOMALY] score=-0.1248 Fault=voltage_spike pred=voltage_spike source=classifier confidence=0.43 | Context={'transformer_id': 'T14', 'transformer_zone': 'central', 'zone': 'west'}
+[2026-03-28 11:35:12.231] [ml-anomaly-detector] [WARNING] [ANOMALY] score=-0.1154 Fault=voltage_spike pred=voltage_spike source=classifier confidence=0.43 | Context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north'}

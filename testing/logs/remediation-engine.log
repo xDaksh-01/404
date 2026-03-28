@@ -1237,3 +1237,7 @@
 [2026-03-28 11:34:26.990] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
 [2026-03-28 11:34:27.059] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (18ms)
 [2026-03-28 11:34:28.331] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.5s | {'grid_voltage': 228.04}
+[2026-03-28 11:35:12.325] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T5
+[2026-03-28 11:35:12.383] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 11:35:12.438] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 11:35:13.699] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.82}

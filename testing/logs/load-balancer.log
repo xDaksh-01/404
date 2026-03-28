@@ -991,3 +991,15 @@
 [2026-03-28 11:34:18.789] [load-balancer] [DEBUG] [BALANCE] Demand=2197MW Allocated=2197MW Overloaded_zones=0
 [2026-03-28 11:34:23.826] [load-balancer] [DEBUG] [BALANCE] Demand=2204MW Allocated=2204MW Overloaded_zones=0
 [2026-03-28 11:34:28.844] [load-balancer] [DEBUG] [BALANCE] Demand=2186MW Allocated=2186MW Overloaded_zones=0
+[2026-03-28 11:34:33.876] [load-balancer] [DEBUG] [BALANCE] Demand=2202MW Allocated=2202MW Overloaded_zones=0
+[2026-03-28 11:34:38.901] [load-balancer] [DEBUG] [BALANCE] Demand=2205MW Allocated=2205MW Overloaded_zones=0
+[2026-03-28 11:34:43.912] [load-balancer] [DEBUG] [BALANCE] Demand=2215MW Allocated=2215MW Overloaded_zones=0
+[2026-03-28 11:34:48.944] [load-balancer] [DEBUG] [BALANCE] Demand=2231MW Allocated=2231MW Overloaded_zones=0
+[2026-03-28 11:34:53.977] [load-balancer] [DEBUG] [BALANCE] Demand=2301MW Allocated=2301MW Overloaded_zones=0
+[2026-03-28 11:34:58.991] [load-balancer] [DEBUG] [BALANCE] Demand=2279MW Allocated=2279MW Overloaded_zones=0
+[2026-03-28 11:35:04.009] [load-balancer] [DEBUG] [BALANCE] Demand=2267MW Allocated=2267MW Overloaded_zones=0
+[2026-03-28 11:35:09.023] [load-balancer] [DEBUG] [BALANCE] Demand=2272MW Allocated=2272MW Overloaded_zones=0
+[2026-03-28 11:35:14.041] [load-balancer] [DEBUG] [BALANCE] Demand=2286MW Allocated=2286MW Overloaded_zones=0
+[2026-03-28 11:35:19.054] [load-balancer] [DEBUG] [BALANCE] Demand=2303MW Allocated=2303MW Overloaded_zones=0
+[2026-03-28 11:35:24.069] [load-balancer] [DEBUG] [BALANCE] Demand=2342MW Allocated=2342MW Overloaded_zones=0
+[2026-03-28 11:35:29.096] [load-balancer] [DEBUG] [BALANCE] Demand=2390MW Allocated=2390MW Overloaded_zones=0
