@@ -12,51 +12,51 @@ global:
 scrape_configs:
   - job_name: 'grid-controller'
     static_configs:
-      - targets: ['localhost:5001']
+      - targets: ['grid-controller:5001']
     metrics_path: '/metrics'
 
   - job_name: 'transformer'
     static_configs:
-      - targets: ['localhost:5002']
+      - targets: ['transformer:5002']
     metrics_path: '/metrics'
 
   - job_name: 'zone-north'
     static_configs:
-      - targets: ['localhost:5003']
+      - targets: ['zone-north:5003']
     metrics_path: '/metrics'
 
   - job_name: 'zone-south'
     static_configs:
-      - targets: ['localhost:5004']
+      - targets: ['zone-south:5004']
     metrics_path: '/metrics'
 
   - job_name: 'zone-east'
     static_configs:
-      - targets: ['localhost:5005']
+      - targets: ['zone-east:5005']
     metrics_path: '/metrics'
 
   - job_name: 'zone-west'
     static_configs:
-      - targets: ['localhost:5006']
+      - targets: ['zone-west:5006']
     metrics_path: '/metrics'
 
   - job_name: 'zone-central'
     static_configs:
-      - targets: ['localhost:5007']
+      - targets: ['zone-central:5007']
     metrics_path: '/metrics'
 
   - job_name: 'load-balancer'
     static_configs:
-      - targets: ['localhost:5008']
+      - targets: ['load-balancer:5008']
     metrics_path: '/metrics'
 
   - job_name: 'voltage-regulator'
     static_configs:
-      - targets: ['localhost:5009']
+      - targets: ['voltage-regulator:5009']
     metrics_path: '/metrics'
 
   - job_name: 'fault-detection'
     static_configs:
-      - targets: ['localhost:5010']
+      - targets: ['fault-detection:5010']
     metrics_path: '/metrics'
 """
