@@ -1,47 +1,8 @@
-[2026-03-29 03:44:47.326] [load-balancer] [INFO] Starting load-balancer on port 5008
+[2026-03-29 04:13:10.181] [load-balancer] [INFO] Starting load-balancer on port 5008
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5008
- * Running on http://10.12.15.243:5008
+ * Running on http://10.12.15.75:5008
 Press CTRL+C to quit
-127.0.0.1 - - [29/Mar/2026 03:44:53] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:06] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:08] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:17] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:22] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:36] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:37] "GET /status HTTP/1.1" 200 -
-[2026-03-29 03:45:42.647] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 03:45:42] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:52] "GET /health HTTP/1.1" 200 -
-[2026-03-29 03:45:53.478] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
-127.0.0.1 - - [29/Mar/2026 03:45:53] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:55] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:45:56] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:07] "GET /status HTTP/1.1" 200 -
-[2026-03-29 03:46:13.089] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
-127.0.0.1 - - [29/Mar/2026 03:46:13] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:14] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:21] "GET /health HTTP/1.1" 200 -
-[2026-03-29 03:46:27.217] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=east mode=reduce excess=94.64301746572862MW
-127.0.0.1 - - [29/Mar/2026 03:46:27] "POST /emergency-rebalance HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:33] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:36] "GET /status HTTP/1.1" 200 -
-[2026-03-29 03:46:38.255] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
-127.0.0.1 - - [29/Mar/2026 03:46:38] "POST /reroute HTTP/1.1" 200 -
-[2026-03-29 03:46:46.198] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
-127.0.0.1 - - [29/Mar/2026 03:46:46] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:47] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:47] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:50] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:54] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:46:58] "GET /status HTTP/1.1" 200 -
-[2026-03-29 03:47:04.418] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 03:47:04] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:47:05] "GET /status HTTP/1.1" 200 -
-[2026-03-29 03:47:07.637] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
-127.0.0.1 - - [29/Mar/2026 03:47:07] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:47:17] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 03:47:20] "GET /health HTTP/1.1" 200 -

@@ -40,18 +40,23 @@ function OverviewBadge({ children, tone = 'cyan' }) {
 }
 
 function PowerFactorRing({ value = 0.93 }) {
-  const percent = 0
+  const percent = Math.min(100, Math.max(0, (value || 0) * 100))
   const angle = (percent / 100) * 360
+  const color = value > 0.9 ? '#22c55e' : value > 0.8 ? '#f59e0b' : '#ef4444'
 
   return (
     <div className="overview-ring-block">
       <div
         className="overview-ring"
         style={{
-          background: `conic-gradient(#22c55e 0deg ${angle}deg, rgba(51,65,85,0.72) ${angle}deg 360deg)`,
+          background: `conic-gradient(${color} 0deg ${angle}deg, rgba(51,65,85,0.72) ${angle}deg 360deg)`,
         }}
       >
-        <div className="overview-ring-inner" />
+        <div className="overview-ring-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="overview-ring-value" style={{ color, marginTop: 0 }}>
+            {value ? value.toFixed(2) : '—'}
+          </div>
+        </div>
       </div>
       <div className="overview-ring-label">
         Power
