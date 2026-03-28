@@ -41,9 +41,10 @@ export default function LogsFixes() {
   const slaComp = total > 0 ? ((resolved.filter(e => e.total_time_s <= 15).length / total) * 100).toFixed(0) : '100'
 
   return (
-    <div className="page-content">
+    <div className="page-content control-page">
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
         <div>
+          <div className="page-eyebrow">Remediation Layer</div>
           <h1 className="page-title">Fault Logs & Remediation Engine</h1>
           <p className="page-subtitle">Real-time MTTR tracking and session persistence.</p>
         </div>

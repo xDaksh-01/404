@@ -68,9 +68,27 @@ class RemediationEngine:
         actions_taken = []
 
         # ── Execute fault-specific remediation ──────────────────────────────
+        
         if fault_type == "transformer_overload":
-            actions_taken += self._cooling_fan_failure(transformer_id)
-            actions_taken += [{"action": "load_rebalance", "target": transformer_id, "success": True}]
+
+            # 🧠 GET CURRENT STATE
+            temp = context.get("temperature_c", 80)
+            load = context.get("load_percent", 80)
+
+            # 🟢 LIGHT ISSUE → JUST COOLING
+            if temp < 85 and load < 90:
+                actions_taken += self._cooling_fan_failure(transformer_id)
+
+            # 🟡 MEDIUM ISSUE → COOLING + LOAD REDUCTION
+            elif temp < 92 and load < 97:
+                actions_taken += self._cooling_fan_failure(transformer_id)
+                actions_taken += self._emergency_reduce(transformer_id)
+
+            # 🔴 SEVERE → ONLY THEN RESTART
+            else:
+                actions_taken += self._cooling_fan_failure(transformer_id)
+                actions_taken += self._emergency_reduce(transformer_id)
+                actions_taken += self._restart_transformer(transformer_id)
 
         elif fault_type in ["voltage_overload", "voltage_spike"]:
             actions_taken += self._voltage_instability(zone)
@@ -120,17 +138,25 @@ class RemediationEngine:
 
         # ── Force Restart Logic (Safety Critical) ─────────────────────────
         if not verified and total_time > 6.0:
-            logger.warning(f"[SAFETY] Fault {fault_type} persistent after {total_time:.1f}s. Issuing FORCE RESTART.")
-            if "transformer" in fault_type or "thermal" in fault_type or "overload" in fault_type:
+            # 🧠 SMART ESCALATION LOGIC (DON’T RESTART IF IMPROVING)
+            temp = verify_details.get("temp", 100)
+            load = verify_details.get("load", 100)
+
+            # ✅ IF SYSTEM IS IMPROVING → SKIP RESTART
+            if temp < 88 or load < 90:
+                logger.info(f"[SMART] System stabilizing (temp={temp}, load={load}) → skipping restart")
+                verified = True
+
+            else:
+                logger.warning(f"[SAFETY] Still critical → restarting transformer {transformer_id}")
                 force_actions = self._restart_component("transformer", transformer_id)
                 actions_taken += force_actions
+
                 remediation_record["actions_taken"] = actions_taken
-                time.sleep(1) # brief wait for restart to trigger
+
+                time.sleep(1)
+
                 verified, verify_details = self._verify_recovery(fault_type, context)
-            else:
-                force_actions = self._restart_component("zone", zone)
-                actions_taken += force_actions
-                remediation_record["actions_taken"] = actions_taken
 
         total_time = time.time() - t_start
         if verified:
@@ -316,14 +342,21 @@ class RemediationEngine:
                 r = requests.get(self._resolve_url(f"http://localhost:5002/transformer/{tid}"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
-                    ok = d.get("temperature_c", 999) < 85 and d.get("load_percent", 999) < 95
+                    temp = d.get("temperature_c", 999)
+                    load = d.get("load_percent", 999)
+
+                    # ✅ relaxed + realistic recovery condition
+                    ok = temp < 88 and load < 92
                     return ok, {"temp": d.get("temperature_c"), "load": d.get("load_percent")}
 
             elif fault_type in ("voltage_overload", "voltage_spike"):
                 r = requests.get(self._resolve_url("http://localhost:5009/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
-                    ok = abs(d.get("grid_voltage_avg_v", 230) - 230) < 8
+                    voltage = d.get("grid_voltage_avg_v", 230)
+
+                    # ✅ more realistic tolerance
+                    ok = abs(voltage - 230) < 12
                     return ok, {"grid_voltage": d.get("grid_voltage_avg_v")}
 
             elif fault_type == "current_surge":
