@@ -243,6 +243,14 @@ def demo_inject():
                 target["insulation_resistance_mohm"] = random.uniform(1, 10)
                 target["status"] = "insulation_breakdown"
 
+            elif fault_type == "current_surge":
+                # High residual current for detection
+                target["residual_current_ma"] = data.get("residual_current_ma",
+                    random.uniform(600, 1200))
+                target["current_thd_percent"] = random.uniform(5, 12)
+                target["status"] = "current_surge"
+                state["residual_current_ma_max"] = target["residual_current_ma"]
+
             state["total_faults_detected"] += 1
 
     logger.warning(f"[INJECT] {fault_type} on feeder {feeder_id}")

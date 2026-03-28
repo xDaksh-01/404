@@ -9,15 +9,14 @@ export default function SystemOverview() {
 
   return (
     <div className="page-content grid-layout">
-      {/* Overview stats */}
-      <GridOverview summary={summary} className="span-2" />
-      <VoltagePanel />
+      {/* Overview stats - Main Grid Summary */}
+      <GridOverview className="span-2" />
       
-      {/* Zone Status */}
-      <ZonePanel className="span-3" />
+      {/* Voltage Regulator - Stability Metrics */}
+      <VoltagePanel className="span-1" />
       
-      {/* Load balancing stats */}
-      <LoadBalancerPanel className="span-2" />
+      {/* Load Balancing - Redistribution Logic */}
+      <LoadBalancerPanel className="span-1" />
     </div>
   )
 }

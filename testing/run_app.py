@@ -86,12 +86,16 @@ INJECTABLE_FAILURES = [
     },
     {
         "name": "Current Spiking",
-        "service": "zone",
-        "endpoint_fn": lambda: f"http://localhost:{random.choice([5003, 5004, 5005, 5006, 5007])}/demo/inject",
+        "endpoint_fn": lambda: f"http://localhost:5006/demo/inject", # west by default
         "payload_fn": lambda: {
             "type": "current_surge",
             "amps_a": random.uniform(450, 600),
         },
+        "extra_action": lambda: requests.post("http://localhost:5010/demo/inject", json={
+            "type": "current_surge",
+            "zone": "west",
+            "feeder": "feeder-1"
+        }, timeout=2)
     },
     {
         "name": "Transformer Overload",
@@ -224,9 +228,9 @@ def run_failure_injection():
         time.sleep(interval)
         
         if not is_simulation_active(): continue
-        if stop_event.is_set(): break
+        # Perform an injection every 5-10 seconds for high-frequency testing
+        time.sleep(random.uniform(5.0, 10.0))
         
-        # Select random failure
         failure = random.choice(INJECTABLE_FAILURES)
         payload = failure["payload_fn"]()
         endpoint = failure.get("endpoint") or failure["endpoint_fn"]()

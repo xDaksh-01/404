@@ -48,17 +48,19 @@ function TapIndicator({ position }) {
   )
 }
 
-export default function VoltagePanel() {
+export default function VoltagePanel({ className }) {
   const { summary } = useGrid()
+  // Data is nested in summary
   const data = summary?.voltage_regulator
+  const hasData = data && Object.keys(data).length > 0
 
-  if (!data) return (
-    <div className="card">
+  if (!hasData) return (
+    <div className={`card ${className || ''}`}>
       <div className="card-header">
         <div className="card-title"><Gauge size={13} />Voltage Regulator</div>
       </div>
       <div style={{ color: 'var(--muted)', fontSize: '0.75rem', padding: '20px 0', textAlign: 'center' }}>
-        Connecting...
+        Connecting to voltage-regulator...
       </div>
     </div>
   )
@@ -76,7 +78,7 @@ export default function VoltagePanel() {
   const voltColor= avgV < 218 ? 'var(--red)' : avgV < 225 ? 'var(--amber)' : 'var(--blue)'
 
   return (
-    <div className="card">
+    <div className={`card ${className || ''}`}>
       <div className="card-header">
         <div className="card-title"><Gauge size={13} />Voltage Regulator</div>
         {locked && <span className="badge warning">TAP LOCKED</span>}

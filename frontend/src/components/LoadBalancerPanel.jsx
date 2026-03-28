@@ -4,16 +4,17 @@ import { useGrid } from '../App.jsx'
 export default function LoadBalancerPanel({ className }) {
   const { summary } = useGrid()
   
-  // Use summary from context which contains LB data
+  // Data is nested in summary
   const data = summary?.load_balancer
+  const hasData = data && Object.keys(data).length > 0
   
-  if (!data) return (
+  if (!hasData) return (
     <div className={`card ${className || ''}`}>
       <div className="card-header">
         <div className="card-title"><Share2 size={13} />Load Balancer</div>
       </div>
       <div style={{ color: 'var(--muted)', fontSize: '0.75rem', padding: '20px 0', textAlign: 'center' }}>
-        Awaiting LB metrics...
+        Connecting to load-balancer...
       </div>
     </div>
   )

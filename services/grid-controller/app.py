@@ -217,27 +217,39 @@ def metrics_summary():
         s = dict(state)
 
     transformer_summary = {"avg_temp": 65.0, "max_load": 75.0}
-    try:
-        r = requests.get("http://localhost:5002/status", timeout=2)
-        if r.status_code == 200:
-            data = r.json()
-            ts = data.get("transformers", [])
-            if ts:
-                transformer_summary["avg_temp"] = round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1)
-                transformer_summary["max_load"] = round(max(t.get("load_percent", 0) for t in ts), 1)
-    except: pass
-
     lb_data = {}
-    try:
-        r = requests.get("http://localhost:5008/status", timeout=1)
-        if r.status_code == 200: lb_data = r.json()
-    except: pass
-
     vr_data = {}
-    try:
-        r = requests.get("http://localhost:5009/status", timeout=1)
-        if r.status_code == 200: vr_data = r.json()
-    except: pass
+
+    def fetch_service(name, url, timeout=1.5):
+        try:
+            r = requests.get(url, timeout=timeout)
+            if r.status_code == 200:
+                return name, r.json()
+        except:
+            pass
+        return name, None
+
+    # Poll sub-services in parallel to avoid timeout (Frontend has 3s limit)
+    targets = [
+        ("tr", "http://127.0.0.1:5002/status", 1.5),
+        ("lb", "http://127.0.0.1:5008/status", 1.2),
+        ("vr", "http://127.0.0.1:5009/status", 1.2),
+    ]
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        results = dict(executor.map(lambda t: fetch_service(*t), targets))
+
+    # Process Transformer data
+    tr_res = results.get("tr")
+    if tr_res:
+        ts = tr_res.get("transformers", [])
+        if ts:
+            transformer_summary["avg_temp"] = round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1)
+            transformer_summary["max_load"] = round(max(t.get("load_percent", 0) for t in ts), 1)
+
+    lb_data = results.get("lb") or {}
+    vr_data = results.get("vr") or {}
 
     risk = "LOW"
     if s["grid_load_percent"] > 85: risk = "CRITICAL"

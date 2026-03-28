@@ -217,7 +217,7 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
 
                 # Post to grid controller alert log
                 try:
-                    requests.post("http://localhost:5001/alert", json={
+                    requests.post("http://127.0.0.1:5001/alert", json={
                         "severity": "CRITICAL",
                         "service":  "ml-anomaly-detector",
                         "fault_type": fault_type,

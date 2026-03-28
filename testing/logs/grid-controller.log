@@ -1,76 +1,72 @@
-[2026-03-28 07:40:19.402] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
-[2026-03-28 07:40:51.313] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:41:08.187] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:41:23.439] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
-[2026-03-28 07:41:29.154] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:41:31.626] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-east | Zone east overloaded at 92.4%
-[2026-03-28 07:41:45.956] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:42:02.804] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:42:15.726] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T3 in north is CRITICAL (temp=93.5°C, load=98.6%)
-[2026-03-28 07:42:19.655] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:42:21.740] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T3 in north is CRITICAL (temp=94.3°C, load=99.7%)
-[2026-03-28 07:42:27.747] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T3 in north is CRITICAL (temp=90.7°C, load=51.9%)
-[2026-03-28 07:42:34.973] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T3 to resolve transformer issues.
-[2026-03-28 07:42:43.728] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:43:00.590] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:43:03.783] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=94.0°C, load=100.0%)
-[2026-03-28 07:43:09.818] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=94.4°C, load=97.7%)
-[2026-03-28 07:43:15.845] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=94.5°C, load=96.9%)
-[2026-03-28 07:43:17.901] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:43:21.877] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=90.8°C, load=48.2%)
-[2026-03-28 07:43:27.899] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=95.6°C, load=100.0%)
-[2026-03-28 07:43:33.203] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T5 to resolve transformer issues.
-[2026-03-28 07:43:33.918] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=96.0°C, load=100.0%)
-[2026-03-28 07:43:39.933] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=96.4°C, load=100.0%)
-[2026-03-28 07:43:41.991] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:43:45.952] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=96.8°C, load=100.0%)
-[2026-03-28 07:43:46.963] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=93.8°C, load=58.1%)
-[2026-03-28 07:43:52.971] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=97.2°C, load=98.3%)
-[2026-03-28 07:43:53.984] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=91.3°C, load=56.7%)
-[2026-03-28 07:43:58.089] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T8 to resolve transformer issues.
-[2026-03-28 07:44:00.004] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=97.4°C, load=100.0%)
-[2026-03-28 07:44:06.015] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=97.4°C, load=100.0%)
-[2026-03-28 07:44:06.828] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:44:11.952] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 90.9%
-[2026-03-28 07:44:12.045] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=93.5°C, load=51.8%)
-[2026-03-28 07:44:18.066] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=90.3°C, load=53.0%)
-[2026-03-28 07:44:22.164] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T4 to resolve transformer issues.
-[2026-03-28 07:44:30.900] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
-[2026-03-28 07:44:47.772] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:44:54.090] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T1 in north is CRITICAL (temp=91.1°C, load=98.1%)
-[2026-03-28 07:45:00.119] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T1 in north is CRITICAL (temp=91.6°C, load=98.7%)
-[2026-03-28 07:45:04.614] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:45:06.128] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T1 in north is CRITICAL (temp=92.0°C, load=97.1%)
-[2026-03-28 07:45:19.909] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T1 to resolve transformer issues.
-[2026-03-28 07:45:22.141] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T4 in south is CRITICAL (temp=92.3°C, load=60.0%)
-[2026-03-28 07:45:28.626] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:45:43.859] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
-[2026-03-28 07:45:49.586] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Sustained Voltage Overload
-[2026-03-28 07:46:04.877] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T13 to resolve transformer issues.
-[2026-03-28 07:46:13.577] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:46:30.438] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:46:45.692] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
-[2026-03-28 07:46:51.403] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Sustained Voltage Overload
-[2026-03-28 07:47:06.047] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-north | Zone north overloaded at 92.7%
-[2026-03-28 07:47:08.217] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
-[2026-03-28 07:47:12.073] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-north | Zone north overloaded at 90.7%
-[2026-03-28 07:47:13.174] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=96.6°C, load=100.0%)
-[2026-03-28 07:47:19.188] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=95.1°C, load=76.2%)
-[2026-03-28 07:47:25.200] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T2 in north is CRITICAL (temp=92.0°C, load=100.0%)
-[2026-03-28 07:47:25.916] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
-[2026-03-28 07:47:26.223] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=93.3°C, load=78.5%)
-[2026-03-28 07:47:32.236] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=91.8°C, load=75.3%)
-[2026-03-28 07:47:32.999] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 98.3%
-[2026-03-28 07:47:38.244] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=91.3°C, load=74.5%)
-[2026-03-28 07:47:39.007] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 95.1%
-[2026-03-28 07:47:41.170] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for T2 to resolve transformer issues.
-[2026-03-28 07:47:49.879] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
-[2026-03-28 07:48:06.759] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:48:13.086] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-north | Zone north overloaded at 96.0%
-[2026-03-28 07:48:19.115] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-north | Zone north overloaded at 94.9%
-[2026-03-28 07:48:23.639] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
-[2026-03-28 07:48:38.912] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
-[2026-03-28 07:48:44.603] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:49:01.485] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:49:18.342] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
-[2026-03-28 07:49:35.194] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:27:47.942] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
+[2026-03-28 08:28:16.975] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:28:31.115] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:28:45.316] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:28:59.483] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:29:13.616] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:29:20.650] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+[2026-03-28 08:29:27.642] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:29:34.696] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Sustained Voltage Overload
+[2026-03-28 08:29:41.729] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:29:52.301] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+[2026-03-28 08:29:54.304] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.6°C, load=100.0%)
+[2026-03-28 08:30:00.334] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=92.7°C, load=53.7%)
+[2026-03-28 08:30:00.381] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:30:14.463] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:30:20.047] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
+[2026-03-28 08:30:49.169] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:31:03.283] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:31:10.294] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:31:17.275] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:31:22.612] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 107.3%
+[2026-03-28 08:31:24.327] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Critical Current Spike
+[2026-03-28 08:31:33.406] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:31:47.561] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:31:54.602] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Critical Current Spike
+[2026-03-28 08:31:57.976] [grid-controller] [INFO] Starting grid-controller on port 5001 (Simulation ACTIVE by default)
+[2026-03-28 08:32:03.662] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 08:32:13.648] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 95.5%
+[2026-03-28 08:32:14.239] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:19.675] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 96.8%
+[2026-03-28 08:32:25.701] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 94.4%
+[2026-03-28 08:32:27.562] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:29.373] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:31.719] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 90.4%
+[2026-03-28 08:32:36.403] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:37.724] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 110.0%
+[2026-03-28 08:32:38.203] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:43.742] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 108.0%
+[2026-03-28 08:32:43.794] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:45.292] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:49.770] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 110.0%
+[2026-03-28 08:32:50.830] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:52.359] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:55.786] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 106.9%
+[2026-03-28 08:32:57.885] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:32:59.451] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:01.815] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 105.5%
+[2026-03-28 08:33:04.944] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:06.377] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=92.7°C, load=100.0%)
+[2026-03-28 08:33:06.447] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:07.844] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 103.3%
+[2026-03-28 08:33:12.391] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T6 in east is CRITICAL (temp=91.6°C, load=76.0%)
+[2026-03-28 08:33:13.402] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=91.1°C, load=70.7%)
+[2026-03-28 08:33:13.866] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 102.7%
+[2026-03-28 08:33:14.425] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:33:16.114] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:19.433] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T6 in east is CRITICAL (temp=90.0°C, load=75.3%)
+[2026-03-28 08:33:19.885] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 100.9%
+[2026-03-28 08:33:21.680] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:25.460] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=92.5°C, load=97.2%)
+[2026-03-28 08:33:25.585] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:33:25.896] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 98.2%
+[2026-03-28 08:33:27.263] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:28.751] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:31.479] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T10 in west is CRITICAL (temp=91.5°C, load=80.4%)
+[2026-03-28 08:33:31.923] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 96.7%
+[2026-03-28 08:33:36.843] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:33:37.951] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 95.2%
+[2026-03-28 08:33:38.216] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:33:38.541] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:39.917] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:33:43.977] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 92.3%

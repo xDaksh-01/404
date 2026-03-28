@@ -1,559 +1,385 @@
-[07:40:19] [RUNNER]   → zone-north (port 5003) PID=30084
-[07:40:19] [RUNNER]   → zone-south (port 5004) PID=3516
-[07:40:20] [RUNNER]   → zone-east (port 5005) PID=16264
-[07:40:20] [RUNNER]   → zone-west (port 5006) PID=16716
-[07:40:20] [RUNNER]   → zone-central (port 5007) PID=30136
-[07:40:21] [RUNNER]   → load-balancer (port 5008) PID=2688
-[07:40:21] [RUNNER]   → voltage-regulator (port 5009) PID=21140
-[07:40:21] [RUNNER]   → fault-detection (port 5010) PID=24560
-[07:40:22] [RUNNER] Services starting... waiting for health checks...
-[07:40:45] [RUNNER] [96mStarting ML inference loop (2s poll interval)...[0m
-[07:40:45] [RUNNER] [95mStarting Background Failure Injection...[0m
-[07:40:45] [INJECTOR] [95mFailure Injection Thread initialized.[0m
-[07:40:45] [RUNNER] [92mFull Operational Mode: ON[0m
-[07:40:45] [RUNNER] Log file: d:\Coding\Projects\PowerGrid\test\testing\logs\simulation_run.txt
-[07:40:45] [RUNNER] Frontend: http://localhost:3000
-[07:40:45] [RUNNER] Press Ctrl+C to stop.
+[08:31:58] [RUNNER]   → zone-north (port 5003) PID=26768
+[08:31:58] [RUNNER]   → zone-south (port 5004) PID=30220
+[08:31:58] [RUNNER]   → zone-east (port 5005) PID=3444
+[08:31:59] [RUNNER]   → zone-west (port 5006) PID=14072
+[08:31:59] [RUNNER]   → zone-central (port 5007) PID=30228
+[08:31:59] [RUNNER]   → load-balancer (port 5008) PID=12592
+[08:32:00] [RUNNER]   → voltage-regulator (port 5009) PID=11672
+[08:32:00] [RUNNER]   → fault-detection (port 5010) PID=21796
+[08:32:00] [RUNNER] Services starting... waiting for health checks...
+[08:32:00.763] [ZONE-WEST] [REMEDIATE] Load shed 200MW in west
+[08:32:00.764] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:00.765] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/emergency-rebalance → 200 (4090ms)
+[08:32:00.779] [GRID-CONTROLLER] [REMEDIATE] [current_surge] EXECUTING
+[08:32:00.781] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of current_surge
+[08:32:01.984] [REMEDIATION-ENGINE] [VERIFY] current_surge RESOLVED total_time=7.4s
+[08:32:03.642] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0381 prediction=-1
+[08:32:03.643] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.37 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:03.662] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[08:32:03.663] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666923663 Fault=voltage_spike zone=west transformer=T10
+[08:32:05.681] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
+[08:32:05.682] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2018ms)
+[08:32:07.751] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
+[08:32:07.752] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2070ms)
+[08:32:07.755] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[08:32:07.756] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[08:32:08.981] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=5.3s
+[08:32:09] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
+[08:32:11.268] [ZONE-WEST] [INJECT] current_surge in west
+[08:32:11] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 598.091401483669})
+[08:32:13.648] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 95.5%
+[08:32:14.235] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0292 prediction=-1
+[08:32:14.236] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.44 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:14.239] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:14.241] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666934241 Fault=power_redistribution zone=west transformer=T10
+[08:32:16.312] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:16.314] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2072ms)
+[08:32:18.361] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2046ms)
+[08:32:18.375] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:18.377] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:19.597] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=5.4s
+[08:32:19.675] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 96.8%
+[08:32:21.068] [ZONE-WEST] [REMEDIATE] Load shed 78.31MW in west
+[08:32:21.070] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:23] [RUNNER] [96mStarting ML inference loop (2s poll interval)...[0m
+[08:32:23] [RUNNER] [95mStarting Background Failure Injection...[0m
+[08:32:23] [INJECTOR] [95mFailure Injection Thread initialized.[0m
+[08:32:23] [RUNNER] [92mFull Operational Mode: ON[0m
+[08:32:23] [RUNNER] Log file: d:\Coding\Projects\PowerGrid\test\testing\logs\simulation_run.txt
+[08:32:23] [RUNNER] Frontend: http://localhost:3000
+[08:32:23] [RUNNER] Press Ctrl+C to stop.
 
-[07:40:47.716] [ML-ANOMALY-DETECTOR] [INFO] Inference loop started
-[07:40:49.299] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0169 prediction=-1
-[07:40:49.299] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.61 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:40:51.313] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:40:51.314] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663851314 Fault=voltage_spike zone=west transformer=T11
-[07:40:53.381] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:40:53.382] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2067ms)
-[07:40:53] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
-[07:40:55.462] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:40:55.463] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2081ms)
-[07:40:55.909] [ZONE-WEST] [INJECT] current_surge in west
-[07:40:55] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 497.5080493977027})
-[07:40:57.480] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:40:57.482] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:41:02.495] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.2s
-[07:41:05] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:41:06.163] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0566 prediction=-1
-[07:41:06.163] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.58 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:41:07.567] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:41:07] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 246.269409953993})
-[07:41:08.187] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:41:08.188] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663868188 Fault=voltage_spike zone=west transformer=T11
-[07:41:10.243] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:41:10.244] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2055ms)
-[07:41:12.312] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:41:12.313] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2069ms)
-[07:41:14.318] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:41:14.319] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:41:14] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:41:16.496] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:41:16] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 254.78498615718655})
-[07:41:21.380] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2052ms)
-[07:41:23.439] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
-[07:41:23.440] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2059ms)
-[07:41:23.441] [REMEDIATION-ENGINE] [VERIFY] voltage_spike PARTIAL total_time=15.3s
-[07:41:25] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5005/demo/inject
-[07:41:27.135] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0436 prediction=-1
-[07:41:27.135] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.59 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:41:27.841] [ZONE-EAST] [INJECT] current_surge in east
-[07:41:27] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 586.3641761798726})
-[07:41:29.155] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:41:29.156] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663889156 Fault=voltage_spike zone=west transformer=T13
-[07:41:31.187] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:41:31.189] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2031ms)
-[07:41:31.627] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-east: Zone east overloaded at 92.4%
-[07:41:31.629] [ZONE-EAST] [REMEDIATE] Load shed 101.89456704719491MW in east
-[07:41:31.631] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=east mode=reduce
-[07:41:33.232] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:41:33.233] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2043ms)
-[07:41:35.246] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:41:35.247] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:41:35] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:41:36] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:41:38.153] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:41:38] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 174.62096428495198})
-[07:41:40.252] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:41:43.940] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0661 prediction=-1
-[07:41:43.941] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:41:45] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:41:45.956] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:41:45.957] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663905957 Fault=voltage_spike zone=west transformer=T13
-[07:41:47.578] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T10
-[07:41:47] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T10", "voltage_v": 273.2478501222899})
-[07:41:48.011] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:41:48.012] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2054ms)
-[07:41:50.068] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:41:50.069] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2056ms)
-[07:41:52.077] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:41:52.078] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:41:57.097] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:41:57] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:41:59.178] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T4
-[07:41:59] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T4", "voltage_v": 279.9299443356827})
-[07:42:00.787] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0709 prediction=-1
-[07:42:00.787] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.46 context={'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:42:02.804] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:42:02.805] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663922805 Fault=voltage_spike zone=west transformer=T16
-[07:42:04.862] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:42:04.863] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2057ms)
-[07:42:06.918] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:42:06.919] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2055ms)
-[07:42:08.929] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:42:08.931] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:42:09] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:42:11.077] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T3
-[07:42:11] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T3", "load_percent": 98.30556166716872})
-[07:42:13.940] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:42:15.727] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T3 in north is CRITICAL (temp=93.5°C, load=98.6%)
-[07:42:17.646] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0546 prediction=-1
-[07:42:17.646] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:42:18] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:42:19.655] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:42:19.656] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663939656 Fault=transformer_overload zone=west transformer=T3
-[07:42:20.433] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:42:20] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 248.38949586754683})
-[07:42:21.740] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T3 in north is CRITICAL (temp=94.3°C, load=99.7%)
-[07:42:21.745] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T3/load-limit → 200 (2088ms)
-[07:42:23.799] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:42:23.801] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2055ms)
-[07:42:25] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:42:25.805] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:42:25.806] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:42:27.748] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T3 in north is CRITICAL (temp=90.7°C, load=51.9%)
-[07:42:28] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:42:30.720] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:42:30] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 253.93214870264995})
-[07:42:32.902] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T3/restart → 404 (2087ms)
-[07:42:34.973] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T3 to resolve transformer issues.
-[07:42:34.974] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2071ms)
-[07:42:37.991] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=18.3s
-[07:42:39] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:42:41.158] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:42:41] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 285.74603621273843})
-[07:42:41.702] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0735 prediction=-1
-[07:42:41.702] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:42:43.728] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:42:43.729] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663963729 Fault=voltage_spike zone=west transformer=T13
-[07:42:45.759] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:42:45.761] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2031ms)
-[07:42:47.826] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:42:47.828] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2066ms)
-[07:42:49.854] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:42:49.856] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:42:50] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:42:52.332] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:42:52] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 248.51863327224987})
-[07:42:54.870] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:42:58.556] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0708 prediction=-1
-[07:42:58.557] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:43:00.590] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:43:00.592] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663980592 Fault=voltage_spike zone=west transformer=T13
-[07:43:00] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:43:02.647] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:43:02.649] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2056ms)
-[07:43:02.661] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T5
-[07:43:02] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T5", "load_percent": 108.75693417898492})
-[07:43:03.784] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T5 in south is CRITICAL (temp=94.0°C, load=100.0%)
-[07:43:04.701] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:43:04.703] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2053ms)
-[07:43:06.717] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:43:06.718] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:43:09.818] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T5 in south is CRITICAL (temp=94.4°C, load=97.7%)
-[07:43:11.729] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:43:12] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:43:14.414] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:43:14] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 177.52825220899732})
-[07:43:15.845] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T5 in south is CRITICAL (temp=94.5°C, load=96.9%)
-[07:43:15] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:43:15.890] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0440 prediction=-1
-[07:43:15.891] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:43:17.902] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:43:17.903] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774663997903 Fault=transformer_overload zone=west transformer=T5
-[07:43:19.974] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T5/load-limit → 200 (2070ms)
-[07:43:21] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:43:21.878] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T5 in south is CRITICAL (temp=90.8°C, load=48.2%)
-[07:43:22.044] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:43:22.046] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2071ms)
-[07:43:23.134] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T8
-[07:43:23] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T8", "load_percent": 108.2872560091641})
-[07:43:24.072] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:43:24.073] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:43:27.900] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=95.6°C, load=100.0%)
-[07:43:30] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:43:31.157] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T5/restart → 404 (2050ms)
-[07:43:32.285] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:43:32] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 251.89657725861795})
-[07:43:33.203] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T5 to resolve transformer issues.
-[07:43:33.204] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2047ms)
-[07:43:33.918] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=96.0°C, load=100.0%)
-[07:43:36.214] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=18.3s
-[07:43:39] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:43:39.933] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=96.4°C, load=100.0%)
-[07:43:39.983] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0252 prediction=-1
-[07:43:39.984] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:43:41.460] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T4
-[07:43:41] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T4", "load_percent": 108.24598193840193})
-[07:43:41.992] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:43:41.993] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664021993 Fault=transformer_overload zone=west transformer=T8
-[07:43:44.042] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T8/load-limit → 200 (2048ms)
-[07:43:45.952] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=96.8°C, load=100.0%)
-[07:43:46.093] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:43:46.094] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2051ms)
-[07:43:46.963] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=93.8°C, load=58.1%)
-[07:43:47] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:43:48.128] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:43:48.129] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:43:49.901] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T12
-[07:43:49] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T12", "voltage_v": 266.62276062634925})
-[07:43:52.971] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=97.2°C, load=98.3%)
-[07:43:53.984] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=91.3°C, load=56.7%)
-[07:43:56.031] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T8/restart → 404 (2043ms)
-[07:43:56] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:43:58.090] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T8 to resolve transformer issues.
-[07:43:58.091] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2059ms)
-[07:43:58.293] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T5
-[07:43:58] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T5", "voltage_v": 271.676866462451})
-[07:44:00.005] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=97.4°C, load=100.0%)
-[07:44:01.115] [REMEDIATION-ENGINE] [VERIFY] transformer_overload PARTIAL total_time=19.1s
-[07:44:04.807] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0179 prediction=-1
-[07:44:04.808] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.86 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:44:04] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
-[07:44:06.015] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=97.4°C, load=100.0%)
-[07:44:06] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:44:06.828] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:44:06.830] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664046830 Fault=transformer_overload zone=west transformer=T4
-[07:44:06.861] [ZONE-WEST] [INJECT] current_surge in west
-[07:44:06] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 564.6558596370888})
-[07:44:08.875] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T4/load-limit → 200 (2045ms)
-[07:44:10.926] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:44:10.928] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2051ms)
-[07:44:11.952] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 90.9%
-[07:44:12.045] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=93.5°C, load=51.8%)
-[07:44:12.947] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:44:12.948] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:44:16] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:44:18.067] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=90.3°C, load=53.0%)
-[07:44:18.520] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T5
-[07:44:18] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T5", "voltage_v": 266.9170435737555})
-[07:44:20.115] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T4/restart → 404 (2045ms)
-[07:44:20.975] [ZONE-WEST] [REMEDIATE] Load shed 73.7MW in west
-[07:44:20.976] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
-[07:44:22.164] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T4 to resolve transformer issues.
-[07:44:22.165] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2050ms)
-[07:44:25.199] [REMEDIATION-ENGINE] [VERIFY] transformer_overload PARTIAL total_time=18.4s
-[07:44:25] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5003/demo/inject
-[07:44:28.064] [ZONE-NORTH] [INJECT] current_surge in north
-[07:44:28] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 519.2319883225298})
-[07:44:28.879] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0866 prediction=-1
-[07:44:28.880] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.58 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:44:30.901] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
-[07:44:30.902] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664070902 Fault=power_redistribution zone=west transformer=T13
-[07:44:32.969] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
-[07:44:32.971] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2068ms)
-[07:44:35.023] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2051ms)
-[07:44:36] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:44:37.030] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
-[07:44:37.032] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of power_redistribution
-[07:44:38.855] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:44:38] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 245.31824878496008})
-[07:44:42.051] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=11.1s
-[07:44:45.750] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0975 prediction=-1
-[07:44:45.751] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.48 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:44:46] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:44:47.772] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:44:47.774] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664087774 Fault=voltage_spike zone=west transformer=T13
-[07:44:48.973] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T1
-[07:44:48] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T1", "load_percent": 100.92325199504546})
-[07:44:49.815] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:44:49.816] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2042ms)
-[07:44:51.858] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:44:51.859] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2042ms)
-[07:44:53.886] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:44:53.887] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:44:54.090] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T1 in north is CRITICAL (temp=91.1°C, load=98.1%)
-[07:44:56] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:44:57] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:44:58.902] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:45:00.119] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T1 in north is CRITICAL (temp=91.6°C, load=98.7%)
-[07:45:00.122] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T5
-[07:45:00] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T5", "voltage_v": 273.3394373280308})
-[07:45:02.605] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0521 prediction=-1
-[07:45:02.605] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:45:04.614] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:45:04.615] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664104615 Fault=transformer_overload zone=west transformer=T1
-[07:45:06.128] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T1 in north is CRITICAL (temp=92.0°C, load=97.1%)
-[07:45:06] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:45:06.702] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T1/load-limit → 200 (2086ms)
-[07:45:08.217] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T11
-[07:45:08] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T11", "voltage_v": 274.00813014839605})
-[07:45:08.761] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:45:08.763] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2059ms)
-[07:45:10.786] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:45:10.788] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:45:17] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:45:17.863] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T1/restart → 404 (2049ms)
-[07:45:19.504] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T4
-[07:45:19] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T4", "load_percent": 97.69205837280032})
-[07:45:19.909] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T1 to resolve transformer issues.
-[07:45:19.911] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2047ms)
-[07:45:22.141] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T4 in south is CRITICAL (temp=92.3°C, load=60.0%)
-[07:45:22.920] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=18.3s
-[07:45:26.602] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0794 prediction=-1
-[07:45:26.602] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.37 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:45:28] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:45:28.626] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:45:28.628] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664128628 Fault=voltage_spike zone=west transformer=T13
-[07:45:30.484] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:45:30] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 246.82109373271635})
-[07:45:30.654] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:45:30.655] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2027ms)
-[07:45:32.705] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:45:32.706] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2050ms)
-[07:45:34.717] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:45:34.718] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:45:39] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:45:41.792] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2068ms)
-[07:45:41.808] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:45:41] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 251.1198498130445})
-[07:45:43.859] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
-[07:45:43.860] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2068ms)
-[07:45:43.861] [REMEDIATION-ENGINE] [VERIFY] voltage_spike PARTIAL total_time=15.2s
-[07:45:46] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:45:47.555] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0717 prediction=-1
-[07:45:47.555] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_overload confidence=0.65 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:45:49.586] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Sustained Voltage Overload
-[07:45:49] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:45:49.588] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664149588 Fault=voltage_overload zone=west transformer=T13
-[07:45:51.637] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:45:51.638] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:45:51.639] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2050ms)
-[07:45:51] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 250.27184427029894})
-[07:45:53.707] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:45:53.708] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2068ms)
-[07:45:55.734] [GRID-CONTROLLER] [REMEDIATE] [voltage_overload] EXECUTING
-[07:45:55.735] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_overload
-[07:45:57] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:45:59.990] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:45:59] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 253.85088154007857})
-[07:46:02.823] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T13/restart → 404 (2065ms)
-[07:46:04.877] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T13 to resolve transformer issues.
-[07:46:04.878] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2055ms)
-[07:46:06] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:46:07.896] [REMEDIATION-ENGINE] [VERIFY] voltage_overload PARTIAL total_time=18.3s
-[07:46:08.218] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:46:08] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 299.4581270865383})
-[07:46:11.569] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0795 prediction=-1
-[07:46:11.569] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:46:13.577] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:46:13.578] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664173578 Fault=voltage_spike zone=west transformer=T10
-[07:46:15.645] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:46:15.647] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2068ms)
-[07:46:16] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:46:17.698] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:46:17.700] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2052ms)
-[07:46:18.180] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T5
-[07:46:18] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T5", "voltage_v": 277.67257844385523})
-[07:46:19.706] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:46:19.707] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:46:24.731] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.2s
-[07:46:27] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:46:28.434] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0852 prediction=-1
-[07:46:28.435] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:46:30.006] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:46:30] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 184.89632305752178})
-[07:46:30.438] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:46:30.440] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664190440 Fault=voltage_spike zone=west transformer=T10
-[07:46:32.503] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:46:32.504] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2064ms)
-[07:46:34.553] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:46:34.554] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2049ms)
-[07:46:36] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:46:36.575] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:46:36.577] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:46:39] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:46:41.568] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:46:41] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 247.4676419216948})
-[07:46:43.658] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2060ms)
-[07:46:45.693] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
-[07:46:45.694] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2035ms)
-[07:46:45.695] [REMEDIATION-ENGINE] [VERIFY] voltage_spike PARTIAL total_time=15.3s
-[07:46:49.395] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0784 prediction=-1
-[07:46:49.396] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_overload confidence=0.65 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:46:49] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:46:51.403] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Sustained Voltage Overload
-[07:46:51.405] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664211405 Fault=voltage_overload zone=west transformer=T10
-[07:46:51.634] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:46:51] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 245.22005827167473})
-[07:46:53.457] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:46:53.459] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2053ms)
-[07:46:55.510] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:46:55.511] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2051ms)
-[07:46:57.517] [GRID-CONTROLLER] [REMEDIATE] [voltage_overload] EXECUTING
-[07:46:57.519] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_overload
-[07:46:59] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5003/demo/inject
-[07:47:01.903] [ZONE-NORTH] [INJECT] current_surge in north
-[07:47:01] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 559.8803548153378})
-[07:47:02.525] [REMEDIATION-ENGINE] [VERIFY] voltage_overload RESOLVED total_time=11.1s
-[07:47:06.047] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-north: Zone north overloaded at 92.7%
-[07:47:06.206] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0923 prediction=-1
-[07:47:06.206] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.54 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:47:08.218] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
-[07:47:08.219] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664228219 Fault=power_redistribution zone=west transformer=T10
-[07:47:09] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:47:10.271] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
-[07:47:10.272] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2052ms)
-[07:47:11.686] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T10
-[07:47:11] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T10", "load_percent": 114.25185809559076})
-[07:47:12.073] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-north: Zone north overloaded at 90.7%
-[07:47:13.174] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=96.6°C, load=100.0%)
-[07:47:13.177] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2904ms)
-[07:47:15.209] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
-[07:47:15.211] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of power_redistribution
-[07:47:17.897] [ZONE-NORTH] [REMEDIATE] Load shed 86.18MW in north
-[07:47:17.899] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=north mode=reduce
-[07:47:18] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
-[07:47:19.188] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=95.1°C, load=76.2%)
-[07:47:20.219] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=12.0s
-[07:47:20.466] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T2
-[07:47:20] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T2", "load_percent": 107.82716825016563})
-[07:47:23.902] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0660 prediction=-1
-[07:47:23.903] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.85 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:47:25.200] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T2 in north is CRITICAL (temp=92.0°C, load=100.0%)
-[07:47:25.916] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[07:47:25.917] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664245917 Fault=transformer_overload zone=west transformer=T2
-[07:47:26.223] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=93.3°C, load=78.5%)
-[07:47:26] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:47:27.947] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T2/load-limit → 200 (2029ms)
-[07:47:29] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
-[07:47:30.004] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[07:47:30.006] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2057ms)
-[07:47:31.280] [ZONE-WEST] [INJECT] current_surge in west
-[07:47:31] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 484.0746245679838})
-[07:47:32.033] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[07:47:32.034] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[07:47:32.237] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=91.8°C, load=75.3%)
-[07:47:32.999] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 98.3%
-[07:47:38.244] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=91.3°C, load=74.5%)
-[07:47:39.007] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 95.1%
-[07:47:39.103] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T2/restart → 404 (2055ms)
-[07:47:39] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:47:41.170] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for T2 to resolve transformer issues.
-[07:47:41.171] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2067ms)
-[07:47:41.618] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T6
-[07:47:41] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T6", "voltage_v": 265.3959105686273})
-[07:47:42.022] [ZONE-WEST] [REMEDIATE] Load shed 77.95MW in west
-[07:47:42.024] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
-[07:47:44.185] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=18.3s
-[07:47:47.875] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0978 prediction=-1
-[07:47:47.875] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.55 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:47:49] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:47:49.880] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
-[07:47:49.881] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664269881 Fault=power_redistribution zone=west transformer=T10
-[07:47:51.080] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:47:51] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 251.29524975172006})
-[07:47:51.943] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
-[07:47:51.944] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2062ms)
-[07:47:53.997] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2052ms)
-[07:47:56.016] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
-[07:47:56.018] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of power_redistribution
-[07:47:57] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:47:59.390] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T3
-[07:47:59] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T3", "voltage_v": 279.81359381354986})
-[07:48:01.025] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=11.1s
-[07:48:04.740] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1091 prediction=-1
-[07:48:04.740] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:48:06.759] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:48:06.760] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664286760 Fault=voltage_spike zone=west transformer=T9
-[07:48:08.811] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:48:08.812] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2051ms)
-[07:48:09] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5003/demo/inject
-[07:48:10.897] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:48:10.898] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2085ms)
-[07:48:11.407] [ZONE-NORTH] [INJECT] current_surge in north
-[07:48:11] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 499.0766518409961})
-[07:48:12.930] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:48:12.932] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:48:13.086] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-north: Zone north overloaded at 96.0%
-[07:48:16] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:48:17.954] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.2s
-[07:48:19.115] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-north: Zone north overloaded at 94.9%
-[07:48:19] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
-[07:48:21.575] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
-[07:48:21] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 251.04825850847442})
-[07:48:21.628] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1119 prediction=-1
-[07:48:21.628] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.54 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:48:23.284] [ZONE-NORTH] [REMEDIATE] Load shed 90.13MW in north
-[07:48:23.286] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=north mode=reduce
-[07:48:23.639] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
-[07:48:23.640] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664303640 Fault=power_redistribution zone=west transformer=T9
-[07:48:25.708] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
-[07:48:25.709] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2068ms)
-[07:48:27.767] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2057ms)
-[07:48:29] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:48:29.773] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
-[07:48:29.774] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of power_redistribution
-[07:48:31.265] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:48:31] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 278.39354118590995})
-[07:48:36.864] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2059ms)
-[07:48:37] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:48:38.912] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
-[07:48:38.913] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2048ms)
-[07:48:38.914] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=15.3s
-[07:48:39.486] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T12
-[07:48:39] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T12", "voltage_v": 268.46144929534})
-[07:48:42.593] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1299 prediction=-1
-[07:48:42.594] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:48:44.603] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:48:44.604] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664324604 Fault=voltage_spike zone=west transformer=T16
-[07:48:46] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:48:46.657] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:48:46.658] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2053ms)
-[07:48:48.197] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:48:48] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 205.08497508502853})
-[07:48:48.719] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:48:48.720] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2062ms)
-[07:48:50.747] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:48:50.749] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:48:55.774] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.2s
-[07:48:56] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5007/demo/inject
-[07:48:58.200] [ZONE-CENTRAL] [INJECT] current_surge in central
-[07:48:58] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 486.1305164167756})
-[07:48:59.472] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1258 prediction=-1
-[07:48:59.472] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:49:01.485] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:49:01.486] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664341486 Fault=voltage_spike zone=west transformer=T9
-[07:49:03.530] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:49:03.531] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2044ms)
-[07:49:05.560] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:49:05.561] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2029ms)
-[07:49:06] [RUNNER] [HEARTBEAT] Services online: 10/10
-[07:49:06] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
-[07:49:07.580] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:49:07.581] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:49:09.035] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T6
-[07:49:09] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T6", "voltage_v": 277.13705217747827})
-[07:49:12.602] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:49:15] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5004/demo/inject
-[07:49:16.316] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1229 prediction=-1
-[07:49:16.316] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:49:17.280] [ZONE-SOUTH] [INJECT] current_surge in south
-[07:49:17] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 464.54397844575544})
-[07:49:18.342] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[07:49:18.344] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664358344 Fault=voltage_spike zone=west transformer=T9
-[07:49:20.390] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
-[07:49:20.391] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/tap-changer/lock → 200 (2047ms)
-[07:49:22.441] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
-[07:49:22.442] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5009/capacitor-bank/deactivate → 200 (2050ms)
-[07:49:24.450] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[07:49:24.451] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[07:49:26] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
-[07:49:27.597] [ZONE-SOUTH] [REMEDIATE] Load shed 68.34MW in south
-[07:49:27.599] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=south mode=reduce
-[07:49:29.030] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
-[07:49:29] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 293.00956432079147})
-[07:49:29.465] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=11.1s
-[07:49:33.162] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1288 prediction=-1
-[07:49:33.162] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.59 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
-[07:49:35.194] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
-[07:49:35.195] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774664375195 Fault=power_redistribution zone=west transformer=T9
-[07:49:36] [RUNNER] 
-[93mShutting down all services...[0m
-[07:49:36] [RUNNER] [92mAll services stopped. Goodbye![0m
+[08:32:25.702] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 94.4%
+[08:32:25.971] [ML-ANOMALY-DETECTOR] [INFO] Inference loop started
+[08:32:26.361] [ZONE-WEST] [REMEDIATE] Load shed 79.34MW in west
+[08:32:26.363] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:26] [RUNNER] [HEARTBEAT] Services online: 10/10
+[08:32:27.557] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0553 prediction=-1
+[08:32:27.558] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:27.562] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:27.563] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666947563 Fault=power_redistribution zone=west transformer=T5
+[08:32:29.370] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0559 prediction=-1
+[08:32:29.370] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:29.373] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:29.375] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666949375 Fault=power_redistribution zone=west transformer=T5
+[08:32:29.618] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:29.619] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2055ms)
+[08:32:30] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
+[08:32:31.420] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:31.421] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2046ms)
+[08:32:31.673] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2053ms)
+[08:32:31.686] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:31.688] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:31.719] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 90.4%
+[08:32:32.237] [ZONE-WEST] [INJECT] current_surge in west
+[08:32:32] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 477.6117392235952})
+[08:32:32.930] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:33.474] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2052ms)
+[08:32:33.476] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:33.477] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:34.720] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.3s
+[08:32:36.400] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0776 prediction=-1
+[08:32:36.401] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.81 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:36.404] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:36.405] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666956405 Fault=power_redistribution zone=west transformer=T10
+[08:32:37.724] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 110.0%
+[08:32:38.190] [ZONE-WEST] [REMEDIATE] Load shed 93.22446956894382MW in west
+[08:32:38.191] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:38.200] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0725 prediction=-1
+[08:32:38.200] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.81 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:38.203] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:38.204] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666958204 Fault=power_redistribution zone=west transformer=T10
+[08:32:38.470] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:38.472] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2067ms)
+[08:32:40.262] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:40.264] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2059ms)
+[08:32:40.529] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2056ms)
+[08:32:40.532] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:40.533] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:41] [INJECTOR] [93mINJECTING:[0m Current Spiking | Target: http://localhost:5006/demo/inject
+[08:32:41.761] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:42.335] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2071ms)
+[08:32:42.350] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:42.351] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:43.588] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:43.742] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 108.0%
+[08:32:43.744] [ZONE-WEST] [REMEDIATE] Load shed 90.2MW in west
+[08:32:43.744] [ZONE-WEST] [INJECT] current_surge in west
+[08:32:43.746] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:43] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "current_surge", "amps_a": 481.03466478180167})
+[08:32:43.791] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0569 prediction=-1
+[08:32:43.791] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.81 context={'transformer_id': 'T7', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:43.794] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:43.796] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666963796 Fault=power_redistribution zone=west transformer=T7
+[08:32:45.274] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0618 prediction=-1
+[08:32:45.275] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.80 context={'transformer_id': 'T7', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:45.292] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:45.293] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666965293 Fault=power_redistribution zone=west transformer=T7
+[08:32:45.853] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:45.854] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2058ms)
+[08:32:47.331] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:47.332] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2038ms)
+[08:32:47] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
+[08:32:47.891] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2036ms)
+[08:32:47.894] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:47.896] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:49.121] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.3s
+[08:32:49.399] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2066ms)
+[08:32:49.414] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:49.415] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:49.662] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
+[08:32:49] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 254.20992442163734})
+[08:32:49.770] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 110.0%
+[08:32:50.657] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:50.827] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0581 prediction=-1
+[08:32:50.828] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.55 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:50.830] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:50.832] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666970832 Fault=power_redistribution zone=west transformer=T10
+[08:32:52.356] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0608 prediction=-1
+[08:32:52.356] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.55 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:52.359] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:52.367] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666972367 Fault=power_redistribution zone=west transformer=T10
+[08:32:52.876] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:52.877] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2045ms)
+[08:32:54.415] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:54.416] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2049ms)
+[08:32:54.942] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2064ms)
+[08:32:54.957] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:54.958] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:55.786] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 106.9%
+[08:32:55.787] [ZONE-WEST] [REMEDIATE] Load shed 90.2MW in west
+[08:32:55.790] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:32:56.190] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:56.485] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2068ms)
+[08:32:56.499] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:32:56.501] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:32:57.744] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:32:57.882] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0778 prediction=-1
+[08:32:57.883] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.81 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:57.886] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:57.887] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666977887 Fault=power_redistribution zone=west transformer=T13
+[08:32:59.435] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0778 prediction=-1
+[08:32:59.436] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.81 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:32:59.451] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:32:59.453] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666979453 Fault=power_redistribution zone=west transformer=T13
+[08:32:59.933] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:32:59.934] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2046ms)
+[08:33:00.539] [ZONE-WEST] [REMEDIATE] Load shed 87.7MW in west
+[08:33:00.540] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:01.505] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:01.507] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2053ms)
+[08:33:01] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
+[08:33:01.815] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 105.5%
+[08:33:02.002] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2067ms)
+[08:33:02.016] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:02.018] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:03.257] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:33:03.554] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2046ms)
+[08:33:03.567] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:03.568] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:03.630] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T10
+[08:33:03] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T10", "load_percent": 111.8174209161158})
+[08:33:03] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
+[08:33:04.775] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.3s
+[08:33:04.940] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0391 prediction=-1
+[08:33:04.941] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.49 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:04.944] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:04.946] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666984946 Fault=power_redistribution zone=west transformer=T10
+[08:33:06.377] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=92.7°C, load=100.0%)
+[08:33:06.381] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T6
+[08:33:06] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T6", "load_percent": 114.65727508707276})
+[08:33:06.444] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0378 prediction=-1
+[08:33:06.445] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.49 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:06.447] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:06.449] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666986449 Fault=power_redistribution zone=west transformer=T6
+[08:33:07.001] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:07.003] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2056ms)
+[08:33:07.844] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 103.3%
+[08:33:08.504] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:08.506] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2056ms)
+[08:33:09.063] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2060ms)
+[08:33:09.066] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:09.068] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:10.574] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2067ms)
+[08:33:10.588] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:10.590] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:12.361] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2064ms)
+[08:33:12.391] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T6 in east is CRITICAL (temp=91.6°C, load=76.0%)
+[08:33:12.422] [ZONE-WEST] [REMEDIATE] Load shed 84.69MW in west
+[08:33:12.423] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:12.811] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=6.4s
+[08:33:13.402] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=91.1°C, load=70.7%)
+[08:33:13.866] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 102.7%
+[08:33:14] [RUNNER] [HEARTBEAT] Services online: 10/10
+[08:33:14.426] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:14.427] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2065ms)
+[08:33:14.428] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.5s
+[08:33:16.110] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0251 prediction=-1
+[08:33:16.111] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.75 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:16.114] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:16.116] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774666996116 Fault=power_redistribution zone=west transformer=T6
+[08:33:16] [RUNNER] [HEARTBEAT] Services online: 10/10
+[08:33:17.608] [ZONE-WEST] [REMEDIATE] Load shed 84.18MW in west
+[08:33:17.610] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:18.170] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:18.172] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2055ms)
+[08:33:19.433] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T6 in east is CRITICAL (temp=90.0°C, load=75.3%)
+[08:33:19.886] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 100.9%
+[08:33:20.216] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2044ms)
+[08:33:20.230] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:20.232] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:21] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
+[08:33:21.653] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0384 prediction=-1
+[08:33:21.653] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.77 context={'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:21.680] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:21.681] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667001681 Fault=power_redistribution zone=west transformer=T16
+[08:33:23.257] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T10
+[08:33:23] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T10", "load_percent": 100.39984572397029})
+[08:33:23.511] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2050ms)
+[08:33:23.730] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:23.731] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2049ms)
+[08:33:23] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
+[08:33:25.460] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=92.5°C, load=97.2%)
+[08:33:25.585] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:25.586] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2075ms)
+[08:33:25.587] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.5s
+[08:33:25.801] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
+[08:33:25.802] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2070ms)
+[08:33:25] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 278.321215534761})
+[08:33:25.816] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:25.818] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:25.896] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 98.2%
+[08:33:27.036] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:33:27.260] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0179 prediction=-1
+[08:33:27.260] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.42 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:27.263] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:27.265] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667007265 Fault=power_redistribution zone=west transformer=T10
+[08:33:28.725] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0179 prediction=-1
+[08:33:28.725] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.42 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:28.752] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:28.753] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667008753 Fault=power_redistribution zone=west transformer=T10
+[08:33:29.325] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:29.326] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2061ms)
+[08:33:29.561] [ZONE-WEST] [REMEDIATE] Load shed 80.53MW in west
+[08:33:29.562] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:30.781] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:30.782] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2029ms)
+[08:33:31.479] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T10 in west is CRITICAL (temp=91.5°C, load=80.4%)
+[08:33:31.482] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2154ms)
+[08:33:31.485] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:31.486] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:31.923] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 96.7%
+[08:33:32.825] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2041ms)
+[08:33:32.839] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:32.840] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:34.802] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2085ms)
+[08:33:34.957] [ZONE-WEST] [REMEDIATE] Load shed 79.27000000000001MW in west
+[08:33:34.958] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:36.155] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2070ms)
+[08:33:36.843] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:36.844] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2041ms)
+[08:33:36.845] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.6s
+[08:33:37] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
+[08:33:37.951] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 95.2%
+[08:33:38.217] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:38.218] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2062ms)
+[08:33:38.219] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.5s
+[08:33:38.537] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0371 prediction=-1
+[08:33:38.538] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.79 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:38.541] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:38.542] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667018542 Fault=power_redistribution zone=west transformer=T6
+[08:33:39.505] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T3
+[08:33:39] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T3", "voltage_v": 276.5414006082727})
+[08:33:39.914] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0542 prediction=-1
+[08:33:39.915] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.79 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:39.917] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:39.919] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667019919 Fault=power_redistribution zone=west transformer=T6
+[08:33:40.591] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:40.592] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2050ms)
+[08:33:41.965] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:41.967] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2047ms)
+[08:33:42.637] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2045ms)
+[08:33:42.641] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:42.642] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:42] [INJECTOR] [93mINJECTING:[0m Voltage Overload | Target: http://localhost:5009/demo/inject
+[08:33:43.977] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 92.3%
+[08:33:44.025] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2058ms)
+[08:33:44.028] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:44.029] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:44.960] [VOLTAGE-REGULATOR] [INJECT] voltage_overload injected into voltage-regulator
+[08:33:44] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_overload", "voltage_v": 253.16504250679932})
+[08:33:45.956] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2084ms)
+[08:33:46.996] [ZONE-WEST] [REMEDIATE] Load shed 75.7MW in west
+[08:33:46.997] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:47.337] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5006/restart → 404 (2067ms)
+[08:33:48.025] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:48.026] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2069ms)
+[08:33:48.027] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.5s
+[08:33:49.400] [GRID-CONTROLLER] [ALERT] INFO from remediation-engine: System reboot initiated for west to resolve zone issues.
+[08:33:49.401] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5001/alert → 200 (2063ms)
+[08:33:49.402] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=9.5s
+[08:33:50.008] [GRID-CONTROLLER] [ALERT] CRITICAL from zone-west: Zone west overloaded at 92.8%
+[08:33:50.054] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0460 prediction=-1
+[08:33:50.055] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.57 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:50.058] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:50.059] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667030059 Fault=power_redistribution zone=west transformer=T5
+[08:33:51.098] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0444 prediction=-1
+[08:33:51.099] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.57 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:51.102] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:51.103] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667031103 Fault=power_redistribution zone=west transformer=T5
+[08:33:52.117] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:52.118] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2059ms)
+[08:33:53] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
+[08:33:53.071] [ZONE-WEST] [REMEDIATE] Load shed 76.07000000000001MW in west
+[08:33:53.072] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:33:53.148] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:53.149] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2045ms)
+[08:33:54.191] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2072ms)
+[08:33:54.195] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:54.196] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:55.111] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T7
+[08:33:55] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T7", "voltage_v": 277.3735258367507})
+[08:33:55.236] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2086ms)
+[08:33:55.239] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:33:55.240] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:33:55.438] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:33:56.467] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:33:57.135] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0332 prediction=-1
+[08:33:57.135] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T7', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:57.153] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:57.154] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667037154 Fault=power_redistribution zone=west transformer=T7
+[08:33:58.145] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0332 prediction=-1
+[08:33:58.145] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T7', 'transformer_zone': 'east', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:33:58.148] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:33:58.149] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667038149 Fault=power_redistribution zone=west transformer=T7
+[08:33:59.194] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:33:59.196] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2041ms)
+[08:34:00.220] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:34:00.221] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2072ms)
+[08:34:00] [INJECTOR] [93mINJECTING:[0m Voltage Spike | Target: http://localhost:5002/demo/inject
+[08:34:01.266] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2069ms)
+[08:34:01.280] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:34:01.281] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:34:02.293] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/distribute → 200 (2070ms)
+[08:34:02.307] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[08:34:02.308] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[08:34:02.494] [TRANSFORMER] [INJECT] voltage_spike injected on transformer T16
+[08:34:02] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "voltage_spike", "transformer_id": "T16", "voltage_v": 276.4693945587294})
+[08:34:02.510] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:34:03.552] [REMEDIATION-ENGINE] [VERIFY] power_redistribution PARTIAL total_time=5.4s
+[08:34:04.101] [ZONE-WEST] [REMEDIATE] Load shed 72.35000000000001MW in west
+[08:34:04.102] [LOAD-BALANCER] [REMEDIATE] Emergency rebalance: zone=west mode=reduce
+[08:34:04.163] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0580 prediction=-1
+[08:34:04.163] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:34:04.177] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:34:04.179] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667044179 Fault=power_redistribution zone=west transformer=T3
+[08:34:04] [RUNNER] [HEARTBEAT] Services online: 10/10
+[08:34:05.219] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0580 prediction=-1
+[08:34:05.219] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution confidence=0.83 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-1'}
+[08:34:05.233] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[08:34:05.234] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774667045234 Fault=power_redistribution zone=west transformer=T3
+[08:34:06.215] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:34:06.216] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2037ms)
+[08:34:06] [RUNNER] [HEARTBEAT] Services online: 10/10
+[08:34:07.273] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[08:34:07.274] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2040ms)
