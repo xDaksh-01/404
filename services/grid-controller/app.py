@@ -64,6 +64,13 @@ alerts = deque(maxlen=200)   # live alert feed
 remediation_log = deque(maxlen=100)
 alert_timestamps = deque(maxlen=300)  # for rate calculation
 
+# ─── Background data cache (avoids live HTTP in /metrics/summary) ─────────────
+service_cache = {
+    "transformer_summary": {"avg_temp": 65.0, "max_load": 75.0},
+    "lb_data": {},
+    "vr_data": {},
+}
+
 # ─── Logger ────────────────────────────────────────────────────────────────────
 logger = setup_logger(SERVICE_NAME)
 
@@ -130,6 +137,30 @@ def poll_services():
 
             if zone_loads:
                 total_load = sum(zone_loads)
+
+            # ── Cache transformer / LB / VR data ──────────────────────────────
+            try:
+                r = requests.get("http://localhost:5002/status", timeout=2)
+                if r.status_code == 200:
+                    ts = r.json().get("transformers", [])
+                    if ts:
+                        service_cache["transformer_summary"] = {
+                            "avg_temp": round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1),
+                            "max_load": round(max(t.get("load_percent", 0) for t in ts), 1),
+                        }
+            except: pass
+
+            try:
+                r = requests.get("http://localhost:5008/status", timeout=1)
+                if r.status_code == 200:
+                    service_cache["lb_data"] = r.json()
+            except: pass
+
+            try:
+                r = requests.get("http://localhost:5009/status", timeout=1)
+                if r.status_code == 200:
+                    service_cache["vr_data"] = r.json()
+            except: pass
 
             latency_ms = (time.time() - t_start) * 1000
 
@@ -212,32 +243,13 @@ def metrics():
 
 @app.route("/metrics/summary")
 def metrics_summary():
-    """Aggregated summary for the React frontend."""
+    """Aggregated summary for the React frontend. Uses cached data — no live HTTP calls."""
     with state_lock:
         s = dict(state)
 
-    transformer_summary = {"avg_temp": 65.0, "max_load": 75.0}
-    try:
-        r = requests.get("http://localhost:5002/status", timeout=2)
-        if r.status_code == 200:
-            data = r.json()
-            ts = data.get("transformers", [])
-            if ts:
-                transformer_summary["avg_temp"] = round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1)
-                transformer_summary["max_load"] = round(max(t.get("load_percent", 0) for t in ts), 1)
-    except: pass
-
-    lb_data = {}
-    try:
-        r = requests.get("http://localhost:5008/status", timeout=1)
-        if r.status_code == 200: lb_data = r.json()
-    except: pass
-
-    vr_data = {}
-    try:
-        r = requests.get("http://localhost:5009/status", timeout=1)
-        if r.status_code == 200: vr_data = r.json()
-    except: pass
+    transformer_summary = service_cache["transformer_summary"]
+    lb_data             = service_cache["lb_data"]
+    vr_data             = service_cache["vr_data"]
 
     risk = "LOW"
     if s["grid_load_percent"] > 85: risk = "CRITICAL"
@@ -397,6 +409,15 @@ def demo_reset():
 
 
 if __name__ == "__main__":
+    # ── Fresh start: clear all in-memory state ─────────────────────────────
+    alerts.clear()
+    remediation_log.clear()
+    alert_timestamps.clear()
+    with state_lock:
+        state["active_alerts_count"]       = 0
+        state["remediation_actions_count"] = 0
+        state["remediation_count_session"] = 0
+
     # Clear simulation log file on start
     sim_log_path = os.path.join(ROOT, "testing", "logs", "simulation_run.txt")
     try:
@@ -406,7 +427,7 @@ if __name__ == "__main__":
     except Exception:
         pass
 
-    logger.info(f"Starting {SERVICE_NAME} on port {PORT} (Simulation ACTIVE by default)")
+    logger.info(f"Starting {SERVICE_NAME} on port {PORT} — fresh state, 0 logs")
     threading.Thread(target=poll_services, daemon=True).start()
     threading.Thread(target=simulate_natural_variation, daemon=True).start()
     app.run(host="0.0.0.0", port=PORT, debug=False, use_reloader=False)

@@ -48,20 +48,19 @@ function TapIndicator({ position }) {
   )
 }
 
-export default function VoltagePanel() {
+export default function VoltagePanel({ className }) {
   const { summary } = useGrid()
-  const data = summary?.voltage_regulator
-
-  if (!data) return (
-    <div className="card">
-      <div className="card-header">
-        <div className="card-title"><Gauge size={13} />Voltage Regulator</div>
-      </div>
-      <div style={{ color: 'var(--muted)', fontSize: '0.75rem', padding: '20px 0', textAlign: 'center' }}>
-        Connecting...
-      </div>
-    </div>
-  )
+  const data = summary?.voltage_regulator || {
+    grid_power_factor_avg: 0.95,
+    grid_voltage_avg_v: 230,
+    grid_voltage_min_v: 228,
+    tap_changes_per_hour: 0,
+    capacitor_banks_active_count: 0,
+    voltage_violations_count: 0,
+    tap_changer_locked: false,
+    zone_voltage_profiles: {}
+  }
+  const isConnected = !!(summary?.voltage_regulator && Object.keys(summary.voltage_regulator).length > 0)
 
   const pf      = data.grid_power_factor_avg || 0.94
   const avgV    = data.grid_voltage_avg_v || 230
@@ -76,9 +75,10 @@ export default function VoltagePanel() {
   const voltClass = avgV < 218 ? 'status-critical' : avgV < 225 ? 'status-warning' : 'status-cyan'
 
   return (
-    <div className="card">
+    <div className={`card ${className || ''}`}>
       <div className="card-header">
         <div className="card-title"><Gauge size={13} />Voltage Regulator</div>
+        {!isConnected && <span className="badge" style={{ background: 'var(--muted)', color: 'var(--bg)' }}>OFFLINE</span>}
         {locked && <span className="badge warning">TAP LOCKED</span>}
         {viols > 0 && <span className="badge critical">{viols} violations</span>}
       </div>
