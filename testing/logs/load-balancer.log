@@ -18,3 +18,37 @@
 [2026-03-29 03:47:07.637] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
 [2026-03-29 03:47:15.703] [load-balancer] [DEBUG] [BALANCE] Demand=2899MW Allocated=2899MW Overloaded_zones=0
 [2026-03-29 03:47:30.770] [load-balancer] [DEBUG] [BALANCE] Demand=3091MW Allocated=3091MW Overloaded_zones=0
+[2026-03-29 03:47:42.714] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:47:45.866] [load-balancer] [DEBUG] [BALANCE] Demand=3053MW Allocated=3053MW Overloaded_zones=0
+[2026-03-29 03:47:59.692] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+[2026-03-29 03:48:03.004] [load-balancer] [DEBUG] [BALANCE] Demand=3180MW Allocated=2246MW Overloaded_zones=1
+[2026-03-29 03:48:04.028] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=central mode=reduce excess=93.41000000000001MW
+[2026-03-29 03:48:18.145] [load-balancer] [DEBUG] [BALANCE] Demand=3198MW Allocated=3198MW Overloaded_zones=0
+[2026-03-29 03:48:33.271] [load-balancer] [DEBUG] [BALANCE] Demand=3083MW Allocated=3083MW Overloaded_zones=0
+[2026-03-29 03:48:45.044] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:48:47.364] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=east mode=reduce excess=103.34000000000002MW
+[2026-03-29 03:48:50.384] [load-balancer] [DEBUG] [BALANCE] Demand=3261MW Allocated=2227MW Overloaded_zones=1
+[2026-03-29 03:49:01.993] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+[2026-03-29 03:49:05.518] [load-balancer] [DEBUG] [BALANCE] Demand=3084MW Allocated=3084MW Overloaded_zones=0
+[2026-03-29 03:49:20.609] [load-balancer] [DEBUG] [BALANCE] Demand=3212MW Allocated=3212MW Overloaded_zones=0
+[2026-03-29 03:49:35.726] [load-balancer] [DEBUG] [BALANCE] Demand=3090MW Allocated=3090MW Overloaded_zones=0
+[2026-03-29 03:49:43.216] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:49:50.813] [load-balancer] [DEBUG] [BALANCE] Demand=3002MW Allocated=3002MW Overloaded_zones=0
+[2026-03-29 03:50:02.288] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:50:05.893] [load-balancer] [DEBUG] [BALANCE] Demand=2922MW Allocated=2922MW Overloaded_zones=0
+[2026-03-29 03:50:21.018] [load-balancer] [DEBUG] [BALANCE] Demand=2921MW Allocated=2921MW Overloaded_zones=0
+[2026-03-29 03:50:21.247] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:50:36.125] [load-balancer] [DEBUG] [BALANCE] Demand=3069MW Allocated=3069MW Overloaded_zones=0
+[2026-03-29 03:50:53.258] [load-balancer] [DEBUG] [BALANCE] Demand=3146MW Allocated=2166MW Overloaded_zones=1
+[2026-03-29 03:50:54.280] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=central mode=reduce excess=97.98MW
+[2026-03-29 03:50:57.204] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+[2026-03-29 03:51:08.340] [load-balancer] [DEBUG] [BALANCE] Demand=2985MW Allocated=2985MW Overloaded_zones=0
+[2026-03-29 03:51:23.460] [load-balancer] [DEBUG] [BALANCE] Demand=2873MW Allocated=2873MW Overloaded_zones=0
+[2026-03-29 03:51:38.569] [load-balancer] [DEBUG] [BALANCE] Demand=2816MW Allocated=2816MW Overloaded_zones=0
+[2026-03-29 03:51:53.642] [load-balancer] [DEBUG] [BALANCE] Demand=2803MW Allocated=2803MW Overloaded_zones=0
+[2026-03-29 03:52:08.737] [load-balancer] [DEBUG] [BALANCE] Demand=2770MW Allocated=2770MW Overloaded_zones=0
+[2026-03-29 03:52:20.812] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=south mode=reduce excess=66.87MW
+[2026-03-29 03:52:25.861] [load-balancer] [DEBUG] [BALANCE] Demand=2903MW Allocated=2234MW Overloaded_zones=1
+[2026-03-29 03:52:34.597] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 03:52:37.191] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 03:52:40.990] [load-balancer] [DEBUG] [BALANCE] Demand=2793MW Allocated=2793MW Overloaded_zones=0

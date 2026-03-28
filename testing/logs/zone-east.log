@@ -2,3 +2,6 @@
 [2026-03-29 03:45:32.629] [zone-east] [WARNING] [INJECT] current_surge in east
 [2026-03-29 03:46:24.077] [zone-east] [WARNING] [INJECT] current_surge in east
 [2026-03-29 03:46:27.211] [zone-east] [INFO] [SHED-LOAD] Shed 94.64301746572862MW in east
+[2026-03-29 03:48:09.644] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-29 03:48:41.246] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-29 03:48:47.359] [zone-east] [INFO] [SHED-LOAD] Shed 103.34000000000002MW in east

@@ -1,2 +1,4 @@
 [2026-03-29 03:44:46.030] [zone-south] [INFO] Starting zone-south on port 5004 (zone=south)
 [2026-03-29 03:49:11.121] [zone-south] [WARNING] [INJECT] current_surge in south
+[2026-03-29 03:52:15.778] [zone-south] [WARNING] [INJECT] current_surge in south
+[2026-03-29 03:52:20.810] [zone-south] [INFO] [SHED-LOAD] Shed 66.87MW in south
