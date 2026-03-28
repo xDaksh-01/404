@@ -1,0 +1,308 @@
+services:
+  grid-controller:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/grid-controller/app.py
+    environment: &service_hosts
+      GRID_CONTROLLER_HOST: grid-controller
+      TRANSFORMER_HOST: transformer
+      ZONE_NORTH_HOST: zone-north
+      ZONE_SOUTH_HOST: zone-south
+      ZONE_EAST_HOST: zone-east
+      ZONE_WEST_HOST: zone-west
+      ZONE_CENTRAL_HOST: zone-central
+      LOAD_BALANCER_HOST: load-balancer
+      VOLTAGE_REGULATOR_HOST: voltage-regulator
+      FAULT_DETECTION_HOST: fault-detection
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck: &python_health
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5001/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  transformer:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/transformer/app.py
+    environment: *service_hosts
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5002/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  zone-north:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/zone-north/app.py
+    environment: *service_hosts
+    ports:
+      - "5003:5003"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5003/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  zone-south:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/zone-south/app.py
+    environment: *service_hosts
+    ports:
+      - "5004:5004"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5004/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  zone-east:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/zone-east/app.py
+    environment: *service_hosts
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5005/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  zone-west:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/zone-west/app.py
+    environment: *service_hosts
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5006/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  zone-central:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/zone-central/app.py
+    environment: *service_hosts
+    ports:
+      - "5007:5007"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5007/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  load-balancer:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/load-balancer/app.py
+    environment: *service_hosts
+    ports:
+      - "5008:5008"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5008/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  voltage-regulator:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/voltage-regulator/app.py
+    environment: *service_hosts
+    ports:
+      - "5009:5009"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5009/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  fault-detection:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python services/fault-detection/app.py
+    environment: *service_hosts
+    ports:
+      - "5010:5010"
+    volumes:
+      - ./testing/logs:/app/testing/logs
+      - ./ml/models:/app/ml/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5010/health', timeout=2)"]
+      interval: 10s
+      timeout: 4s
+      retries: 12
+      start_period: 20s
+
+  ml-trainer:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python ml/train_model.py
+    environment: *service_hosts
+    volumes:
+      - ./ml/models:/app/ml/models
+      - ./testing/logs:/app/testing/logs
+    restart: "no"
+
+  ml-anomaly-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    command: python ml/run_anomaly_detector.py
+    environment: *service_hosts
+    depends_on:
+      ml-trainer:
+        condition: service_completed_successfully
+      grid-controller:
+        condition: service_healthy
+      transformer:
+        condition: service_healthy
+      zone-north:
+        condition: service_healthy
+      zone-south:
+        condition: service_healthy
+      zone-east:
+        condition: service_healthy
+      zone-west:
+        condition: service_healthy
+      zone-central:
+        condition: service_healthy
+      load-balancer:
+        condition: service_healthy
+      voltage-regulator:
+        condition: service_healthy
+      fault-detection:
+        condition: service_healthy
+    volumes:
+      - ./ml/models:/app/ml/models
+      - ./testing/logs:/app/testing/logs
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      grid-controller:
+        condition: service_healthy
+      transformer:
+        condition: service_healthy
+      zone-north:
+        condition: service_healthy
+      zone-south:
+        condition: service_healthy
+      zone-east:
+        condition: service_healthy
+      zone-west:
+        condition: service_healthy
+      zone-central:
+        condition: service_healthy
+      load-balancer:
+        condition: service_healthy
+      voltage-regulator:
+        condition: service_healthy
+      fault-detection:
+        condition: service_healthy
+    ports:
+      - "3000:80"
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    depends_on:
+      grid-controller:
+        condition: service_healthy
+      transformer:
+        condition: service_healthy
+      zone-north:
+        condition: service_healthy
+      zone-south:
+        condition: service_healthy
+      zone-east:
+        condition: service_healthy
+      zone-west:
+        condition: service_healthy
+      zone-central:
+        condition: service_healthy
+      load-balancer:
+        condition: service_healthy
+      voltage-regulator:
+        condition: service_healthy
+      fault-detection:
+        condition: service_healthy
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    volumes:
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    depends_on:
+      prometheus:
+        condition: service_started
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./observability/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+    ports:
+      - "3001:3000"

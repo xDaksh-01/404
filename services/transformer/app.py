@@ -29,6 +29,7 @@ SERVICE_NAME = "transformer"
 PORT = 5002
 START_TIME = time.time()
 logger = setup_logger(SERVICE_NAME)
+GRID_CONTROLLER_HOST = os.getenv("GRID_CONTROLLER_HOST", "localhost")
 
 # ─── Transformer definitions ────────────────────────────────────────────────────
 TRANSFORMER_SPECS = [
@@ -139,7 +140,7 @@ def simulate():
                 # Alert if critical
                 if t["status"] == "critical":
                     try:
-                        requests.post("http://localhost:5001/alert", json={
+                        requests.post(f"http://{GRID_CONTROLLER_HOST}:5001/alert", json={
                             "severity": "critical",
                             "service": SERVICE_NAME,
                             "component": tid,

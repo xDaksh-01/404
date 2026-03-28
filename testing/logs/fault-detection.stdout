@@ -1,8 +1,74 @@
-[2026-03-28 10:56:48.606] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-28 13:32:30.989] [fault-detection] [INFO] Starting fault-detection on port 5010
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5010
- * Running on http://10.12.15.75:5010
+ * Running on http://10.39.1.210:5010
 Press CTRL+C to quit
+127.0.0.1 - - [28/Mar/2026 13:32:38] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:53] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:04] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:29] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:44] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:54] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:20] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:34] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:45] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:10] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:36] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:01] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:26] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:39:28] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:38] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:11:47] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:22] "GET /health HTTP/1.1" 200 -

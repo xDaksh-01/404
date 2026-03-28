@@ -24,6 +24,23 @@ ZONE_PORTS = {
     "north": 5003, "south": 5004, "east": 5005,
     "west": 5006, "central": 5007,
 }
+PORT_TO_ZONE = {port: zone for zone, port in ZONE_PORTS.items()}
+ZONE_HOSTS = {
+    "north": os.getenv("ZONE_NORTH_HOST", "localhost"),
+    "south": os.getenv("ZONE_SOUTH_HOST", "localhost"),
+    "east": os.getenv("ZONE_EAST_HOST", "localhost"),
+    "west": os.getenv("ZONE_WEST_HOST", "localhost"),
+    "central": os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+}
+GRID_CONTROLLER_HOST = os.getenv("GRID_CONTROLLER_HOST", "localhost")
+TRANSFORMER_HOST = os.getenv("TRANSFORMER_HOST", "localhost")
+LOAD_BALANCER_HOST = os.getenv("LOAD_BALANCER_HOST", "localhost")
+VOLTAGE_REGULATOR_HOST = os.getenv("VOLTAGE_REGULATOR_HOST", "localhost")
+FAULT_DETECTION_HOST = os.getenv("FAULT_DETECTION_HOST", "localhost")
+
+
+def zone_url(zone: str, path: str) -> str:
+    return f"http://{ZONE_HOSTS[zone]}:{ZONE_PORTS[zone]}{path}"
 
 
 class RemediationEngine:
@@ -81,7 +98,7 @@ class RemediationEngine:
             "status":            "EXECUTING",
         }
         try:
-            requests.post("http://127.0.0.1:5001/remediation-log",
+            requests.post(f"http://{GRID_CONTROLLER_HOST}:5001/remediation-log",
                           json=remediation_record, timeout=2)
         except Exception:
             pass
@@ -99,7 +116,7 @@ class RemediationEngine:
             # Check temperature for decision
             current_temp = 0
             try:
-                r = requests.get(f"http://127.0.0.1:5002/transformer/{transformer_id}", timeout=1)
+                r = requests.get(f"http://{TRANSFORMER_HOST}:5002/transformer/{transformer_id}", timeout=1)
                 if r.status_code == 200:
                     current_temp = r.json().get("temperature_c", 0)
             except: pass
@@ -139,7 +156,7 @@ class RemediationEngine:
             "total_time_s":  round(total_time, 2),
         })
         try:
-            requests.post("http://127.0.0.1:5001/remediation-log",
+            requests.post(f"http://{GRID_CONTROLLER_HOST}:5001/remediation-log",
                           json=remediation_record, timeout=2)
         except Exception:
             pass
@@ -150,18 +167,19 @@ class RemediationEngine:
         actions = []
         url = ""
         if comp_type == "transformer":
-            url = f"http://localhost:5002/transformer/{comp_id}/restart"
+            url = f"http://{TRANSFORMER_HOST}:5002/transformer/{comp_id}/restart"
         else:
             # zone
             zone_port = ZONE_PORTS.get(comp_id, 5007)
-            url = f"http://localhost:{zone_port}/restart"
+            zone_host = ZONE_HOSTS.get(comp_id, "localhost")
+            url = f"http://{zone_host}:{zone_port}/restart"
         
         r = self._post(url, {})
         actions.append({"action": "component_restart", "target": comp_id, 
                         "success": r is not None})
         
         # Also alert
-        self._post("http://localhost:5001/alert", {
+        self._post(f"http://{GRID_CONTROLLER_HOST}:5001/alert", {
             "severity": "info", "service": "remediation-engine",
             "message": f"System reboot initiated for {comp_id} to resolve {comp_type} issues."})
         
@@ -170,23 +188,24 @@ class RemediationEngine:
     def _voltage_instability(self, zone: str) -> list:
         actions = []
         # For surges or instability, lock and attempt capacitor discharge
-        r = self._post("http://localhost:5009/tap-changer/lock", {"zone": zone})
+        r = self._post(f"http://{VOLTAGE_REGULATOR_HOST}:5009/tap-changer/lock", {"zone": zone})
         actions.append({"action": "lock_tap_changer", "target": zone, "success": r is not None})
         # If high voltage surge, we should actually ensure capacitors are OFF
-        r = self._post("http://localhost:5009/capacitor-bank/deactivate", {"zone": zone})
+        r = self._post(f"http://{VOLTAGE_REGULATOR_HOST}:5009/capacitor-bank/deactivate", {"zone": zone})
         actions.append({"action": "deactivate_capacitor_surge_protection", "target": zone, "success": r is not None})
         return actions
 
     def _earth_fault(self, zone_port: int, feeder_id: str) -> list:
         actions = []
+        zone = PORT_TO_ZONE.get(zone_port, "central")
         # Parse zone and feeder from feeder_id (e.g. "central-feeder-1")
         parts = feeder_id.split("-")
         feeder_name = "-".join(parts[1:]) if len(parts) > 1 else feeder_id
-        r = self._post(f"http://localhost:{zone_port}/feeder/{feeder_name}/isolate", {})
+        r = self._post(zone_url(zone, f"/feeder/{feeder_name}/isolate"), {})
         actions.append({"action": "isolate_feeder", "target": feeder_id, "success": r is not None})
-        r = self._post(f"http://localhost:{zone_port}/feeder/backup/activate", {})
+        r = self._post(zone_url(zone, "/feeder/backup/activate"), {})
         actions.append({"action": "activate_backup", "target": zone_port, "success": r is not None})
-        self._post("http://localhost:5001/alert", {
+        self._post(f"http://{GRID_CONTROLLER_HOST}:5001/alert", {
             "severity": "critical", "service": "remediation-engine",
             "message": f"Earth fault isolated: {feeder_id}"})
         actions.append({"action": "alert_sent", "target": "grid-controller", "success": True})
@@ -194,22 +213,22 @@ class RemediationEngine:
 
     def _feeder_overload(self, zone: str, zone_port: int) -> list:
         actions = []
-        r = self._post(f"http://localhost:{zone_port}/shed-load", {"amount_mw": 150})
+        r = self._post(zone_url(zone, "/shed-load"), {"amount_mw": 150})
         actions.append({"action": "heavy_load_shed", "target": zone, "success": r is not None})
-        r = self._post("http://localhost:5008/emergency-rebalance",
+        r = self._post(f"http://{LOAD_BALANCER_HOST}:5008/emergency-rebalance",
                        {"zone": zone, "excess_mw": 200, "mode": "reduce"})
         actions.append({"action": "emergency_rebalance_zones", "target": zone, "success": r is not None})
         return actions
 
     def _cascading_overload(self) -> list:
         actions = []
-        r = self._post("http://localhost:5008/load-shedding/activate", {
+        r = self._post(f"http://{LOAD_BALANCER_HOST}:5008/load-shedding/activate", {
             "priority": ["industrial", "commercial", "residential"],
             "target_reduction_mw": 300
         })
         actions.append({"action": "load_shedding_industrial_first", "target": "all_zones",
                         "success": r is not None})
-        r = self._post("http://localhost:5002/emergency-reduce",
+        r = self._post(f"http://{TRANSFORMER_HOST}:5002/emergency-reduce",
                        {"all_zones": True, "reduce_by_percent": 15})
         actions.append({"action": "emergency_reduce_transformers", "target": "all",
                         "success": r is not None})
@@ -217,11 +236,11 @@ class RemediationEngine:
 
     def _substation_trip(self, zone: str, zone_port: int) -> list:
         actions = []
-        r = self._post(f"http://localhost:{zone_port}/feeder/restore",
+        r = self._post(zone_url(zone, "/feeder/restore"),
                        {"feeders": ["feeder-1", "feeder-3"]})
         actions.append({"action": "restore_healthy_feeders", "target": zone,
                         "success": r is not None})
-        r = self._post("http://localhost:5008/emergency-rebalance",
+        r = self._post(f"http://{LOAD_BALANCER_HOST}:5008/emergency-rebalance",
                        {"zone": zone, "mode": "restore"})
         actions.append({"action": "emergency_rebalance_restore", "target": zone,
                         "success": r is not None})
@@ -229,11 +248,11 @@ class RemediationEngine:
 
     def _cooling_fan_failure(self, transformer_id: str) -> list:
         actions = []
-        r = self._post(f"http://localhost:5002/transformer/{transformer_id}/load-limit",
+        r = self._post(f"http://{TRANSFORMER_HOST}:5002/transformer/{transformer_id}/load-limit",
                        {"max_load_percent": 60})
         actions.append({"action": "set_load_limit_60pct", "target": transformer_id,
                         "success": r is not None})
-        r = self._post("http://localhost:5008/reroute",
+        r = self._post(f"http://{LOAD_BALANCER_HOST}:5008/reroute",
                        {"from_transformer": transformer_id, "amount_mw": 40})
         actions.append({"action": "reroute_excess_load", "target": transformer_id,
                         "success": r is not None})
@@ -241,22 +260,23 @@ class RemediationEngine:
 
     def _arc_fault(self, zone_port: int, feeder_id: str) -> list:
         actions = []
+        zone = PORT_TO_ZONE.get(zone_port, "central")
         parts = feeder_id.split("-")
         feeder_name = "-".join(parts[1:]) if len(parts) > 1 else feeder_id
-        r = self._post(f"http://localhost:{zone_port}/feeder/{feeder_name}/de-energize", {})
+        r = self._post(zone_url(zone, f"/feeder/{feeder_name}/de-energize"), {})
         actions.append({"action": "de_energize_feeder", "target": feeder_id,
                         "success": r is not None})
-        r = self._post(f"http://localhost:5010/feeder/{feeder_id}/flag-maintenance", {})
+        r = self._post(f"http://{FAULT_DETECTION_HOST}:5010/feeder/{feeder_id}/flag-maintenance", {})
         actions.append({"action": "flag_maintenance", "target": feeder_id,
                         "success": r is not None})
         return actions
 
     def _reactive_power_collapse(self, zone: str, zone_port: int) -> list:
         actions = []
-        r = self._post("http://localhost:5009/reactive-compensation/maximum", {"zone": zone})
+        r = self._post(f"http://{VOLTAGE_REGULATOR_HOST}:5009/reactive-compensation/maximum", {"zone": zone})
         actions.append({"action": "max_reactive_compensation", "target": zone,
                         "success": r is not None})
-        r = self._post(f"http://localhost:{zone_port}/inductive-loads/shed",
+        r = self._post(zone_url(zone, "/inductive-loads/shed"),
                        {"target_kvar_reduction": 400})
         actions.append({"action": "shed_inductive_loads", "target": zone,
                         "success": r is not None})
@@ -264,11 +284,11 @@ class RemediationEngine:
 
     def _transmission_bottleneck(self) -> list:
         actions = []
-        r = self._post("http://localhost:5008/reroute",
+        r = self._post(f"http://{LOAD_BALANCER_HOST}:5008/reroute",
                        {"alternate_path": True, "split_load": True})
         actions.append({"action": "reroute_alternate_path", "target": "load-balancer",
                         "success": r is not None})
-        r = self._post("http://localhost:5002/distribute",
+        r = self._post(f"http://{TRANSFORMER_HOST}:5002/distribute",
                        {"rebalance_type": "bottleneck_relief"})
         actions.append({"action": "distribute_transformer_load", "target": "transformer",
                         "success": r is not None})
@@ -281,14 +301,14 @@ class RemediationEngine:
         try:
             if fault_type == "transformer_overload":
                 tid = context.get("transformer_id", "T1")
-                r = requests.get(f"http://127.0.0.1:5002/transformer/{tid}", timeout=2)
+                r = requests.get(f"http://{TRANSFORMER_HOST}:5002/transformer/{tid}", timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("temperature_c", 999) < 85 and d.get("load_percent", 999) < 95
                     return ok, {"temp": d.get("temperature_c"), "load": d.get("load_percent")}
 
             elif fault_type in ("voltage_overload", "voltage_spike"):
-                r = requests.get("http://127.0.0.1:5009/status", timeout=2)
+                r = requests.get(f"http://{VOLTAGE_REGULATOR_HOST}:5009/status", timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = abs(d.get("grid_voltage_avg_v", 230) - 230) < 8
@@ -297,7 +317,7 @@ class RemediationEngine:
             elif fault_type == "current_surge":
                 zone = context.get("zone", "central")
                 zone_port = ZONE_PORTS.get(zone, 5007)
-                r = requests.get(f"http://127.0.0.1:{zone_port}/status", timeout=2)
+                r = requests.get(zone_url(zone, "/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     # Current surge is resolved if load is back below 85%
@@ -305,7 +325,7 @@ class RemediationEngine:
                     return ok, {"load_percent": d.get("load_percent")}
 
             elif fault_type == "power_redistribution":
-                r = requests.get("http://127.0.0.1:5008/status", timeout=2)
+                r = requests.get(f"http://{LOAD_BALANCER_HOST}:5008/status", timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("zones_overloaded_count", 5) == 0
@@ -314,7 +334,7 @@ class RemediationEngine:
             elif fault_type == "rebooting_overheat":
                 zone = context.get("zone", "central")
                 zone_port = ZONE_PORTS.get(zone, 5007)
-                r = requests.get(f"http://localhost:{zone_port}/status", timeout=2)
+                r = requests.get(zone_url(zone, "/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
                     ok = d.get("substation_status") == "healthy"

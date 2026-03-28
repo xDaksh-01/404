@@ -34,6 +34,7 @@ SERVICE_NAME = f"zone-{ZONE_CFG.ZONE_NAME}"
 PORT = ZONE_CFG.PORT
 START_TIME = time.time()
 logger = setup_logger(SERVICE_NAME)
+GRID_CONTROLLER_HOST = os.getenv("GRID_CONTROLLER_HOST", "localhost")
 
 # ─── State ─────────────────────────────────────────────────────────────────────
 state_lock = threading.Lock()
@@ -135,7 +136,7 @@ def simulate():
 def _alert(severity, message):
     """Non-blocking alert to grid controller."""
     try:
-        requests.post("http://localhost:5001/alert", json={
+        requests.post(f"http://{GRID_CONTROLLER_HOST}:5001/alert", json={
             "severity": severity,
             "service": SERVICE_NAME,
             "zone": ZONE_CFG.ZONE_NAME,

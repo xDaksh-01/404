@@ -36,6 +36,41 @@ SERVICE_NAME = "grid-controller"
 PORT = 5001
 START_TIME = time.time()
 
+SERVICE_PORTS = {
+    "grid-controller": 5001,
+    "transformer": 5002,
+    "zone-north": 5003,
+    "zone-south": 5004,
+    "zone-east": 5005,
+    "zone-west": 5006,
+    "zone-central": 5007,
+    "load-balancer": 5008,
+    "voltage-regulator": 5009,
+    "fault-detection": 5010,
+}
+SERVICE_HOSTS = {
+    "grid-controller": os.getenv("GRID_CONTROLLER_HOST", "localhost"),
+    "transformer": os.getenv("TRANSFORMER_HOST", "localhost"),
+    "zone-north": os.getenv("ZONE_NORTH_HOST", "localhost"),
+    "zone-south": os.getenv("ZONE_SOUTH_HOST", "localhost"),
+    "zone-east": os.getenv("ZONE_EAST_HOST", "localhost"),
+    "zone-west": os.getenv("ZONE_WEST_HOST", "localhost"),
+    "zone-central": os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+    "load-balancer": os.getenv("LOAD_BALANCER_HOST", "localhost"),
+    "voltage-regulator": os.getenv("VOLTAGE_REGULATOR_HOST", "localhost"),
+    "fault-detection": os.getenv("FAULT_DETECTION_HOST", "localhost"),
+}
+PORT_TO_SERVICE = {port: name for name, port in SERVICE_PORTS.items()}
+
+
+def service_url(service_name: str, path: str) -> str:
+    return f"http://{SERVICE_HOSTS[service_name]}:{SERVICE_PORTS[service_name]}{path}"
+
+
+def service_url_by_port(port: int, path: str) -> str:
+    service_name = PORT_TO_SERVICE[port]
+    return service_url(service_name, path)
+
 ZONE_PORTS = {
     "north": 5003, "south": 5004, "east": 5005,
     "west": 5006, "central": 5007,
@@ -82,7 +117,7 @@ def poll_services():
             # ── Node 1: Infrastructure (Transformer 5002) ──────────────────
             node1 = 0
             try:
-                r = requests.get("http://localhost:5002/status", timeout=2)
+                r = requests.get(service_url("transformer", "/status"), timeout=2)
                 if r.status_code == 200:
                     data = r.json()
                     ts = data.get("transformers", [])
@@ -95,7 +130,7 @@ def poll_services():
             node2 = 1
             for zp in [5003, 5004, 5005, 5006, 5007]:
                 try:
-                    r = requests.get(f"http://localhost:{zp}/health", timeout=1)
+                    r = requests.get(service_url_by_port(zp, "/health"), timeout=1)
                     if r.status_code != 200:
                         node2 = 0
                         break
@@ -106,13 +141,13 @@ def poll_services():
             # ── Node 3-5: Optimization, Stability, Security ─────────────
             node3 = node4 = node5 = 0
             try:
-                if requests.get("http://localhost:5008/health", timeout=1).status_code == 200: node3 = 1
+                if requests.get(service_url("load-balancer", "/health"), timeout=1).status_code == 200: node3 = 1
             except: pass
             try:
-                if requests.get("http://localhost:5009/health", timeout=1).status_code == 200: node4 = 1
+                if requests.get(service_url("voltage-regulator", "/health"), timeout=1).status_code == 200: node4 = 1
             except: pass
             try:
-                if requests.get("http://localhost:5010/health", timeout=1).status_code == 200: node5 = 1
+                if requests.get(service_url("fault-detection", "/health"), timeout=1).status_code == 200: node5 = 1
             except: pass
 
             online = node1 + node2 + node3 + node4 + node5
@@ -121,7 +156,7 @@ def poll_services():
             zone_loads = []
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(service_url_by_port(port, "/status"), timeout=2)
                     if r.status_code == 200:
                         data = r.json()
                         zone_loads.append(data.get("current_load_mw", 0))
@@ -231,9 +266,9 @@ def metrics_summary():
 
     # Poll sub-services in parallel to avoid timeout (Frontend has 3s limit)
     targets = [
-        ("tr", "http://127.0.0.1:5002/status", 1.5),
-        ("lb", "http://127.0.0.1:5008/status", 1.2),
-        ("vr", "http://127.0.0.1:5009/status", 1.2),
+        ("tr", service_url("transformer", "/status"), 1.5),
+        ("lb", service_url("load-balancer", "/status"), 1.2),
+        ("vr", service_url("voltage-regulator", "/status"), 1.2),
     ]
 
     from concurrent.futures import ThreadPoolExecutor
@@ -372,7 +407,7 @@ def stop_simulation():
     # Reset all components
     for port in [5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010]:
         try:
-            requests.get(f"http://localhost:{port}/demo/reset", timeout=1)
+            requests.get(service_url_by_port(port, "/demo/reset"), timeout=1)
         except Exception:
             pass
             

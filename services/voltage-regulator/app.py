@@ -30,6 +30,17 @@ START_TIME = time.time()
 logger = setup_logger(SERVICE_NAME)
 
 ZONE_PORTS = {"north": 5003, "south": 5004, "east": 5005, "west": 5006, "central": 5007}
+ZONE_HOSTS = {
+    "north": os.getenv("ZONE_NORTH_HOST", "localhost"),
+    "south": os.getenv("ZONE_SOUTH_HOST", "localhost"),
+    "east": os.getenv("ZONE_EAST_HOST", "localhost"),
+    "west": os.getenv("ZONE_WEST_HOST", "localhost"),
+    "central": os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+}
+
+
+def zone_url(zone: str, path: str) -> str:
+    return f"http://{ZONE_HOSTS[zone]}:{ZONE_PORTS[zone]}{path}"
 
 state_lock = threading.Lock()
 state = {
@@ -73,7 +84,7 @@ def poll_and_regulate():
 
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(zone_url(zone, "/status"), timeout=2)
                     if r.status_code == 200:
                         d = r.json()
                         v_avg = d.get("voltage_avg_v", 230)
@@ -109,7 +120,7 @@ def poll_and_regulate():
                                     logger.info(f"[TAP] {zone}: tap raised to {zp['tap_position']}")
                                     # Notify zone
                                     try:
-                                        requests.post(f"http://localhost:{port}/tap-change", 
+                                        requests.post(zone_url(zone, "/tap-change"), 
                                                       json={"position": zp["tap_position"]}, timeout=1)
                                     except: pass
                                 elif v_avg > 233 and zp["tap_position"] > -4:
@@ -118,7 +129,7 @@ def poll_and_regulate():
                                     logger.info(f"[TAP] {zone}: tap lowered to {zp['tap_position']}")
                                     # Notify zone
                                     try:
-                                        requests.post(f"http://localhost:{port}/tap-change", 
+                                        requests.post(zone_url(zone, "/tap-change"), 
                                                       json={"position": zp["tap_position"]}, timeout=1)
                                     except: pass
 
@@ -226,7 +237,7 @@ def activate_capacitor():
     # Also activate on the zone service
     if zone and zone in ZONE_PORTS:
         try:
-            requests.post(f"http://localhost:{ZONE_PORTS[zone]}/capacitor-bank/activate",
+            requests.post(zone_url(zone, "/capacitor-bank/activate"),
                           timeout=2)
         except Exception:
             pass

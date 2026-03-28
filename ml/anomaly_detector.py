@@ -31,17 +31,30 @@ logger = setup_logger("ml-anomaly-detector")
 
 MODELS_DIR = os.path.join(ROOT, "ml", "models")
 
+SERVICE_HOSTS = {
+    "grid_controller": os.getenv("GRID_CONTROLLER_HOST", "localhost"),
+    "transformer": os.getenv("TRANSFORMER_HOST", "localhost"),
+    "zone_north": os.getenv("ZONE_NORTH_HOST", "localhost"),
+    "zone_south": os.getenv("ZONE_SOUTH_HOST", "localhost"),
+    "zone_east": os.getenv("ZONE_EAST_HOST", "localhost"),
+    "zone_west": os.getenv("ZONE_WEST_HOST", "localhost"),
+    "zone_central": os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+    "load_balancer": os.getenv("LOAD_BALANCER_HOST", "localhost"),
+    "voltage_regulator": os.getenv("VOLTAGE_REGULATOR_HOST", "localhost"),
+    "fault_detection": os.getenv("FAULT_DETECTION_HOST", "localhost"),
+}
+
 SERVICE_URLS = {
-    "transformer":       "http://localhost:5002/status",
-    "zone_north":        "http://localhost:5003/status",
-    "zone_south":        "http://localhost:5004/status",
-    "zone_east":         "http://localhost:5005/status",
-    "zone_west":         "http://localhost:5006/status",
-    "zone_central":      "http://localhost:5007/status",
-    "load_balancer":     "http://localhost:5008/status",
-    "voltage_regulator": "http://localhost:5009/status",
-    "fault_detection":   "http://localhost:5010/status",
-    "grid_controller":   "http://localhost:5001/status",
+    "transformer":       f"http://{SERVICE_HOSTS['transformer']}:5002/status",
+    "zone_north":        f"http://{SERVICE_HOSTS['zone_north']}:5003/status",
+    "zone_south":        f"http://{SERVICE_HOSTS['zone_south']}:5004/status",
+    "zone_east":         f"http://{SERVICE_HOSTS['zone_east']}:5005/status",
+    "zone_west":         f"http://{SERVICE_HOSTS['zone_west']}:5006/status",
+    "zone_central":      f"http://{SERVICE_HOSTS['zone_central']}:5007/status",
+    "load_balancer":     f"http://{SERVICE_HOSTS['load_balancer']}:5008/status",
+    "voltage_regulator": f"http://{SERVICE_HOSTS['voltage_regulator']}:5009/status",
+    "fault_detection":   f"http://{SERVICE_HOSTS['fault_detection']}:5010/status",
+    "grid_controller":   f"http://{SERVICE_HOSTS['grid_controller']}:5001/status",
 }
 
 from concurrent.futures import ThreadPoolExecutor
@@ -217,7 +230,7 @@ def run_inference_loop(poll_interval: float = 5.0, once: bool = False):
 
                 # Post to grid controller alert log
                 try:
-                    requests.post("http://127.0.0.1:5001/alert", json={
+                    requests.post(f"http://{SERVICE_HOSTS['grid_controller']}:5001/alert", json={
                         "severity": "CRITICAL",
                         "service":  "ml-anomaly-detector",
                         "fault_type": fault_type,

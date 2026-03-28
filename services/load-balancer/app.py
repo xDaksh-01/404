@@ -29,6 +29,18 @@ logger = setup_logger(SERVICE_NAME)
 
 ZONE_PORTS = {"north": 5003, "south": 5004, "east": 5005, "west": 5006, "central": 5007}
 ZONE_PEAK_MW = {"north": 950, "south": 780, "east": 1100, "west": 820, "central": 1050}
+ZONE_HOSTS = {
+    "north": os.getenv("ZONE_NORTH_HOST", "localhost"),
+    "south": os.getenv("ZONE_SOUTH_HOST", "localhost"),
+    "east": os.getenv("ZONE_EAST_HOST", "localhost"),
+    "west": os.getenv("ZONE_WEST_HOST", "localhost"),
+    "central": os.getenv("ZONE_CENTRAL_HOST", "localhost"),
+}
+LOAD_BALANCER_HOST = os.getenv("LOAD_BALANCER_HOST", "localhost")
+
+
+def zone_url(zone: str, path: str) -> str:
+    return f"http://{ZONE_HOSTS[zone]}:{ZONE_PORTS[zone]}{path}"
 
 state_lock = threading.Lock()
 state = {
@@ -69,7 +81,7 @@ def poll_zones():
 
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(zone_url(zone, "/status"), timeout=2)
                     if r.status_code == 200:
                         d = r.json()
                         demand = d.get("current_load_mw", 0)
@@ -80,7 +92,7 @@ def poll_zones():
                         if lp > 85:
                             overloaded += 1
                             # Autonomously request rebalance
-                            requests.post(f"http://localhost:5008/emergency-rebalance", 
+                            requests.post(f"http://{LOAD_BALANCER_HOST}:5008/emergency-rebalance", 
                                           json={"zone": zone, "mode": "reduce", "excess_mw": demand * 0.1},
                                           timeout=1)
 
@@ -165,7 +177,7 @@ def emergency_rebalance():
         for z, port in ZONE_PORTS.items():
             if z != zone:
                 try:
-                    requests.post(f"http://localhost:{port}/feeder/restore",
+                    requests.post(zone_url(z, "/feeder/restore"),
                                   json={"feeders": [f"feeder-{i}" for i in range(1, 4)]},
                                   timeout=2)
                 except Exception:
@@ -174,7 +186,7 @@ def emergency_rebalance():
         # Shed load from overloaded zone
         if zone and zone in ZONE_PORTS:
             try:
-                requests.post(f"http://localhost:{ZONE_PORTS[zone]}/shed-load",
+                requests.post(zone_url(zone, "/shed-load"),
                               json={"amount_mw": excess_mw}, timeout=2)
             except Exception:
                 pass
@@ -232,7 +244,7 @@ def activate_load_shedding():
     # Shed from all zones
     for z, port in ZONE_PORTS.items():
         try:
-            requests.post(f"http://localhost:{port}/shed-load",
+            requests.post(zone_url(z, "/shed-load"),
                           json={"amount_mw": target_mw / 5}, timeout=2)
         except Exception:
             pass

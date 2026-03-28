@@ -1,9 +1,292 @@
-[2026-03-28 10:56:48.307] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
+[2026-03-28 13:32:30.696] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5009
- * Running on http://10.12.15.75:5009
+ * Running on http://10.39.1.210:5009
 Press CTRL+C to quit
-[2026-03-28 10:56:50.329] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+[2026-03-28 13:32:32.743] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+127.0.0.1 - - [28/Mar/2026 13:32:37] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:32:37.809] [voltage-regulator] [INFO] [TAP] east: tap raised to 1
+[2026-03-28 13:32:40.853] [voltage-regulator] [INFO] [TAP] west: tap raised to 1
+127.0.0.1 - - [28/Mar/2026 13:32:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:42] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:32:43.900] [voltage-regulator] [INFO] [TAP] central: tap raised to 1
+127.0.0.1 - - [28/Mar/2026 13:32:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:51] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:32:53.955] [voltage-regulator] [INFO] [TAP] south: tap raised to 1
+127.0.0.1 - - [28/Mar/2026 13:32:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:32:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:00] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:01.045] [voltage-regulator] [INFO] [TAP] central: tap raised to 2
+[2026-03-28 13:33:02.091] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:02] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:03] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:03] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:04.168] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:04] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:07] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:09.210] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:09] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:09] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:11.264] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:11] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:15] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:16.310] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:16] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-28 13:33:18.366] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:18] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:21] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:23.434] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:23] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:24] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:25.506] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:25] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:28] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:28] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:30.516] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:30] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:30] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:30.982] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+127.0.0.1 - - [28/Mar/2026 13:33:30] "POST /demo/inject HTTP/1.1" 200 -
+[2026-03-28 13:33:32.553] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:32] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:42] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:42] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:44.839] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:44] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:45] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:46.890] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:46] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:48] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:48.518] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+127.0.0.1 - - [28/Mar/2026 13:33:48] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:51] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:33:51.975] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:51] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:53] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:33:54.043] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:33:54] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:33:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:01] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:03.660] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:03] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:03] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:05.703] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:05] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:09] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:10.783] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:10] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:12.836] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:12] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:19] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:30] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:32.135] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:32] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:32] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:33] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:34.201] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:34] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:37] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:39.266] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:39] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:39] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:41.305] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:41] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:44] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:51] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:53.657] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:53] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:54] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:34:55.724] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:34:55] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:34:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:09] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:09] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:11.071] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+127.0.0.1 - - [28/Mar/2026 13:35:11] "POST /demo/inject HTTP/1.1" 200 -
+[2026-03-28 13:35:12.029] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:12] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:14.087] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:14] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:18] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:19.199] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:19] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-28 13:35:21.247] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:21] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:22] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:24] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:26.317] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:26] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:27] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:28.392] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:28] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:35] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:42] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:44.637] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:44] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:45] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:46.709] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:46] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:35:57] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:35:59.210] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:35:59] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:00] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:00] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:36:01.269] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:36:01] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:12] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:36:13.530] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:36:13] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-28 13:36:15.581] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:36:15] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:25] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:36:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:39:27] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:33] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:40:36.163] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:40:36] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:36] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:40:38.443] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:40:38] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:50] "GET /health HTTP/1.1" 200 -
+[2026-03-28 13:40:51.299] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:40:51] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-28 13:40:53.347] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:40:53] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:40:56] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:40:58.482] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=west
+127.0.0.1 - - [28/Mar/2026 13:40:58] "POST /tap-changer/lock HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:00] "GET /status HTTP/1.1" 200 -
+[2026-03-28 13:41:00.516] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=west
+127.0.0.1 - - [28/Mar/2026 13:41:00] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 13:41:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:11:46] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:20] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 14:52:24] "GET /status HTTP/1.1" 200 -
