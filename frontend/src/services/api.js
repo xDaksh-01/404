@@ -26,7 +26,7 @@ async function get(base, path) {
 
 export const api = {
   gridSummary:     () => get(BASE.gc, '/metrics/summary'),
-  alerts:          (n=50) => get(BASE.gc, `/alerts?limit=${n}`),
+  alerts:          (n=50, includeResolved=true) => get(BASE.gc, `/alerts?limit=${n}&include_resolved=${includeResolved}`),
   remediationLog:  (n=20) => get(BASE.gc, `/remediation-log?limit=${n}`),
   transformers:    () => get(BASE.tr, '/status'),
   zoneNorth:       () => get(BASE.zn, '/status'),

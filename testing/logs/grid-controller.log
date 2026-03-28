@@ -1448,3 +1448,141 @@
 [2026-03-28 17:30:30.848] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.6°C, load=95.5%)
 [2026-03-28 17:30:31.875] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.2°C, load=99.7%)
 [2026-03-28 17:30:37.910] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.9°C, load=97.5%)
+[2026-03-28 16:40:22.212] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 16:40:44.154] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:40:49.178] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:40:59.255] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:41:14.470] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:41:29.645] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:01.273] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 16:54:08.212] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:20.738] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:28.095] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:35.461] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:42.793] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:54:55.263] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:55:07.900] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:55:20.462] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 16:55:32.878] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:03:05.358] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:03:12.141] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:03:27.329] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:03:42.439] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:03:57.564] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:04:12.694] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:04:27.888] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:06:58.323] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:07:30.506] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:07:47.218] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:07:54.412] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:08:32.926] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:09:00.197] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:09:05.173] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:09:20.309] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:09:31.677] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:09:43.434] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:09:58.572] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:10:13.686] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:10:49.401] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:11:21.390] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:11:36.610] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:12:24.871] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:12:36.848] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:12:51.969] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:13:07.151] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:13:20.382] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:13:47.459] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:14:02.561] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:14:17.728] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:17:19.139] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:17:26.147] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:17:41.374] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:17:56.546] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:18:50.684] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:19:03.309] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:19:18.421] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:19:33.556] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:19:38.607] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:19:48.646] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:20:03.745] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:20:18.940] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:20:39.761] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:21:02.081] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:21:07.065] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:21:17.142] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:21:32.274] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:21:42.378] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:21:57.533] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:22:26.641] [grid-controller] [INFO] Starting grid-controller on port 5001 — fresh state, 0 logs
+[2026-03-28 17:22:43.872] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:22:59.011] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:23:14.200] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:23:19.190] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:23:29.275] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:23:44.377] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:23:54.460] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:24:04.545] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:24:09.502] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:24:24.637] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:24:29.650] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:24:44.895] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:25:00.059] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:25:15.257] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:25:30.472] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:25:40.547] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:25:55.731] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:00.717] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:15.870] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:20.863] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:36.041] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:41.084] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:26:56.234] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:27:11.454] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:27:16.369] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:27:31.630] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:27:46.706] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:28:01.837] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:28:16.989] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:28:32.188] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:28:47.255] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:29:02.370] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:29:17.563] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:29:22.513] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:29:37.633] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:29:42.652] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+[2026-03-28 17:29:47.640] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:30:02.795] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:30:18.031] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:30:33.140] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:30:38.123] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:30:53.223] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:31:08.427] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:31:23.545] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:31:38.692] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:31:53.949] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:32:08.993] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:32:24.200] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:32:39.380] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:32:54.542] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:33:04.552] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:33:09.557] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:33:24.793] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:33:29.742] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+[2026-03-28 17:33:34.754] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:33:49.863] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:34:05.047] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:34:20.231] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:34:35.394] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:34:50.553] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:35:05.709] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:35:20.800] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:35:35.995] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:35:46.012] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:35:51.025] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:36:06.148] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:36:21.301] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:36:36.481] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:36:51.700] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:37:06.811] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:37:11.906] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+[2026-03-28 17:37:21.872] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
