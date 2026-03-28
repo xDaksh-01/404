@@ -18,3 +18,4 @@
 [2026-03-28 08:35:36.858] [transformer] [WARNING] [INJECT] transformer_overload on transformer T9
 [2026-03-28 08:36:00.285] [transformer] [WARNING] [INJECT] transformer_overload on transformer T2
 [2026-03-28 08:36:15.135] [transformer] [WARNING] [INJECT] transformer_overload on transformer T14
+[2026-03-28 08:36:29.913] [transformer] [WARNING] [INJECT] voltage_spike on transformer T15

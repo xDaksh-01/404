@@ -898,3 +898,47 @@ Press CTRL+C to quit
 127.0.0.1 - - [28/Mar/2026 08:36:33] "GET /metrics/summary HTTP/1.1" 200 -
 [2026-03-28 08:36:34.473] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 96.3%
 127.0.0.1 - - [28/Mar/2026 08:36:34] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:36.131] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+127.0.0.1 - - [28/Mar/2026 08:36:36] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:40] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 08:36:40.499] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 93.9%
+127.0.0.1 - - [28/Mar/2026 08:36:40] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:42] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:42] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:42] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "GET /metrics/summary HTTP/1.1" 200 -
+[2026-03-28 08:36:45.586] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+127.0.0.1 - - [28/Mar/2026 08:36:45] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 08:36:46.514] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 93.0%
+127.0.0.1 - - [28/Mar/2026 08:36:46] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:47] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:47.271] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+127.0.0.1 - - [28/Mar/2026 08:36:47] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:48] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:48] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:48] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:51] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 08:36:52.543] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 91.3%
+127.0.0.1 - - [28/Mar/2026 08:36:52] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:52] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:54] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:54.270] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+127.0.0.1 - - [28/Mar/2026 08:36:54] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:58] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:59] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:01] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:01.347] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+127.0.0.1 - - [28/Mar/2026 08:37:01] "POST /alert HTTP/1.1" 200 -

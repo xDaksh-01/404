@@ -481,3 +481,30 @@ Press CTRL+C to quit
 127.0.0.1 - - [28/Mar/2026 08:36:24] "GET /status HTTP/1.1" 200 -
 [2026-03-28 08:36:25.476] [zone-west] [INFO] [SHED-LOAD] Shed 81.93MW in west
 127.0.0.1 - - [28/Mar/2026 08:36:25] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:28] "POST /restart HTTP/1.1" 404 -
+127.0.0.1 - - [28/Mar/2026 08:36:29] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:42] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:43.521] [zone-west] [INFO] [SHED-LOAD] Shed 76.97000000000001MW in west
+127.0.0.1 - - [28/Mar/2026 08:36:43] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:43] "POST /restart HTTP/1.1" 404 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:46] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:58] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:37:00.635] [zone-west] [INFO] [SHED-LOAD] Shed 72.51MW in west
+127.0.0.1 - - [28/Mar/2026 08:37:00] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:37:01] "GET /status HTTP/1.1" 200 -

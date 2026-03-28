@@ -138,3 +138,14 @@
 [2026-03-28 08:36:21.395] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
 [2026-03-28 08:36:22.433] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 99.9%
 [2026-03-28 08:36:22.620] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T14 in central is CRITICAL (temp=92.0°C, load=80.8%)
+[2026-03-28 08:36:28.454] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 98.1%
+[2026-03-28 08:36:28.626] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T14 in central is CRITICAL (temp=90.1°C, load=70.2%)
+[2026-03-28 08:36:30.859] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:36:34.473] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 96.3%
+[2026-03-28 08:36:36.131] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:36:40.499] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 93.9%
+[2026-03-28 08:36:45.586] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for west to resolve zone issues.
+[2026-03-28 08:36:46.514] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 93.0%
+[2026-03-28 08:36:47.271] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+[2026-03-28 08:36:52.543] [grid-controller] [WARNING] [ALERT] CRITICAL | zone-west | Zone west overloaded at 91.3%
+[2026-03-28 08:36:54.270] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing

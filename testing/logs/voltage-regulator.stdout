@@ -342,3 +342,19 @@ HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 08:36:21] "GET /status HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 08:36:24] "GET /health HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 08:36:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:35] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:45] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:46.887] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+127.0.0.1 - - [28/Mar/2026 08:36:46] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:49] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:54] "GET /status HTTP/1.1" 200 -

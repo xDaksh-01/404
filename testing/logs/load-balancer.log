@@ -141,3 +141,8 @@
 [2026-03-28 08:36:23.458] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
 [2026-03-28 08:36:25.478] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=west mode=reduce excess=81.93MW
 [2026-03-28 08:36:26.486] [load-balancer] [DEBUG] [BALANCE] Demand=3005MW Allocated=2186MW Overloaded_zones=1
+[2026-03-28 08:36:38.191] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+[2026-03-28 08:36:43.522] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=west mode=reduce excess=76.97000000000001MW
+[2026-03-28 08:36:44.539] [load-balancer] [DEBUG] [BALANCE] Demand=2978MW Allocated=2208MW Overloaded_zones=1
+[2026-03-28 08:36:49.315] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
+[2026-03-28 08:36:56.320] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
