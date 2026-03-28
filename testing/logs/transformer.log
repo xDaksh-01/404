@@ -37,3 +37,7 @@
 [2026-03-28 11:17:26.431] [transformer] [INFO] Starting transformer on port 5002
 [2026-03-28 11:20:33.528] [transformer] [INFO] Starting transformer on port 5002
 [2026-03-28 11:25:01.984] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-28 11:38:14.340] [transformer] [INFO] [LOAD-LIMIT] T14: max_load_percent=60
+[2026-03-28 11:38:34.463] [transformer] [INFO] [LOAD-LIMIT] T5: max_load_percent=60
+[2026-03-28 11:44:07.916] [transformer] [INFO] [LOAD-LIMIT] T8: max_load_percent=60
+[2026-03-28 11:57:11.354] [transformer] [INFO] [LOAD-LIMIT] T2: max_load_percent=60

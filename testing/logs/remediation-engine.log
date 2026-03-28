@@ -1241,3 +1241,311 @@
 [2026-03-28 11:35:12.383] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
 [2026-03-28 11:35:12.438] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
 [2026-03-28 11:35:13.699] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.82}
+[2026-03-28 11:35:57.853] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T5
+[2026-03-28 11:35:57.920] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 11:35:57.985] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 11:35:59.259] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.46}
+[2026-03-28 11:36:38.300] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T8
+[2026-03-28 11:36:38.368] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 11:36:38.431] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 11:36:39.704] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.75}
+[2026-03-28 11:36:48.360] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T5
+[2026-03-28 11:36:48.423] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 11:36:48.486] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 11:36:49.756] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.34}
+[2026-03-28 11:37:33.959] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T5
+[2026-03-28 11:37:34.007] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 11:37:34.073] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
+[2026-03-28 11:37:35.357] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.24}
+[2026-03-28 11:37:49.087] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T14
+[2026-03-28 11:37:49.152] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:37:49.196] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 11:37:50.458] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.42}
+[2026-03-28 11:38:14.336] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=north | transformer=T14
+[2026-03-28 11:38:14.370] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T14/load-limit → 200 (5ms)
+[2026-03-28 11:38:14.441] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (36ms)
+[2026-03-28 11:38:15.723] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=1.4s | {'temp': 81.66, 'load': 53.29367068049195}
+[2026-03-28 11:38:19.322] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T5
+[2026-03-28 11:38:19.389] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 11:38:19.458] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 11:38:20.738] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.5s | {'grid_voltage': 227.38}
+[2026-03-28 11:38:34.461] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=north | transformer=T5
+[2026-03-28 11:38:34.491] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T5/load-limit → 200 (3ms)
+[2026-03-28 11:38:34.550] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 11:38:35.823] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=1.4s | {'temp': 82.41, 'load': 51.74867226460297}
+[2026-03-28 11:38:39.452] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T9
+[2026-03-28 11:38:39.502] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 11:38:39.550] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 11:38:40.806] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.52}
+[2026-03-28 11:38:49.512] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T8
+[2026-03-28 11:38:49.570] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:38:49.644] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[2026-03-28 11:38:50.896] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.51}
+[2026-03-28 11:39:34.978] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T8
+[2026-03-28 11:39:35.062] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (55ms)
+[2026-03-28 11:39:35.123] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 11:39:36.388] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.86}
+[2026-03-28 11:40:20.469] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T8
+[2026-03-28 11:40:20.537] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 11:40:20.607] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 11:40:21.875] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.51}
+[2026-03-28 11:41:05.950] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T8
+[2026-03-28 11:41:06.013] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 11:41:06.080] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 11:41:07.361] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.78}
+[2026-03-28 11:41:51.440] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T8
+[2026-03-28 11:41:51.497] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 11:41:51.548] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 11:41:52.813] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.53}
+[2026-03-28 11:42:36.877] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T8
+[2026-03-28 11:42:36.941] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 11:42:37.009] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 11:42:38.284] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.56}
+[2026-03-28 11:43:22.322] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T8
+[2026-03-28 11:43:22.382] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:43:22.490] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[2026-03-28 11:43:23.746] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.5s | {'grid_voltage': 227.39}
+[2026-03-28 11:44:07.912] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=south | transformer=T8
+[2026-03-28 11:44:07.943] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T8/load-limit → 200 (5ms)
+[2026-03-28 11:44:08.007] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (29ms)
+[2026-03-28 11:44:09.273] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=1.4s | {'temp': 83.99, 'load': 51.22149022428659}
+[2026-03-28 11:44:12.912] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T4
+[2026-03-28 11:44:12.967] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:44:13.031] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 11:44:14.291] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.37}
+[2026-03-28 11:44:58.418] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T4
+[2026-03-28 11:44:58.474] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 11:44:58.536] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 11:44:59.808] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.25}
+[2026-03-28 11:45:28.780] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T10
+[2026-03-28 11:45:28.849] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 11:45:28.917] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 11:45:30.188] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.29}
+[2026-03-28 11:46:14.211] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T10
+[2026-03-28 11:46:14.274] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 11:46:14.342] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 11:46:15.623] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.25}
+[2026-03-28 11:46:49.531] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:46:49.592] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 11:46:49.660] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 11:46:50.941] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.12}
+[2026-03-28 11:47:35.032] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:47:35.101] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 11:47:35.164] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 11:47:36.429] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.28}
+[2026-03-28 11:48:20.496] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:48:20.541] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 11:48:20.582] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 11:48:21.828] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.37}
+[2026-03-28 11:48:50.820] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:48:50.881] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:48:50.948] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 11:48:52.215] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.31}
+[2026-03-28 11:49:05.943] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:49:06.002] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 11:49:06.064] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 11:49:07.333] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.29}
+[2026-03-28 11:49:51.438] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:49:51.499] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 11:49:51.555] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 11:49:52.818] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.38}
+[2026-03-28 11:50:11.686] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:50:11.754] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 11:50:11.818] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 11:50:13.096] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.45}
+[2026-03-28 11:50:57.213] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:50:57.275] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 11:50:57.345] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 11:50:58.620] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.64}
+[2026-03-28 11:51:42.728] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:51:42.794] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (43ms)
+[2026-03-28 11:51:42.846] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 11:51:44.113] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.77}
+[2026-03-28 11:52:28.164] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:52:28.235] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[2026-03-28 11:52:28.299] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 11:52:29.585] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.5s | {'grid_voltage': 227.68}
+[2026-03-28 11:53:13.707] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T2
+[2026-03-28 11:53:13.755] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 11:53:13.804] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 11:53:15.059] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.67}
+[2026-03-28 11:53:54.244] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:53:54.311] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 11:53:54.376] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 11:53:55.653] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.34}
+[2026-03-28 11:53:59.209] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T2
+[2026-03-28 11:53:59.280] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 11:53:59.353] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 11:54:00.628] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.4}
+[2026-03-28 11:54:44.758] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T6
+[2026-03-28 11:54:44.829] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[2026-03-28 11:54:44.902] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 11:54:46.181] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.5s | {'grid_voltage': 227.14}
+[2026-03-28 11:55:20.120] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T2
+[2026-03-28 11:55:20.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 11:55:20.260] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 11:55:21.528] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.89}
+[2026-03-28 11:56:05.642] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T2
+[2026-03-28 11:56:05.709] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 11:56:05.774] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 11:56:07.042] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.34}
+[2026-03-28 11:56:51.151] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 11:56:51.215] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 11:56:51.281] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 11:56:52.563] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=1.4s | {'grid_voltage': 227.28}
+[2026-03-28 11:57:11.348] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T2
+[2026-03-28 11:57:11.376] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T2/load-limit → 200 (5ms)
+[2026-03-28 11:57:11.445] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (29ms)
+[2026-03-28 11:57:12.731] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=1.4s | {'temp': 80.72, 'load': 54.5}
+[2026-03-28 11:57:16.351] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T6
+[2026-03-28 11:57:16.409] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (31ms)
+[2026-03-28 11:57:16.439] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 11:57:17.727] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:01.920] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T6
+[2026-03-28 11:58:01.988] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (38ms)
+[2026-03-28 11:58:02.015] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 11:58:03.277] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:06.955] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T7
+[2026-03-28 11:58:06.996] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (19ms)
+[2026-03-28 11:58:07.015] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (7ms)
+[2026-03-28 11:58:08.262] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:11.891] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T4
+[2026-03-28 11:58:11.951] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (31ms)
+[2026-03-28 11:58:11.973] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 11:58:13.227] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:21.990] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T1
+[2026-03-28 11:58:22.031] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (22ms)
+[2026-03-28 11:58:22.058] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 11:58:23.328] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:26.955] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T15
+[2026-03-28 11:58:27.024] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (35ms)
+[2026-03-28 11:58:27.058] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 11:58:28.328] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:58:31.967] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=north | transformer=T10
+[2026-03-28 11:58:32.025] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (29ms)
+[2026-03-28 11:58:32.055] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (2ms)
+[2026-03-28 11:58:33.320] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:59:17.450] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T10
+[2026-03-28 11:59:17.515] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 11:59:17.549] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 11:59:18.830] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:59:22.462] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T4
+[2026-03-28 11:59:22.530] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (35ms)
+[2026-03-28 11:59:22.561] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 11:59:23.837] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 11:59:27.437] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T1
+[2026-03-28 11:59:27.507] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 11:59:27.542] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 11:59:28.825] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:00:12.897] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T1
+[2026-03-28 12:00:12.955] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (29ms)
+[2026-03-28 12:00:12.983] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:00:14.251] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:00:28.037] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T4
+[2026-03-28 12:00:28.107] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (36ms)
+[2026-03-28 12:00:28.142] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 12:00:29.411] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:00:33.021] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T10
+[2026-03-28 12:00:33.082] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (33ms)
+[2026-03-28 12:00:33.108] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:00:34.373] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:00:38.032] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T11
+[2026-03-28 12:00:38.106] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (38ms)
+[2026-03-28 12:00:38.144] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 12:00:39.425] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:01:13.335] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T4
+[2026-03-28 12:01:13.385] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (25ms)
+[2026-03-28 12:01:13.412] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:01:14.684] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:01:18.311] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T1
+[2026-03-28 12:01:18.377] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 12:01:18.414] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 12:01:19.681] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:01:43.584] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T10
+[2026-03-28 12:01:43.643] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 12:01:43.672] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:01:44.941] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:01:48.630] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T15
+[2026-03-28 12:01:48.693] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (34ms)
+[2026-03-28 12:01:48.723] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (2ms)
+[2026-03-28 12:01:50.004] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:01:53.590] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=west | transformer=T6
+[2026-03-28 12:01:53.644] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (26ms)
+[2026-03-28 12:01:53.676] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:01:54.945] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:02:34.088] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T9
+[2026-03-28 12:02:34.147] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 12:02:34.176] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:02:35.438] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:02:39.103] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T6
+[2026-03-28 12:02:39.150] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (26ms)
+[2026-03-28 12:02:39.168] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 12:02:40.405] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.3s | {'overloaded_zones': 0}
+[2026-03-28 12:03:24.569] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T5
+[2026-03-28 12:03:24.638] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (33ms)
+[2026-03-28 12:03:24.668] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:03:25.936] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:03:29.537] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T13
+[2026-03-28 12:03:29.611] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (37ms)
+[2026-03-28 12:03:29.645] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:03:30.918] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:03:44.641] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T6
+[2026-03-28 12:03:44.701] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (29ms)
+[2026-03-28 12:03:44.734] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:03:46.004] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:03:49.639] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T2
+[2026-03-28 12:03:49.706] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 12:03:49.737] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:03:51.012] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:04:04.749] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=south | transformer=T11
+[2026-03-28 12:04:04.810] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (30ms)
+[2026-03-28 12:04:04.842] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:04:06.117] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:04:09.791] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T9
+[2026-03-28 12:04:09.860] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (35ms)
+[2026-03-28 12:04:09.895] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 12:04:11.164] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:04:19.825] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T13
+[2026-03-28 12:04:19.894] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (35ms)
+[2026-03-28 12:04:19.925] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:04:21.185] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:04:50.192] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T11
+[2026-03-28 12:04:50.249] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 12:04:50.279] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:04:51.546] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:05:35.617] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T11
+[2026-03-28 12:05:35.679] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (33ms)
+[2026-03-28 12:05:35.710] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (3ms)
+[2026-03-28 12:05:36.982] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:05:40.618] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T6
+[2026-03-28 12:05:40.677] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (31ms)
+[2026-03-28 12:05:40.708] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:05:41.970] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:05:45.657] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T12
+[2026-03-28 12:05:45.725] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (33ms)
+[2026-03-28 12:05:45.761] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 12:05:47.038] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:06:26.121] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T6
+[2026-03-28 12:06:26.182] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (31ms)
+[2026-03-28 12:06:26.217] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (4ms)
+[2026-03-28 12:06:27.488] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:06:56.455] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T12
+[2026-03-28 12:06:56.515] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 12:06:56.546] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (2ms)
+[2026-03-28 12:06:57.827] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:07:11.550] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T6
+[2026-03-28 12:07:11.592] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (20ms)
+[2026-03-28 12:07:11.620] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (2ms)
+[2026-03-28 12:07:12.874] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.3s | {'overloaded_zones': 0}
+[2026-03-28 12:07:16.582] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T14
+[2026-03-28 12:07:16.653] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (36ms)
+[2026-03-28 12:07:16.688] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (6ms)
+[2026-03-28 12:07:17.971] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:07:26.668] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=east | transformer=T2
+[2026-03-28 12:07:26.735] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (32ms)
+[2026-03-28 12:07:26.769] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 12:07:28.045] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}
+[2026-03-28 12:07:56.943] [remediation-engine] [INFO] [DECISION] Remediating power_redistribution | zone=central | transformer=T6
+[2026-03-28 12:07:57.002] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 12:07:57.026] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/distribute → 200 (5ms)
+[2026-03-28 12:07:58.280] [remediation-engine] [INFO] [VERIFY] power_redistribution RESOLVED | total_time=1.4s | {'overloaded_zones': 0}

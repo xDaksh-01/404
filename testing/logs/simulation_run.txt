@@ -307,3 +307,732 @@
 [11:38:19.461] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
 [11:38:19.498] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
 [11:38:20.739] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.5s
+[11:38:34.365] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1133 prediction=-1
+[11:38:34.368] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload source=classifier confidence=0.34 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north'}
+[11:38:34.403] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[11:38:34.431] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774697914431 Fault=transformer_overload zone=north transformer=T5
+[11:38:34.465] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T5/load-limit → 200 (3ms)
+[11:38:34.495] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[11:38:34.520] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (28ms)
+[11:38:34.554] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[11:38:34.584] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of transformer_overload
+[11:38:35.824] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=1.4s
+[11:38:39.373] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1316 prediction=-1
+[11:38:39.376] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'north'}
+[11:38:39.406] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:38:39.425] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774697919425 Fault=voltage_spike zone=north transformer=T9
+[11:38:39.456] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[11:38:39.478] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[11:38:39.506] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[11:38:39.525] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[11:38:39.553] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:38:39.576] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:38:40.807] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:38:49.426] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1274 prediction=-1
+[11:38:49.430] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'north'}
+[11:38:49.463] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:38:49.486] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774697929486 Fault=voltage_spike zone=north transformer=T8
+[11:38:49.515] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[11:38:49.541] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[11:38:49.576] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[11:38:49.618] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[11:38:49.647] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:38:49.671] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:38:50.899] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:39:34.881] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1369 prediction=-1
+[11:39:34.887] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.44 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'north'}
+[11:39:34.922] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:39:34.949] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774697974949 Fault=voltage_spike zone=north transformer=T8
+[11:39:34.982] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[11:39:35.034] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (55ms)
+[11:39:35.066] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[11:39:35.090] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[11:39:35.129] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:39:35.155] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:39:36.389] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:40:20.378] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1313 prediction=-1
+[11:40:20.381] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'east'}
+[11:40:20.416] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:40:20.440] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698020440 Fault=voltage_spike zone=east transformer=T8
+[11:40:20.476] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=east
+[11:40:20.506] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[11:40:20.541] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=east
+[11:40:20.573] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[11:40:20.611] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:40:20.639] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:40:21.876] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:41:05.846] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1240 prediction=-1
+[11:41:05.850] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'central'}
+[11:41:05.892] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:41:05.920] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698065920 Fault=voltage_spike zone=central transformer=T8
+[11:41:05.956] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
+[11:41:05.985] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[11:41:06.016] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
+[11:41:06.047] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[11:41:06.085] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:41:06.120] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:41:07.362] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:41:51.344] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1285 prediction=-1
+[11:41:51.348] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'south'}
+[11:41:51.384] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:41:51.414] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698111414 Fault=voltage_spike zone=south transformer=T8
+[11:41:51.445] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:41:51.467] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[11:41:51.500] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:41:51.521] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[11:41:51.551] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:41:51.581] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:41:52.817] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:42:36.771] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1306 prediction=-1
+[11:42:36.775] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'south'}
+[11:42:36.808] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:42:36.842] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698156842 Fault=voltage_spike zone=south transformer=T8
+[11:42:36.883] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:42:36.907] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[11:42:36.944] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:42:36.975] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[11:42:37.013] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:42:37.045] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:42:38.285] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:43:22.230] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1202 prediction=-1
+[11:43:22.233] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'south'}
+[11:43:22.263] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:43:22.293] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698202293 Fault=voltage_spike zone=south transformer=T8
+[11:43:22.326] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:43:22.351] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[11:43:22.385] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:43:22.437] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[11:43:22.499] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:43:22.514] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:43:23.747] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.5s
+[11:44:07.806] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1209 prediction=-1
+[11:44:07.811] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload source=classifier confidence=0.34 context={'transformer_id': 'T8', 'transformer_zone': 'east', 'zone': 'south'}
+[11:44:07.852] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[11:44:07.883] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698247883 Fault=transformer_overload zone=south transformer=T8
+[11:44:07.918] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T8/load-limit → 200 (5ms)
+[11:44:07.947] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[11:44:07.974] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (29ms)
+[11:44:08.009] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[11:44:08.039] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of transformer_overload
+[11:44:09.275] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=1.4s
+[11:44:12.817] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1403 prediction=-1
+[11:44:12.832] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'south'}
+[11:44:12.866] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:44:12.885] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698252885 Fault=voltage_spike zone=south transformer=T4
+[11:44:12.919] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:44:12.941] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[11:44:12.971] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:44:12.998] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[11:44:13.034] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:44:13.060] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:44:14.292] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:44:58.292] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1439 prediction=-1
+[11:44:58.295] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.44 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'south'}
+[11:44:58.350] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:44:58.389] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698298389 Fault=voltage_spike zone=south transformer=T4
+[11:44:58.423] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:44:58.446] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[11:44:58.478] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:44:58.505] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[11:44:58.542] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:44:58.570] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:44:59.809] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:45:28.672] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1514 prediction=-1
+[11:45:28.676] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'south'}
+[11:45:28.712] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:45:28.743] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698328743 Fault=voltage_spike zone=south transformer=T10
+[11:45:28.786] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:45:28.816] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[11:45:28.854] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:45:28.883] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[11:45:28.920] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:45:28.948] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:45:30.189] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:46:14.105] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1373 prediction=-1
+[11:46:14.110] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.44 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'south'}
+[11:46:14.146] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:46:14.179] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698374179 Fault=voltage_spike zone=south transformer=T10
+[11:46:14.215] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:46:14.245] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[11:46:14.281] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:46:14.308] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[11:46:14.347] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:46:14.380] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:46:15.624] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:46:49.422] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1430 prediction=-1
+[11:46:49.426] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:46:49.465] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:46:49.497] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698409497 Fault=voltage_spike zone=south transformer=T6
+[11:46:49.536] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:46:49.562] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[11:46:49.596] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:46:49.628] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[11:46:49.666] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:46:49.697] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:46:50.943] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:47:34.926] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1374 prediction=-1
+[11:47:34.931] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.45 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:47:34.975] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:47:34.998] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698454998 Fault=voltage_spike zone=south transformer=T6
+[11:47:35.037] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:47:35.066] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[11:47:35.107] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:47:35.136] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[11:47:35.169] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:47:35.194] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:47:36.431] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:48:20.386] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1430 prediction=-1
+[11:48:20.390] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:48:20.437] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:48:20.472] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698500472 Fault=voltage_spike zone=south transformer=T6
+[11:48:20.500] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:48:20.525] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[11:48:20.545] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:48:20.563] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[11:48:20.586] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:48:20.603] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:48:21.829] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:48:50.723] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1568 prediction=-1
+[11:48:50.727] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:48:50.763] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:48:50.791] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698530791 Fault=voltage_spike zone=south transformer=T2
+[11:48:50.824] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:48:50.850] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[11:48:50.884] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:48:50.915] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[11:48:50.957] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:48:50.981] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:48:52.216] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:49:05.851] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1542 prediction=-1
+[11:49:05.855] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:49:05.889] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:49:05.917] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698545917 Fault=voltage_spike zone=south transformer=T6
+[11:49:05.950] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:49:05.976] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[11:49:06.009] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:49:06.035] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[11:49:06.069] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:49:06.099] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:49:07.334] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:49:51.338] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1509 prediction=-1
+[11:49:51.343] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:49:51.381] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:49:51.410] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698591410 Fault=voltage_spike zone=south transformer=T6
+[11:49:51.442] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:49:51.468] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[11:49:51.502] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:49:51.528] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[11:49:51.559] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:49:51.584] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:49:52.819] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:50:11.574] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1498 prediction=-1
+[11:50:11.578] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:50:11.626] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:50:11.654] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698611654 Fault=voltage_spike zone=south transformer=T2
+[11:50:11.692] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:50:11.718] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[11:50:11.758] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:50:11.787] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[11:50:11.824] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:50:11.856] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:50:13.097] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:50:57.112] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1431 prediction=-1
+[11:50:57.117] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:50:57.153] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:50:57.184] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698657184 Fault=voltage_spike zone=south transformer=T2
+[11:50:57.218] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:50:57.244] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[11:50:57.283] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:50:57.310] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[11:50:57.347] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:50:57.377] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:50:58.623] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:51:42.615] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1293 prediction=-1
+[11:51:42.618] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:51:42.659] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:51:42.692] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698702692 Fault=voltage_spike zone=south transformer=T2
+[11:51:42.736] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:51:42.773] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (43ms)
+[11:51:42.798] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:51:42.818] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[11:51:42.849] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:51:42.876] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:51:44.114] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:52:28.054] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1332 prediction=-1
+[11:52:28.058] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:52:28.106] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:52:28.134] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698748134 Fault=voltage_spike zone=south transformer=T2
+[11:52:28.169] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:52:28.202] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[11:52:28.240] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:52:28.269] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[11:52:28.305] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:52:28.348] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:52:29.586] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.5s
+[11:53:13.615] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1304 prediction=-1
+[11:53:13.618] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'central'}
+[11:53:13.649] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:53:13.681] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698793681 Fault=voltage_spike zone=central transformer=T2
+[11:53:13.711] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
+[11:53:13.732] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[11:53:13.759] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
+[11:53:13.780] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[11:53:13.807] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:53:13.827] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:53:15.059] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:53:54.128] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1319 prediction=-1
+[11:53:54.131] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:53:54.177] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:53:54.208] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698834208 Fault=voltage_spike zone=south transformer=T6
+[11:53:54.248] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:53:54.279] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[11:53:54.316] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:53:54.347] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[11:53:54.382] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:53:54.414] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:53:55.654] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:53:59.113] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1314 prediction=-1
+[11:53:59.117] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[11:53:59.151] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:53:59.180] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698839180 Fault=voltage_spike zone=south transformer=T2
+[11:53:59.212] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:53:59.245] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[11:53:59.286] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:53:59.318] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[11:53:59.358] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:53:59.389] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:54:00.628] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:54:44.648] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1397 prediction=-1
+[11:54:44.652] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[11:54:44.694] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:54:44.727] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698884727 Fault=voltage_spike zone=south transformer=T6
+[11:54:44.762] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=south
+[11:54:44.796] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[11:54:44.835] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=south
+[11:54:44.866] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[11:54:44.908] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:54:44.943] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:54:46.183] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.5s
+[11:55:20.015] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1331 prediction=-1
+[11:55:20.018] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'east'}
+[11:55:20.053] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:55:20.087] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698920087 Fault=voltage_spike zone=east transformer=T2
+[11:55:20.126] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=east
+[11:55:20.157] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[11:55:20.193] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=east
+[11:55:20.227] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[11:55:20.265] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:55:20.289] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:55:21.529] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:56:05.538] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1380 prediction=-1
+[11:56:05.542] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.42 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north'}
+[11:56:05.585] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:56:05.614] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774698965614 Fault=voltage_spike zone=north transformer=T2
+[11:56:05.648] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[11:56:05.677] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[11:56:05.712] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[11:56:05.741] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[11:56:05.777] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:56:05.807] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:56:07.043] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:56:51.067] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1374 prediction=-1
+[11:56:51.071] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike source=classifier confidence=0.41 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'west'}
+[11:56:51.104] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[11:56:51.128] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699011128 Fault=voltage_spike zone=west transformer=T2
+[11:56:51.157] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
+[11:56:51.182] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[11:56:51.221] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
+[11:56:51.251] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[11:56:51.285] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[11:56:51.319] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of voltage_spike
+[11:56:52.564] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=1.4s
+[11:57:11.233] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1372 prediction=-1
+[11:57:11.237] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload source=classifier confidence=0.35 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'west'}
+[11:57:11.285] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[11:57:11.317] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699031317 Fault=transformer_overload zone=west transformer=T2
+[11:57:11.356] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T2/load-limit → 200 (5ms)
+[11:57:11.385] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[11:57:11.409] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (29ms)
+[11:57:11.449] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[11:57:11.486] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of transformer_overload
+[11:57:12.732] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=1.4s
+[11:57:16.234] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1397 prediction=-1
+[11:57:16.238] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.32 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west'}
+[11:57:16.273] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:57:16.302] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699036302 Fault=power_redistribution zone=west transformer=T6
+[11:57:16.357] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:57:16.383] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (31ms)
+[11:57:16.415] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[11:57:16.446] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:57:16.484] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:57:17.728] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:01.800] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1625 prediction=-1
+[11:58:01.806] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west'}
+[11:58:01.850] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:01.886] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699081886 Fault=power_redistribution zone=west transformer=T6
+[11:58:01.925] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:01.959] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (38ms)
+[11:58:01.993] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[11:58:02.017] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:02.043] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:03.277] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:06.820] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1618 prediction=-1
+[11:58:06.824] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T7', 'transformer_zone': 'east', 'zone': 'west'}
+[11:58:06.870] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:06.907] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699086907 Fault=power_redistribution zone=west transformer=T7
+[11:58:06.962] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:06.974] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (19ms)
+[11:58:07.003] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (7ms)
+[11:58:07.019] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:07.038] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:08.263] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:11.798] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1625 prediction=-1
+[11:58:11.803] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'west'}
+[11:58:11.837] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:11.868] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699091868 Fault=power_redistribution zone=west transformer=T4
+[11:58:11.895] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:11.923] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (31ms)
+[11:58:11.955] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[11:58:11.976] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:11.995] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:13.228] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:21.877] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1611 prediction=-1
+[11:58:21.883] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'west'}
+[11:58:21.928] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:21.963] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699101963 Fault=power_redistribution zone=west transformer=T1
+[11:58:21.994] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:22.013] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (22ms)
+[11:58:22.034] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[11:58:22.061] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:22.091] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:23.329] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:26.844] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1650 prediction=-1
+[11:58:26.846] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'west'}
+[11:58:26.889] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:26.923] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699106923 Fault=power_redistribution zone=west transformer=T15
+[11:58:26.960] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:26.990] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (35ms)
+[11:58:27.030] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[11:58:27.061] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:27.093] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:28.329] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:58:31.858] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1625 prediction=-1
+[11:58:31.861] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north'}
+[11:58:31.901] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:58:31.936] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699111936 Fault=power_redistribution zone=north transformer=T10
+[11:58:31.971] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:58:31.997] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (29ms)
+[11:58:32.029] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (2ms)
+[11:58:32.059] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:58:32.088] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:58:33.321] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:59:17.343] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1603 prediction=-1
+[11:59:17.347] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'central'}
+[11:59:17.383] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:59:17.419] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699157419 Fault=power_redistribution zone=central transformer=T10
+[11:59:17.456] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:59:17.483] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[11:59:17.521] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[11:59:17.554] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:59:17.588] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:59:18.831] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:59:22.362] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1608 prediction=-1
+[11:59:22.366] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'south'}
+[11:59:22.397] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:59:22.428] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699162428 Fault=power_redistribution zone=south transformer=T4
+[11:59:22.468] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:59:22.498] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (35ms)
+[11:59:22.535] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[11:59:22.564] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:59:22.594] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:59:23.838] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[11:59:27.329] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1606 prediction=-1
+[11:59:27.333] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'south'}
+[11:59:27.377] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[11:59:27.409] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699167409 Fault=power_redistribution zone=south transformer=T1
+[11:59:27.443] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[11:59:27.470] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[11:59:27.514] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[11:59:27.547] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[11:59:27.580] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[11:59:28.826] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:00:12.809] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1591 prediction=-1
+[12:00:12.815] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'south'}
+[12:00:12.856] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:00:12.868] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699212868 Fault=power_redistribution zone=south transformer=T1
+[12:00:12.900] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:00:12.926] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (29ms)
+[12:00:12.959] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:00:12.986] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:00:13.016] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:00:14.252] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:00:27.920] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1597 prediction=-1
+[12:00:27.923] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'east'}
+[12:00:27.964] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:00:27.999] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699227999 Fault=power_redistribution zone=east transformer=T4
+[12:00:28.043] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:00:28.073] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (36ms)
+[12:00:28.115] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[12:00:28.144] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:00:28.174] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:00:29.413] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:00:32.920] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1597 prediction=-1
+[12:00:32.923] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'east'}
+[12:00:32.958] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:00:32.990] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699232990 Fault=power_redistribution zone=east transformer=T10
+[12:00:33.024] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:00:33.054] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (33ms)
+[12:00:33.085] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:00:33.110] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:00:33.135] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:00:34.374] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:00:37.923] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1597 prediction=-1
+[12:00:37.928] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'east'}
+[12:00:37.968] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:00:38.000] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699238000 Fault=power_redistribution zone=east transformer=T11
+[12:00:38.038] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:00:38.072] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (38ms)
+[12:00:38.113] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[12:00:38.148] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:00:38.183] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:00:39.425] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:01:13.229] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1577 prediction=-1
+[12:01:13.233] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T4', 'transformer_zone': 'south', 'zone': 'west'}
+[12:01:13.279] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:01:13.305] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699273305 Fault=power_redistribution zone=west transformer=T4
+[12:01:13.340] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:01:13.360] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (25ms)
+[12:01:13.389] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:01:13.414] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:01:13.446] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:01:14.685] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:01:18.223] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1576 prediction=-1
+[12:01:18.227] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'west'}
+[12:01:18.264] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:01:18.283] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699278283 Fault=power_redistribution zone=west transformer=T1
+[12:01:18.315] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:01:18.344] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[12:01:18.384] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[12:01:18.416] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:01:18.447] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:01:19.681] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:01:43.494] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1593 prediction=-1
+[12:01:43.498] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'west'}
+[12:01:43.528] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:01:43.556] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699303556 Fault=power_redistribution zone=west transformer=T10
+[12:01:43.588] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:01:43.613] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (28ms)
+[12:01:43.647] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:01:43.675] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:01:43.707] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:01:44.941] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:01:48.520] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1588 prediction=-1
+[12:01:48.523] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'west'}
+[12:01:48.562] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:01:48.596] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699308596 Fault=power_redistribution zone=west transformer=T15
+[12:01:48.634] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:01:48.665] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (34ms)
+[12:01:48.696] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (2ms)
+[12:01:48.727] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:01:48.762] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:01:50.006] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:01:53.493] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1592 prediction=-1
+[12:01:53.496] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'west'}
+[12:01:53.532] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:01:53.561] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699313561 Fault=power_redistribution zone=west transformer=T6
+[12:01:53.595] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:01:53.617] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (26ms)
+[12:01:53.648] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:01:53.679] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:01:53.711] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:01:54.945] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:02:33.988] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1613 prediction=-1
+[12:02:33.993] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'south'}
+[12:02:34.029] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:02:34.059] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699354059 Fault=power_redistribution zone=south transformer=T9
+[12:02:34.094] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:02:34.120] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (28ms)
+[12:02:34.150] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:02:34.179] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:02:34.204] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:02:35.439] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:02:39.014] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1598 prediction=-1
+[12:02:39.026] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'central'}
+[12:02:39.056] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:02:39.087] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699359087 Fault=power_redistribution zone=central transformer=T6
+[12:02:39.120] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:02:39.132] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (26ms)
+[12:02:39.156] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[12:02:39.172] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:02:39.191] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:02:40.405] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.3s
+[12:03:24.458] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1576 prediction=-1
+[12:03:24.465] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'south'}
+[12:03:24.507] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:03:24.541] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699404541 Fault=power_redistribution zone=south transformer=T5
+[12:03:24.574] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:03:24.602] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (33ms)
+[12:03:24.642] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:03:24.672] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:03:24.701] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:03:25.937] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:03:29.429] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1585 prediction=-1
+[12:03:29.432] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'south'}
+[12:03:29.468] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:03:29.503] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699409503 Fault=power_redistribution zone=south transformer=T13
+[12:03:29.543] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:03:29.576] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (37ms)
+[12:03:29.615] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:03:29.648] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:03:29.683] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:03:30.919] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:03:44.538] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1616 prediction=-1
+[12:03:44.542] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'south'}
+[12:03:44.577] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:03:44.610] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699424610 Fault=power_redistribution zone=south transformer=T6
+[12:03:44.644] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:03:44.670] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (29ms)
+[12:03:44.706] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:03:44.739] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:03:44.769] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:03:46.005] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:03:49.537] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1549 prediction=-1
+[12:03:49.542] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'south'}
+[12:03:49.591] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:03:49.613] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699429613 Fault=power_redistribution zone=south transformer=T2
+[12:03:49.644] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:03:49.671] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[12:03:49.710] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:03:49.745] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:03:49.773] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:03:51.012] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:04:04.647] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1559 prediction=-1
+[12:04:04.652] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'south'}
+[12:04:04.691] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:04:04.722] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699444722 Fault=power_redistribution zone=south transformer=T11
+[12:04:04.753] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:04:04.780] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (30ms)
+[12:04:04.815] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:04:04.846] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:04:04.878] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:04:06.118] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:04:09.704] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1576 prediction=-1
+[12:04:09.707] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'central'}
+[12:04:09.729] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:04:09.758] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699449758 Fault=power_redistribution zone=central transformer=T9
+[12:04:09.798] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:04:09.826] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (35ms)
+[12:04:09.866] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[12:04:09.899] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:04:09.931] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:04:11.165] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:04:19.712] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1536 prediction=-1
+[12:04:19.716] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'central'}
+[12:04:19.755] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:04:19.786] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699459786 Fault=power_redistribution zone=central transformer=T13
+[12:04:19.828] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:04:19.860] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (35ms)
+[12:04:19.898] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:04:19.931] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:04:19.952] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:04:21.197] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:04:50.077] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1543 prediction=-1
+[12:04:50.083] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'central'}
+[12:04:50.123] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:04:50.157] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699490157 Fault=power_redistribution zone=central transformer=T11
+[12:04:50.195] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:04:50.225] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[12:04:50.253] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:04:50.282] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:04:50.312] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:04:51.546] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:05:35.518] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1565 prediction=-1
+[12:05:35.522] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T11', 'transformer_zone': 'west', 'zone': 'central'}
+[12:05:35.556] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:05:35.588] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699535588 Fault=power_redistribution zone=central transformer=T11
+[12:05:35.621] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:05:35.650] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (33ms)
+[12:05:35.684] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (3ms)
+[12:05:35.715] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:05:35.746] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:05:36.983] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:05:40.516] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1556 prediction=-1
+[12:05:40.520] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'central'}
+[12:05:40.558] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:05:40.589] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699540589 Fault=power_redistribution zone=central transformer=T6
+[12:05:40.622] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:05:40.650] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (31ms)
+[12:05:40.682] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:05:40.714] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:05:40.741] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:05:41.971] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:05:45.546] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1556 prediction=-1
+[12:05:45.550] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central'}
+[12:05:45.590] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:05:45.622] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699545622 Fault=power_redistribution zone=central transformer=T12
+[12:05:45.660] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:05:45.690] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (33ms)
+[12:05:45.732] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[12:05:45.765] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:05:45.797] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:05:47.039] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:06:26.009] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1554 prediction=-1
+[12:06:26.012] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.35 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'east'}
+[12:06:26.055] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:06:26.090] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699586090 Fault=power_redistribution zone=east transformer=T6
+[12:06:26.125] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:06:26.152] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (31ms)
+[12:06:26.193] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (4ms)
+[12:06:26.222] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:06:26.256] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:06:27.488] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:06:56.344] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1543 prediction=-1
+[12:06:56.348] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'east'}
+[12:06:56.391] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:06:56.423] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699616423 Fault=power_redistribution zone=east transformer=T12
+[12:06:56.458] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:06:56.487] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[12:06:56.518] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (2ms)
+[12:06:56.550] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:06:56.584] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:06:57.828] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:07:11.482] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1522 prediction=-1
+[12:07:11.486] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'east'}
+[12:07:11.512] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:07:11.531] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699631531 Fault=power_redistribution zone=east transformer=T6
+[12:07:11.556] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:07:11.571] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (20ms)
+[12:07:11.595] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (2ms)
+[12:07:11.623] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:07:11.646] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:07:12.877] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.3s
+[12:07:16.476] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1528 prediction=-1
+[12:07:16.479] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T14', 'transformer_zone': 'central', 'zone': 'east'}
+[12:07:16.514] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:07:16.546] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699636546 Fault=power_redistribution zone=east transformer=T14
+[12:07:16.587] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:07:16.619] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (36ms)
+[12:07:16.660] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (6ms)
+[12:07:16.692] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:07:16.727] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:07:17.973] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:07:26.551] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1554 prediction=-1
+[12:07:26.555] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'east'}
+[12:07:26.599] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:07:26.630] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699646630 Fault=power_redistribution zone=east transformer=T2
+[12:07:26.675] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:07:26.703] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (32ms)
+[12:07:26.740] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[12:07:26.774] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:07:26.808] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:07:28.047] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
+[12:07:56.844] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1584 prediction=-1
+[12:07:56.850] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=power_redistribution source=heuristic confidence=0.34 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'central'}
+[12:07:56.890] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Grid-wide Load Rebalancing
+[12:07:56.914] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774699676914 Fault=power_redistribution zone=central transformer=T6
+[12:07:56.948] [LOAD-BALANCER] [REMEDIATE] Power rerouted 50MW alternate_path=True
+[12:07:56.973] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (28ms)
+[12:07:57.007] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/distribute → 200 (5ms)
+[12:07:57.028] [GRID-CONTROLLER] [REMEDIATE] [power_redistribution] EXECUTING
+[12:07:57.053] [REMEDIATION-ENGINE] [VERIFY] Waiting 1.2s for recovery verification of power_redistribution
+[12:07:58.280] [REMEDIATION-ENGINE] [VERIFY] power_redistribution RESOLVED total_time=1.4s
