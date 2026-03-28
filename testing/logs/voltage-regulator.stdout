@@ -1,4 +1,4 @@
-[2026-03-29 03:09:44.295] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
+[2026-03-29 03:44:47.604] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -6,3 +6,49 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5009
  * Running on http://10.12.15.243:5009
 Press CTRL+C to quit
+[2026-03-29 03:44:49.641] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+[2026-03-29 03:44:52.694] [voltage-regulator] [INFO] [TAP] south: tap raised to 1
+127.0.0.1 - - [29/Mar/2026 03:44:54] "GET /health HTTP/1.1" 200 -
+[2026-03-29 03:44:55.744] [voltage-regulator] [INFO] [TAP] east: tap raised to 1
+[2026-03-29 03:44:58.794] [voltage-regulator] [INFO] [TAP] west: tap raised to 1
+[2026-03-29 03:45:01.824] [voltage-regulator] [INFO] [TAP] central: tap raised to 1
+127.0.0.1 - - [29/Mar/2026 03:45:08] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:17] "GET /status HTTP/1.1" 200 -
+[2026-03-29 03:45:21.369] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+127.0.0.1 - - [29/Mar/2026 03:45:21] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-29 03:45:23.447] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+127.0.0.1 - - [29/Mar/2026 03:45:23] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:23] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:53] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:58] "GET /health HTTP/1.1" 200 -
+[2026-03-29 03:45:59.686] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+127.0.0.1 - - [29/Mar/2026 03:45:59] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-29 03:46:01.854] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+127.0.0.1 - - [29/Mar/2026 03:46:01] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:14] "GET /status HTTP/1.1" 200 -
+[2026-03-29 03:46:18.976] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+127.0.0.1 - - [29/Mar/2026 03:46:18] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-29 03:46:21.022] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+127.0.0.1 - - [29/Mar/2026 03:46:21] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:22] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:49] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:21] "GET /health HTTP/1.1" 200 -
+[2026-03-29 03:47:21.368] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+127.0.0.1 - - [29/Mar/2026 03:47:21] "POST /tap-changer/lock HTTP/1.1" 200 -
+[2026-03-29 03:47:23.432] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+127.0.0.1 - - [29/Mar/2026 03:47:23] "POST /capacitor-bank/deactivate HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:30] "GET /status HTTP/1.1" 200 -

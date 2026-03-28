@@ -1,1 +1,2 @@
-[2026-03-29 03:09:43.518] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-29 03:44:46.701] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-29 03:46:34.122] [zone-west] [WARNING] [INJECT] current_surge in west
