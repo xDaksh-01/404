@@ -24,3 +24,6 @@
 [2026-03-29 04:18:10.236] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Sustained Voltage Overload
 [2026-03-29 04:18:29.092] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
 [2026-03-29 04:18:41.502] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=96.8°C, load=100.0%)
+[2026-03-29 04:18:47.517] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T8 in east is CRITICAL (temp=95.7°C, load=99.3%)
+[2026-03-29 04:18:47.977] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+[2026-03-29 04:18:48.534] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.6°C, load=100.0%)

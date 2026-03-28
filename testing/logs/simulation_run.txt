@@ -549,3 +549,21 @@ Started: 2026-03-29 04:13:33.862
 [04:18:47.978] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738127978 Fault=transformer_overload zone=east transformer=T15
 [04:18:48.534] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T15 in central is CRITICAL (temp=97.6°C, load=100.0%)
 [04:18:50.025] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5002/transformer/T15/load-limit → 200 (2046ms)
+[04:18:52.058] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[04:18:52.059] [REMEDIATION-ENGINE] [REMEDIATE] POST http://localhost:5008/reroute → 200 (2033ms)
+[04:18:53] [INJECTOR] [93mINJECTING:[0m Transformer Overload | Target: http://localhost:5002/demo/inject
+[04:18:54.075] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[04:18:54.076] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
+[04:18:54.540] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=96.0°C, load=100.0%)
+[04:18:55.570] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T15 in central is CRITICAL (temp=93.7°C, load=50.5%)
+[04:18:55.571] [TRANSFORMER] [INJECT] transformer_overload injected on transformer T9
+[04:18:55] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "transformer_overload", "transformer_id": "T9", "load_percent": 113.01528656214435})
+[04:18:59.085] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=11.1s
+[04:19:01.585] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T8 in east is CRITICAL (temp=96.2°C, load=98.9%)
+[04:19:02] [INJECTOR] [93mINJECTING:[0m Power Redistribution | Target: http://localhost:5008/demo/inject
+[04:19:02.593] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T9 in east is CRITICAL (temp=91.4°C, load=100.0%)
+[04:19:03.609] [GRID-CONTROLLER] [ALERT] CRITICAL from transformer: Transformer T15 in central is CRITICAL (temp=90.3°C, load=49.2%)
+[04:19:04.219] [LOAD-BALANCER] [INJECT] power_redistribution injected into load-balancer
+[04:19:04] [INJECTOR] [92m→ Injection successful[0m (Payload: {"type": "power_redistribution", "imbalance_mw": 221.50625413670957})
+[04:19:04.782] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1029 prediction=-1
+[04:19:04.782] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.82 context={'transformer_id': 'T9', 'transformer_zone': 'east', 'zone': 'east', 'feeder_id': 'east-feeder-3'}

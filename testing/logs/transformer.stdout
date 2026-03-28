@@ -149,3 +149,8 @@ Press CTRL+C to quit
 127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
 [2026-03-29 04:18:35.883] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
 127.0.0.1 - - [29/Mar/2026 04:18:35] "POST /demo/inject HTTP/1.1" 200 -
+[2026-03-29 04:18:44.550] [transformer] [WARNING] [INJECT] transformer_overload on transformer T8
+127.0.0.1 - - [29/Mar/2026 04:18:44] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:45] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:18:50.025] [transformer] [INFO] [LOAD-LIMIT] T15: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 04:18:50] "POST /transformer/T15/load-limit HTTP/1.1" 200 -
