@@ -1,1 +1,14 @@
-[2026-03-29 03:09:44.295] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
+[2026-03-29 03:44:47.604] [voltage-regulator] [INFO] Starting voltage-regulator on port 5009
+[2026-03-29 03:44:49.641] [voltage-regulator] [INFO] [TAP] north: tap raised to 1
+[2026-03-29 03:44:52.694] [voltage-regulator] [INFO] [TAP] south: tap raised to 1
+[2026-03-29 03:44:55.744] [voltage-regulator] [INFO] [TAP] east: tap raised to 1
+[2026-03-29 03:44:58.794] [voltage-regulator] [INFO] [TAP] west: tap raised to 1
+[2026-03-29 03:45:01.824] [voltage-regulator] [INFO] [TAP] central: tap raised to 1
+[2026-03-29 03:45:21.369] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+[2026-03-29 03:45:23.447] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+[2026-03-29 03:45:59.686] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+[2026-03-29 03:46:01.854] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+[2026-03-29 03:46:18.976] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+[2026-03-29 03:46:21.022] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central
+[2026-03-29 03:47:21.368] [voltage-regulator] [INFO] [TAP-LOCK] Tap changer locked for zone=central
+[2026-03-29 03:47:23.432] [voltage-regulator] [INFO] [CAPACITOR] Bank deactivated for zone=central

@@ -1,1 +1,8 @@
-[2026-03-29 03:09:42.053] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-29 03:44:45.419] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-29 03:45:22.486] [transformer] [WARNING] [INJECT] transformer_overload on transformer T16
+[2026-03-29 03:45:40.596] [transformer] [INFO] [LOAD-LIMIT] T16: max_load_percent=60
+[2026-03-29 03:45:43.005] [transformer] [WARNING] [INJECT] voltage_spike on transformer T1
+[2026-03-29 03:46:02.090] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
+[2026-03-29 03:46:56.536] [transformer] [WARNING] [INJECT] transformer_overload on transformer T10
+[2026-03-29 03:47:02.361] [transformer] [INFO] [LOAD-LIMIT] T10: max_load_percent=60
+[2026-03-29 03:47:19.303] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11

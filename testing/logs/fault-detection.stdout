@@ -1,4 +1,4 @@
-[2026-03-29 03:09:44.658] [fault-detection] [INFO] Starting fault-detection on port 5010
+[2026-03-29 03:44:47.890] [fault-detection] [INFO] Starting fault-detection on port 5010
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -6,3 +6,19 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5010
  * Running on http://10.12.15.243:5010
 Press CTRL+C to quit
+127.0.0.1 - - [29/Mar/2026 03:44:55] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:10] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:54] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:45:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:00] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:23] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:46:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 03:47:22] "GET /health HTTP/1.1" 200 -
