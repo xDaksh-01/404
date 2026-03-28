@@ -141,3 +141,11 @@ Press CTRL+C to quit
 [2026-03-29 04:18:06.738] [transformer] [WARNING] [INJECT] voltage_spike on transformer T2
 127.0.0.1 - - [29/Mar/2026 04:18:06] "POST /demo/inject HTTP/1.1" 200 -
 127.0.0.1 - - [29/Mar/2026 04:18:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:18] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:18:35.883] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
+127.0.0.1 - - [29/Mar/2026 04:18:35] "POST /demo/inject HTTP/1.1" 200 -

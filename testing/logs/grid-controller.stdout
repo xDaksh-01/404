@@ -369,3 +369,23 @@ Press CTRL+C to quit
 127.0.0.1 - - [29/Mar/2026 04:18:16] "POST /remediation-log HTTP/1.1" 200 -
 127.0.0.1 - - [29/Mar/2026 04:18:16] "GET /status HTTP/1.1" 200 -
 127.0.0.1 - - [29/Mar/2026 04:18:16] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:23] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:25] "POST /alerts/resolve HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:27] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:18:29.092] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [29/Mar/2026 04:18:29] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /alerts?limit=100&include_resolved=true HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /alerts?limit=100&include_resolved=true HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:35] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:36] "GET /status HTTP/1.1" 200 -
+[2026-03-29 04:18:41.502] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=96.8°C, load=100.0%)
+127.0.0.1 - - [29/Mar/2026 04:18:41] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:42] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 04:18:42] "GET /status HTTP/1.1" 200 -
