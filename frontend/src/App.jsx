@@ -12,6 +12,7 @@ import SystemOverview from './pages/SystemOverview.jsx'
 import AllTransformers from './pages/AllTransformers.jsx'
 import ZoneDetails from './pages/ZoneDetails.jsx'
 import LogsFixes from './pages/LogsFixes.jsx'
+import TransformerInfo from './pages/TransformerInfo.jsx'
 
 // Create Context
 const GridContext = createContext()
@@ -80,8 +81,10 @@ function AppContent() {
         <TopBar summary={summary} lastUpdated={lastUpdated} />
         
         <Routes>
-          <Route path="/" element={<SystemOverview />} />
+          <Route path="/" element={<AllTransformers />} />
+          <Route path="/overview" element={<SystemOverview />} />
           <Route path="/transformers" element={<AllTransformers />} />
+          <Route path="/transformer-info" element={<TransformerInfo />} />
           <Route path="/zones" element={<ZoneDetails />} />
           <Route path="/logs" element={<LogsFixes />} />
         </Routes>

@@ -60,14 +60,14 @@ function TransformerCard({ t }) {
   )
 }
 
-export default function TransformerPanel() {
+export default function TransformerPanel({ className = '' }) {
   const { transformers: ts } = useGrid()
 
   const critCount = ts.filter(t => t.load_percent > 85).length
   const maxTemp   = ts.length ? Math.max(...ts.map(t => t.temperature_c || 0)) : 0
 
   return (
-    <div className="card">
+    <div className={`card ${className}`.trim()}>
       <div className="card-header">
         <div className="card-title">
           <Cpu size={13} />

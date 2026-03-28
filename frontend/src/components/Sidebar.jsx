@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Zap, Activity, Info, BarChart3, Bot, Settings } from 'lucide-react'
+import { LayoutDashboard, Zap, Activity, Bot, Cpu } from 'lucide-react'
 
 export default function Sidebar() {
   return (
@@ -11,13 +11,18 @@ export default function Sidebar() {
       
       <nav className="sidebar-nav">
         <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`} end>
+          <Zap size={18} />
+          <span>City View</span>
+        </NavLink>
+
+        <NavLink to="/overview" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
           <LayoutDashboard size={18} />
           <span>System Overview</span>
         </NavLink>
-        
-        <NavLink to="/transformers" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <Zap size={18} />
-          <span>All Transformers</span>
+
+        <NavLink to="/transformer-info" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+          <Cpu size={18} />
+          <span>Transformer Info</span>
         </NavLink>
         
         <NavLink to="/zones" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
