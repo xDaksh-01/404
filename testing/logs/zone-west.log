@@ -24,3 +24,26 @@
 [2026-03-28 08:33:17.608] [zone-west] [INFO] [SHED-LOAD] Shed 84.18MW in west
 [2026-03-28 08:33:29.560] [zone-west] [INFO] [SHED-LOAD] Shed 80.53MW in west
 [2026-03-28 08:33:34.957] [zone-west] [INFO] [SHED-LOAD] Shed 79.27000000000001MW in west
+[2026-03-28 08:33:46.996] [zone-west] [INFO] [SHED-LOAD] Shed 75.7MW in west
+[2026-03-28 08:33:53.070] [zone-west] [INFO] [SHED-LOAD] Shed 76.07000000000001MW in west
+[2026-03-28 08:34:04.101] [zone-west] [INFO] [SHED-LOAD] Shed 72.35000000000001MW in west
+[2026-03-28 08:34:10.168] [zone-west] [INFO] [SHED-LOAD] Shed 71.17MW in west
+[2026-03-28 08:34:12.878] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:34:22.053] [zone-west] [INFO] [SHED-LOAD] Shed 89.31MW in west
+[2026-03-28 08:34:22.644] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:34:28.080] [zone-west] [INFO] [SHED-LOAD] Shed 94.3MW in west
+[2026-03-28 08:34:38.381] [zone-west] [INFO] [SHED-LOAD] Shed 88.14MW in west
+[2026-03-28 08:34:40.116] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:34:44.453] [zone-west] [INFO] [SHED-LOAD] Shed 94.3MW in west
+[2026-03-28 08:34:55.462] [zone-west] [INFO] [SHED-LOAD] Shed 89.23MW in west
+[2026-03-28 08:35:01.334] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:35:01.567] [zone-west] [INFO] [SHED-LOAD] Shed 87.05000000000001MW in west
+[2026-03-28 08:35:13.288] [zone-west] [INFO] [SHED-LOAD] Shed 87.73MW in west
+[2026-03-28 08:35:19.303] [zone-west] [INFO] [SHED-LOAD] Shed 86.14MW in west
+[2026-03-28 08:35:31.333] [zone-west] [INFO] [SHED-LOAD] Shed 81.7MW in west
+[2026-03-28 08:35:37.343] [zone-west] [INFO] [SHED-LOAD] Shed 81.10000000000001MW in west
+[2026-03-28 08:35:40.328] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:35:49.382] [zone-west] [INFO] [SHED-LOAD] Shed 90.2MW in west
+[2026-03-28 08:35:55.425] [zone-west] [INFO] [SHED-LOAD] Shed 87.96000000000001MW in west
+[2026-03-28 08:35:55.923] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 08:36:07.409] [zone-west] [INFO] [SHED-LOAD] Shed 87.33MW in west

@@ -47,3 +47,7 @@
 [2026-03-28 08:32:41.774] [voltage-regulator] [INFO] [TAP] west: tap raised to 3
 [2026-03-28 08:32:49.662] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
 [2026-03-28 08:32:58.830] [voltage-regulator] [INFO] [TAP] west: tap raised to 4
+[2026-03-28 08:33:44.960] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 08:34:30.693] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 08:35:21.196] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator
+[2026-03-28 08:35:38.604] [voltage-regulator] [WARNING] [INJECT] voltage_overload injected into voltage-regulator

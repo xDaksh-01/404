@@ -86,12 +86,12 @@ INJECTABLE_FAILURES = [
     },
     {
         "name": "Current Spiking",
-        "endpoint_fn": lambda: f"http://localhost:5006/demo/inject", # west by default
+        "endpoint_fn": lambda: f"http://127.0.0.1:5006/demo/inject", # west by default
         "payload_fn": lambda: {
             "type": "current_surge",
             "amps_a": random.uniform(450, 600),
         },
-        "extra_action": lambda: requests.post("http://localhost:5010/demo/inject", json={
+        "extra_action": lambda: requests.post("http://127.0.0.1:5010/demo/inject", json={
             "type": "current_surge",
             "zone": "west",
             "feeder": "feeder-1"

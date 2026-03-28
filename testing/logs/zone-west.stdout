@@ -297,3 +297,187 @@ Press CTRL+C to quit
 127.0.0.1 - - [28/Mar/2026 08:34:00] "GET /status HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 08:34:00] "GET /status HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 08:34:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:03] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:04.101] [zone-west] [INFO] [SHED-LOAD] Shed 72.35000000000001MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:04] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:09] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:10.168] [zone-west] [INFO] [SHED-LOAD] Shed 71.17MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:10] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:10] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:12.878] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:34:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:14] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:22] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:22.053] [zone-west] [INFO] [SHED-LOAD] Shed 89.31MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:22] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:22] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:22.644] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:34:22] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:26] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:28.080] [zone-west] [INFO] [SHED-LOAD] Shed 94.3MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:28] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:35] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:37] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:38.381] [zone-west] [INFO] [SHED-LOAD] Shed 88.14MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:38] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:39] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:40] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:40.116] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:34:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:40] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:42] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:44.453] [zone-west] [INFO] [SHED-LOAD] Shed 94.3MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:44] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:46] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:48] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:54] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:34:55.462] [zone-west] [INFO] [SHED-LOAD] Shed 89.23MW in west
+127.0.0.1 - - [28/Mar/2026 08:34:55] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:34:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:00] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:01] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:01.334] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:35:01] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:01] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:01.567] [zone-west] [INFO] [SHED-LOAD] Shed 87.05000000000001MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:01] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:05] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:13] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:13.288] [zone-west] [INFO] [SHED-LOAD] Shed 87.73MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:13] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:18] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:19.303] [zone-west] [INFO] [SHED-LOAD] Shed 86.14MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:19] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:26] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:30] "GET /health HTTP/1.1" 200 -
+[2026-03-28 08:35:31.333] [zone-west] [INFO] [SHED-LOAD] Shed 81.7MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:31] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:36] "GET /health HTTP/1.1" 200 -
+[2026-03-28 08:35:37.343] [zone-west] [INFO] [SHED-LOAD] Shed 81.10000000000001MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:37] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:39] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:39] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:40.328] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:35:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:40] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:46] "POST /restart HTTP/1.1" 404 -
+127.0.0.1 - - [28/Mar/2026 08:35:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:47] "POST /restart HTTP/1.1" 404 -
+[2026-03-28 08:35:49.382] [zone-west] [INFO] [SHED-LOAD] Shed 90.2MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:49] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:54] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:35:55.425] [zone-west] [INFO] [SHED-LOAD] Shed 87.96000000000001MW in west
+127.0.0.1 - - [28/Mar/2026 08:35:55] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:55] "GET /health HTTP/1.1" 200 -
+[2026-03-28 08:35:55.923] [zone-west] [WARNING] [INJECT] current_surge in west
+127.0.0.1 - - [28/Mar/2026 08:35:55] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:35:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:06] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:07.409] [zone-west] [INFO] [SHED-LOAD] Shed 87.33MW in west
+127.0.0.1 - - [28/Mar/2026 08:36:07] "POST /shed-load HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:21] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 08:36:24] "GET /status HTTP/1.1" 200 -
+[2026-03-28 08:36:25.476] [zone-west] [INFO] [SHED-LOAD] Shed 81.93MW in west
+127.0.0.1 - - [28/Mar/2026 08:36:25] "POST /shed-load HTTP/1.1" 200 -
