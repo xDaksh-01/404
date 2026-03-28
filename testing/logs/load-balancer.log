@@ -1,1 +1,35 @@
 [2026-03-29 04:13:10.181] [load-balancer] [INFO] Starting load-balancer on port 5008
+[2026-03-29 04:13:20.269] [load-balancer] [DEBUG] [BALANCE] Demand=3054MW Allocated=3054MW Overloaded_zones=0
+[2026-03-29 04:13:35.353] [load-balancer] [DEBUG] [BALANCE] Demand=2936MW Allocated=2936MW Overloaded_zones=0
+[2026-03-29 04:13:50.444] [load-balancer] [DEBUG] [BALANCE] Demand=2852MW Allocated=2852MW Overloaded_zones=0
+[2026-03-29 04:13:52.789] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:14:01.599] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:14:05.545] [load-balancer] [DEBUG] [BALANCE] Demand=2812MW Allocated=2812MW Overloaded_zones=0
+[2026-03-29 04:14:20.604] [load-balancer] [DEBUG] [BALANCE] Demand=2735MW Allocated=2735MW Overloaded_zones=0
+[2026-03-29 04:14:35.691] [load-balancer] [DEBUG] [BALANCE] Demand=2691MW Allocated=2691MW Overloaded_zones=0
+[2026-03-29 04:14:40.518] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 04:14:50.754] [load-balancer] [DEBUG] [BALANCE] Demand=2795MW Allocated=2795MW Overloaded_zones=0
+[2026-03-29 04:14:59.406] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 04:15:04.701] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:15:05.839] [load-balancer] [DEBUG] [BALANCE] Demand=2920MW Allocated=2920MW Overloaded_zones=0
+[2026-03-29 04:15:12.876] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:15:20.907] [load-balancer] [DEBUG] [BALANCE] Demand=2832MW Allocated=2832MW Overloaded_zones=0
+[2026-03-29 04:15:21.822] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:15:35.974] [load-balancer] [DEBUG] [BALANCE] Demand=2743MW Allocated=2743MW Overloaded_zones=0
+[2026-03-29 04:15:51.045] [load-balancer] [DEBUG] [BALANCE] Demand=2658MW Allocated=2658MW Overloaded_zones=0
+[2026-03-29 04:15:57.991] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:16:06.115] [load-balancer] [DEBUG] [BALANCE] Demand=2608MW Allocated=2608MW Overloaded_zones=0
+[2026-03-29 04:16:17.489] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:16:21.197] [load-balancer] [DEBUG] [BALANCE] Demand=2568MW Allocated=2568MW Overloaded_zones=0
+[2026-03-29 04:16:36.274] [load-balancer] [DEBUG] [BALANCE] Demand=2549MW Allocated=2549MW Overloaded_zones=0
+[2026-03-29 04:16:51.346] [load-balancer] [DEBUG] [BALANCE] Demand=2541MW Allocated=2541MW Overloaded_zones=0
+[2026-03-29 04:17:06.430] [load-balancer] [DEBUG] [BALANCE] Demand=2505MW Allocated=2505MW Overloaded_zones=0
+[2026-03-29 04:17:17.453] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 04:17:20.571] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:17:21.533] [load-balancer] [DEBUG] [BALANCE] Demand=2489MW Allocated=2489MW Overloaded_zones=0
+[2026-03-29 04:17:31.062] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+[2026-03-29 04:17:36.624] [load-balancer] [DEBUG] [BALANCE] Demand=2428MW Allocated=2428MW Overloaded_zones=0
+[2026-03-29 04:17:51.694] [load-balancer] [DEBUG] [BALANCE] Demand=2405MW Allocated=2405MW Overloaded_zones=0
+[2026-03-29 04:17:55.501] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+[2026-03-29 04:18:06.771] [load-balancer] [DEBUG] [BALANCE] Demand=2556MW Allocated=2556MW Overloaded_zones=0
+[2026-03-29 04:18:15.480] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
