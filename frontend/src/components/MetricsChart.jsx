@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from 'react'
+import { useCallback, useState, useRef, useEffect } from 'react'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, ReferenceLine, Legend,
@@ -39,37 +39,44 @@ export default function MetricsChart({ className }) {
   const [anomalyTimes, setAnomalyTimes] = useState([])
 
   const refresh = useCallback(async () => {
-    const [summary, transformers, fd] = await Promise.all([
-      api.gridSummary(),
-      api.transformers(),
-      api.faultDetection(),
-    ])
+    try {
+      const [summary, transformers, fd] = await Promise.all([
+        api.gridSummary(),
+        api.transformers(),
+        api.faultDetection(),
+      ])
 
-    const now = new Date().toLocaleTimeString('en', { hour12: false,
-      hour: '2-digit', minute: '2-digit', second: '2-digit' })
+      const now = new Date().toLocaleTimeString('en', { hour12: false,
+        hour: '2-digit', minute: '2-digit', second: '2-digit' })
 
-    const ts  = transformers?.transformers || []
-    const maxTemp = ts.length ? Math.max(...ts.map(t => t.temperature_c || 0)) : 0
-    const faultProb = (fd?.fault_probability_max || 0) * 100
+      const ts  = transformers?.transformers || []
+      const maxTemp = ts.length ? Math.max(...ts.map(t => t.temperature_c || 0)) : 0
+      const faultProb = (fd?.fault_probability_max || 0) * 100
 
-    const point = {
-      time:       now,
-      load_pct:   summary?.grid_load_percent || 0,
-      max_temp:   maxTemp,
-      voltage:    summary?.grid_voltage_avg || 230,
-      fault_prob: parseFloat(faultProb.toFixed(2)),
+      const point = {
+        time:       now,
+        load_pct:   summary?.grid_load_percent || 0,
+        max_temp:   maxTemp,
+        voltage:    summary?.grid_voltage_avg || 230,
+        fault_prob: parseFloat(faultProb.toFixed(2)),
+      }
+
+      // Track anomaly times (fault_prob > 40)
+      if (faultProb > 40) {
+        setAnomalyTimes(prev => [...prev.slice(-10), now])
+      }
+
+      dataRef.current = [...dataRef.current.slice(-(MAX_POINTS - 1)), point]
+      setData([...dataRef.current])
+    } catch (error) {
+      console.error('MetricsChart refresh error:', error)
     }
-
-    // Track anomaly times (fault_prob > 40)
-    if (faultProb > 40) {
-      setAnomalyTimes(prev => [...prev.slice(-10), now])
-    }
-
-    dataRef.current = [...dataRef.current.slice(-(MAX_POINTS - 1)), point]
-    setData([...dataRef.current])
   }, [])
 
   useInterval(refresh, 5000)
+
+  // Initial load
+  useEffect(() => { refresh() }, [refresh])
 
   return (
     <div className={`chart-container ${className || ''}`}>
