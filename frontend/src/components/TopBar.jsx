@@ -88,7 +88,7 @@ export default function TopBar({ summary, lastUpdated }) {
       <div className="top-bar-right">
         <div className="top-bar-stat">
           <span className="stat-label">ALERTS</span>
-          <span className={`stat-value mono ${activeAlerts > 0 ? 'text-red' : 'text-green'}`}>
+          <span className={`stat-value mono ${activeAlerts > 0 ? 'status-critical' : 'status-healthy'}`}>
             {activeAlerts}
           </span>
         </div>
