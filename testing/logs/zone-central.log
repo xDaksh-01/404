@@ -1,33 +1,15 @@
-[2026-03-28 15:33:06.000] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 15:44:10.934] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 15:46:15.022] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 15:46:15.818] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 15:46:56.235] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 15:56:21.228] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:00:10.669] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:05:40.653] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:11:58.450] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 16:15:35.029] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 16:18:34.363] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 16:21:33.679] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:30:32.268] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:31:45.736] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 16:32:58.302] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:33:37.382] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:35:22.631] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:36:11.832] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:43:08.805] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:43:36.952] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:43:43.140] [zone-central] [INFO] [SHED-LOAD] Shed 90.75360744862792MW in central
-[2026-03-28 16:46:58.061] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:47:37.792] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:52:17.334] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 16:55:21.075] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:00:23.172] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:03:08.766] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 17:06:50.632] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:13:47.890] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
-[2026-03-28 17:19:15.387] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:21:43.106] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:23:34.809] [zone-central] [WARNING] [INJECT] current_surge in central
-[2026-03-28 17:27:35.576] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:27:04.979] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
+[2026-03-28 23:34:44.583] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:36:19.149] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:36:29.343] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:36:37.332] [zone-central] [INFO] [SHED-LOAD] Shed 98.65MW in central
+[2026-03-28 23:36:41.312] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:36:55.123] [zone-central] [INFO] [SHED-LOAD] Shed 102.98MW in central
+[2026-03-28 23:37:58.596] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:47:17.465] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:48:10.588] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-28 23:57:33.891] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-29 00:02:08.732] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-29 00:02:48.483] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-29 00:02:52.009] [zone-central] [INFO] [SHED-LOAD] Shed 94.0514393517396MW in central
+[2026-03-29 00:07:10.559] [zone-central] [WARNING] [INJECT] current_surge in central
