@@ -1,3 +1,54 @@
-[2026-03-28 07:40:20.602] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
-[2026-03-28 07:41:27.841] [zone-east] [WARNING] [INJECT] current_surge in east
-[2026-03-28 07:41:31.629] [zone-east] [INFO] [SHED-LOAD] Shed 101.89456704719491MW in east
+[2026-03-28 15:33:05.440] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 15:35:06.980] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 15:36:55.638] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 15:38:14.192] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 15:46:14.493] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:01:43.987] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:03:48.478] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:11:57.909] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:13:20.301] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:15:34.499] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:18:33.778] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:19:25.821] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:19:45.721] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:23:15.469] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:23:47.933] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:25:36.728] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:29:44.544] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:31:45.115] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:32:29.115] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:39:04.633] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:39:43.799] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:41:01.734] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:41:10.585] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:41:16.548] [zone-east] [INFO] [SHED-LOAD] Shed 101.22000000000001MW in east
+[2026-03-28 16:46:03.860] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:47:17.093] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:51:48.415] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:03:08.133] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:05:25.045] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:07:51.534] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:13:47.223] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:15:29.531] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:17:30.797] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:22:33.222] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:23:23.916] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:23:42.985] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:23:52.940] [zone-east] [INFO] [SHED-LOAD] Shed 99.43MW in east
+[2026-03-28 17:23:54.840] [zone-east] [INFO] [SHED-LOAD] Shed 99.43MW in east
+[2026-03-28 17:28:34.075] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 17:29:42.109] [zone-east] [WARNING] [INJECT] current_surge in east
+[2026-03-28 16:40:22.266] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 16:54:01.210] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:03:05.260] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:06:58.254] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:07:47.511] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:08:32.747] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:09:31.284] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:10:49.688] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:12:24.969] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:13:20.371] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:17:18.869] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:18:50.858] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:20:39.837] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)
+[2026-03-28 17:22:26.720] [zone-east] [INFO] Starting zone-east on port 5005 (zone=east)

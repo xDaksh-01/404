@@ -64,6 +64,61 @@ alerts = deque(maxlen=200)   # live alert feed
 remediation_log = deque(maxlen=100)
 alert_timestamps = deque(maxlen=300)  # for rate calculation
 
+
+def _recompute_active_alerts_count():
+    """Keep active count tied to unresolved alerts only."""
+    with state_lock:
+        state["active_alerts_count"] = sum(1 for a in alerts if not a.get("resolved", False))
+
+
+def _resolve_best_matching_alert(criteria: dict):
+    """Resolve the best unresolved alert using available correlation fields."""
+    unresolved = [a for a in alerts if not a.get("resolved", False)]
+    if not unresolved:
+        return None
+
+    fault_type = str(criteria.get("fault_type", "")).strip().lower()
+    zone = str(criteria.get("zone", "")).strip().lower()
+    service = str(criteria.get("service", "")).strip().lower()
+    component = str(criteria.get("component", criteria.get("transformer_id", ""))).strip().lower()
+
+    best = None
+    best_score = -1
+    for alert in unresolved:
+        score = 0
+        if fault_type and str(alert.get("fault_type", "")).strip().lower() == fault_type:
+            score += 5
+        if zone and str(alert.get("zone", "")).strip().lower() == zone:
+            score += 3
+        if service and str(alert.get("service", "")).strip().lower() == service:
+            score += 2
+        if component and str(alert.get("component", "")).strip().lower() == component:
+            score += 2
+
+        # If no criteria were provided, resolve the most recent unresolved alert.
+        if not (fault_type or zone or service or component):
+            score = 1
+
+        if score > best_score:
+            best = alert
+            best_score = score
+
+    if best is None or best_score <= 0:
+        return None
+
+    now = datetime.datetime.now().isoformat()
+    best["resolved"] = True
+    best["resolved_at"] = now
+    best["resolved_by"] = criteria.get("resolved_by", "remediation-engine")
+    return best
+
+# ─── Background data cache (avoids live HTTP in /metrics/summary) ─────────────
+service_cache = {
+    "transformer_summary": {"avg_temp": 65.0, "max_load": 75.0},
+    "lb_data": {},
+    "vr_data": {},
+}
+
 # ─── Logger ────────────────────────────────────────────────────────────────────
 logger = setup_logger(SERVICE_NAME)
 
@@ -130,6 +185,30 @@ def poll_services():
 
             if zone_loads:
                 total_load = sum(zone_loads)
+
+            # ── Cache transformer / LB / VR data ──────────────────────────────
+            try:
+                r = requests.get("http://localhost:5002/status", timeout=2)
+                if r.status_code == 200:
+                    ts = r.json().get("transformers", [])
+                    if ts:
+                        service_cache["transformer_summary"] = {
+                            "avg_temp": round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1),
+                            "max_load": round(max(t.get("load_percent", 0) for t in ts), 1),
+                        }
+            except: pass
+
+            try:
+                r = requests.get("http://localhost:5008/status", timeout=1)
+                if r.status_code == 200:
+                    service_cache["lb_data"] = r.json()
+            except: pass
+
+            try:
+                r = requests.get("http://localhost:5009/status", timeout=1)
+                if r.status_code == 200:
+                    service_cache["vr_data"] = r.json()
+            except: pass
 
             latency_ms = (time.time() - t_start) * 1000
 
@@ -212,32 +291,13 @@ def metrics():
 
 @app.route("/metrics/summary")
 def metrics_summary():
-    """Aggregated summary for the React frontend."""
+    """Aggregated summary for the React frontend. Uses cached data — no live HTTP calls."""
     with state_lock:
         s = dict(state)
 
-    transformer_summary = {"avg_temp": 65.0, "max_load": 75.0}
-    try:
-        r = requests.get("http://localhost:5002/status", timeout=2)
-        if r.status_code == 200:
-            data = r.json()
-            ts = data.get("transformers", [])
-            if ts:
-                transformer_summary["avg_temp"] = round(sum(t.get("temperature_c", 60) for t in ts) / len(ts), 1)
-                transformer_summary["max_load"] = round(max(t.get("load_percent", 0) for t in ts), 1)
-    except: pass
-
-    lb_data = {}
-    try:
-        r = requests.get("http://localhost:5008/status", timeout=1)
-        if r.status_code == 200: lb_data = r.json()
-    except: pass
-
-    vr_data = {}
-    try:
-        r = requests.get("http://localhost:5009/status", timeout=1)
-        if r.status_code == 200: vr_data = r.json()
-    except: pass
+    transformer_summary = service_cache["transformer_summary"]
+    lb_data             = service_cache["lb_data"]
+    vr_data             = service_cache["vr_data"]
 
     risk = "LOW"
     if s["grid_load_percent"] > 85: risk = "CRITICAL"
@@ -276,15 +336,14 @@ def receive_alert():
         "zone": data.get("zone", ""),
         "message": data.get("message", ""),
         "fault_type": data.get("fault_type", ""),
+        "resolved": False,
+        "resolved_at": None,
+        "resolved_by": None,
     }
     alerts.appendleft(alert)
     alert_timestamps.append(time.time())
 
-    with state_lock:
-        state["active_alerts_count"] = len([
-            a for a in alerts
-            if (time.time() - datetime.datetime.fromisoformat(a["timestamp"]).timestamp()) < 300
-        ])
+    _recompute_active_alerts_count()
 
     logger.warning(f"[ALERT] {alert['severity']} | {alert['service']} | {alert['message']}")
     write_simulation_log(SERVICE_NAME, "ALERT", f"{alert['severity']} from {alert['service']}: {alert['message']}")
@@ -294,7 +353,26 @@ def receive_alert():
 @app.route("/alerts")
 def get_alerts():
     limit = int(request.args.get("limit", 50))
-    return jsonify(list(alerts)[:limit])
+    include_resolved = request.args.get("include_resolved", "true").lower() != "false"
+    rows = list(alerts)
+    if not include_resolved:
+        rows = [a for a in rows if not a.get("resolved", False)]
+    return jsonify(rows[:limit])
+
+
+@app.route("/alerts/resolve", methods=["POST"])
+def resolve_alert():
+    data = request.get_json(force=True) or {}
+    resolved_alert = _resolve_best_matching_alert(data)
+    if not resolved_alert:
+        return jsonify({"resolved": False, "reason": "no_matching_unresolved_alert"}), 404
+
+    _recompute_active_alerts_count()
+    return jsonify({
+        "resolved": True,
+        "alert_id": resolved_alert.get("id"),
+        "resolved_at": resolved_alert.get("resolved_at"),
+    })
 
 
 @app.route("/remediation-log", methods=["GET"])
@@ -368,9 +446,9 @@ def stop_simulation():
         state["is_simulating"] = False
         state["simulation_start_time"] = None
         state["system_status"] = 0
-        state["active_alerts_count"] = 0
         remediation_log.clear()
         alerts.clear()
+        state["active_alerts_count"] = 0
 
     write_simulation_log(SERVICE_NAME, "SIMULATE", "Simulation STOPPED and RESET via dashboard")
     return jsonify({"status": "stopped_and_reset"})
@@ -392,11 +470,24 @@ def demo_inject():
 def demo_reset():
     with state_lock:
         state["system_status"] = 0
-        state["active_alerts_count"] = 0
+        for alert in alerts:
+            alert["resolved"] = True
+            alert["resolved_at"] = datetime.datetime.now().isoformat()
+            alert["resolved_by"] = "demo-reset"
+    _recompute_active_alerts_count()
     return jsonify({"reset": True})
 
 
 if __name__ == "__main__":
+    # ── Fresh start: clear all in-memory state ─────────────────────────────
+    alerts.clear()
+    remediation_log.clear()
+    alert_timestamps.clear()
+    with state_lock:
+        state["active_alerts_count"]       = 0
+        state["remediation_actions_count"] = 0
+        state["remediation_count_session"] = 0
+
     # Clear simulation log file on start
     sim_log_path = os.path.join(ROOT, "testing", "logs", "simulation_run.txt")
     try:
@@ -406,7 +497,7 @@ if __name__ == "__main__":
     except Exception:
         pass
 
-    logger.info(f"Starting {SERVICE_NAME} on port {PORT} (Simulation ACTIVE by default)")
+    logger.info(f"Starting {SERVICE_NAME} on port {PORT} — fresh state, 0 logs")
     threading.Thread(target=poll_services, daemon=True).start()
     threading.Thread(target=simulate_natural_variation, daemon=True).start()
     app.run(host="0.0.0.0", port=PORT, debug=False, use_reloader=False)

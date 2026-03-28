@@ -284,6 +284,10 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
   box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.2);
 }
 
+.nav-link-external {
+  cursor: pointer;
+}
+
 .sidebar-footer {
   padding: 16px 20px;
   border-top: 1px solid var(--border);
@@ -554,9 +558,10 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
   padding: 2px 8px;
   border-radius: 10px;
 }
-.rem-status.RESOLVED { background: rgba(34,197,94,0.15); color: var(--green); }
-.rem-status.EXECUTING{ background: rgba(245,158,11,0.15);color: var(--amber); }
-.rem-status.PARTIAL  { background: rgba(168,85,247,0.15); color: var(--purple); }
+.rem-status.RESOLVED   { background: rgba(34,197,94,0.15);  color: var(--green);  }
+.rem-status.EXECUTING  { background: rgba(245,158,11,0.15); color: var(--amber);  }
+.rem-status.EXCEEDED   { background: rgba(239,68,68,0.15);  color: var(--red);    }
+.rem-status.UNRESOLVED { background: rgba(168,85,247,0.15); color: var(--purple); }
 
 .rem-actions {
   margin-top: 6px;

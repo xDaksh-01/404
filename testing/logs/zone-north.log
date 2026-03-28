@@ -1,6 +1,56 @@
-[2026-03-28 07:40:20.001] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
-[2026-03-28 07:44:28.063] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 07:47:01.902] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 07:47:17.897] [zone-north] [INFO] [SHED-LOAD] Shed 86.18MW in north
-[2026-03-28 07:48:11.407] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 07:48:23.284] [zone-north] [INFO] [SHED-LOAD] Shed 90.13MW in north
+[2026-03-28 15:33:04.789] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 15:40:36.374] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:42:35.334] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:43:08.155] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:43:20.733] [zone-north] [INFO] [SHED-LOAD] Shed 87.01MW in north
+[2026-03-28 15:45:43.453] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:46:04.546] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:46:09.196] [zone-north] [INFO] [SHED-LOAD] Shed 93.48633774738036MW in north
+[2026-03-28 15:46:13.980] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 15:47:45.486] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:48:27.261] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:48:36.626] [zone-north] [INFO] [SHED-LOAD] Shed 81.16000000000001MW in north
+[2026-03-28 15:51:23.110] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:54:51.461] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:55:03.319] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 15:55:16.090] [zone-north] [INFO] [SHED-LOAD] Shed 81.69MW in north
+[2026-03-28 16:08:01.359] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:11:57.475] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 16:14:14.263] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:15:14.143] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:15:33.977] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 16:16:10.290] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:16:28.289] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:16:37.969] [zone-north] [INFO] [SHED-LOAD] Shed 90.65MW in north
+[2026-03-28 16:16:40.864] [zone-north] [INFO] [SHED-LOAD] Shed 88.77000000000001MW in north
+[2026-03-28 16:18:33.283] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 16:20:33.927] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:27:48.134] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:29:53.536] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:31:44.586] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 16:38:24.983] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:39:13.981] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:39:24.674] [zone-north] [INFO] [SHED-LOAD] Shed 82.85000000000001MW in north
+[2026-03-28 16:39:29.785] [zone-north] [INFO] [SHED-LOAD] Shed 73.985MW in north
+[2026-03-28 16:42:01.602] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:53:43.123] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 17:03:07.449] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:09:48.057] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 17:12:52.175] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 17:13:46.592] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:18:47.201] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 17:27:25.405] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 16:40:21.974] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 16:54:01.216] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:03:05.472] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:06:58.075] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:07:46.861] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:08:32.669] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:09:31.393] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:10:48.897] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:12:24.608] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:13:19.939] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:17:19.096] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:18:51.110] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:20:39.572] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 17:22:26.010] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)

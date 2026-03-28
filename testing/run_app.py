@@ -9,6 +9,10 @@ import requests
 import random
 import json
 
+# Ensure stdout encoding is UTF-8 when supported (better terminal logging across platforms)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 import shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,6 +32,7 @@ if os.path.exists(LOG_DIR):
                 shutil.rmtree(file_path)
     except Exception as e:
         print(f"Warning: Could not clear logs: {e}")
+        print("Hint: A previous simulation run may still be active and holding file handles. Stop running instances and retry.")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 SIM_LOG = os.path.join(LOG_DIR, "simulation_run.txt")
@@ -277,9 +282,6 @@ def main():
     if sys.platform != "win32":
         signal.signal(signal.SIGTERM, shutdown)
 
-    # Write simulation log header
-    write_simulation_header()
-
     print(f"\n{BOLD}{CYAN}{'═'*60}{RESET}")
     print(f"{BOLD}{CYAN}  SMART GRID CONTROL SYSTEM{RESET}")
     print(f"{BOLD}{CYAN}  Smart City Power Grid & Autonomous Remediation{RESET}")
@@ -304,6 +306,9 @@ def main():
     if not all_online:
         log(f"{RED}✗ Not all services came online within 90s. Check logs in {LOG_DIR}{RESET}")
         shutdown()
+
+    # Write simulation log header after services are online
+    write_simulation_header()
 
     now = datetime.datetime.now().strftime("%H:%M:%S")
     print(f"\n[{now}] {GREEN}{BOLD}All {len(SERVICES)} services online. System ready.{RESET}")

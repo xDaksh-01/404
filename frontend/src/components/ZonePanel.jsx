@@ -10,35 +10,30 @@ const ZONES = [
 ]
 
 function ZoneRow({ zone, data }) {
-  if (!data) return (
-    <div className="zone-row">
-      <div className="zone-name" style={{ color: 'var(--muted)' }}>{zone.label}</div>
-      <div style={{ fontSize: '0.68rem', color: 'var(--muted)' }}>offline</div>
-      <div></div>
-    </div>
-  )
-  const pct     = data.load_percent || 0
-  const color   = pct > 90 ? 'red' : pct > 80 ? 'amber' : 'green'
+  const pct = data ? (data.load_percent || 0) : 0
+  const color = pct > 90 ? 'red' : pct > 80 ? 'amber' : 'green'
   const textCol = pct > 90 ? 'var(--red)' : pct > 80 ? 'var(--amber)' : 'var(--green)'
-  const tripped = data.substation_status === 'tripped'
-  const freqOk  = Math.abs((data.frequency_hz || 50) - 50) < 0.3
-  const freq    = (data.frequency_hz || 50).toFixed(3)
+  const tripped = data ? (data.substation_status === 'tripped') : false
+  const freqOk = data ? Math.abs((data.frequency_hz || 50) - 50) < 0.3 : true
+  const freq = data ? (data.frequency_hz || 50).toFixed(3) : '50.000'
+  const isOnline = !!data
 
   return (
     <div className="zone-row">
       <div>
-        <div className="zone-name" style={{ color: tripped ? 'var(--red)' : 'var(--white)' }}>
+        <div className="zone-name" style={{ color: tripped ? 'var(--red)' : isOnline ? 'var(--white)' : 'var(--muted)' }}>
           {zone.label}
         </div>
         {tripped && <div style={{ fontSize: '0.6rem', color: 'var(--red)' }}>TRIPPED</div>}
+        {!isOnline && <div style={{ fontSize: '0.6rem', color: 'var(--muted)' }}>OFFLINE</div>}
       </div>
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
           <span style={{
-            fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: textCol, fontWeight: 600
-          }}>{pct.toFixed(1)}%</span>
+            fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: isOnline ? textCol : 'var(--muted)', fontWeight: 600
+          }}>{isOnline ? pct.toFixed(1) : '--'}</span>
           <span style={{ fontSize: '0.62rem', color: 'var(--muted)' }}>
-            {data.current_load_mw?.toFixed(0)}MW
+            {data?.current_load_mw?.toFixed(0) ?? '--'}MW
           </span>
         </div>
         <div className="progress-bar" style={{ height: '5px' }}>
@@ -47,11 +42,11 @@ function ZoneRow({ zone, data }) {
       </div>
       <div className="zone-stats">
         <div style={{ color: freqOk ? 'var(--muted)' : 'var(--amber)' }}>{freq}Hz</div>
-        <div style={{ color: (data.voltage_avg_v || 230) < 215 ? 'var(--amber)' : 'var(--muted)' }}>
-          {data.voltage_avg_v?.toFixed(1)}V
+        <div style={{ color: isOnline && (data.voltage_avg_v || 230) < 215 ? 'var(--amber)' : 'var(--muted)' }}>
+          {(data?.voltage_avg_v || 230).toFixed(0)}V
         </div>
-        <div style={{ color: (data.active_events || 0) > 0 ? 'var(--amber)' : 'var(--muted)' }}>
-          {data.active_events || 0} events
+        <div style={{ color: (data?.active_events || 0) > 0 ? 'var(--amber)' : 'var(--muted)' }}>
+          {data?.active_events || 0} events
         </div>
       </div>
     </div>

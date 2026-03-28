@@ -5,18 +5,16 @@ export default function LoadBalancerPanel({ className }) {
   const { summary } = useGrid()
   
   // Use summary from context which contains LB data
-  const data = summary?.load_balancer
-  
-  if (!data) return (
-    <div className={`card ${className || ''}`}>
-      <div className="card-header">
-        <div className="card-title"><Share2 size={13} />Load Balancer</div>
-      </div>
-      <div style={{ color: 'var(--muted)', fontSize: '0.75rem', padding: '20px 0', textAlign: 'center' }}>
-        Awaiting LB metrics...
-      </div>
-    </div>
-  )
+  const data = summary?.load_balancer || {
+    total_demand_mw: 0,
+    total_allocated_mw: 0,
+    zones_overloaded_count: 0,
+    load_shedding_active: false,
+    transmission_mode: 'normal',
+    rebalance_count_session: 0,
+    transmission_paths: {}
+  }
+  const isConnected = !!(summary?.load_balancer && Object.keys(summary.load_balancer).length > 0)
 
   const demand    = data.total_demand_mw    || 0
   const allocated = data.total_allocated_mw || 0
@@ -36,6 +34,7 @@ export default function LoadBalancerPanel({ className }) {
       <div className="card-header">
         <div className="card-title"><Share2 size={13} />Load Balancer</div>
         <div style={{ display: 'flex', gap: 6 }}>
+          {!isConnected && <span className="badge" style={{ background: 'var(--muted)', color: 'var(--bg)' }}>OFFLINE</span>}
           {shedding && <span className="badge warning">SHEDDING</span>}
           {overloaded > 0 && <span className="badge critical">{overloaded} overloaded</span>}
         </div>
