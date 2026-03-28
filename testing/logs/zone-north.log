@@ -1,9 +1,1 @@
-[2026-03-28 23:27:03.769] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
-[2026-03-28 23:32:43.650] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 23:40:37.925] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 23:41:18.323] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-28 23:41:26.274] [zone-north] [INFO] [SHED-LOAD] Shed 84.29MW in north
-[2026-03-28 23:47:06.399] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-29 00:00:52.031] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-29 00:01:59.461] [zone-north] [WARNING] [INJECT] current_surge in north
-[2026-03-29 00:02:05.667] [zone-north] [INFO] [SHED-LOAD] Shed 88.20771033611453MW in north
+[2026-03-29 03:09:42.451] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
