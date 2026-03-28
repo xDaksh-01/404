@@ -31,10 +31,10 @@ function LoadBar({ percent }) {
   )
 }
 
-export default function GridOverview({ className }) {
+export default function GridOverview() {
   const { summary: s } = useGrid()
   
-  if (!s) return <div className={`card loading-placeholder ${className || ''}`}>Loading Grid Summary...</div>
+  if (!s) return <div className="card loading-placeholder">Loading Grid Summary...</div>
 
   const loadMW  = s.grid_total_load_mw?.toFixed(0) ?? '—'
   const capMW   = s.grid_capacity_mw?.toFixed(0) ?? '5240'
@@ -46,7 +46,7 @@ export default function GridOverview({ className }) {
   const riskColor = { LOW: 'var(--green)', MEDIUM: 'var(--blue)', HIGH: 'var(--amber)', CRITICAL: 'var(--red)' }[risk] || 'var(--muted)'
 
   return (
-    <div className={`card ${className || ''}`}>
+    <div className="card">
       <div className="card-header">
         <div className="card-title">
           <Activity size={13} />

@@ -8119,3 +8119,245 @@ Press CTRL+C to quit
 [2026-03-28 17:27:34.251] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.3°C, load=96.9%)
 127.0.0.1 - - [28/Mar/2026 17:27:34] "POST /alert HTTP/1.1" 200 -
 127.0.0.1 - - [28/Mar/2026 17:27:35] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:36] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:27:40.282] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=97.9°C, load=97.7%)
+127.0.0.1 - - [28/Mar/2026 17:27:40] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:40] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:40] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:40] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:40] "GET /alerts?limit=100 HTTP/1.1" 200 -
+[2026-03-28 17:27:41.292] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.4°C, load=99.5%)
+127.0.0.1 - - [28/Mar/2026 17:27:41] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:27:42.324] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.3°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:27:42] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:42] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:44] "GET /metrics/summary HTTP/1.1" 200 -
+[2026-03-28 17:27:46.119] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:27:46] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:46] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:27:48.354] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=97.5°C, load=97.1%)
+127.0.0.1 - - [28/Mar/2026 17:27:48] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:49] "GET /metrics/summary HTTP/1.1" 200 -
+[2026-03-28 17:27:49.387] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.8°C, load=99.3%)
+127.0.0.1 - - [28/Mar/2026 17:27:49] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:27:50.407] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.0°C, load=99.7%)
+127.0.0.1 - - [28/Mar/2026 17:27:50] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:52] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:56] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:27:56.442] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=97.4°C, load=95.2%)
+127.0.0.1 - - [28/Mar/2026 17:27:56] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:27:57.457] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.0°C, load=95.9%)
+127.0.0.1 - - [28/Mar/2026 17:27:57] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:27:58.488] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=96.7°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:27:58] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:27:59] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:00] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:02.959] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:28:02] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:03] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:04.525] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=97.5°C, load=94.1%)
+127.0.0.1 - - [28/Mar/2026 17:28:04] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:05.559] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.9°C, load=95.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:05] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:06.572] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.1°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:06] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:07] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:09] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:12.596] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=97.1°C, load=94.6%)
+127.0.0.1 - - [28/Mar/2026 17:28:12] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:13.610] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.0°C, load=96.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:13] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:14.627] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=96.9°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:14] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:16] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:17] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:19.857] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:28:19] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:20.654] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.5°C, load=92.6%)
+127.0.0.1 - - [28/Mar/2026 17:28:20] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:21.677] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.0°C, load=97.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:21] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:22.705] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=96.7°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:22] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:25] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:26] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:28.729] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.0°C, load=92.7%)
+127.0.0.1 - - [28/Mar/2026 17:28:28] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:29.763] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.1°C, load=97.6%)
+127.0.0.1 - - [28/Mar/2026 17:28:29] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:30.798] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.4°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:30] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:33] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:35] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:36.771] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:28:36] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:36.823] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.8°C, load=91.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:36] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:37.829] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.3°C, load=98.7%)
+127.0.0.1 - - [28/Mar/2026 17:28:37] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:38.844] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.6°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:38] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:40] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:40] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:40] "GET /remediation-log?limit=50 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:40] "GET /alerts?limit=100 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:42] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:43] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:44.863] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.7°C, load=90.9%)
+127.0.0.1 - - [28/Mar/2026 17:28:44] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:44] "GET /metrics/summary HTTP/1.1" 200 -
+[2026-03-28 17:28:45.902] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=98.0°C, load=97.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:45] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:46.931] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.8°C, load=99.6%)
+127.0.0.1 - - [28/Mar/2026 17:28:46] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:49] "GET /metrics/summary HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:49] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:51] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:28:52.951] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.6°C, load=94.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:52] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:53.843] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Transformer Thermal Overload
+127.0.0.1 - - [28/Mar/2026 17:28:53] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:53.994] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=98.0°C, load=95.3%)
+127.0.0.1 - - [28/Mar/2026 17:28:53] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:28:55.021] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=98.2°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:28:55] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:57] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:28:59] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:00] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:01.028] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.9°C, load=96.7%)
+127.0.0.1 - - [28/Mar/2026 17:29:01] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:02.043] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.8°C, load=95.5%)
+127.0.0.1 - - [28/Mar/2026 17:29:02] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:03.068] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=98.0°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:29:03] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:07] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:08] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:09.087] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.7°C, load=96.5%)
+127.0.0.1 - - [28/Mar/2026 17:29:09] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:10.095] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=98.7°C, load=98.3%)
+127.0.0.1 - - [28/Mar/2026 17:29:10] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:10.717] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:29:10] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:11.123] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=98.0°C, load=98.5%)
+127.0.0.1 - - [28/Mar/2026 17:29:11] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:15.860] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T16 in central is CRITICAL (temp=91.5°C, load=60.0%)
+127.0.0.1 - - [28/Mar/2026 17:29:15] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:16] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 17:29:17.133] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.8°C, load=96.8%)
+127.0.0.1 - - [28/Mar/2026 17:29:17] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:18.157] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=98.6°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:29:18] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:18] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:19.185] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=98.2°C, load=97.3%)
+127.0.0.1 - - [28/Mar/2026 17:29:19] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:21] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:25.223] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.9°C, load=94.4%)
+127.0.0.1 - - [28/Mar/2026 17:29:25] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:25.973] [grid-controller] [WARNING] [ALERT] INFO | remediation-engine | System reboot initiated for north to resolve zone issues.
+127.0.0.1 - - [28/Mar/2026 17:29:25] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:26.248] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=98.0°C, load=100.0%)
+127.0.0.1 - - [28/Mar/2026 17:29:26] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:27.274] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=98.2°C, load=96.1%)
+127.0.0.1 - - [28/Mar/2026 17:29:27] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:27] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:31] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:31.904] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:29:31] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:33.306] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.7°C, load=95.1%)
+127.0.0.1 - - [28/Mar/2026 17:29:33] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:34.326] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.8°C, load=99.3%)
+127.0.0.1 - - [28/Mar/2026 17:29:34] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:35.360] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.8°C, load=97.2%)
+127.0.0.1 - - [28/Mar/2026 17:29:35] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:38] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:40] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:41.377] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=95.5°C, load=97.3%)
+127.0.0.1 - - [28/Mar/2026 17:29:41] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:42.410] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.5°C, load=99.0%)
+127.0.0.1 - - [28/Mar/2026 17:29:42] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:43] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:43.432] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.6°C, load=97.9%)
+127.0.0.1 - - [28/Mar/2026 17:29:43] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:45] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:47] "GET /health HTTP/1.1" 200 -
+[2026-03-28 17:29:48.999] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Grid-wide Load Rebalancing
+127.0.0.1 - - [28/Mar/2026 17:29:49] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:49.455] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.0°C, load=97.7%)
+127.0.0.1 - - [28/Mar/2026 17:29:49] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:49] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:29:50.470] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.3°C, load=98.6%)
+127.0.0.1 - - [28/Mar/2026 17:29:50] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:51.486] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.3°C, load=98.7%)
+127.0.0.1 - - [28/Mar/2026 17:29:51] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:29:55] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 17:29:57.519] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.2°C, load=97.5%)
+127.0.0.1 - - [28/Mar/2026 17:29:57] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:58.549] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.4°C, load=97.3%)
+127.0.0.1 - - [28/Mar/2026 17:29:58] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:29:59.574] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.3°C, load=99.5%)
+127.0.0.1 - - [28/Mar/2026 17:29:59] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:02] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:03] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:30:05.597] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.2°C, load=96.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:05] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:06.063] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:30:06] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:06.625] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=97.3°C, load=96.8%)
+127.0.0.1 - - [28/Mar/2026 17:30:06] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:07.642] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.3°C, load=98.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:07] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:12] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:12] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:30:13.662] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.5°C, load=96.0%)
+127.0.0.1 - - [28/Mar/2026 17:30:13] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:14.691] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.7°C, load=94.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:14] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:15.715] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.5°C, load=97.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:15] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:19] "POST /remediation-log HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:21] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:30:21.747] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.6°C, load=97.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:21] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:22.775] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.8°C, load=96.1%)
+127.0.0.1 - - [28/Mar/2026 17:30:22] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:23.131] [grid-controller] [WARNING] [ALERT] CRITICAL | ml-anomaly-detector | Autonomous detection of Unexpected Voltage Spike
+127.0.0.1 - - [28/Mar/2026 17:30:23] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:23.797] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.0°C, load=97.0%)
+127.0.0.1 - - [28/Mar/2026 17:30:23] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:29] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 17:30:29.819] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.3°C, load=96.9%)
+127.0.0.1 - - [28/Mar/2026 17:30:29] "POST /alert HTTP/1.1" 200 -
+[2026-03-28 17:30:30.848] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T7 in east is CRITICAL (temp=96.6°C, load=95.5%)
+127.0.0.1 - - [28/Mar/2026 17:30:30] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:31] "GET /status HTTP/1.1" 200 -
+[2026-03-28 17:30:31.875] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T15 in central is CRITICAL (temp=97.2°C, load=99.7%)
+127.0.0.1 - - [28/Mar/2026 17:30:31] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:36] "POST /remediation-log HTTP/1.1" 200 -
+[2026-03-28 17:30:37.910] [grid-controller] [WARNING] [ALERT] CRITICAL | transformer | Transformer T5 in south is CRITICAL (temp=96.9°C, load=97.5%)
+127.0.0.1 - - [28/Mar/2026 17:30:37] "POST /alert HTTP/1.1" 200 -
+127.0.0.1 - - [28/Mar/2026 17:30:37] "GET /status HTTP/1.1" 200 -

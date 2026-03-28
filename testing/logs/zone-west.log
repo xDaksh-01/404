@@ -44,3 +44,4 @@
 [2026-03-28 17:18:01.145] [zone-west] [INFO] [SHED-LOAD] Shed 71.57000000000001MW in west
 [2026-03-28 17:26:12.895] [zone-west] [WARNING] [INJECT] current_surge in west
 [2026-03-28 17:26:28.089] [zone-west] [INFO] [SHED-LOAD] Shed 70.19MW in west
+[2026-03-28 17:29:51.718] [zone-west] [WARNING] [INJECT] current_surge in west
