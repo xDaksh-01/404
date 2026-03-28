@@ -71,7 +71,7 @@ export default function ZonePanel({ className }) {
           {overloaded > 0 && (
             <span className="badge warning">{overloaded} overloaded</span>
           )}
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--muted)' }}>
+          <span className="status-muted" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>
             {totalLoad.toFixed(0)} MW total
           </span>
         </div>

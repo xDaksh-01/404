@@ -188,6 +188,12 @@ def set_cooling(tid):
             return jsonify({"error": "not found"}), 404
         t = transformers[tid]
         t["cooling_active"] = data.get("activate", True)
+        # 🔥 instant temperature drop when cooling activated
+        if t["cooling_active"]:
+            t["temperature_c"] = max(65, t["temperature_c"] - 15)
+        # ✅ reset status if recovered
+        if t["temperature_c"] < 75 and t["load_percent"] < 80:
+            t["status"] = "healthy"
         fan_speed = data.get("fan_speed", "maximum")
         if fan_speed == "maximum":
             t["cooling_active"] = True
@@ -224,6 +230,10 @@ def emergency_reduce():
             t = transformers[tid]
             t["load_percent"] = max(20, t["load_percent"] * (1 - reduce_pct / 100))
             t["load_mw"] = t["capacity_mw"] * t["load_percent"] / 100
+            t["temperature_c"] = max(60, t["temperature_c"] - 20)
+            # ✅ RESET STATUS
+            if t["temperature_c"] < 75 and t["load_percent"] < 80:
+                t["status"] = "healthy"
     logger.info(f"[EMERGENCY-REDUCE] Reduced load by {reduce_pct}% on {len(targets)} transformers")
     write_simulation_log(SERVICE_NAME, "REMEDIATE",
                          f"Emergency load reduction {reduce_pct}% on {len(targets)} transformers")
