@@ -1,0 +1,352 @@
+"""
+testing/inject_failures.py
+===========================
+Runs for exactly 60 seconds.
+Randomly injects one failure every 8-12 seconds.
+Shows live logs in terminal AND writes to testing/logs/simulation_run.txt.
+
+Usage (run WHILE run_app.py is running):
+    python testing/inject_failures.py
+"""
+
+import os
+import sys
+import time
+import random
+import datetime
+import json
+import requests
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+LOG_DIR = os.path.join(ROOT, "testing", "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+SIM_LOG = os.path.join(LOG_DIR, "simulation_run.txt")
+
+# ── ANSI colors ─────────────────────────────────────────────────────────────────
+RED    = "\033[91m"
+GREEN  = "\033[92m"
+YELLOW = "\033[93m"
+CYAN   = "\033[96m"
+MAGENTA = "\033[95m"
+BOLD   = "\033[1m"
+RESET  = "\033[0m"
+DIVIDER = f"{CYAN}{'═'*60}{RESET}"
+
+ZONE_PORTS = {
+    "north": 5003, "south": 5004, "east": 5005,
+    "west": 5006, "central": 5007
+}
+
+INJECTABLE_FAILURES = [
+    {
+        "name": "Thermal Runaway (Critical)", 
+        "service": "transformer",
+        "endpoint": "http://localhost:5002/demo/inject",
+        "payload_fn": lambda: {
+            "type": "thermal_overload",
+            "transformer_id": f"T{random.randint(1, 16)}",
+            "load_percent": random.uniform(97, 125),
+            "temperature_c": random.uniform(95, 118),
+        },
+    },
+    {
+        "name": "Grid Voltage Surge",
+        "service": "voltage-regulator",
+        "endpoint": "http://localhost:5009/demo/inject",
+        "payload_fn": lambda: {
+            "type": "voltage_instability",
+            "zone": random.choice(["north", "south", "east", "west", "central"]),
+            "voltage_v": random.uniform(248, 265),
+            "tap_oscillation": True,
+        },
+    },
+    {
+        "name": "City Feeder Overload",
+        "service": "zone",
+        "endpoint_fn": lambda: f"http://localhost:{random.choice([5003, 5004, 5005, 5006, 5007])}/demo/inject",
+        "payload_fn": lambda: {
+            "type": "feeder_overload",
+            "sector": f"sector-{random.randint(1, 3)}",
+            "magnitude_percent": random.uniform(150, 220),
+        },
+    },
+    {
+        "name": "Localized Load Spike",
+        "service": "transformer",
+        "endpoint": "http://localhost:5002/demo/inject",
+        "payload_fn": lambda: {
+            "type": "thermal_overload",
+            "transformer_id": f"T{random.randint(1, 16)}",
+            "load_percent": random.uniform(110, 140),
+            "temperature_c": random.uniform(80, 95),
+        },
+    }
+]
+
+# ── Tracking ────────────────────────────────────────────────────────────────────
+results = []
+
+
+def _log(msg: str, also_print: bool = True):
+    """Write to both terminal and log file."""
+    ts = datetime.datetime.now().strftime("%H:%M:%S.%f")[:-3]
+    line = f"[{ts}] {msg}"
+    if also_print:
+        print(line)
+    try:
+        with open(SIM_LOG, "a", encoding="utf-8") as f:
+            f.write(line.replace(RED, "").replace(GREEN, "").replace(
+                YELLOW, "").replace(CYAN, "").replace(MAGENTA, "").replace(
+                BOLD, "").replace(RESET, "") + "\n")
+    except Exception:
+        pass
+
+
+def capture_baseline() -> dict:
+    """Capture system metrics before any injection."""
+    baseline = {}
+    try:
+        r = requests.get("http://localhost:5001/metrics/summary", timeout=3)
+        if r.status_code == 200:
+            d = r.json()
+            baseline = {
+                "grid_total_load_mw": d.get("grid_total_load_mw", 0),
+                "grid_load_percent": d.get("grid_load_percent", 0),
+                "avg_transformer_temp": d.get("avg_transformer_temp", 0),
+                "status_text": d.get("status_text", "UNKNOWN"),
+            }
+    except Exception:
+        baseline = {"error": "grid-controller unreachable"}
+    return baseline
+
+
+def inject_failure(failure: dict, t_elapsed: float) -> dict:
+    """Inject a single failure and return result dict."""
+    payload = failure["payload_fn"]()
+    endpoint = failure.get("endpoint") or failure["endpoint_fn"]()
+
+    _log(f"\n{DIVIDER}")
+    _log(f"[T+{t_elapsed:03.0f}s] {BOLD}{YELLOW}INJECTING:{RESET} {failure['name']}")
+    _log(f"         Target: {endpoint}")
+    _log(f"         Payload: {json.dumps(payload)}")
+
+    t_inject = time.time()
+    inject_success = False
+    try:
+        r = requests.post(endpoint, json=payload, timeout=3)
+        inject_success = r.status_code == 200
+        status = f"{GREEN}→ Injection successful{RESET}" if inject_success \
+            else f"{RED}→ Injection failed ({r.status_code}){RESET}"
+        _log(f"         {status}")
+    except Exception as e:
+        _log(f"         {RED}→ Injection error: {e}{RESET}")
+
+    return {
+        "name": failure["name"],
+        "injected": inject_success,
+        "inject_time": t_inject,
+        "endpoint": endpoint,
+        "payload": payload,
+        "detected": False,
+        "remediated": False,
+        "detection_time_s": None,
+        "total_time_s": None,
+    }
+
+
+def poll_for_detection(result: dict, max_wait: float = 12.0) -> None:
+    """Poll ML anomaly detector output via grid controller alerts."""
+    t_start = result["inject_time"]
+    deadline = t_start + max_wait
+
+    ml_detected = False
+    while time.time() < deadline:
+        try:
+            r = requests.get("http://localhost:5001/alerts?limit=5", timeout=2)
+            if r.status_code == 200:
+                alerts = r.json()
+                for alert in alerts:
+                    alert_time = datetime.datetime.fromisoformat(
+                        alert.get("timestamp", "")).timestamp()
+                    if (alert_time >= t_start and
+                            alert.get("service") == "ml-anomaly-detector"):
+                        detection_time = alert_time - t_start
+                        result["detected"] = True
+                        result["detection_time_s"] = round(detection_time, 1)
+                        score_str = alert.get("message", "")
+                        _log(
+                            f"[T+{time.time()-t_start+result.get('_base',0):.0f}s] "
+                            f"{CYAN}ML DETECTION:{RESET} Anomaly detected")
+                        _log(f"[T+{time.time()-t_start+result.get('_base',0):.0f}s] "
+                             f"{MAGENTA}ROOT CAUSE:{RESET} {alert.get('fault_type','?')} "
+                             f"(detection: {detection_time:.1f}s)")
+                        ml_detected = True
+                        break
+        except Exception:
+            pass
+        if ml_detected:
+            break
+        time.sleep(1)
+
+
+def poll_for_remediation(result: dict, max_wait: float = 15.0) -> None:
+    """Poll remediation log."""
+    t_start = result["inject_time"]
+    deadline = t_start + max_wait
+
+    while time.time() < deadline:
+        try:
+            r = requests.get("http://localhost:5001/remediation-log?limit=3", timeout=2)
+            if r.status_code == 200:
+                logs = r.json()
+                for entry in logs:
+                    entry_time = datetime.datetime.fromisoformat(
+                        entry.get("timestamp", "")).timestamp()
+                    if entry_time >= t_start:
+                        total_time = time.time() - t_start
+                        result["remediated"] = True
+                        result["total_time_s"] = round(total_time, 1)
+                        status = entry.get("status", "UNKNOWN")
+                        _log(f"[T+{total_time:.0f}s] "
+                             f"{GREEN}REMEDIATION:{RESET} {status} in {total_time:.1f}s")
+                        return
+        except Exception:
+            pass
+        time.sleep(1)
+
+
+def print_summary(baseline: dict, start_time: float):
+    total = len(results)
+    detected = sum(1 for r in results if r["detected"])
+    remediated = sum(1 for r in results if r["remediated"])
+    detect_times = [r["detection_time_s"] for r in results
+                    if r["detection_time_s"] is not None]
+    total_times = [r["total_time_s"] for r in results
+                   if r["total_time_s"] is not None]
+
+    avg_detect = sum(detect_times) / len(detect_times) if detect_times else 0
+    avg_total  = sum(total_times)  / len(total_times)  if total_times  else 0
+    under_15   = sum(1 for t in total_times if t <= 15)
+
+    elapsed = time.time() - start_time
+
+    print(f"\n\n{BOLD}{CYAN}{'═'*60}{RESET}")
+    print(f"{BOLD}{CYAN}  SIMULATION COMPLETE{RESET}")
+    print(f"{BOLD}{CYAN}{'═'*60}{RESET}")
+    print(f"\n  Duration:              {elapsed:.0f} seconds")
+    print(f"  Start Baseline:        Load={baseline.get('grid_load_percent','?')}% "
+          f"Temp={baseline.get('avg_transformer_temp','?')}°C")
+    print(f"\n  Failures injected:     {BOLD}{total}{RESET}")
+    print(f"  Successfully detected: "
+          f"{GREEN if detected==total else YELLOW}{BOLD}{detected}{RESET} "
+          f"({detected/total*100:.0f}%)" if total > 0 else "  N/A")
+    print(f"  Successfully remediated:{GREEN if remediated>=detected*0.8 else YELLOW}"
+          f"{BOLD}{remediated}{RESET} "
+          f"({remediated/total*100:.0f}%)" if total > 0 else "  N/A")
+    print(f"  Avg detection time:    {avg_detect:.1f}s")
+    print(f"  Avg total time:        {avg_total:.1f}s")
+    print(f"  Under 15s:             {under_15}/{len(total_times)} "
+          f"{'✓' if under_15==len(total_times) else '⚠'}")
+
+    print(f"\n  {'Failure':<28} {'Detected':>8} {'Remediated':>10} {'Time':>6}")
+    print(f"  {'-'*54}")
+    for r in results:
+        d = f"{GREEN}✓{RESET}" if r["detected"] else f"{RED}✗{RESET}"
+        rem = f"{GREEN}✓{RESET}" if r["remediated"] else f"{RED}✗{RESET}"
+        t = f"{r['total_time_s']:.1f}s" if r["total_time_s"] else "  N/A"
+        print(f"  {r['name']:<28} {d:>8} {rem:>10} {t:>6}")
+
+    print(f"\n{BOLD}{CYAN}{'═'*60}{RESET}\n")
+
+    # Write summary to log
+    with open(SIM_LOG, "a", encoding="utf-8") as f:
+        f.write("\n" + "="*80 + "\n")
+        f.write("SIMULATION SUMMARY\n")
+        f.write(f"Total failures injected:    {total}\n")
+        f.write(f"Successfully detected:      {detected}\n")
+        f.write(f"Successfully remediated:    {remediated}\n")
+        f.write(f"Average detection time:     {avg_detect:.1f}s\n")
+        f.write(f"Average total time:         {avg_total:.1f}s\n")
+        f.write("="*80 + "\n")
+
+
+def main():
+    TOTAL_DURATION = 60
+    MIN_INTERVAL   = 8
+    MAX_INTERVAL   = 12
+
+    print(f"\n{BOLD}{CYAN}{DIVIDER}{RESET}")
+    print(f"{BOLD}{CYAN}  SMART GRID FAILURE INJECTION SIMULATION{RESET}")
+    now = datetime.datetime.now().strftime("%H:%M:%S")
+    print(f"  Duration: {TOTAL_DURATION} seconds | Started: {now}")
+    print(f"{BOLD}{CYAN}{DIVIDER}{RESET}")
+
+    # Check grid controller is up
+    try:
+        requests.get("http://localhost:5001/health", timeout=3)
+    except Exception:
+        print(f"{RED}ERROR: Grid Controller not running. Start run_app.py first.{RESET}")
+        sys.exit(1)
+
+    start_time = time.time()
+
+    # Capture baseline
+    baseline = capture_baseline()
+    _log(f"[T+00s] System baseline captured")
+    _log(f"        grid_load_percent: {baseline.get('grid_load_percent', '?')}%")
+    _log(f"        avg_transformer_temp: {baseline.get('avg_transformer_temp', '?')}°C")
+    _log(f"        status: {baseline.get('status_text', '?')}")
+
+    # Build randomized injection schedule
+    failure_pool = INJECTABLE_FAILURES.copy()
+    random.shuffle(failure_pool)
+    failure_idx = 0
+
+    next_inject_at = time.time() + random.uniform(MIN_INTERVAL, MAX_INTERVAL)
+
+    while time.time() - start_time < TOTAL_DURATION:
+        now = time.time()
+        if now >= next_inject_at and failure_idx < len(failure_pool):
+            t_elapsed = now - start_time
+            failure = failure_pool[failure_idx % len(failure_pool)]
+            failure_idx += 1
+
+            result = inject_failure(failure, t_elapsed)
+            result["_base"] = t_elapsed
+            results.append(result)
+
+            # Poll for detection (non-blocking poll in background)
+            # Give it up to 12s to detect
+            detect_thread = threading.Thread(
+                target=poll_for_detection, args=(result, 12.0), daemon=True)
+            detect_thread.start()
+
+            # Poll for remediation
+            remediate_thread = threading.Thread(
+                target=poll_for_remediation, args=(result, 15.0), daemon=True)
+            remediate_thread.start()
+
+            # Schedule next injection
+            next_inject_at = now + random.uniform(MIN_INTERVAL, MAX_INTERVAL)
+
+            # If we've run out of failures, recycle
+            if failure_idx >= len(failure_pool):
+                failure_pool = INJECTABLE_FAILURES.copy()
+                random.shuffle(failure_pool)
+                failure_idx = 0
+
+        remaining = TOTAL_DURATION - (time.time() - start_time)
+        print(f"\r  ⏱  Time remaining: {remaining:.0f}s   ", end="", flush=True)
+        time.sleep(0.5)
+
+    print()
+    _log(f"\n[T+60s] SIMULATION COMPLETE")
+    time.sleep(3)  # Let final polls complete
+    print_summary(baseline, start_time)
+
+
+if __name__ == "__main__":
+    import threading
+    main()

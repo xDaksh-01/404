@@ -1,0 +1,6 @@
+[2026-03-28 07:40:20.001] [zone-north] [INFO] Starting zone-north on port 5003 (zone=north)
+[2026-03-28 07:44:28.063] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 07:47:01.902] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 07:47:17.897] [zone-north] [INFO] [SHED-LOAD] Shed 86.18MW in north
+[2026-03-28 07:48:11.407] [zone-north] [WARNING] [INJECT] current_surge in north
+[2026-03-28 07:48:23.284] [zone-north] [INFO] [SHED-LOAD] Shed 90.13MW in north

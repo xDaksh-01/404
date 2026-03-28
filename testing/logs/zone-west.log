@@ -1,0 +1,6 @@
+[2026-03-28 07:40:20.911] [zone-west] [INFO] Starting zone-west on port 5006 (zone=west)
+[2026-03-28 07:40:55.908] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 07:44:06.861] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 07:44:20.974] [zone-west] [INFO] [SHED-LOAD] Shed 73.7MW in west
+[2026-03-28 07:47:31.280] [zone-west] [WARNING] [INJECT] current_surge in west
+[2026-03-28 07:47:42.022] [zone-west] [INFO] [SHED-LOAD] Shed 77.95MW in west
