@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Zap, Activity, BarChart3, Bot, Bell, Cpu } from 'lucide-react'
+import { LayoutDashboard, Zap, Activity, BarChart3, Bot, Cpu } from 'lucide-react'
 
 export default function Sidebar() {
   const host = typeof window !== 'undefined' ? window.location.hostname : 'localhost'
@@ -48,20 +48,6 @@ export default function Sidebar() {
           <span>Logs & Fixes</span>
         </NavLink>
 
-        <NavLink to="/alerts" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-          <Bell size={18} />
-          <span>Alerts Feed</span>
-        </NavLink>
-
-        <a
-          href={observabilityLinks.prometheus}
-          className="nav-link nav-link-external"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <BarChart3 size={18} />
-          <span>Prometheus</span>
-        </a>
 
         <a
           href={observabilityLinks.grafana}
