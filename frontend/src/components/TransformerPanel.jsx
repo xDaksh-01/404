@@ -3,6 +3,7 @@ import { Cpu } from 'lucide-react'
 import { useGrid } from '../App.jsx'
 
 function getColor(pct) {
+  if (typeof pct !== 'number' || Number.isNaN(pct)) return { text: 'var(--muted)', cls: 'healthy' }
   if (pct > 95) return { text: 'var(--red)',   cls: 'critical' }
   if (pct > 85) return { text: 'var(--red)',   cls: 'critical' }
   if (pct > 75) return { text: 'var(--amber)', cls: 'warning'  }
@@ -12,26 +13,29 @@ function getColor(pct) {
 function TransformerCard({ t }) {
   const col = getColor(t.load_percent)
   const [hovered, setHovered] = useState(false)
+  const loadText = typeof t.load_percent === 'number' ? `${t.load_percent.toFixed(0)}%` : '—'
+  const tempText = typeof t.temperature_c === 'number' ? `${t.temperature_c.toFixed(1)}°C` : '—'
+  const zoneText = t.zone || 'Pending'
 
   return (
     <div
       className={`tx-card ${col.cls === 'critical' ? 'critical' : col.cls === 'warning' ? 'warning' : ''}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      title={`${t.id} | Zone: ${t.zone} | Temp: ${t.temperature_c?.toFixed(1)}°C | Voltage: ${t.voltage_output_v?.toFixed(1)}V | PF: ${t.power_factor?.toFixed(2)}`}
+      title={`${t.id || 'Transformer'} | Zone: ${zoneText} | Temp: ${tempText}`}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
         <div>
-          <div className="tx-id">{t.id}</div>
-          <div className="tx-zone">{t.zone}</div>
+          <div className="tx-id">{t.id || '—'}</div>
+          <div className="tx-zone">{zoneText}</div>
         </div>
         <span className={`dot ${col.cls === 'critical' ? 'red' : col.cls === 'warning' ? 'amber' : 'green'}`}
               style={{ marginTop: 2 }} />
       </div>
       <div className="tx-load" style={{ color: col.text }}>
-        {t.load_percent?.toFixed(0)}%
+        {loadText}
       </div>
-      <div className="tx-temp">{t.temperature_c?.toFixed(1)}°C</div>
+      <div className="tx-temp">{tempText}</div>
       <div className="progress-bar" style={{ height: '3px', marginTop: 4 }}>
         <div
           className={`progress-fill ${col.cls === 'critical' ? 'red' : col.cls === 'warning' ? 'amber' : 'green'}`}
@@ -47,13 +51,13 @@ function TransformerCard({ t }) {
           pointerEvents: 'none',
         }}>
           <div style={{ color: 'var(--blue)', fontFamily: 'var(--font-mono)', marginBottom: 2 }}>
-            {t.id} – {t.zone}
+            {t.id || '—'} – {zoneText}
           </div>
-          <div>Load: <span style={{ color: col.text }}>{t.load_percent?.toFixed(1)}%</span></div>
-          <div>Temp: {t.temperature_c?.toFixed(1)}°C</div>
-          <div>Voltage: {t.voltage_output_v?.toFixed(1)}V</div>
-          <div>PF: {t.power_factor?.toFixed(3)}</div>
-          <div>Oil: {t.oil_level_percent?.toFixed(1)}%</div>
+          <div>Load: <span style={{ color: col.text }}>{typeof t.load_percent === 'number' ? `${t.load_percent.toFixed(1)}%` : '—'}</span></div>
+          <div>Temp: {tempText}</div>
+          <div>Voltage: {typeof t.voltage_output_v === 'number' ? `${t.voltage_output_v.toFixed(1)}V` : '—'}</div>
+          <div>PF: {typeof t.power_factor === 'number' ? t.power_factor.toFixed(3) : '—'}</div>
+          <div>Oil: {typeof t.oil_level_percent === 'number' ? `${t.oil_level_percent.toFixed(1)}%` : '—'}</div>
         </div>
       )}
     </div>
@@ -63,8 +67,9 @@ function TransformerCard({ t }) {
 export default function TransformerPanel({ className = '' }) {
   const { transformers: ts } = useGrid()
 
-  const critCount = ts.filter(t => t.load_percent > 85).length
-  const maxTemp   = ts.length ? Math.max(...ts.map(t => t.temperature_c || 0)) : 0
+  const critCount = ts.filter(t => (t.load_percent || 0) > 85).length
+  const tempValues = ts.map(t => t.temperature_c).filter((value) => typeof value === 'number')
+  const maxTemp = tempValues.length ? Math.max(...tempValues) : null
 
   return (
     <div className={`card ${className}`.trim()}>
@@ -76,7 +81,7 @@ export default function TransformerPanel({ className = '' }) {
         <div style={{ display: 'flex', gap: 6 }}>
           {critCount > 0 && <span className="badge critical">{critCount} ⚠</span>}
           <span style={{ fontSize: '0.65rem', color: 'var(--muted)', fontFamily: 'var(--font-mono)' }}>
-            max {maxTemp.toFixed(1)}°C
+            {typeof maxTemp === 'number' ? `max ${maxTemp.toFixed(1)}°C` : 'temp pending'}
           </span>
         </div>
       </div>

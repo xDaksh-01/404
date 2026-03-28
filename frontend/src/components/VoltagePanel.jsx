@@ -32,6 +32,7 @@ function CircularGauge({ value, max = 1, label, color = 'var(--blue)', size = 60
 
 function TapIndicator({ position }) {
   const steps = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+  const toneClass = position === 0 ? 'status-muted' : position > 0 ? 'status-cyan' : 'status-warning'
   return (
     <div className="tap-indicator">
       {steps.map(s => (
@@ -40,8 +41,7 @@ function TapIndicator({ position }) {
           (position < 0 && s < 0 && s >= position) ? 'active neg' : ''
         }`} />
       ))}
-      <span style={{ marginLeft: 4, fontSize: '0.68rem', fontFamily: 'var(--font-mono)',
-                     color: position === 0 ? 'var(--muted)' : position > 0 ? 'var(--blue)' : 'var(--amber)' }}>
+      <span className={toneClass} style={{ marginLeft: 4, fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
         {position > 0 ? `+${position}` : position}
       </span>
     </div>
@@ -72,8 +72,8 @@ export default function VoltagePanel() {
   const locked  = data.tap_changer_locked
   const profiles= data.zone_voltage_profiles || {}
 
-  const pfColor  = pf < 0.85 ? 'var(--red)' : pf < 0.90 ? 'var(--amber)' : 'var(--green)'
-  const voltColor= avgV < 218 ? 'var(--red)' : avgV < 225 ? 'var(--amber)' : 'var(--blue)'
+  const pfClass  = pf < 0.85 ? 'status-critical' : pf < 0.90 ? 'status-warning' : 'status-healthy'
+  const voltClass = avgV < 218 ? 'status-critical' : avgV < 225 ? 'status-warning' : 'status-cyan'
 
   return (
     <div className="card">
@@ -85,11 +85,11 @@ export default function VoltagePanel() {
 
       {/* Main gauges */}
       <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: 14 }}>
-        <CircularGauge value={pf} max={1} label="Power Factor" color={pfColor} size={64} />
+        <CircularGauge value={pf} max={1} label="Power Factor" color={pf < 0.85 ? 'var(--red)' : pf < 0.90 ? 'var(--amber)' : 'var(--green)'} size={64} />
         <div style={{ textAlign: 'center' }}>
           <div className="label" style={{ marginBottom: 4 }}>Avg Voltage</div>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1.4rem',
-                       fontWeight: 600, color: voltColor }}>
+          <div className={voltClass} style={{ fontFamily: 'var(--font-mono)', fontSize: '1.4rem',
+                       fontWeight: 600 }}>
             {avgV.toFixed(1)}
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--muted)' }}>V (min {minV.toFixed(1)})</div>
@@ -110,15 +110,14 @@ export default function VoltagePanel() {
             <span style={{ color: 'var(--white)', textTransform: 'capitalize', minWidth: 55 }}>
               {zone}
             </span>
-            <span style={{
+            <span className={(zp.avg_v || 230) < 218 ? 'status-warning' : 'status-muted'} style={{
               fontFamily: 'var(--font-mono)',
-              color: (zp.avg_v || 230) < 218 ? 'var(--amber)' : 'var(--muted)',
             }}>
               {(zp.avg_v || 0).toFixed(1)}V
             </span>
             <TapIndicator position={zp.tap_position || 0} />
             {zp.capacitor_bank_active && (
-              <span style={{ fontSize: '0.6rem', color: 'var(--blue)' }}>⚡CAP</span>
+              <span className="status-cyan" style={{ fontSize: '0.6rem' }}>⚡CAP</span>
             )}
           </div>
         ))}

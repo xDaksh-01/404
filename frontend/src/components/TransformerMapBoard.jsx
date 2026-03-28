@@ -223,14 +223,18 @@ function buildZoneLabelHtml(name, load, voltage) {
 }
 
 function buildZonePopupHtml(zone) {
+  const statusClass = zone.status === 'critical' ? 'critical' : zone.status === 'warning' ? 'warning' : 'healthy'
+  const loadClass = zone.load > 90 ? 'critical' : zone.load > 75 ? 'warning' : 'healthy'
+  const voltageClass = zone.voltage < 200 ? 'critical' : zone.voltage < 220 ? 'warning' : 'healthy'
+
   return `
     <div class="zone-popup">
       <div class="zone-popup-title">${zone.name}</div>
       <div class="zone-popup-copy">${zone.description}</div>
       <div class="zone-popup-metrics">
-        <div>Status: ${zone.status}</div>
-        <div>Load: ${zone.load.toFixed(0)}%</div>
-        <div>Voltage: ${zone.voltage.toFixed(0)}V</div>
+        <div>Status: <span class="zone-popup-value ${statusClass}">${zone.status}</span></div>
+        <div>Load: <span class="zone-popup-value ${loadClass}">${zone.load.toFixed(0)}%</span></div>
+        <div>Voltage: <span class="zone-popup-value ${voltageClass}">${zone.voltage.toFixed(0)}V</span></div>
       </div>
       <div class="zone-popup-subtitle">Covered Areas</div>
       <div class="zone-popup-areas">${zone.areas.join(' • ')}</div>
