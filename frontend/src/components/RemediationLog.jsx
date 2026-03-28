@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Bot } from 'lucide-react'
 import { useGrid } from '../App.jsx'
+import { api } from '../services/api.js'
 
 function RemItem({ entry }) {
   const [expanded, setExpanded] = useState(false)
@@ -64,7 +65,36 @@ function RemItem({ entry }) {
 }
 
 export default function RemediationLog({ className }) {
-  const { remediationLog: entries } = useGrid()
+  const [entries, setEntries] = useState([])
+  const [lastUpdated, setLastUpdated] = useState(null)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let mounted = true
+
+    const refreshLog = async () => {
+      try {
+        const liveEntries = await api.remediationLog(50)
+        if (!mounted) return
+
+        if (liveEntries && Array.isArray(liveEntries)) {
+          setEntries(liveEntries)
+          setError(null)
+        } else {
+          setError('No remediation entries received')
+        }
+        setLastUpdated(new Date())
+      } catch (err) {
+        if (!mounted) return
+        console.error('RemediationLog refresh failed', err)
+        setError(err.message || 'Refresh error')
+      }
+    }
+
+    refreshLog()
+    const intervalId = setInterval(refreshLog, 2000)
+    return () => { mounted = false; clearInterval(intervalId) }
+  }, [])
 
   const resolved   = entries.filter(e => e.status === 'RESOLVED').length
   const under15    = entries.filter(e => e.total_time_s && e.total_time_s <= 15).length
@@ -85,6 +115,16 @@ export default function RemediationLog({ className }) {
               </span>
             </>
           )}
+          {lastUpdated && (
+            <span style={{ fontSize: '0.62rem', color: 'var(--muted)', fontFamily: 'var(--font-mono)' }}>
+              Updated {lastUpdated.toLocaleTimeString()}
+            </span>
+          )}
+          {error && (
+            <span style={{ fontSize: '0.62rem', color: 'var(--red)', fontFamily: 'var(--font-mono)' }}>
+              {error}
+            </span>
+          )}
         </div>
       </div>
 
@@ -93,9 +133,10 @@ export default function RemediationLog({ className }) {
           <div style={{ color: 'var(--muted)', fontSize: '0.72rem', padding: '12px 0', textAlign: 'center' }}>
             Awaiting ML anomaly detection...
           </div>
-        ) : entries.map(e => (
-          <RemItem key={e.id} entry={e} />
-        ))}
+        ) : entries.map((e, i) => (
+          <RemItem key={`${e.id}-${i}`} entry={e} />
+        ))
+      }
       </div>
     </div>
   )
