@@ -22,6 +22,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url
 
 # ─── Load zone-specific config ─────────────────────────────────────────────────
 # Each zone directory has its own config.py
@@ -135,7 +136,7 @@ def simulate():
 def _alert(severity, message):
     """Non-blocking alert to grid controller."""
     try:
-        requests.post("http://localhost:5001/alert", json={
+        requests.post(get_service_url(5001, "/alert"), json={
             "severity": severity,
             "service": SERVICE_NAME,
             "zone": ZONE_CFG.ZONE_NAME,
@@ -337,3 +338,4 @@ if __name__ == "__main__":
     logger.info(f"Starting {SERVICE_NAME} on port {PORT} (zone={ZONE_CFG.ZONE_NAME})")
     threading.Thread(target=simulate, daemon=True).start()
     app.run(host="0.0.0.0", port=PORT, debug=False, use_reloader=False)
+

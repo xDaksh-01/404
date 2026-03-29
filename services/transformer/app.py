@@ -23,6 +23,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url
 
 app = Flask(__name__)
 SERVICE_NAME = "transformer"
@@ -139,7 +140,7 @@ def simulate():
                 # Alert if critical
                 if t["status"] == "critical":
                     try:
-                        requests.post("http://localhost:5001/alert", json={
+                        requests.post(get_service_url(5001, "/alert"), json={
                             "severity": "critical",
                             "service": SERVICE_NAME,
                             "component": tid,

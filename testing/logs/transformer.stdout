@@ -1,4 +1,4 @@
-[2026-03-29 04:13:08.334] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-29 07:33:35.083] [transformer] [INFO] Starting transformer on port 5002
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -6,151 +6,336 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5002
  * Running on http://10.12.15.75:5002
 Press CTRL+C to quit
-127.0.0.1 - - [29/Mar/2026 04:13:10] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:15] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:15] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:17] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:17] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:17] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:20] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:23] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:26] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:29] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:35] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:37] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:38] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:39] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:41] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:13:44.630] [transformer] [WARNING] [INJECT] voltage_spike on transformer T12
-127.0.0.1 - - [29/Mar/2026 04:13:44] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:44] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:47] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:51] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:54] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:56] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:57] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:13:59] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:00] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:03] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:06] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:07] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:08] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:09] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:12] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:15] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:15] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:18] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:21] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:14:21.687] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
-127.0.0.1 - - [29/Mar/2026 04:14:21] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:24] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:27] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:28] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:32] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:14:32.708] [transformer] [WARNING] [INJECT] transformer_overload on transformer T5
-127.0.0.1 - - [29/Mar/2026 04:14:32] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:33] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:34] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:36] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:38] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:14:38.463] [transformer] [INFO] [LOAD-LIMIT] T5: max_load_percent=60
-127.0.0.1 - - [29/Mar/2026 04:14:38] "POST /transformer/T5/load-limit HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:39] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:42] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:45] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:47] "GET /transformer/T5 HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:48] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:53] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:14:57.342] [transformer] [INFO] [LOAD-LIMIT] T2: max_load_percent=60
-127.0.0.1 - - [29/Mar/2026 04:14:57] "POST /transformer/T2/load-limit HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:58] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:14:58] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:06] "GET /transformer/T2 HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:07] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:12] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:27] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:15:29.991] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
-127.0.0.1 - - [29/Mar/2026 04:15:29] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:36] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:48] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:49] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:15:56] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:05] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:08] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:26] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:27] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:34] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:35] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:36] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:16:37.570] [transformer] [WARNING] [INJECT] voltage_spike on transformer T8
-127.0.0.1 - - [29/Mar/2026 04:16:37] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:38] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:39] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:42] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:42] "GET /demo/reset HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:45] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:48] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:51] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:51] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:54] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:55] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:16:57] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:16:58.243] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
-127.0.0.1 - - [29/Mar/2026 04:16:58] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:00] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:03] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:04] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:06] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:09] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:17:09.613] [transformer] [WARNING] [INJECT] transformer_overload on transformer T14
-127.0.0.1 - - [29/Mar/2026 04:17:09] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:10] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:12] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:17:15.397] [transformer] [INFO] [LOAD-LIMIT] T14: max_load_percent=60
-127.0.0.1 - - [29/Mar/2026 04:17:15] "POST /transformer/T14/load-limit HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:15] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:18] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:21] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:24] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:24] "GET /transformer/T14 HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:24] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:27] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:28] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:33] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:33] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:17:39.795] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
-127.0.0.1 - - [29/Mar/2026 04:17:39] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:49] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:17:53.449] [transformer] [INFO] [LOAD-LIMIT] T13: max_load_percent=60
-127.0.0.1 - - [29/Mar/2026 04:17:53] "POST /transformer/T13/load-limit HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:17:53] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:02] "GET /transformer/T13 HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:02] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:18:06.738] [transformer] [WARNING] [INJECT] voltage_spike on transformer T2
-127.0.0.1 - - [29/Mar/2026 04:18:06] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:08] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:18] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:23] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:27] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:32] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:18:35.883] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
-127.0.0.1 - - [29/Mar/2026 04:18:35] "POST /demo/inject HTTP/1.1" 200 -
-[2026-03-29 04:18:44.550] [transformer] [WARNING] [INJECT] transformer_overload on transformer T8
-127.0.0.1 - - [29/Mar/2026 04:18:44] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 04:18:45] "GET /status HTTP/1.1" 200 -
-[2026-03-29 04:18:50.025] [transformer] [INFO] [LOAD-LIMIT] T15: max_load_percent=60
-127.0.0.1 - - [29/Mar/2026 04:18:50] "POST /transformer/T15/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:44] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:58] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:33:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:07] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:11] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:34:12.353] [transformer] [WARNING] [INJECT] voltage_spike on transformer T13
+127.0.0.1 - - [29/Mar/2026 07:34:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:34] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:38] "POST /distribute HTTP/1.1" 200 -
+[2026-03-29 07:34:39.710] [transformer] [WARNING] [INJECT] voltage_spike on transformer T2
+127.0.0.1 - - [29/Mar/2026 07:34:39] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:51] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:34:51.612] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+127.0.0.1 - - [29/Mar/2026 07:34:51] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:34:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:06] "GET /demo/reset HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:11] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:35:12.917] [transformer] [WARNING] [INJECT] voltage_spike on transformer T6
+127.0.0.1 - - [29/Mar/2026 07:35:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:23] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:35:24.776] [transformer] [WARNING] [INJECT] transformer_overload on transformer T3
+127.0.0.1 - - [29/Mar/2026 07:35:24] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:38] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:35:40.299] [transformer] [INFO] [LOAD-LIMIT] T3: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:35:40] "POST /transformer/T3/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:49] "GET /transformer/T3 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:54] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:35:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:36:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:36:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:36:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:36:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:36:12] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:36:12.836] [transformer] [WARNING] [INJECT] voltage_spike on transformer T3
+127.0.0.1 - - [29/Mar/2026 07:36:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:15] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:17] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:21] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:24] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:27] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:29] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:37:29.811] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
+127.0.0.1 - - [29/Mar/2026 07:37:29] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:33] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:37:33.708] [transformer] [INFO] [LOAD-LIMIT] T2: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:37:33] "POST /transformer/T2/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:42] "GET /transformer/T2 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:48] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:49] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:37:49.987] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
+127.0.0.1 - - [29/Mar/2026 07:37:49] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:53] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:54] "POST /distribute HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:37:59] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:37:59.758] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+127.0.0.1 - - [29/Mar/2026 07:37:59] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:01] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:03] "GET /demo/reset HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:08] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:12] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:17] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:38:18.717] [transformer] [WARNING] [INJECT] transformer_overload on transformer T5
+127.0.0.1 - - [29/Mar/2026 07:38:18] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:20] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:31] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:34] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:38:36.546] [transformer] [INFO] [LOAD-LIMIT] T5: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:38:36] "POST /transformer/T5/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:38] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:38:40.245] [transformer] [WARNING] [INJECT] transformer_overload on transformer T10
+127.0.0.1 - - [29/Mar/2026 07:38:40] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:45] "GET /transformer/T5 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:49] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:38:50.230] [transformer] [WARNING] [INJECT] voltage_spike on transformer T11
+127.0.0.1 - - [29/Mar/2026 07:38:50] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:51] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:53] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:38:55.591] [transformer] [INFO] [LOAD-LIMIT] T10: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:38:55] "POST /transformer/T10/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:56] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:58] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:38:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:00] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:00.773] [transformer] [WARNING] [INJECT] transformer_overload on transformer T3
+127.0.0.1 - - [29/Mar/2026 07:39:00] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:02] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:04] "GET /transformer/T10 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:10] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:14] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:15.523] [transformer] [INFO] [LOAD-LIMIT] T3: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:39:15] "POST /transformer/T3/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:17] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:20] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:21.893] [transformer] [WARNING] [INJECT] transformer_overload on transformer T4
+127.0.0.1 - - [29/Mar/2026 07:39:21] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:23] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:24] "GET /transformer/T3 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:26] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:29] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:30] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:32] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:39] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:40.298] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+127.0.0.1 - - [29/Mar/2026 07:39:40] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:41] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:45] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:48] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:49] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:49.274] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
+127.0.0.1 - - [29/Mar/2026 07:39:49] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:50] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:39:53.260] [transformer] [INFO] [LOAD-LIMIT] T11: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:39:53] "POST /transformer/T11/load-limit HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:39:59] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:40:02] "GET /transformer/T11 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:40:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [29/Mar/2026 07:40:08] "GET /status HTTP/1.1" 200 -
+[2026-03-29 07:40:12.159] [transformer] [INFO] [LOAD-LIMIT] T4: max_load_percent=60
+127.0.0.1 - - [29/Mar/2026 07:40:12] "POST /transformer/T4/load-limit HTTP/1.1" 200 -

@@ -22,6 +22,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url
 
 app = Flask(__name__)
 SERVICE_NAME = "voltage-regulator"
@@ -73,7 +74,7 @@ def poll_and_regulate():
 
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(get_service_url(port, "/status"), timeout=2)
                     if r.status_code == 200:
                         d = r.json()
                         v_avg = d.get("voltage_avg_v", 230)
@@ -109,7 +110,7 @@ def poll_and_regulate():
                                     logger.info(f"[TAP] {zone}: tap raised to {zp['tap_position']}")
                                     # Notify zone
                                     try:
-                                        requests.post(f"http://localhost:{port}/tap-change", 
+                                        requests.post(get_service_url(port, "/tap-change"), 
                                                       json={"position": zp["tap_position"]}, timeout=1)
                                     except: pass
                                 elif v_avg > 233 and zp["tap_position"] > -4:
@@ -118,7 +119,7 @@ def poll_and_regulate():
                                     logger.info(f"[TAP] {zone}: tap lowered to {zp['tap_position']}")
                                     # Notify zone
                                     try:
-                                        requests.post(f"http://localhost:{port}/tap-change", 
+                                        requests.post(get_service_url(port, "/tap-change"), 
                                                       json={"position": zp["tap_position"]}, timeout=1)
                                     except: pass
 
@@ -226,7 +227,7 @@ def activate_capacitor():
     # Also activate on the zone service
     if zone and zone in ZONE_PORTS:
         try:
-            requests.post(f"http://localhost:{ZONE_PORTS[zone]}/capacitor-bank/activate",
+            requests.post(get_service_url(ZONE_PORTS[zone], "/capacitor-bank/activate"),
                           timeout=2)
         except Exception:
             pass

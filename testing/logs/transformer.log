@@ -1,17 +1,25 @@
-[2026-03-29 04:13:08.334] [transformer] [INFO] Starting transformer on port 5002
-[2026-03-29 04:13:44.630] [transformer] [WARNING] [INJECT] voltage_spike on transformer T12
-[2026-03-29 04:14:21.687] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
-[2026-03-29 04:14:32.708] [transformer] [WARNING] [INJECT] transformer_overload on transformer T5
-[2026-03-29 04:14:38.463] [transformer] [INFO] [LOAD-LIMIT] T5: max_load_percent=60
-[2026-03-29 04:14:57.342] [transformer] [INFO] [LOAD-LIMIT] T2: max_load_percent=60
-[2026-03-29 04:15:29.991] [transformer] [WARNING] [INJECT] voltage_spike on transformer T14
-[2026-03-29 04:16:37.570] [transformer] [WARNING] [INJECT] voltage_spike on transformer T8
-[2026-03-29 04:16:58.243] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
-[2026-03-29 04:17:09.613] [transformer] [WARNING] [INJECT] transformer_overload on transformer T14
-[2026-03-29 04:17:15.397] [transformer] [INFO] [LOAD-LIMIT] T14: max_load_percent=60
-[2026-03-29 04:17:39.795] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
-[2026-03-29 04:17:53.449] [transformer] [INFO] [LOAD-LIMIT] T13: max_load_percent=60
-[2026-03-29 04:18:06.738] [transformer] [WARNING] [INJECT] voltage_spike on transformer T2
-[2026-03-29 04:18:35.883] [transformer] [WARNING] [INJECT] transformer_overload on transformer T15
-[2026-03-29 04:18:44.550] [transformer] [WARNING] [INJECT] transformer_overload on transformer T8
-[2026-03-29 04:18:50.025] [transformer] [INFO] [LOAD-LIMIT] T15: max_load_percent=60
+[2026-03-29 07:33:35.083] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-29 07:34:12.353] [transformer] [WARNING] [INJECT] voltage_spike on transformer T13
+[2026-03-29 07:34:39.710] [transformer] [WARNING] [INJECT] voltage_spike on transformer T2
+[2026-03-29 07:34:51.612] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+[2026-03-29 07:35:12.917] [transformer] [WARNING] [INJECT] voltage_spike on transformer T6
+[2026-03-29 07:35:24.776] [transformer] [WARNING] [INJECT] transformer_overload on transformer T3
+[2026-03-29 07:35:40.299] [transformer] [INFO] [LOAD-LIMIT] T3: max_load_percent=60
+[2026-03-29 07:36:12.836] [transformer] [WARNING] [INJECT] voltage_spike on transformer T3
+[2026-03-29 02:06:14.036] [transformer] [INFO] Starting transformer on port 5002
+[2026-03-29 07:37:29.811] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
+[2026-03-29 07:37:33.708] [transformer] [INFO] [LOAD-LIMIT] T2: max_load_percent=60
+[2026-03-29 07:37:49.987] [transformer] [WARNING] [INJECT] transformer_overload on transformer T13
+[2026-03-29 07:37:59.758] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+[2026-03-29 07:38:18.717] [transformer] [WARNING] [INJECT] transformer_overload on transformer T5
+[2026-03-29 07:38:36.546] [transformer] [INFO] [LOAD-LIMIT] T5: max_load_percent=60
+[2026-03-29 07:38:40.245] [transformer] [WARNING] [INJECT] transformer_overload on transformer T10
+[2026-03-29 07:38:50.230] [transformer] [WARNING] [INJECT] voltage_spike on transformer T11
+[2026-03-29 07:38:55.591] [transformer] [INFO] [LOAD-LIMIT] T10: max_load_percent=60
+[2026-03-29 07:39:00.773] [transformer] [WARNING] [INJECT] transformer_overload on transformer T3
+[2026-03-29 07:39:15.523] [transformer] [INFO] [LOAD-LIMIT] T3: max_load_percent=60
+[2026-03-29 07:39:21.893] [transformer] [WARNING] [INJECT] transformer_overload on transformer T4
+[2026-03-29 07:39:40.298] [transformer] [WARNING] [INJECT] transformer_overload on transformer T11
+[2026-03-29 07:39:49.274] [transformer] [WARNING] [INJECT] voltage_spike on transformer T9
+[2026-03-29 07:39:53.260] [transformer] [INFO] [LOAD-LIMIT] T11: max_load_percent=60
+[2026-03-29 07:40:12.159] [transformer] [INFO] [LOAD-LIMIT] T4: max_load_percent=60

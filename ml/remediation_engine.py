@@ -17,6 +17,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import resolve_url
 
 logger = setup_logger("remediation-engine")
 
@@ -29,25 +30,8 @@ ZONE_PORTS = {
 class RemediationEngine:
     def __init__(self):
         self._actions_executed = 0
-        self._port_host = {
-            5001: os.getenv("GRID_CONTROLLER_HOST", "localhost"),
-            5002: os.getenv("TRANSFORMER_HOST", "localhost"),
-            5003: os.getenv("ZONE_NORTH_HOST", "localhost"),
-            5004: os.getenv("ZONE_SOUTH_HOST", "localhost"),
-            5005: os.getenv("ZONE_EAST_HOST", "localhost"),
-            5006: os.getenv("ZONE_WEST_HOST", "localhost"),
-            5007: os.getenv("ZONE_CENTRAL_HOST", "localhost"),
-            5008: os.getenv("LOAD_BALANCER_HOST", "localhost"),
-            5009: os.getenv("VOLTAGE_REGULATOR_HOST", "localhost"),
-            5010: os.getenv("FAULT_DETECTION_HOST", "localhost"),
-        }
-
     def _resolve_url(self, url: str) -> str:
-        """Map localhost service URLs to docker service hosts when available."""
-        out = url
-        for port, host in self._port_host.items():
-            out = out.replace(f"localhost:{port}", f"{host}:{port}")
-        return out
+        return resolve_url(url)
 
     def fix(self, fault_type: str, context: dict):
         """

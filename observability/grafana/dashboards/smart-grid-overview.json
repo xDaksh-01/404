@@ -463,6 +463,37 @@
       ],
       "title": "Transformer Load by Zone",
       "type": "timeseries"
+    },
+    {
+      "datasource": "Loki",
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 8,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "targets": [
+        {
+          "datasource": "Loki",
+          "editorMode": "code",
+          "expr": "{container!=\"\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "System Logs (All Containers)",
+      "type": "logs"
     }
   ],
   "refresh": "5s",
