@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Zap, Activity, Bot, Cpu } from 'lucide-react'
+import { LayoutDashboard, Zap, Activity, Bot, Cpu, BarChart3, ExternalLink } from 'lucide-react'
 
 export default function Sidebar() {
   return (
@@ -34,6 +34,17 @@ export default function Sidebar() {
           <Bot size={18} />
           <span>Logs & Fixes</span>
         </NavLink>
+
+        <a
+          href="/grafana/d/smart-grid-overview/smart-grid-overview?orgId=1"
+          className="nav-link nav-link-external"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BarChart3 size={18} />
+          <span>Grafana</span>
+          <ExternalLink size={14} style={{ marginLeft: 'auto', opacity: 0.8 }} />
+        </a>
       </nav>
 
       <div className="sidebar-footer">

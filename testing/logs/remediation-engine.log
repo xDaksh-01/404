@@ -2258,3 +2258,1373 @@
 [2026-03-28 17:37:21.932] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T5
 [2026-03-28 17:37:21.992] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
 [2026-03-28 17:37:22.050] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 17:56:52.293] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T15
+[2026-03-28 17:56:52.373] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (50ms)
+[2026-03-28 17:56:52.428] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 17:56:55.494] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 17:57:07.485] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T15
+[2026-03-28 17:57:07.529] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 17:57:07.577] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 17:59:12.024] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T10
+[2026-03-28 17:59:12.063] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (19ms)
+[2026-03-28 17:59:12.103] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (18ms)
+[2026-03-28 17:59:15.156] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:01:13.677] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T6
+[2026-03-28 18:01:13.720] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (19ms)
+[2026-03-28 18:01:13.755] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (18ms)
+[2026-03-28 18:01:16.799] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.1s | {'grid_voltage': 229.5}
+[2026-03-28 18:01:29.000] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T6
+[2026-03-28 18:01:29.163] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (97ms)
+[2026-03-28 18:01:29.236] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:01:32.297] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:01:43.980] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:01:44.022] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 18:01:44.079] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:01:47.130] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:01:59.192] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=east | transformer=T6
+[2026-03-28 18:01:59.258] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:01:59.322] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:02:02.393] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:02:09.293] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T6
+[2026-03-28 18:02:09.319] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T6/load-limit → 200 (5ms)
+[2026-03-28 18:02:09.375] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 18:02:12.436] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 81.1, 'load': 52.18}
+[2026-03-28 18:02:14.250] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:02:14.332] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (45ms)
+[2026-03-28 18:02:14.403] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:02:17.474] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:02:29.502] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:02:29.583] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (44ms)
+[2026-03-28 18:02:29.657] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (41ms)
+[2026-03-28 18:02:32.708] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:02:44.636] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:02:44.700] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:02:44.760] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:02:47.832] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:02:59.817] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=south | transformer=T15
+[2026-03-28 18:02:59.889] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:02:59.956] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:03:03.045] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:04:33.713] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T12
+[2026-03-28 18:04:33.758] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:04:33.805] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:04:36.853] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:04:48.852] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:04:48.908] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:04:48.977] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:04:52.048] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:04:53.924] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:04:54.018] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:04:54.136] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:04:57.260] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 18:05:03.945] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:05:04.014] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:05:04.093] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:05:07.168] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:05:19.103] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:05:19.153] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:05:19.211] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:05:22.277] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:05:34.363] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:05:34.439] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 18:05:34.504] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:05:37.573] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:05:49.466] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:05:49.528] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:05:49.593] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:05:52.669] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:06:04.579] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:06:04.637] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:06:04.698] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:06:07.771] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:06:19.733] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:06:19.785] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:06:19.836] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:06:22.894] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:06:34.936] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:06:35.017] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:06:35.087] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:06:38.166] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:06:50.062] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:06:50.123] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:06:50.178] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:06:53.238] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:00.130] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:07:00.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:07:00.266] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (39ms)
+[2026-03-28 18:07:03.328] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:10.199] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:07:10.262] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:07:10.324] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:07:13.389] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:15.216] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:07:15.295] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:07:15.381] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (39ms)
+[2026-03-28 18:07:18.469] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:30.382] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T9
+[2026-03-28 18:07:30.442] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:07:30.498] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:07:33.558] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:40.434] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T9
+[2026-03-28 18:07:40.456] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T9/load-limit → 200 (6ms)
+[2026-03-28 18:07:40.518] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (27ms)
+[2026-03-28 18:07:43.592] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 79.17, 'load': 51.96}
+[2026-03-28 18:07:45.439] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:07:45.501] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:07:45.570] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
+[2026-03-28 18:07:48.644] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:07:50.477] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:07:50.547] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:07:50.604] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:07:53.667] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:08:00.490] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:08:00.552] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:08:00.619] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:08:03.684] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:08:05.473] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:08:05.552] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[2026-03-28 18:08:05.618] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:08:08.689] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:08:15.562] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:08:15.626] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:08:15.686] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:08:18.760] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:08:30.746] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:08:30.813] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:08:30.884] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 18:08:33.964] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:08:45.996] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:08:46.051] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:08:46.117] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:08:49.202] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:09:01.161] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:09:01.220] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:09:01.281] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:09:04.352] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:09:16.289] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T8
+[2026-03-28 18:09:16.354] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:09:16.413] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:09:19.485] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:09:31.464] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T8
+[2026-03-28 18:09:31.493] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T8/load-limit → 200 (9ms)
+[2026-03-28 18:09:31.546] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (30ms)
+[2026-03-28 18:09:34.602] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 83.86, 'load': 54.39075173156075}
+[2026-03-28 18:09:36.416] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:09:36.463] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 18:09:36.511] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:09:39.562] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:09:51.560] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:09:51.609] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:09:51.653] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:09:54.723] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:01.601] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:10:01.643] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:10:01.697] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:10:04.769] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:16.734] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:10:16.779] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:10:16.827] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:10:19.886] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:21.748] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:10:21.804] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:10:21.863] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:10:24.932] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:36.804] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:10:36.863] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:10:36.923] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:10:39.988] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:41.823] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:10:41.883] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:10:41.942] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:10:45.010] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:10:51.868] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:10:51.923] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:10:51.983] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:10:55.051] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:11:06.985] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:11:07.033] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:11:07.079] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:11:10.141] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:11:17.097] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:11:17.154] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:11:17.213] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:11:20.300] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:11:32.248] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:11:32.303] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:11:32.372] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:11:35.446] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:11:47.321] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:11:47.381] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:11:47.447] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 18:11:50.512] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:12:02.426] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:12:02.490] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[2026-03-28 18:12:02.554] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:12:05.626] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:12:17.493] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:12:17.547] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:12:17.598] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:12:20.658] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:12:32.616] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:12:32.721] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:12:32.776] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:12:35.844] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:12:47.719] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:12:47.774] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:12:47.831] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:12:50.912] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:13:02.887] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:13:02.946] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:13:03.000] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:13:06.054] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:13:17.959] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:13:18.016] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:13:18.075] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:13:21.145] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:13:33.129] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T13
+[2026-03-28 18:13:33.169] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:13:33.208] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:13:36.253] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.1s | {'grid_voltage': 229.5}
+[2026-03-28 18:13:48.380] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T13
+[2026-03-28 18:13:48.400] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T13/load-limit → 200 (4ms)
+[2026-03-28 18:13:48.444] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (23ms)
+[2026-03-28 18:13:51.502] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 81.32, 'load': 54.25}
+[2026-03-28 18:13:53.253] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:13:53.293] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 18:13:53.342] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:13:56.412] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:14:08.451] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:14:08.508] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:14:08.570] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:14:11.642] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:14:23.566] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:14:23.623] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:14:23.671] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:14:26.717] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:14:38.666] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:14:38.724] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:14:38.788] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:14:41.855] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:14:53.812] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 18:14:53.868] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:14:53.927] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:14:57.001] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:15:08.964] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T2
+[2026-03-28 18:15:08.984] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T2/load-limit → 200 (7ms)
+[2026-03-28 18:15:09.041] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 18:15:12.100] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 79.78, 'load': 51.17}
+[2026-03-28 18:15:13.982] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:15:14.034] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:15:14.073] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:15:17.140] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:15:29.073] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:15:29.123] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:15:29.179] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:15:32.246] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:15:44.207] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:15:44.262] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:15:44.312] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:15:47.380] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:15:59.294] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:15:59.349] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:15:59.399] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:16:02.463] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:16:14.436] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:16:14.492] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:16:14.551] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:16:17.615] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:16:29.561] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:16:29.613] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:16:29.667] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:16:32.716] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:16:44.639] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:16:44.693] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:16:44.734] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:16:47.786] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:16:59.814] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:16:59.872] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:16:59.926] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:17:02.992] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:17:14.924] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:17:14.983] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:17:15.043] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:17:18.097] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:17:30.075] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:17:30.133] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:17:30.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:17:33.254] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:17:45.141] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:17:45.184] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:17:45.233] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:17:48.298] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:17:55.189] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:17:55.245] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:17:55.299] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:17:58.372] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:18:10.331] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:18:10.375] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:18:10.421] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:18:13.479] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:18:25.420] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:18:25.454] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (17ms)
+[2026-03-28 18:18:25.515] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:18:28.577] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:18:40.537] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:18:40.590] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:18:40.649] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:18:43.714] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:18:55.629] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:18:55.687] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:18:55.734] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:18:58.791] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:19:10.758] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:19:10.806] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:19:10.853] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:19:13.908] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:19:25.852] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:19:25.899] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:19:25.942] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:19:29.009] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:19:30.866] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:19:30.908] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:19:30.949] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:19:33.995] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:19:45.948] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:19:46.000] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:19:46.054] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:19:49.114] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:01.115] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:20:01.169] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:20:01.219] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:20:04.294] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:16.260] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:20:16.311] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:20:16.357] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:20:19.417] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:21.244] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:20:21.298] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:20:21.357] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:20:24.413] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:31.322] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:20:31.386] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:20:31.444] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:20:34.500] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:36.321] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:20:36.377] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:20:36.434] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:20:39.497] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:20:51.442] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:20:51.495] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:20:51.550] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:20:54.614] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:21:06.573] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:21:06.631] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:21:06.686] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:21:09.757] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:21:16.666] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:21:16.731] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:21:16.797] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:21:19.865] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:21:31.793] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T16
+[2026-03-28 18:21:31.857] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:21:31.924] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:21:34.985] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:21:36.772] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T16
+[2026-03-28 18:21:36.795] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T16/load-limit → 200 (5ms)
+[2026-03-28 18:21:36.851] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (27ms)
+[2026-03-28 18:21:39.923] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 80.6, 'load': 53.084300819729705}
+[2026-03-28 18:21:41.757] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:21:41.817] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:21:41.873] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:21:44.946] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:21:56.919] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:21:56.968] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:21:57.005] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:22:00.058] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:22:11.974] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:22:12.019] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 18:22:12.080] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:22:15.146] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:22:27.135] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:22:27.191] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:22:27.254] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:22:30.331] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:22:42.295] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:22:42.358] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:22:42.414] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:22:45.473] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:22:57.340] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:22:57.399] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:22:57.464] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:23:00.537] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:23:12.484] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T1
+[2026-03-28 18:23:12.534] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:23:12.587] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:23:15.643] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:23:27.622] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T1
+[2026-03-28 18:23:27.640] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T1/load-limit → 200 (5ms)
+[2026-03-28 18:23:27.695] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (24ms)
+[2026-03-28 18:23:30.769] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 83.08, 'load': 54.91083905855991}
+[2026-03-28 18:23:32.625] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:23:32.684] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:23:32.747] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:23:35.818] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:23:47.871] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:23:48.002] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (67ms)
+[2026-03-28 18:23:48.115] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (66ms)
+[2026-03-28 18:23:51.179] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:24:02.826] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:24:02.876] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:24:02.932] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:24:06.002] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:24:17.949] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:24:18.002] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:24:18.060] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:24:21.126] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:24:33.076] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:24:33.131] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:24:33.180] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:24:36.260] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:24:48.176] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:24:48.212] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (17ms)
+[2026-03-28 18:24:48.259] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:24:51.330] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:25:03.352] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:25:03.401] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:25:03.461] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:25:06.538] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:25:18.436] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:25:18.491] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 18:25:18.548] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:25:21.620] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:25:33.544] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:25:33.585] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:25:33.625] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:25:36.670] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:25:48.656] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:25:48.714] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:25:48.771] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:25:51.837] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:26:03.893] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:26:03.938] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:26:03.980] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:26:07.036] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:26:18.977] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:26:19.015] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (19ms)
+[2026-03-28 18:26:19.061] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:26:22.126] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:26:34.185] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:26:34.243] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:26:34.313] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:26:37.384] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:26:49.275] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:26:49.330] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:26:49.386] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:26:52.455] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:27:04.386] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:27:04.449] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:27:04.515] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:27:07.580] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:27:19.472] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:27:19.531] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (15ms)
+[2026-03-28 18:27:19.577] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:27:22.646] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:27:34.586] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:27:34.652] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:27:34.717] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:27:37.789] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:27:49.721] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T14
+[2026-03-28 18:27:49.783] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:27:49.846] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:27:52.906] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:27:54.736] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:27:54.792] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:27:54.839] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (17ms)
+[2026-03-28 18:27:57.910] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:28:09.846] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:28:09.898] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:28:09.962] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:28:13.024] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:28:24.931] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:28:24.986] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:28:25.046] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:28:28.108] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:28:40.071] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:28:40.129] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:28:40.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:28:43.256] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:28:55.186] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:28:55.243] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:28:55.301] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:28:58.373] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:29:10.337] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:29:10.389] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:29:10.446] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:29:13.520] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:29:25.441] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:29:25.502] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 18:29:25.567] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:29:28.646] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:29:40.573] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:29:40.630] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:29:40.684] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:29:43.754] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:29:45.555] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:29:45.615] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:29:45.666] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:29:48.731] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:30:00.673] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:30:00.716] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (19ms)
+[2026-03-28 18:30:00.771] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:30:03.821] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:30:15.845] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:30:15.900] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:30:15.955] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:30:19.079] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:30:30.956] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:30:31.009] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:30:31.047] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:30:34.112] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:30:46.112] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:30:46.171] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:30:46.227] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:30:49.294] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:31:01.245] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T10
+[2026-03-28 18:31:01.301] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:31:01.353] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:31:04.414] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:31:16.373] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T10
+[2026-03-28 18:31:16.395] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T10/load-limit → 200 (3ms)
+[2026-03-28 18:31:16.449] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (23ms)
+[2026-03-28 18:31:19.510] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 81.27, 'load': 52.40846849635221}
+[2026-03-28 18:31:21.330] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T14
+[2026-03-28 18:31:21.395] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:31:21.452] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:31:24.526] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:31:36.463] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T14
+[2026-03-28 18:31:36.514] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:31:36.567] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:31:39.640] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:31:51.541] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T14
+[2026-03-28 18:31:51.592] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:31:51.652] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:31:54.718] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:32:01.606] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T14
+[2026-03-28 18:32:01.631] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T14/load-limit → 200 (4ms)
+[2026-03-28 18:32:01.694] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (31ms)
+[2026-03-28 18:32:04.763] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 84.02, 'load': 53.0024977210995}
+[2026-03-28 18:32:06.613] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:32:06.668] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:32:06.730] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:32:09.793] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:32:21.746] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:32:21.798] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:32:21.845] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:32:24.903] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:32:26.737] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:32:26.793] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:32:26.857] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:32:29.928] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:32:36.837] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:32:36.891] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:32:36.941] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:32:40.003] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:32:51.914] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:32:51.966] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:32:52.026] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:32:55.097] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:33:07.084] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:33:07.134] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (9ms)
+[2026-03-28 18:33:07.200] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:33:10.264] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:33:12.024] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:33:12.081] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:33:12.145] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:33:15.218] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:33:27.200] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:33:27.247] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:33:27.298] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:33:30.356] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:33:42.325] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:33:42.373] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:33:42.423] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:33:45.507] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:33:52.368] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:33:52.406] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (18ms)
+[2026-03-28 18:33:52.459] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:33:55.531] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:34:07.527] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:34:07.585] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:34:07.642] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:34:10.709] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:34:12.517] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:34:12.568] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:34:12.635] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:34:15.704] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:34:27.718] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:34:27.775] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:34:27.833] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:34:30.898] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:34:42.820] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:34:42.877] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:34:42.933] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:34:46.001] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:34:57.914] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:34:57.971] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:34:58.023] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:35:01.092] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:35:12.987] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:35:13.025] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (17ms)
+[2026-03-28 18:35:13.059] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:35:16.128] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:35:28.139] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:35:28.197] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:35:28.259] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:35:31.333] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:35:43.354] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:35:43.411] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:35:43.457] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:35:46.527] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:35:58.432] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:35:58.490] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (16ms)
+[2026-03-28 18:35:58.548] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:36:01.611] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:36:13.573] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:36:13.629] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:36:13.701] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:36:16.772] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:36:28.745] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:36:28.805] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:36:28.866] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:36:31.938] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:36:33.776] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:36:33.835] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:36:33.892] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:36:36.958] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:36:48.850] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:36:48.898] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:36:48.943] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:36:51.998] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:37:03.982] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:37:04.044] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:37:04.103] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:37:07.170] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:37:19.108] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:37:19.174] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 18:37:19.237] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:37:22.311] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:37:34.197] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:37:34.241] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:37:34.277] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:37:37.322] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.1s | {'grid_voltage': 229.5}
+[2026-03-28 18:37:49.288] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:37:49.352] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:37:49.407] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:37:52.484] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:37:54.300] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T6
+[2026-03-28 18:37:54.322] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T6/load-limit → 200 (5ms)
+[2026-03-28 18:37:54.364] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (22ms)
+[2026-03-28 18:37:57.412] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.1s | {'temp': 80.09, 'load': 56.1}
+[2026-03-28 18:37:59.300] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:37:59.353] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:37:59.404] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:38:02.474] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:38:14.418] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:38:14.455] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (18ms)
+[2026-03-28 18:38:14.495] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:38:17.551] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:38:29.507] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:38:29.562] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:38:29.611] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:38:32.683] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:38:44.630] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:38:44.688] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:38:44.751] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:38:47.819] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:38:59.747] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:38:59.809] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:38:59.869] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:39:02.941] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:39:14.918] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:39:14.971] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:39:15.032] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:39:18.104] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:39:30.023] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:39:30.076] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:39:30.136] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:39:33.204] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:39:45.156] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:39:45.203] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 18:39:45.241] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:39:48.290] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:40:00.313] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:40:00.367] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:40:00.430] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:40:03.490] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:40:15.430] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:40:15.487] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:40:15.540] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:40:18.602] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:40:30.555] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:40:30.616] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 18:40:30.672] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:40:33.738] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:40:45.676] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:40:45.728] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:40:45.787] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:40:48.858] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:41:00.878] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=west | transformer=T7
+[2026-03-28 18:41:00.899] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T7/load-limit → 200 (3ms)
+[2026-03-28 18:41:00.953] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (24ms)
+[2026-03-28 18:41:04.017] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 82.61, 'load': 54.62}
+[2026-03-28 18:41:05.850] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:41:05.908] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:41:05.953] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:41:09.010] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:41:20.967] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:41:21.010] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:41:21.067] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:41:24.130] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:41:36.108] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:41:36.162] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:41:36.224] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:41:39.296] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:41:51.199] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:41:51.257] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:41:51.312] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:41:54.372] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:41:56.206] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T7
+[2026-03-28 18:41:56.264] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:41:56.319] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:41:59.387] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:42:06.304] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:42:06.362] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
+[2026-03-28 18:42:06.418] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:42:09.475] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:42:21.389] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:42:21.437] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:42:21.490] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:42:24.553] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:42:36.568] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:42:36.635] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:42:36.696] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 18:42:39.758] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:42:51.634] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:42:51.696] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 18:42:51.764] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:42:54.839] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:43:06.765] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:43:06.823] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:43:06.879] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:43:09.946] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:43:21.899] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:43:21.962] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:43:22.025] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:43:25.095] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:43:37.041] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:43:37.100] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:43:37.160] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:43:40.231] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:43:52.110] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:43:52.162] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 18:43:52.222] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:43:55.297] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:44:07.241] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:44:07.304] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:44:07.361] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:44:10.415] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:44:17.307] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:44:17.353] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:44:17.399] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:44:20.470] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:44:22.329] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:44:22.382] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:44:22.432] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:44:25.501] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:44:37.420] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:44:37.463] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:44:37.500] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:44:40.549] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.1s | {'grid_voltage': 229.5}
+[2026-03-28 18:44:52.556] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:44:52.616] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:44:52.677] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:44:55.751] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:45:07.623] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:45:07.685] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:45:07.742] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (19ms)
+[2026-03-28 18:45:10.817] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:45:22.724] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:45:22.787] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:45:22.852] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:45:25.917] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:45:37.864] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:45:37.929] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:45:37.997] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:45:41.071] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:45:52.945] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:45:53.013] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 18:45:53.075] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:45:56.150] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:46:08.064] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:46:08.122] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:46:08.194] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:46:11.270] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:46:13.043] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:46:13.085] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:46:13.133] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (18ms)
+[2026-03-28 18:46:16.204] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:46:23.133] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:46:23.196] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:46:23.255] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:46:26.330] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:46:38.224] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:46:38.283] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:46:38.337] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:46:41.404] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:46:53.341] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:46:53.398] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 18:46:53.452] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:46:56.519] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:47:03.411] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T6
+[2026-03-28 18:47:03.460] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:47:03.516] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:47:06.584] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:47:08.415] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:47:08.465] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:47:08.523] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:47:11.592] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:47:23.467] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:47:23.517] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:47:23.576] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:47:26.684] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:47:38.601] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:47:38.668] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:47:38.729] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:47:41.810] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:47:53.740] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:47:53.796] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:47:53.853] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 18:47:56.934] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:48:08.833] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:48:08.889] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:48:08.951] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 18:48:12.022] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:48:23.955] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:48:24.009] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:48:24.061] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:48:27.122] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:48:39.127] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:48:39.184] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:48:39.251] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:48:42.321] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:48:54.161] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:48:54.228] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:48:54.293] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:48:57.365] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:49:09.246] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:49:09.291] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (19ms)
+[2026-03-28 18:49:09.332] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (14ms)
+[2026-03-28 18:49:12.398] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:49:24.400] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:49:24.451] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:49:24.515] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:49:27.580] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:49:39.547] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:49:39.605] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:49:39.663] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:49:42.738] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:49:54.636] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:49:54.694] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:49:54.746] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 18:49:57.821] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:50:09.759] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:50:09.818] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:50:09.881] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:50:12.945] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:50:24.859] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:50:24.908] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:50:24.948] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
+[2026-03-28 18:50:27.995] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:50:39.996] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:50:40.058] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:50:40.117] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:50:43.182] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:50:55.137] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:50:55.190] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:50:55.254] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:50:58.323] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:51:10.307] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:51:10.381] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 18:51:10.450] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:51:13.530] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:51:25.424] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:51:25.495] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:51:25.562] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
+[2026-03-28 18:51:28.643] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:51:40.571] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:51:40.614] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:51:40.657] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:51:43.708] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:51:55.722] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:51:55.794] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
+[2026-03-28 18:51:55.861] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:51:58.932] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:52:10.846] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:52:10.913] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
+[2026-03-28 18:52:10.976] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
+[2026-03-28 18:52:14.049] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:52:25.944] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:52:26.013] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:52:26.073] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:52:29.144] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:52:41.062] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:52:41.127] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 18:52:41.184] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 18:52:44.233] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:52:56.207] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:52:56.275] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:52:56.340] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:52:59.414] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:53:11.339] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:53:11.406] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 18:53:11.478] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:53:14.556] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:53:26.614] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:53:26.669] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:53:26.724] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:53:29.787] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:53:41.640] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:53:41.711] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 18:53:41.784] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
+[2026-03-28 18:53:44.860] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:53:56.821] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:53:56.881] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 18:53:56.947] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:54:00.025] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:54:11.939] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:54:11.989] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:54:12.040] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:54:15.116] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:54:27.099] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:54:27.147] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 18:54:27.199] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:54:30.264] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:54:42.296] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:54:42.364] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
+[2026-03-28 18:54:42.442] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:54:45.521] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:54:57.485] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:54:57.539] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:54:57.593] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:55:00.654] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:55:12.575] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:55:12.632] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:55:12.701] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
+[2026-03-28 18:55:15.776] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:55:27.757] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:55:27.836] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (41ms)
+[2026-03-28 18:55:27.904] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 18:55:30.980] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:55:42.816] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:55:42.872] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:55:42.933] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 18:55:46.001] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:55:57.937] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:55:57.999] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 18:55:58.054] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 18:56:01.121] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:56:13.103] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:56:13.153] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:56:13.203] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:56:16.265] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:56:28.216] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:56:28.267] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 18:56:28.316] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:56:31.381] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:56:43.396] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:56:43.452] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:56:43.505] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:56:46.561] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:56:58.631] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:56:58.711] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (41ms)
+[2026-03-28 18:56:58.805] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (52ms)
+[2026-03-28 18:57:01.892] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:57:13.888] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:57:13.959] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 18:57:14.035] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
+[2026-03-28 18:57:17.135] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:57:28.980] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:57:29.032] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 18:57:29.086] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 18:57:32.141] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:57:44.144] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:57:44.193] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 18:57:44.242] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 18:57:47.295] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:57:59.262] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:57:59.313] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:57:59.365] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:58:02.420] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:58:14.396] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:58:14.443] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 18:58:14.500] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 18:58:17.553] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:58:29.642] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:58:29.722] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
+[2026-03-28 18:58:29.801] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (41ms)
+[2026-03-28 18:58:32.875] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:58:44.723] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:58:44.777] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 18:58:44.822] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 18:58:47.878] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:58:59.929] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:59:00.034] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (47ms)
+[2026-03-28 18:59:00.120] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (43ms)
+[2026-03-28 18:59:03.203] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 18:59:15.140] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:59:15.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 18:59:15.239] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 18:59:18.292] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 18:59:30.388] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 18:59:30.487] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (52ms)
+[2026-03-28 18:59:30.598] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (57ms)
+[2026-03-28 18:59:33.703] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 18:59:45.556] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T15
+[2026-03-28 18:59:45.619] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (39ms)
+[2026-03-28 18:59:45.702] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
+[2026-03-28 18:59:48.790] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:00:00.591] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T15
+[2026-03-28 19:00:00.638] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:00:00.683] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 19:00:03.739] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:00:15.784] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:00:15.838] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:00:15.886] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 19:00:18.947] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:00:30.875] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:00:30.924] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:00:30.975] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:00:34.031] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:00:46.015] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:00:46.066] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:00:46.114] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:00:49.174] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:01:01.162] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:01:01.221] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 19:01:01.274] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:01:04.332] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:01:16.266] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:01:16.311] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 19:01:16.361] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 19:01:19.422] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:01:31.404] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:01:31.450] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 19:01:31.504] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:01:34.557] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:01:46.639] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:01:46.728] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 19:01:46.836] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (48ms)
+[2026-03-28 19:01:49.949] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 19:02:01.661] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:02:01.711] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 19:02:01.760] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:02:04.817] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:02:16.778] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:02:16.849] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 19:02:16.916] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 19:02:19.988] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:02:31.903] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:02:31.958] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:02:32.012] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:02:35.074] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:02:47.050] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:02:47.097] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 19:02:47.140] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:02:50.201] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:03:02.181] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:03:02.231] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:03:02.281] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:03:05.331] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:03:17.318] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:03:17.365] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 19:03:17.413] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:03:20.467] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:03:32.514] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:03:32.595] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
+[2026-03-28 19:03:32.681] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (46ms)
+[2026-03-28 19:03:35.773] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:03:47.986] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:03:48.172] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (90ms)
+[2026-03-28 19:03:48.386] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (101ms)
+[2026-03-28 19:03:51.563] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.7s | {'grid_voltage': 229.5}
+[2026-03-28 19:04:02.845] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:04:02.942] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (49ms)
+[2026-03-28 19:04:03.043] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (53ms)
+[2026-03-28 19:04:06.138] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:04:17.967] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:04:18.015] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:04:18.064] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:04:21.117] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:04:33.300] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:04:33.396] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 19:04:33.464] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (44ms)
+[2026-03-28 19:04:36.518] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:04:48.368] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:04:48.415] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:04:48.463] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 19:04:51.527] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:05:03.476] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:05:03.523] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:05:03.568] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:05:06.619] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:05:18.649] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:05:18.700] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:05:18.747] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:05:21.796] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:05:33.880] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:05:33.971] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (47ms)
+[2026-03-28 19:05:34.067] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[2026-03-28 19:05:37.173] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:05:49.011] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:05:49.084] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 19:05:49.167] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
+[2026-03-28 19:05:52.260] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:06:04.131] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:06:04.211] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 19:06:04.293] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[2026-03-28 19:06:07.377] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:06:19.285] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:06:19.370] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (46ms)
+[2026-03-28 19:06:19.468] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[2026-03-28 19:06:22.581] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:06:34.435] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:06:34.528] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 19:06:34.622] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (40ms)
+[2026-03-28 19:06:37.702] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:06:49.546] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:06:49.593] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:06:49.642] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:06:52.693] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:07:04.668] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:07:04.716] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:07:04.765] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:07:07.823] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:07:19.871] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:07:19.920] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:07:19.973] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:07:23.025] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:07:35.047] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:07:35.119] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
+[2026-03-28 19:07:35.190] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (38ms)
+[2026-03-28 19:07:38.252] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:07:50.119] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:07:50.163] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 19:07:50.213] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:07:53.273] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:08:05.266] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:08:05.312] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:08:05.362] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:08:08.412] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:08:21.916] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:08:22.388] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (202ms)
+[2026-03-28 19:08:22.666] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (149ms)
+[2026-03-28 19:16:06.538] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=464.9s | {'grid_voltage': 229.5}
+[2026-03-28 19:16:07.609] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:16:07.830] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (112ms)
+[2026-03-28 19:16:08.080] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (102ms)
+[2026-03-28 19:16:11.875] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=4.4s | {'grid_voltage': 229.5}
+[2026-03-28 19:16:22.726] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T15
+[2026-03-28 19:16:22.799] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
+[2026-03-28 19:16:22.879] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (39ms)
+[2026-03-28 19:32:07.939] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:32:08.035] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (49ms)
+[2026-03-28 19:32:08.126] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[2026-03-28 19:32:11.228] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:32:33.080] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:32:33.197] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (55ms)
+[2026-03-28 19:32:33.321] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[2026-03-28 19:32:36.453] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 19:32:48.079] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:32:48.130] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:32:48.189] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 19:32:51.257] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:32:53.031] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T12
+[2026-03-28 19:32:53.076] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
+[2026-03-28 19:32:53.123] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (24ms)
+[2026-03-28 19:32:56.173] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:08.160] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T3
+[2026-03-28 19:33:08.207] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
+[2026-03-28 19:33:08.257] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:33:11.311] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:23.326] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T3
+[2026-03-28 19:33:23.382] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 19:33:23.423] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
+[2026-03-28 19:33:26.472] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:28.317] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T12
+[2026-03-28 19:33:28.362] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 19:33:28.409] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
+[2026-03-28 19:33:31.463] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:43.492] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T12
+[2026-03-28 19:33:43.549] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:33:43.608] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 19:33:46.670] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:48.486] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T3
+[2026-03-28 19:33:48.567] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (39ms)
+[2026-03-28 19:33:48.654] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (39ms)
+[2026-03-28 19:33:51.732] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 19:33:58.544] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T12
+[2026-03-28 19:33:58.599] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
+[2026-03-28 19:33:58.657] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:34:01.717] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:34:08.603] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T3
+[2026-03-28 19:34:08.656] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 19:34:08.713] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:34:11.779] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:34:23.797] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:34:23.854] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 19:34:23.904] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:34:26.968] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:34:38.925] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:34:38.979] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 19:34:39.031] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:34:42.085] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:34:54.054] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:34:54.104] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:34:54.158] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:34:57.219] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:35:09.164] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:35:09.216] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:35:09.270] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:35:12.328] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:35:24.288] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:35:24.344] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 19:35:24.398] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:35:27.464] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:35:39.398] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:35:39.449] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:35:39.500] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:35:42.556] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:35:54.506] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:35:54.558] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:35:54.613] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:35:57.671] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:36:09.645] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:36:09.688] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (21ms)
+[2026-03-28 19:36:09.735] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:36:12.806] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:36:24.787] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:36:24.844] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 19:36:24.899] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:36:27.952] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:36:40.116] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:36:40.252] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (67ms)
+[2026-03-28 19:36:40.391] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (62ms)
+[2026-03-28 19:36:43.546] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.5s | {'grid_voltage': 229.5}
+[2026-03-28 19:36:55.062] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:36:55.114] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 19:36:55.165] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:36:58.232] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:37:10.192] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T3
+[2026-03-28 19:37:10.243] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:37:10.298] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
+[2026-03-28 19:37:13.357] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:37:15.191] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T5
+[2026-03-28 19:37:15.242] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:37:15.297] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 19:37:18.358] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:37:30.305] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T5
+[2026-03-28 19:37:30.358] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 19:37:30.420] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 19:37:33.479] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:37:45.662] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T5
+[2026-03-28 19:37:45.806] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (65ms)
+[2026-03-28 19:37:45.950] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (55ms)
+[2026-03-28 19:37:49.127] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.6s | {'grid_voltage': 229.5}
+[2026-03-28 19:37:50.577] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T11
+[2026-03-28 19:37:50.621] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (20ms)
+[2026-03-28 19:37:50.662] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (20ms)
+[2026-03-28 19:37:53.707] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:38:05.563] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T11
+[2026-03-28 19:38:05.622] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
+[2026-03-28 19:38:05.674] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:38:08.736] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:38:10.590] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T5
+[2026-03-28 19:38:10.647] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
+[2026-03-28 19:38:10.700] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
+[2026-03-28 19:38:13.756] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:38:25.689] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T5
+[2026-03-28 19:38:25.740] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
+[2026-03-28 19:38:25.791] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
+[2026-03-28 19:38:28.908] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 19:38:30.674] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=central | transformer=T11
+[2026-03-28 19:38:30.720] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
+[2026-03-28 19:38:30.766] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
+[2026-03-28 19:38:33.814] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:57:18.778] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T2
+[2026-03-28 22:57:18.852] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[2026-03-28 22:57:18.923] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 22:57:22.038] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.3s | {'grid_voltage': 229.5}
+[2026-03-28 22:57:28.967] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:57:29.073] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (52ms)
+[2026-03-28 22:57:29.262] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[2026-03-28 22:57:32.488] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.6s | {'grid_voltage': 229.5}
+[2026-03-28 22:57:44.161] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:57:44.214] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[2026-03-28 22:57:44.270] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 22:57:47.343] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:57:49.156] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T10
+[2026-03-28 22:57:49.214] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 22:57:49.269] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 22:57:52.334] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:58:04.355] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:58:04.413] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 22:58:04.472] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 22:58:07.534] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:58:19.779] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T10
+[2026-03-28 22:58:19.904] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (59ms)
+[2026-03-28 22:58:20.035] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (51ms)
+[2026-03-28 22:58:23.244] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.5s | {'grid_voltage': 229.5}
+[2026-03-28 22:58:29.746] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:58:29.800] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[2026-03-28 22:58:29.857] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[2026-03-28 22:58:32.919] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:58:34.853] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T10
+[2026-03-28 22:58:34.962] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (50ms)
+[2026-03-28 22:58:35.094] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (64ms)
+[2026-03-28 22:58:38.233] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 22:58:44.914] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=north | transformer=T10
+[2026-03-28 22:58:44.942] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T10/load-limit → 200 (13ms)
+[2026-03-28 22:58:45.004] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (30ms)
+[2026-03-28 22:58:48.061] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 79.82, 'load': 54.18}
+[2026-03-28 22:58:49.865] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:58:49.922] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 22:58:49.985] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[2026-03-28 22:58:53.055] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:59:05.077] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T3
+[2026-03-28 22:59:05.133] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 22:59:05.193] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 22:59:08.289] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:59:15.226] [remediation-engine] [INFO] [DECISION] Remediating transformer_overload | zone=north | transformer=T3
+[2026-03-28 22:59:15.257] [remediation-engine] [INFO] [ACTION] POST http://transformer:5002/transformer/T3/load-limit → 200 (7ms)
+[2026-03-28 22:59:15.321] [remediation-engine] [INFO] [ACTION] POST http://load-balancer:5008/reroute → 200 (28ms)
+[2026-03-28 22:59:18.390] [remediation-engine] [INFO] [VERIFY] transformer_overload RESOLVED | total_time=3.2s | {'temp': 80.96, 'load': 58.11}
+[2026-03-28 22:59:20.220] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T2
+[2026-03-28 22:59:20.278] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[2026-03-28 22:59:20.337] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[2026-03-28 22:59:23.401] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:59:30.499] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T6
+[2026-03-28 22:59:30.627] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (56ms)
+[2026-03-28 22:59:30.745] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[2026-03-28 22:59:33.873] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}
+[2026-03-28 22:59:35.345] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T16
+[2026-03-28 22:59:35.408] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[2026-03-28 22:59:35.474] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 22:59:38.551] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 22:59:45.450] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=west | transformer=T2
+[2026-03-28 22:59:45.506] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[2026-03-28 22:59:45.566] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[2026-03-28 22:59:48.636] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.2s | {'grid_voltage': 229.5}
+[2026-03-28 23:00:00.885] [remediation-engine] [INFO] [DECISION] Remediating voltage_spike | zone=north | transformer=T2
+[2026-03-28 23:00:00.995] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/tap-changer/lock → 200 (55ms)
+[2026-03-28 23:00:01.103] [remediation-engine] [INFO] [ACTION] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (52ms)
+[2026-03-28 23:00:04.223] [remediation-engine] [INFO] [VERIFY] voltage_spike RESOLVED | total_time=3.4s | {'grid_voltage': 229.5}

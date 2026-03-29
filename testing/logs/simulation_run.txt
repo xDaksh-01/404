@@ -1,790 +1,186 @@
-[17:22:33.759] [ML-ANOMALY-DETECTOR] [INFO] Inference loop started
-[17:22:43.844] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0197 prediction=-1
-[17:22:43.847] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.59 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:22:43.873] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:22:43.889] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718563889 Fault=voltage_spike zone=north transformer=T12
-[17:22:43.917] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:22:43.941] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:22:43.970] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:22:43.990] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (23ms)
-[17:22:44.021] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:22:44.037] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:22:47.070] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:22:58.977] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0367 prediction=-1
-[17:22:58.981] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.57 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:22:59.012] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:22:59.032] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718579032 Fault=voltage_spike zone=north transformer=T12
-[17:22:59.060] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:22:59.083] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
-[17:22:59.122] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:22:59.155] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (48ms)
-[17:22:59.177] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:22:59.198] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:02.219] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:23:14.162] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0690 prediction=-1
-[17:23:14.164] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.48 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:23:14.201] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:23:14.225] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718594225 Fault=voltage_spike zone=north transformer=T12
-[17:23:14.253] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:23:14.280] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:23:14.321] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:23:14.345] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
-[17:23:14.385] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:23:14.411] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:17.446] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:23:19.149] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0743 prediction=-1
-[17:23:19.155] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.49 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:23:19.196] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:23:19.219] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718599219 Fault=voltage_spike zone=north transformer=T13
-[17:23:19.252] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:23:19.273] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
-[17:23:19.307] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:23:19.331] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
-[17:23:19.363] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:23:19.393] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:22.432] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:23:29.239] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0874 prediction=-1
-[17:23:29.244] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.46 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:23:29.276] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:23:29.305] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718609305 Fault=voltage_spike zone=north transformer=T12
-[17:23:29.344] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:23:29.372] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:23:29.406] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:23:29.435] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
-[17:23:29.479] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:23:29.505] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:32.545] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:23:44.335] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0917 prediction=-1
-[17:23:44.342] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.46 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:23:44.378] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:23:44.408] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718624408 Fault=voltage_spike zone=central transformer=T12
-[17:23:44.444] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:23:44.474] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
-[17:23:44.517] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:23:44.535] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
-[17:23:44.565] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:23:44.595] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:47.639] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:23:54.414] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0946 prediction=-1
-[17:23:54.420] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.46 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:23:54.461] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:23:54.484] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718634484 Fault=voltage_spike zone=north transformer=T13
-[17:23:54.515] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:23:54.534] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (22ms)
-[17:23:54.565] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:23:54.593] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
-[17:23:54.626] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:23:54.652] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:23:57.686] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:24:04.510] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0905 prediction=-1
-[17:24:04.513] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:24:04.547] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:24:04.570] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718644570 Fault=voltage_spike zone=north transformer=T12
-[17:24:04.603] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:24:04.631] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
-[17:24:04.667] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:24:04.693] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
-[17:24:04.718] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:24:04.748] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:24:07.784] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:24:09.465] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0898 prediction=-1
-[17:24:09.467] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:24:09.505] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:24:09.532] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718649532 Fault=voltage_spike zone=north transformer=T13
-[17:24:09.562] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:24:09.651] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (92ms)
-[17:24:09.756] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:24:09.823] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (81ms)
-[17:24:09.850] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:24:09.913] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:24:12.943] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
-[17:24:24.593] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0988 prediction=-1
-[17:24:24.599] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:24:24.638] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:24:24.667] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718664667 Fault=voltage_spike zone=north transformer=T12
-[17:24:24.695] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:24:24.719] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:24:24.750] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:24:24.774] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:24:24.801] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:24:24.826] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:24:27.853] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:24:29.607] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0914 prediction=-1
-[17:24:29.612] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T13', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:24:29.651] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:24:29.673] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718669673 Fault=voltage_spike zone=north transformer=T13
-[17:24:29.707] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:24:29.730] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:24:29.762] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:24:29.789] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
-[17:24:29.818] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:24:29.848] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:24:32.880] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:24:44.834] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0947 prediction=-1
-[17:24:44.862] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:24:44.895] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:24:44.923] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718684923 Fault=voltage_spike zone=central transformer=T12
-[17:24:44.980] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:24:45.010] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
-[17:24:45.072] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:24:45.099] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
-[17:24:45.135] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:24:45.182] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:24:48.304] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
-[17:24:59.996] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0977 prediction=-1
-[17:25:00.003] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:25:00.063] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:25:00.096] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718700096 Fault=voltage_spike zone=central transformer=T12
-[17:25:00.140] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:25:00.163] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:25:00.203] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:25:00.234] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
-[17:25:00.272] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:25:00.304] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:25:03.346] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:25:15.205] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0992 prediction=-1
-[17:25:15.208] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:25:15.263] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:25:15.280] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718715280 Fault=voltage_spike zone=central transformer=T12
-[17:25:15.322] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:25:15.349] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:25:15.385] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:25:15.410] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:25:15.440] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:25:15.457] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:25:18.494] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:25:30.437] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1006 prediction=-1
-[17:25:30.440] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:25:30.475] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:25:30.500] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718730500 Fault=voltage_spike zone=north transformer=T15
-[17:25:30.532] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:25:30.552] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
-[17:25:30.586] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:25:30.610] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
-[17:25:30.636] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:25:30.665] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:25:33.702] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:25:40.503] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0994 prediction=-1
-[17:25:40.509] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:25:40.547] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:25:40.575] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718740575 Fault=voltage_spike zone=central transformer=T12
-[17:25:40.619] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:25:40.642] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
-[17:25:40.680] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:25:40.709] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
-[17:25:40.740] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:25:40.766] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:25:43.809] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:25:55.682] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0984 prediction=-1
-[17:25:55.694] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:25:55.736] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:25:55.762] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718755762 Fault=voltage_spike zone=north transformer=T12
-[17:25:55.802] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:25:55.825] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:25:55.873] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:25:55.891] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
-[17:25:55.923] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:25:55.971] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:25:59.002] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:26:00.674] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0987 prediction=-1
-[17:26:00.677] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:26:00.718] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:00.744] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718760744 Fault=voltage_spike zone=north transformer=T15
-[17:26:00.773] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:26:00.799] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:26:00.841] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:26:00.869] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
-[17:26:00.914] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:00.944] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:03.984] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:26:15.839] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1000 prediction=-1
-[17:26:15.842] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:26:15.870] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:15.896] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718775896 Fault=voltage_spike zone=north transformer=T15
-[17:26:15.934] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:26:15.965] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
-[17:26:16.000] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:26:16.024] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
-[17:26:16.061] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:16.087] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:19.133] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:26:20.816] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1068 prediction=-1
-[17:26:20.824] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:26:20.864] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:20.888] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718780888 Fault=voltage_spike zone=north transformer=T12
-[17:26:20.919] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:26:20.945] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:26:20.991] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:26:21.019] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
-[17:26:21.048] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:21.085] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:24.121] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:26:36.001] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1005 prediction=-1
-[17:26:36.008] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:26:36.043] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:36.065] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718796065 Fault=voltage_spike zone=north transformer=T12
-[17:26:36.095] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:26:36.129] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
-[17:26:36.171] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:26:36.214] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (48ms)
-[17:26:36.252] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:36.277] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:39.315] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:26:41.050] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0985 prediction=-1
-[17:26:41.053] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'central', 'feeder_id': 'central-feeder-2'}
-[17:26:41.087] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:41.113] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718801113 Fault=voltage_spike zone=central transformer=T15
-[17:26:41.140] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=central
-[17:26:41.161] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
-[17:26:41.188] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=central
-[17:26:41.218] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
-[17:26:41.258] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:41.338] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:44.420] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:26:56.204] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1014 prediction=-1
-[17:26:56.207] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:26:56.235] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:26:56.293] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718816293 Fault=voltage_spike zone=north transformer=T15
-[17:26:56.359] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:26:56.373] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
-[17:26:56.417] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:26:56.460] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (57ms)
-[17:26:56.489] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:26:56.510] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:26:59.547] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:27:11.359] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0936 prediction=-1
-[17:27:11.362] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:27:11.474] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:27:11.576] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718831576 Fault=voltage_spike zone=north transformer=T10
-[17:27:11.695] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:27:11.704] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:27:11.804] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:27:11.828] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
-[17:27:11.857] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:27:11.882] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:27:14.920] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:27:16.332] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0894 prediction=-1
-[17:27:16.338] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:27:16.372] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:27:16.404] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718836404 Fault=voltage_spike zone=north transformer=T15
-[17:27:16.449] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:27:16.479] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (35ms)
-[17:27:16.508] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:27:16.526] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (21ms)
-[17:27:16.555] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:27:16.591] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:27:19.630] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:27:31.573] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0796 prediction=-1
-[17:27:31.581] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:27:31.634] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:27:31.664] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718851664 Fault=voltage_spike zone=north transformer=T15
-[17:27:31.697] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:27:31.723] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:27:31.761] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:27:31.783] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
-[17:27:31.819] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:27:31.845] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:27:34.891] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:27:46.673] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0787 prediction=-1
-[17:27:46.675] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:27:46.707] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:27:46.733] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718866733 Fault=voltage_spike zone=north transformer=T15
-[17:27:46.777] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:27:46.801] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:27:46.836] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:27:46.866] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
-[17:27:46.904] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:27:46.931] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:27:49.970] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:28:01.800] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0816 prediction=-1
-[17:28:01.802] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:28:01.837] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:28:01.862] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718881862 Fault=voltage_spike zone=north transformer=T15
-[17:28:01.901] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:28:01.925] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:28:01.951] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:28:01.980] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
-[17:28:02.017] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:28:02.044] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:28:05.076] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:28:16.940] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0886 prediction=-1
-[17:28:16.947] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:28:16.991] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:28:17.019] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718897019 Fault=voltage_spike zone=north transformer=T15
-[17:28:17.061] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:28:17.086] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:28:17.138] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:28:17.166] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (38ms)
-[17:28:17.201] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:28:17.243] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:28:20.287] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:28:32.131] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0835 prediction=-1
-[17:28:32.144] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:28:32.189] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:28:32.215] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718912215 Fault=voltage_spike zone=north transformer=T15
-[17:28:32.251] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:28:32.274] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:28:32.314] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:28:32.337] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
-[17:28:32.381] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:28:32.413] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:28:35.440] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:28:47.219] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0715 prediction=-1
-[17:28:47.221] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:28:47.255] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:28:47.286] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718927286 Fault=voltage_spike zone=north transformer=T12
-[17:28:47.321] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:28:47.352] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
-[17:28:47.398] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:28:47.425] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
-[17:28:47.468] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:28:47.496] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:28:50.531] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:29:02.337] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0675 prediction=-1
-[17:29:02.340] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:02.371] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:29:02.398] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718942398 Fault=voltage_spike zone=north transformer=T12
-[17:29:02.430] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:29:02.452] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
-[17:29:02.493] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:29:02.517] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
-[17:29:02.549] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:29:02.585] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:29:05.619] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:29:17.521] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0738 prediction=-1
-[17:29:17.523] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:17.565] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:29:17.584] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718957584 Fault=voltage_spike zone=north transformer=T12
-[17:29:17.630] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:29:17.665] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (43ms)
-[17:29:17.692] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:29:17.725] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
-[17:29:17.759] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:29:17.786] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:29:20.831] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:29:22.475] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0728 prediction=-1
-[17:29:22.478] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:22.519] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:29:22.544] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718962544 Fault=voltage_spike zone=north transformer=T2
-[17:29:22.593] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:29:22.618] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
-[17:29:22.656] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:29:22.682] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:29:22.719] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:29:22.751] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:29:25.782] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:29:37.593] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0765 prediction=-1
-[17:29:37.599] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:37.641] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:29:37.691] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718977691 Fault=voltage_spike zone=north transformer=T2
-[17:29:37.721] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:29:37.746] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:29:37.781] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:29:37.806] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
-[17:29:37.844] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:29:37.870] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:29:40.912] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:29:42.619] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0730 prediction=-1
-[17:29:42.623] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.51 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:42.654] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[17:29:42.677] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718982677 Fault=transformer_overload zone=north transformer=T2
-[17:29:42.722] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T2/load-limit → 200 (7ms)
-[17:29:42.746] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[17:29:42.778] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (36ms)
-[17:29:42.814] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[17:29:42.842] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[17:29:45.892] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=3.2s
-[17:29:47.605] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0801 prediction=-1
-[17:29:47.610] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:29:47.645] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:29:47.684] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774718987684 Fault=voltage_spike zone=north transformer=T12
-[17:29:47.715] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:29:47.742] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:29:47.789] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:29:47.816] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
-[17:29:47.851] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:29:47.881] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:29:50.924] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:30:02.749] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0943 prediction=-1
-[17:30:02.757] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:30:02.804] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:30:02.825] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719002825 Fault=voltage_spike zone=north transformer=T12
-[17:30:02.867] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:30:02.895] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
-[17:30:02.944] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:30:02.974] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (41ms)
-[17:30:03.008] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:30:03.047] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:30:06.086] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:30:17.970] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0916 prediction=-1
-[17:30:17.988] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:30:18.032] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:30:18.069] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719018069 Fault=voltage_spike zone=north transformer=T12
-[17:30:18.103] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:30:18.137] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
-[17:30:18.167] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:30:18.207] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (44ms)
-[17:30:18.243] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:30:18.278] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:30:21.314] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:30:33.095] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0955 prediction=-1
-[17:30:33.105] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T12', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:30:33.141] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:30:33.174] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719033174 Fault=voltage_spike zone=north transformer=T12
-[17:30:33.215] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:30:33.240] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:30:33.277] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:30:33.312] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (38ms)
-[17:30:33.349] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:30:33.388] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:30:36.448] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:30:38.087] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0994 prediction=-1
-[17:30:38.091] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:30:38.129] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:30:38.154] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719038154 Fault=voltage_spike zone=north transformer=T1
-[17:30:38.193] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:30:38.220] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:30:38.254] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:30:38.280] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
-[17:30:38.317] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:30:38.347] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:30:41.385] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:30:53.187] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0966 prediction=-1
-[17:30:53.192] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:30:53.224] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:30:53.253] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719053253 Fault=voltage_spike zone=north transformer=T1
-[17:30:53.289] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:30:53.317] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
-[17:30:53.351] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:30:53.379] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
-[17:30:53.411] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:30:53.443] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:30:56.478] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:31:08.384] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0983 prediction=-1
-[17:31:08.390] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:31:08.428] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:31:08.453] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719068453 Fault=voltage_spike zone=north transformer=T1
-[17:31:08.483] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:31:08.511] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (32ms)
-[17:31:08.548] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:31:08.577] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (34ms)
-[17:31:08.613] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:31:08.644] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:31:11.669] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:31:23.482] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.1027 prediction=-1
-[17:31:23.493] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:31:23.545] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:31:23.578] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719083578 Fault=voltage_spike zone=north transformer=T1
-[17:31:23.620] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:31:23.649] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
-[17:31:23.674] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:31:23.694] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (22ms)
-[17:31:23.725] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:31:23.753] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:31:26.782] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:31:38.658] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0943 prediction=-1
-[17:31:38.664] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:31:38.694] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:31:38.723] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719098723 Fault=voltage_spike zone=north transformer=T1
-[17:31:38.777] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:31:38.809] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (43ms)
-[17:31:38.863] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:31:38.899] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (53ms)
-[17:31:38.980] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:31:38.990] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:31:42.029] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:31:53.895] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0860 prediction=-1
-[17:31:53.900] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:31:53.952] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:31:53.974] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719113974 Fault=voltage_spike zone=north transformer=T1
-[17:31:54.015] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:31:54.037] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
-[17:31:54.084] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:31:54.106] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (28ms)
-[17:31:54.137] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:31:54.162] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:31:57.198] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:32:08.952] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0779 prediction=-1
-[17:32:08.958] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:32:08.998] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:32:09.029] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719129029 Fault=voltage_spike zone=north transformer=T1
-[17:32:09.070] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:32:09.091] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
-[17:32:09.125] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:32:09.153] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
-[17:32:09.190] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:32:09.226] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:32:12.265] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:32:24.150] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0791 prediction=-1
-[17:32:24.152] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:32:24.202] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:32:24.241] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719144241 Fault=voltage_spike zone=north transformer=T1
-[17:32:24.292] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:32:24.313] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (24ms)
-[17:32:24.353] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:32:24.379] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
-[17:32:24.422] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:32:24.458] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:32:27.494] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:32:39.332] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0742 prediction=-1
-[17:32:39.344] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:32:39.381] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:32:39.411] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719159411 Fault=voltage_spike zone=north transformer=T1
-[17:32:39.447] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:32:39.473] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
-[17:32:39.512] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:32:39.535] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:32:39.570] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:32:39.597] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:32:42.636] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:32:54.481] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0877 prediction=-1
-[17:32:54.489] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:32:54.542] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:32:54.569] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719174569 Fault=voltage_spike zone=north transformer=T1
-[17:32:54.608] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:32:54.636] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
-[17:32:54.686] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:32:54.718] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (39ms)
-[17:32:54.750] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:32:54.783] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:32:57.833] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:33:04.516] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0876 prediction=-1
-[17:33:04.518] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:04.553] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:33:04.584] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719184584 Fault=voltage_spike zone=north transformer=T6
-[17:33:04.627] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:33:04.648] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
-[17:33:04.683] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:33:04.710] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (31ms)
-[17:33:04.741] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:33:04.765] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:33:07.811] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:33:09.519] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0821 prediction=-1
-[17:33:09.526] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:09.558] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:33:09.581] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719189581 Fault=voltage_spike zone=north transformer=T1
-[17:33:09.619] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:33:09.641] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (26ms)
-[17:33:09.683] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:33:09.709] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:33:09.748] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:33:09.777] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:33:12.818] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:33:24.734] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0790 prediction=-1
-[17:33:24.738] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:24.796] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:33:24.839] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719204839 Fault=voltage_spike zone=north transformer=T1
-[17:33:24.870] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:33:24.902] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (36ms)
-[17:33:24.948] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:33:24.970] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (25ms)
-[17:33:25.003] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:33:25.025] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:33:28.063] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:33:29.713] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0742 prediction=-1
-[17:33:29.714] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.35 context={'transformer_id': 'T1', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:29.743] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
-[17:33:29.768] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719209768 Fault=transformer_overload zone=north transformer=T1
-[17:33:29.808] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T1/load-limit → 200 (8ms)
-[17:33:29.835] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
-[17:33:29.862] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (30ms)
-[17:33:29.897] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
-[17:33:29.921] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
-[17:33:32.969] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=3.2s
-[17:33:34.719] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0889 prediction=-1
-[17:33:34.722] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:34.754] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:33:34.782] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719214782 Fault=voltage_spike zone=north transformer=T15
-[17:33:34.815] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:33:34.841] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:33:34.886] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:33:34.914] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
-[17:33:34.952] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:33:34.977] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:33:38.008] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:33:49.824] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0899 prediction=-1
-[17:33:49.828] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:33:49.864] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:33:49.895] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719229895 Fault=voltage_spike zone=north transformer=T15
-[17:33:49.938] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:33:49.972] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
-[17:33:50.013] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:33:50.038] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
-[17:33:50.081] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:33:50.105] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:33:53.141] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:34:05.012] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0903 prediction=-1
-[17:34:05.014] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:34:05.048] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:34:05.077] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719245077 Fault=voltage_spike zone=north transformer=T15
-[17:34:05.107] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:34:05.138] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (33ms)
-[17:34:05.178] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:34:05.200] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (26ms)
-[17:34:05.241] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:34:05.272] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:34:08.311] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:34:20.201] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0886 prediction=-1
-[17:34:20.203] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:34:20.232] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:34:20.265] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719260265 Fault=voltage_spike zone=north transformer=T15
-[17:34:20.299] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:34:20.327] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
-[17:34:20.358] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:34:20.388] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
-[17:34:20.421] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:34:20.449] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:34:23.489] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:34:35.351] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0883 prediction=-1
-[17:34:35.356] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:34:35.394] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:34:35.425] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719275425 Fault=voltage_spike zone=north transformer=T15
-[17:34:35.468] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:34:35.501] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (38ms)
-[17:34:35.544] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:34:35.577] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
-[17:34:35.616] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:34:35.654] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:34:38.706] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:34:50.518] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0893 prediction=-1
-[17:34:50.521] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:34:50.554] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:34:50.597] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719290597 Fault=voltage_spike zone=north transformer=T15
-[17:34:50.630] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:34:50.654] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:34:50.687] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:34:50.719] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (35ms)
-[17:34:50.765] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:34:50.785] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:34:53.825] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:35:05.663] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0928 prediction=-1
-[17:35:05.670] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:35:05.722] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:35:05.745] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719305745 Fault=voltage_spike zone=north transformer=T15
-[17:35:05.788] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:35:05.852] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (67ms)
-[17:35:05.922] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:35:05.965] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (82ms)
-[17:35:06.071] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:35:06.171] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:35:09.247] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.5s
-[17:35:20.755] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0977 prediction=-1
-[17:35:20.762] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:35:20.801] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:35:20.827] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719320827 Fault=voltage_spike zone=north transformer=T15
-[17:35:20.868] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:35:20.892] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
-[17:35:20.941] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:35:20.971] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (42ms)
-[17:35:21.010] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:35:21.037] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:35:24.073] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:35:35.949] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0985 prediction=-1
-[17:35:35.960] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:35:35.996] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:35:36.023] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719336023 Fault=voltage_spike zone=north transformer=T15
-[17:35:36.061] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:35:36.096] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (40ms)
-[17:35:36.134] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:35:36.166] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
-[17:35:36.202] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:35:36.233] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:35:39.276] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:35:45.977] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0970 prediction=-1
-[17:35:45.982] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:35:46.013] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:35:46.108] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719346108 Fault=voltage_spike zone=north transformer=T5
-[17:35:46.189] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:35:46.271] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (95ms)
-[17:35:46.342] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:35:46.400] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (64ms)
-[17:35:46.454] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:35:46.478] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:35:49.511] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
-[17:35:50.979] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0981 prediction=-1
-[17:35:50.984] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:35:51.029] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:35:51.054] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719351054 Fault=voltage_spike zone=north transformer=T15
-[17:35:51.090] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:35:51.116] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
-[17:35:51.149] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:35:51.179] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
-[17:35:51.224] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:35:51.251] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:35:54.288] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:36:06.107] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0998 prediction=-1
-[17:36:06.111] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:36:06.149] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:36:06.186] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719366186 Fault=voltage_spike zone=north transformer=T15
-[17:36:06.234] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:36:06.265] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (37ms)
-[17:36:06.306] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:36:06.327] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
-[17:36:06.355] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:36:06.385] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:36:09.426] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:36:21.264] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0927 prediction=-1
-[17:36:21.267] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:36:21.302] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:36:21.330] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719381330 Fault=voltage_spike zone=north transformer=T15
-[17:36:21.365] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:36:21.389] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
-[17:36:21.422] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:36:21.446] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
-[17:36:21.490] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:36:21.521] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:36:24.555] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:36:36.445] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0970 prediction=-1
-[17:36:36.451] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.42 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:36:36.482] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:36:36.509] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719396509 Fault=voltage_spike zone=north transformer=T15
-[17:36:36.546] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:36:36.565] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (23ms)
-[17:36:36.599] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:36:36.629] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
-[17:36:36.661] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:36:36.701] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:36:39.733] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:36:51.656] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0965 prediction=-1
-[17:36:51.661] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:36:51.702] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:36:51.728] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719411728 Fault=voltage_spike zone=north transformer=T5
-[17:36:51.772] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:36:51.803] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (40ms)
-[17:36:51.842] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:36:51.880] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (43ms)
-[17:36:51.927] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:36:51.955] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:36:54.989] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
-[17:37:06.771] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0975 prediction=-1
-[17:37:06.776] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:37:06.812] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:37:06.845] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719426845 Fault=voltage_spike zone=north transformer=T5
-[17:37:06.891] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:37:06.910] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (25ms)
-[17:37:06.952] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:37:06.986] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (37ms)
-[17:37:07.016] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:37:07.049] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:37:10.088] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:37:11.787] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0966 prediction=-1
-[17:37:11.829] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T15', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:37:11.922] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:37:11.950] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719431950 Fault=voltage_spike zone=north transformer=T15
-[17:37:11.990] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:37:12.021] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (41ms)
-[17:37:12.063] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:37:12.089] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (36ms)
-[17:37:12.128] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:37:12.159] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
-[17:37:15.199] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
-[17:37:21.830] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0950 prediction=-1
-[17:37:21.836] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.41 context={'transformer_id': 'T5', 'transformer_zone': 'south', 'zone': 'north', 'feeder_id': 'north-feeder-2'}
-[17:37:21.873] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
-[17:37:21.904] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774719441904 Fault=voltage_spike zone=north transformer=T5
-[17:37:21.938] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
-[17:37:21.960] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
-[17:37:21.996] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
-[17:37:22.021] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (27ms)
-[17:37:22.053] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
-[17:37:22.086] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:57:18.532] [ML-ANOMALY-DETECTOR] [INFO] Inference loop started
+[22:57:18.663] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0191 prediction=-1
+[22:57:18.671] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.57 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:57:18.712] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:57:18.742] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738638742 Fault=voltage_spike zone=north transformer=T2
+[22:57:18.795] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:57:18.823] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (34ms)
+[22:57:18.859] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:57:18.884] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[22:57:18.931] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:57:18.975] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:57:22.039] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.3s
+[22:57:28.811] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0499 prediction=-1
+[22:57:28.823] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:57:28.880] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:57:28.919] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738648919 Fault=voltage_spike zone=north transformer=T3
+[22:57:28.976] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:57:29.020] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (52ms)
+[22:57:29.087] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:57:29.121] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (47ms)
+[22:57:29.294] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:57:29.394] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:57:32.490] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.6s
+[22:57:44.056] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0318 prediction=-1
+[22:57:44.061] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.53 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:57:44.103] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:57:44.130] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738664130 Fault=voltage_spike zone=north transformer=T3
+[22:57:44.167] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:57:44.189] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (27ms)
+[22:57:44.220] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:57:44.245] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[22:57:44.275] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:57:44.306] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:57:47.344] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:57:49.062] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0508 prediction=-1
+[22:57:49.067] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.47 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:57:49.105] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:57:49.130] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738669130 Fault=voltage_spike zone=north transformer=T10
+[22:57:49.161] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:57:49.187] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[22:57:49.219] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:57:49.244] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[22:57:49.272] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:57:49.300] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:57:52.336] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:58:04.264] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0620 prediction=-1
+[22:58:04.269] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:04.306] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:58:04.330] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738684330 Fault=voltage_spike zone=north transformer=T3
+[22:58:04.361] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:58:04.386] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[22:58:04.419] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:58:04.443] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[22:58:04.477] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:58:04.499] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:58:07.535] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:58:19.573] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0658 prediction=-1
+[22:58:19.590] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:19.659] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:58:19.712] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738699712 Fault=voltage_spike zone=north transformer=T10
+[22:58:19.785] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:58:19.839] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (59ms)
+[22:58:19.927] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:58:19.964] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (51ms)
+[22:58:20.042] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:58:20.095] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:58:23.245] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.5s
+[22:58:29.655] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0708 prediction=-1
+[22:58:29.659] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:29.696] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:58:29.721] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738709721 Fault=voltage_spike zone=north transformer=T3
+[22:58:29.751] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:58:29.775] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (28ms)
+[22:58:29.805] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:58:29.829] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (29ms)
+[22:58:29.862] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:58:29.885] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:58:32.921] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:58:34.703] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0740 prediction=-1
+[22:58:34.709] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.45 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:34.759] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:58:34.803] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738714803 Fault=voltage_spike zone=north transformer=T10
+[22:58:34.864] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:58:34.907] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (50ms)
+[22:58:34.969] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:58:35.029] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (64ms)
+[22:58:35.102] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:58:35.163] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:58:38.234] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
+[22:58:44.796] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0750 prediction=-1
+[22:58:44.799] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.52 context={'transformer_id': 'T10', 'transformer_zone': 'west', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:44.833] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[22:58:44.875] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738724875 Fault=transformer_overload zone=north transformer=T10
+[22:58:44.934] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T10/load-limit → 200 (13ms)
+[22:58:44.961] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[22:58:44.973] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (30ms)
+[22:58:45.012] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[22:58:45.041] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
+[22:58:48.061] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=3.2s
+[22:58:49.769] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0799 prediction=-1
+[22:58:49.773] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:58:49.812] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:58:49.838] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738729838 Fault=voltage_spike zone=north transformer=T3
+[22:58:49.870] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:58:49.895] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[22:58:49.928] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:58:49.956] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (33ms)
+[22:58:49.990] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:58:50.018] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:58:53.072] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:59:04.983] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0590 prediction=-1
+[22:59:04.987] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:59:05.024] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:59:05.052] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738745052 Fault=voltage_spike zone=north transformer=T3
+[22:59:05.082] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:59:05.107] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[22:59:05.140] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:59:05.167] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[22:59:05.199] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:59:05.224] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:59:08.290] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:59:15.120] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0644 prediction=-1
+[22:59:15.124] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=transformer_overload confidence=0.47 context={'transformer_id': 'T3', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:59:15.172] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Transformer Thermal Overload
+[22:59:15.197] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738755197 Fault=transformer_overload zone=north transformer=T3
+[22:59:15.234] [REMEDIATION-ENGINE] [REMEDIATE] POST http://transformer:5002/transformer/T3/load-limit → 200 (7ms)
+[22:59:15.263] [LOAD-BALANCER] [REMEDIATE] Power rerouted 40MW alternate_path=False
+[22:59:15.286] [REMEDIATION-ENGINE] [REMEDIATE] POST http://load-balancer:5008/reroute → 200 (28ms)
+[22:59:15.331] [GRID-CONTROLLER] [REMEDIATE] [transformer_overload] EXECUTING
+[22:59:15.358] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of transformer_overload
+[22:59:18.392] [REMEDIATION-ENGINE] [VERIFY] transformer_overload RESOLVED total_time=3.2s
+[22:59:20.126] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0721 prediction=-1
+[22:59:20.130] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:59:20.166] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:59:20.193] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738760193 Fault=voltage_spike zone=north transformer=T2
+[22:59:20.228] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:59:20.251] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (30ms)
+[22:59:20.284] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:59:20.309] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (30ms)
+[22:59:20.341] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:59:20.367] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:59:23.402] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:59:30.288] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0744 prediction=-1
+[22:59:30.306] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.43 context={'transformer_id': 'T6', 'transformer_zone': 'east', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:59:30.370] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:59:30.442] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738770442 Fault=voltage_spike zone=north transformer=T6
+[22:59:30.514] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:59:30.564] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (56ms)
+[22:59:30.636] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:59:30.683] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (54ms)
+[22:59:30.751] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:59:30.810] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:59:33.874] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
+[22:59:35.218] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0753 prediction=-1
+[22:59:35.223] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T16', 'transformer_zone': 'central', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[22:59:35.288] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:59:35.316] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738775316 Fault=voltage_spike zone=north transformer=T16
+[22:59:35.351] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[22:59:35.377] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (31ms)
+[22:59:35.414] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[22:59:35.441] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[22:59:35.478] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:59:35.511] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:59:38.557] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[22:59:45.354] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0875 prediction=-1
+[22:59:45.359] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'west', 'feeder_id': 'west-feeder-3'}
+[22:59:45.398] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[22:59:45.421] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738785421 Fault=voltage_spike zone=west transformer=T2
+[22:59:45.456] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=west
+[22:59:45.480] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (29ms)
+[22:59:45.512] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=west
+[22:59:45.539] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (32ms)
+[22:59:45.570] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[22:59:45.597] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[22:59:48.638] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.2s
+[23:00:00.667] [ML-ANOMALY-DETECTOR] [ML-DETECT] Anomaly detected score=-0.0909 prediction=-1
+[23:00:00.748] [ML-ANOMALY-DETECTOR] [ML-CLASSIFY] Root cause=voltage_spike confidence=0.44 context={'transformer_id': 'T2', 'transformer_zone': 'north', 'zone': 'north', 'feeder_id': 'north-feeder-1'}
+[23:00:00.803] [GRID-CONTROLLER] [ALERT] CRITICAL from ml-anomaly-detector: Autonomous detection of Unexpected Voltage Spike
+[23:00:00.843] [REMEDIATION-ENGINE] [DECISION] RemediationID=rem-1774738800842 Fault=voltage_spike zone=north transformer=T2
+[23:00:00.894] [VOLTAGE-REGULATOR] [REMEDIATE] Tap changer locked zone=north
+[23:00:00.941] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/tap-changer/lock → 200 (55ms)
+[23:00:01.007] [VOLTAGE-REGULATOR] [REMEDIATE] Capacitor bank deactivated zone=north
+[23:00:01.050] [REMEDIATION-ENGINE] [REMEDIATE] POST http://voltage-regulator:5009/capacitor-bank/deactivate → 200 (52ms)
+[23:00:01.108] [GRID-CONTROLLER] [REMEDIATE] [voltage_spike] EXECUTING
+[23:00:01.159] [REMEDIATION-ENGINE] [VERIFY] Waiting 3s for recovery verification of voltage_spike
+[23:00:04.224] [REMEDIATION-ENGINE] [VERIFY] voltage_spike RESOLVED total_time=3.4s
