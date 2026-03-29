@@ -20,6 +20,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url
 
 app = Flask(__name__)
 SERVICE_NAME = "load-balancer"
@@ -69,7 +70,7 @@ def poll_zones():
 
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(get_service_url(port, "/status"), timeout=2)
                     if r.status_code == 200:
                         d = r.json()
                         demand = d.get("current_load_mw", 0)
@@ -80,7 +81,7 @@ def poll_zones():
                         if lp > 85:
                             overloaded += 1
                             # Autonomously request rebalance
-                            requests.post(f"http://localhost:5008/emergency-rebalance", 
+                            requests.post(get_service_url(5008, "/emergency-rebalance"), 
                                           json={"zone": zone, "mode": "reduce", "excess_mw": demand * 0.1},
                                           timeout=1)
 
@@ -165,7 +166,7 @@ def emergency_rebalance():
         for z, port in ZONE_PORTS.items():
             if z != zone:
                 try:
-                    requests.post(f"http://localhost:{port}/feeder/restore",
+                    requests.post(get_service_url(port, "/feeder/restore"),
                                   json={"feeders": [f"feeder-{i}" for i in range(1, 4)]},
                                   timeout=2)
                 except Exception:
@@ -174,7 +175,7 @@ def emergency_rebalance():
         # Shed load from overloaded zone
         if zone and zone in ZONE_PORTS:
             try:
-                requests.post(f"http://localhost:{ZONE_PORTS[zone]}/shed-load",
+                requests.post(get_service_url(ZONE_PORTS[zone], "/shed-load"),
                               json={"amount_mw": excess_mw}, timeout=2)
             except Exception:
                 pass
@@ -232,7 +233,7 @@ def activate_load_shedding():
     # Shed from all zones
     for z, port in ZONE_PORTS.items():
         try:
-            requests.post(f"http://localhost:{port}/shed-load",
+            requests.post(get_service_url(port, "/shed-load"),
                           json={"amount_mw": target_mw / 5}, timeout=2)
         except Exception:
             pass

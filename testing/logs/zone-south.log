@@ -1,1 +1,9 @@
-[2026-03-29 04:13:08.925] [zone-south] [INFO] Starting zone-south on port 5004 (zone=south)
+[2026-03-29 07:33:35.650] [zone-south] [INFO] Starting zone-south on port 5004 (zone=south)
+[2026-03-29 07:34:30.303] [zone-south] [WARNING] [INJECT] current_surge in south
+[2026-03-29 07:34:44.222] [zone-south] [INFO] [SHED-LOAD] Shed 67.59MW in south
+[2026-03-29 02:06:14.095] [zone-south] [INFO] Starting zone-south on port 5004 (zone=south)
+[2026-03-29 07:37:38.179] [zone-south] [WARNING] [INJECT] current_surge in south
+[2026-03-29 07:37:46.715] [zone-south] [INFO] [SHED-LOAD] Shed 77.25MW in south
+[2026-03-29 07:38:03.816] [zone-south] [INFO] [SHED-LOAD] Shed 66.57000000000001MW in south
+[2026-03-29 07:38:29.734] [zone-south] [WARNING] [INJECT] current_surge in south
+[2026-03-29 07:38:36.093] [zone-south] [INFO] [SHED-LOAD] Shed 77.77000000000001MW in south

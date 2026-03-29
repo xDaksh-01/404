@@ -28,6 +28,7 @@ import requests
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url
 
 app = Flask(__name__)
 
@@ -137,7 +138,7 @@ def poll_services():
             # ── Node 1: Infrastructure (Transformer 5002) ──────────────────
             node1 = 0
             try:
-                r = requests.get("http://localhost:5002/status", timeout=2)
+                r = requests.get(get_service_url(5002, "/status"), timeout=2)
                 if r.status_code == 200:
                     data = r.json()
                     ts = data.get("transformers", [])
@@ -150,7 +151,7 @@ def poll_services():
             node2 = 1
             for zp in [5003, 5004, 5005, 5006, 5007]:
                 try:
-                    r = requests.get(f"http://localhost:{zp}/health", timeout=1)
+                    r = requests.get(get_service_url(zp, "/health"), timeout=1)
                     if r.status_code != 200:
                         node2 = 0
                         break
@@ -161,13 +162,13 @@ def poll_services():
             # ── Node 3-5: Optimization, Stability, Security ─────────────
             node3 = node4 = node5 = 0
             try:
-                if requests.get("http://localhost:5008/health", timeout=1).status_code == 200: node3 = 1
+                if requests.get(get_service_url(5008, "/health"), timeout=1).status_code == 200: node3 = 1
             except: pass
             try:
-                if requests.get("http://localhost:5009/health", timeout=1).status_code == 200: node4 = 1
+                if requests.get(get_service_url(5009, "/health"), timeout=1).status_code == 200: node4 = 1
             except: pass
             try:
-                if requests.get("http://localhost:5010/health", timeout=1).status_code == 200: node5 = 1
+                if requests.get(get_service_url(5010, "/health"), timeout=1).status_code == 200: node5 = 1
             except: pass
 
             online = node1 + node2 + node3 + node4 + node5
@@ -176,7 +177,7 @@ def poll_services():
             zone_loads = []
             for zone, port in ZONE_PORTS.items():
                 try:
-                    r = requests.get(f"http://localhost:{port}/status", timeout=2)
+                    r = requests.get(get_service_url(port, "/status"), timeout=2)
                     if r.status_code == 200:
                         data = r.json()
                         zone_loads.append(data.get("current_load_mw", 0))
@@ -188,7 +189,7 @@ def poll_services():
 
             # ── Cache transformer / LB / VR data ──────────────────────────────
             try:
-                r = requests.get("http://localhost:5002/status", timeout=2)
+                r = requests.get(get_service_url(5002, "/status"), timeout=2)
                 if r.status_code == 200:
                     ts = r.json().get("transformers", [])
                     if ts:
@@ -199,13 +200,13 @@ def poll_services():
             except: pass
 
             try:
-                r = requests.get("http://localhost:5008/status", timeout=1)
+                r = requests.get(get_service_url(5008, "/status"), timeout=1)
                 if r.status_code == 200:
                     service_cache["lb_data"] = r.json()
             except: pass
 
             try:
-                r = requests.get("http://localhost:5009/status", timeout=1)
+                r = requests.get(get_service_url(5009, "/status"), timeout=1)
                 if r.status_code == 200:
                     service_cache["vr_data"] = r.json()
             except: pass

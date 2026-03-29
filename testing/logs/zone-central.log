@@ -1,1 +1,5 @@
-[2026-03-29 04:13:09.857] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
+[2026-03-29 07:33:36.552] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
+[2026-03-29 02:06:13.903] [zone-central] [INFO] Starting zone-central on port 5007 (zone=central)
+[2026-03-29 02:06:25.790] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-29 07:40:11.387] [zone-central] [WARNING] [INJECT] current_surge in central
+[2026-03-29 07:40:14.684] [zone-central] [INFO] [SHED-LOAD] Shed 89.72000000000001MW in central

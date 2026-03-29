@@ -16,6 +16,7 @@ import threading
 import numpy as np
 import joblib
 import requests
+from flask import Flask, Response, jsonify
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -26,22 +27,23 @@ from ml.feature_extractor import (
     FEATURE_COLUMNS,
 )
 from services.shared.logger import setup_logger, write_simulation_log
+from services.shared.network import get_service_url, resolve_url
 
 logger = setup_logger("ml-anomaly-detector")
 
 MODELS_DIR = os.path.join(ROOT, "ml", "models")
 
 SERVICE_URLS = {
-    "transformer":       "http://localhost:5002/status",
-    "zone_north":        "http://localhost:5003/status",
-    "zone_south":        "http://localhost:5004/status",
-    "zone_east":         "http://localhost:5005/status",
-    "zone_west":         "http://localhost:5006/status",
-    "zone_central":      "http://localhost:5007/status",
-    "load_balancer":     "http://localhost:5008/status",
-    "voltage_regulator": "http://localhost:5009/status",
-    "fault_detection":   "http://localhost:5010/status",
-    "grid_controller":   "http://localhost:5001/status",
+    "transformer":       get_service_url(5002, "/status"),
+    "zone_north":        get_service_url(5003, "/status"),
+    "zone_south":        get_service_url(5004, "/status"),
+    "zone_east":         get_service_url(5005, "/status"),
+    "zone_west":         get_service_url(5006, "/status"),
+    "zone_central":      get_service_url(5007, "/status"),
+    "load_balancer":     get_service_url(5008, "/status"),
+    "voltage_regulator": get_service_url(5009, "/status"),
+    "fault_detection":   get_service_url(5010, "/status"),
+    "grid_controller":   get_service_url(5001, "/status"),
 }
 
 from concurrent.futures import ThreadPoolExecutor
@@ -49,6 +51,34 @@ from concurrent.futures import ThreadPoolExecutor
 ANOMALY_COOLDOWN = 12  # Reduced to allow faster re-triggering
 _last_anomaly_times = {} # component_key -> timestamp
 _cooldown_lock = threading.Lock()
+
+# ─── Metrics Exposition ────────────────────────────────────────────────────────
+metrics_app = Flask(__name__)
+fault_counts = {} # fault_type -> count
+metrics_lock = threading.Lock()
+
+@metrics_app.route("/metrics")
+def get_metrics():
+    with metrics_lock:
+        lines = [
+            '# HELP ml_detected_faults_total Total count of detected faults by type',
+            '# TYPE ml_detected_faults_total counter'
+        ]
+        for ftype, count in fault_counts.items():
+            lines.append(f'ml_detected_faults_total{{fault_type="{ftype}"}} {count}')
+        return Response("\n".join(lines) + "\n", mimetype="text/plain")
+
+@metrics_app.route("/health")
+def ml_health():
+    return jsonify({"status": "healthy", "service": "ml-anomaly-detector"})
+
+def start_metrics_server():
+    logger.info("[METRICS] Starting ML metrics server on port 5011")
+    metrics_app.run(host="0.0.0.0", port=5011, debug=False, use_reloader=False)
+
+def increment_fault_counter(fault_type):
+    with metrics_lock:
+        fault_counts[fault_type] = fault_counts.get(fault_type, 0) + 1
 
 
 def load_models():
@@ -212,6 +242,7 @@ Context: {context}
 ⚡ Auto-Healing Triggered
 """
 )
+                increment_fault_counter(fault_type)
                 write_simulation_log("ml-anomaly-detector", "ML-DETECT",
                     f"Anomaly detected score={anomaly_score:.4f} prediction={prediction}")
                 write_simulation_log("ml-anomaly-detector", "ML-CLASSIFY",
@@ -230,7 +261,7 @@ Context: {context}
 
                 # Post to grid controller alert log
                 try:
-                    requests.post("http://localhost:5001/alert", json={
+                    requests.post(get_service_url(5001, "/alert"), json={
                         "severity": "CRITICAL",
                         "service":  "ml-anomaly-detector",
                         "fault_type": fault_type,
@@ -259,4 +290,5 @@ Context: {context}
 
 
 if __name__ == "__main__":
+    threading.Thread(target=start_metrics_server, daemon=True).start()
     run_inference_loop()
