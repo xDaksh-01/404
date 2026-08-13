@@ -82,12 +82,26 @@ class RemediationEngine:
             actions_taken += self._feeder_overload(zone, zone_port)
             
         elif fault_type == "power_redistribution":
-            actions_taken += self._transmission_bottleneck()
-            
+
+            overloaded = context.get("overloaded_zones", 2)
+
+            # 🟢 LIGHT → minor imbalance
+            if overloaded <= 1:
+                actions_taken += self._reroute_only()
+
+            # 🟡 MEDIUM → proper balancing
+            elif overloaded <= 3:
+                actions_taken += self._transmission_bottleneck()
+
+            # 🔴 SEVERE → aggressive fix
+            else:
+                actions_taken += self._transmission_bottleneck()
+                actions_taken += self._emergency_grid_balance()
+                    
         elif fault_type == "rebooting_overheat":
             # Safety critical restart
             actions_taken += self._restart_component("zone", zone)
-        
+                
         else:
             # Fallback for transient or unknown
             actions_taken += [{"action": "generic_mitigation", "target": zone, "success": True}]
@@ -308,11 +322,7 @@ class RemediationEngine:
         actions = []
         r = self._post("http://localhost:5008/reroute",
                        {"alternate_path": True, "split_load": True})
-        actions.append({"action": "reroute_alternate_path", "target": "load-balancer",
-                        "success": r is not None})
-        r = self._post("http://localhost:5002/distribute",
-                       {"rebalance_type": "bottleneck_relief"})
-        actions.append({"action": "distribute_transformer_load", "target": "transformer",
+        actions.append({"action": "reroute_light", "target": "load-balancer",
                         "success": r is not None})
         return actions
 
@@ -354,7 +364,8 @@ class RemediationEngine:
                 r = requests.get(self._resolve_url("http://localhost:5008/status"), timeout=2)
                 if r.status_code == 200:
                     d = r.json()
-                    ok = d.get("zones_overloaded_count", 5) == 0
+                    overloaded = d.get("zones_overloaded_count", 5)
+                    ok=overloaded <= 1
                     return ok, {"overloaded_zones": d.get("zones_overloaded_count")}
 
             elif fault_type == "rebooting_overheat":

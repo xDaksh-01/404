@@ -9,4 +9,4 @@ providers:
     allowUiUpdates: true
     updateIntervalSeconds: 10
     options:
-      path: /etc/grafana/provisioning/dashboards-json
+      path: C:/Users/krish/Downloads/SOlstice/404/observability/grafana/dashboards

@@ -1,0 +1,16 @@
+.env
+
+# Runtime and local state
+.grafana/
+data/
+testing/logs/
+
+# Build and package caches
+frontend/node_modules/
+frontend/node_modules/.vite/
+
+# Python bytecode/cache
+__pycache__/
+*.pyc
+
+tools/

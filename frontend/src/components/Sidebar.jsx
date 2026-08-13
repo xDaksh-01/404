@@ -8,7 +8,7 @@ export default function Sidebar() {
   const observabilityLinks = import.meta.env.DEV
     ? {
         prometheus: 'http://localhost:9090',
-        grafana: 'http://localhost:3001',
+        grafana: 'http://localhost:3001/d/smart-grid-overview/smart-grid-overview?orgId=1&refresh=5s',
       }
     : {
         prometheus: `http://localhost:3000/prometheus/targets?search=`,

@@ -1,4 +1,4 @@
-import { Activity, Gauge, Map, TrendingUp, Zap } from 'lucide-react'
+import { Activity, Gauge, Map, Zap } from 'lucide-react'
 import { useGrid } from '../App.jsx'
 import LoadBalancerPanel from '../components/LoadBalancerPanel.jsx'
 
@@ -94,7 +94,6 @@ export default function SystemOverview() {
   const risk = String(summary?.overload_risk || 'PENDING').toUpperCase()
   const riskTone = risk === 'CRITICAL' ? 'red' : risk === 'HIGH' ? 'amber' : risk === 'MEDIUM' ? 'cyan' : 'green'
   const gridLoadPercent = summary?.grid_load_percent
-  const latency = summary?.last_poll_latency_ms
 
   const pf = voltage.grid_power_factor_avg
   const avgVoltage = voltage.grid_voltage_avg_v
@@ -185,10 +184,6 @@ export default function SystemOverview() {
               <div className="overview-meta-item">
                 <Zap size={12} />
                 <span>{typeof gridLoadPercent === 'number' ? `${gridLoadPercent.toFixed(1)}% utilization` : 'Awaiting utilization data'}</span>
-              </div>
-              <div className="overview-meta-item success">
-                <TrendingUp size={12} />
-                <span>{typeof latency === 'number' ? `Latency ${formatNumber(latency, 1)}ms` : 'Latency pending'}</span>
               </div>
             </div>
           </div>

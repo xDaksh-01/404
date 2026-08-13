@@ -1,90 +1,195 @@
-[2026-03-29 07:33:36.830] [load-balancer] [INFO] Starting load-balancer on port 5008
+[2026-04-09 23:20:52.375] [load-balancer] [INFO] Starting load-balancer on port 5008
  * Serving Flask app 'app'
  * Debug mode: off
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5008
- * Running on http://10.12.15.75:5008
+ * Running on http://10.67.8.197:5008
 Press CTRL+C to quit
-127.0.0.1 - - [29/Mar/2026 07:33:43] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:33:56] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:33:58] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:12] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:13] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:27] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:32] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:34:36.609] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
-127.0.0.1 - - [29/Mar/2026 07:34:36] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:41] "GET /health HTTP/1.1" 200 -
-[2026-03-29 07:34:44.224] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=south mode=reduce excess=67.59MW
-127.0.0.1 - - [29/Mar/2026 07:34:44] "POST /emergency-rebalance HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:45] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:46] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:51] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:34:57] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:11] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:17] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:26] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:36] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:37] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:40] "GET /health HTTP/1.1" 200 -
-[2026-03-29 07:35:42.343] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:35:42] "POST /reroute HTTP/1.1" 200 -
-[2026-03-29 07:35:46.086] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
-127.0.0.1 - - [29/Mar/2026 07:35:46] "POST /demo/inject HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:55] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:35:55] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:36:05.761] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=west mode=reduce excess=77.3166287593293MW
-127.0.0.1 - - [29/Mar/2026 07:36:05] "POST /emergency-rebalance HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:36:09] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:10] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:18] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:29] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:29] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:33] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:37:35.776] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:37:35] "POST /reroute HTTP/1.1" 200 -
-[2026-03-29 07:37:46.718] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=south mode=reduce excess=77.25MW
-127.0.0.1 - - [29/Mar/2026 07:37:46] "POST /emergency-rebalance HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:47] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:37:48] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:37:52.625] [load-balancer] [INFO] [REROUTE] Rerouted 50MW (alternate=True)
-127.0.0.1 - - [29/Mar/2026 07:37:52] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:01] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:02] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:38:03.818] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=south mode=reduce excess=66.57000000000001MW
-127.0.0.1 - - [29/Mar/2026 07:38:03] "POST /emergency-rebalance HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:08] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:12] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:17] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:20] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:31] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:32] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:38:36.096] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=south mode=reduce excess=77.77000000000001MW
-127.0.0.1 - - [29/Mar/2026 07:38:36] "POST /emergency-rebalance HTTP/1.1" 200 -
-[2026-03-29 07:38:38.605] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:38:38] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:46] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:38:51] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:38:57.663] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:38:57] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:01] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:10] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:10] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:15] "GET /health HTTP/1.1" 200 -
-[2026-03-29 07:39:17.604] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:39:17] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:30] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:31] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:45] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:39:49] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:39:55.324] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:39:55] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:40:00] "GET /status HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:40:00] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:40:08] "GET /status HTTP/1.1" 200 -
-[2026-03-29 07:40:14.189] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
-127.0.0.1 - - [29/Mar/2026 07:40:14] "POST /reroute HTTP/1.1" 200 -
-127.0.0.1 - - [29/Mar/2026 07:40:14] "GET /health HTTP/1.1" 200 -
-[2026-03-29 07:40:14.686] [load-balancer] [INFO] [EMERGENCY-REBALANCE] Zone=central mode=reduce excess=89.72000000000001MW
-127.0.0.1 - - [29/Mar/2026 07:40:14] "POST /emergency-rebalance HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:20:58] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:11] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:13] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:28] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:43] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:49] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:21:57] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:01] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:12] "GET /status HTTP/1.1" 200 -
+[2026-04-09 23:22:14.379] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:22:14] "POST /reroute HTTP/1.1" 200 -
+[2026-04-09 23:22:25.311] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:22:25] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:26] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:27] "GET /status HTTP/1.1" 200 -
+[2026-04-09 23:22:36.787] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:22:36] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:42] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:46] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:22:56] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:11] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:25] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:31] "GET /status HTTP/1.1" 200 -
+[2026-04-09 23:23:37.410] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:23:37] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:40] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:42] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:50] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:23:55] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:10] "GET /status HTTP/1.1" 200 -
+[2026-04-09 23:24:12.940] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:24:12] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:28] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:32] "GET /health HTTP/1.1" 200 -
+[2026-04-09 23:24:34.383] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:24:34] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:39] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:47] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:49] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:24:51.929] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:24:51] "POST /demo/inject HTTP/1.1" 200 -
+[2026-04-09 23:24:53.326] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:24:53] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:54] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:24:59] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:25:00.214] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:25:00] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:09] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:09] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:25:11.249] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:25:11] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:19] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:22] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:23] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:24] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:25] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:29] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:25:32.262] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:25:32] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:34] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:39] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:44] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:49] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:52] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:25:59] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:03] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:08] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:09] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:13] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:19] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:22] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:22] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:24] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:26:29.156] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:26:29] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:29] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:34] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:37] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:39] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:41] "GET /status HTTP/1.1" 200 -
+[2026-04-09 23:26:44.442] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:26:44] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:49] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:51] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:26:59] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:00] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:03] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:06] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:09] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:19] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:19] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:21] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:24] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:29] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:34] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:36] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:38] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:39] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:49] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:50] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:53] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:57] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:27:59] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:05] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:09] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:16] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:19] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:19] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:24] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:29] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:34] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:35] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:39] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:28:40.650] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:28:40] "POST /demo/inject HTTP/1.1" 200 -
+[2026-04-09 23:28:42.533] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:28:42] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:43] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:49] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:49] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:55] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:28:59] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:09] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:29:09.895] [load-balancer] [WARNING] [INJECT] power_redistribution injected into load-balancer
+127.0.0.1 - - [09/Apr/2026 23:29:09] "POST /demo/inject HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:14] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:19] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:19] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:29:20.854] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:29:20] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:24] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:29] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:33] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:33] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:34] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:34] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:39] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:29:39.918] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:29:39] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:44] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:48] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:49] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:52] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:54] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:29:59] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:04] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:04] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:09] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:14] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:18] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:18] "GET /status HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:19] "GET /metrics HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:24] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:24] "GET /metrics HTTP/1.1" 200 -
+[2026-04-09 23:30:24.904] [load-balancer] [INFO] [REROUTE] Rerouted 40MW (alternate=False)
+127.0.0.1 - - [09/Apr/2026 23:30:24] "POST /reroute HTTP/1.1" 200 -
+127.0.0.1 - - [09/Apr/2026 23:30:29] "GET /metrics HTTP/1.1" 200 -
